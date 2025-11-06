@@ -4,7 +4,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 
 export default function Home() {
   return (
-    <SmoothScroll className="grid">
+    <SmoothScroll>
       <Hero />
       <SecondPage />
     </SmoothScroll>

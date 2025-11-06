@@ -28,7 +28,7 @@ export default function RootLayout({
         <link rel="icon" href="/skarion.png" type="image/png" sizes="any" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
         {children}
       </body>
