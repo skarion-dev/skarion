@@ -1,13 +1,13 @@
+import Navbar from "@/components/Common/Navbar/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Landing/Hero/hero";
-import SecondPage from "@/components/Landing/SecondPage/secondPage";
 import SmoothScroll from "@/components/SmoothScroll";
 
 export default function Home() {
   return (
     <SmoothScroll>
+      <Navbar />
       <Hero />
-      <SecondPage />
       <Footer />
     </SmoothScroll>
   );
