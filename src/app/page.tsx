@@ -1,4 +1,4 @@
-import Navbar from "@/components/Common/Navbar/Navbar";
+import Navbar from "@/components/Common/Navbar/navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Landing/Hero/hero";
 import SmoothScroll from "@/components/SmoothScroll";
