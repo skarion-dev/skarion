@@ -6,7 +6,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 export default function Home() {
   return (
     <SmoothScroll>
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <Footer />
     </SmoothScroll>
