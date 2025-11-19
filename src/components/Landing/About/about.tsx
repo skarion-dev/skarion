@@ -18,20 +18,20 @@ export default function AboutSection() {
             <div className="space-y-4">
               {/* Card 1 */}
               <div className="bg-[#ff686b] p-6 rounded-xl shadow-lg hover:shadow-xl transition-all">
-                <h3 className="text-xl font-semibold text-gray-800">
+                <h3 className="text-xl font-semibold text-[#122461]">
                   Find Proper niche for your dream income
                 </h3>
-                <p className="text-[#122461]">
+                <p className="text-gray-900">
                   Lorem ipsum is simply dummy text.
                 </p>
               </div>
 
               {/* Card 2 */}
               <div className="bg-[#122461] p-6 rounded-xl shadow-lg hover:shadow-xl transition-all">
-                <h3 className="text-xl font-semibold text-gray-300">
+                <h3 className="text-xl font-semibold text-[#c3ddf5]">
                   Focusing On Revenue
                 </h3>
-                <p className="text-[#ff686b]">
+                <p className="text-gray-300">
                   Lorem ipsum is simply dummy text.
                 </p>
               </div>
