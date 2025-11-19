@@ -20,7 +20,7 @@ const Section1 = () => {
 const Section2 = () => {
     return (
         <div className='flex justify-between items-end'>
-            <h1 className='text-[14vw] leading-[0.8] mt-10'>Skarion</h1>
+            <b><i><h1 className='text-[25vw] leading-[0.37] mt-10'>Skarion</h1></i></b>
             <p>©copyright</p>
         </div>
     )
