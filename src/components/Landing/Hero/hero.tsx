@@ -8,11 +8,10 @@ export default function Hero() {
                 <div className="w-[35%]">
                     <div className="bg-[#ff686b] rounded-[14px] h-[180px]"></div>
                     <div className="text-[#787777] text-[18px] font-[500] pt-8 text-left">
-                        Skarion helps individuals gain the skills and experience needed to secure high-demand jobs through specialized, hands-on training.                    
+                        Skarion helps individuals gain the skills and experience needed to secure high-demand jobs through specialized, hands-on training.                     
                     </div>
                 </div>
             </div>
-
             <div className="flex flex-row items-start justify-between space-x-8 pt-12">
             <div className="flex flex-col gap-8 w-[62%] h-[500px]">
                 <div className="rounded-[14px] relative flex-2 overflow-hidden">
