@@ -1,15 +1,28 @@
+import LogoCarousel from "@/components/LogoCarousel";
+
 export default function Hero() {
     return (
         <div className="w-full bg-[#ffffff] py-10 px-12">
             <div className="flex flex-row items-start justify-between space-x-8">
-                <div className="text-[#000000] text-[64px] w-[60%] leading-[1.3] text-left">
-                    Advancing Careers Through<br />Specialized Training
-                </div>
-                <div className="w-[35%]">
-                    <div className="bg-[#ff686b] rounded-[14px] h-[180px]"></div>
-                    <div className="text-[#787777] text-[18px] font-[500] pt-8 text-left">
+                <div className="w-[60%]">
+                    <div className="inline-flex items-center space-x-2 px-5 py-2 border border-black rounded-full mb-3">
+                        <span className="text-[12px] font-[500]">
+                            Learn More About Skarion
+                        </span>
+                    </div>
+                    <div className="text-[#000000] text-[64px] leading-[1.2] text-left">
+                        Advancing Careers Through Specialized Training
+                    </div>
+                    <div className="text-[20px] font-[300] pt-5 text-left w-[80%]">
                         Skarion helps individuals gain the skills and experience needed to secure high-demand jobs through specialized, hands-on training.                     
                     </div>
+                </div>
+                <div className=" w-[35%]">
+                    <div className="bg-[#ff686b] rounded-[14px] h-[180px]"></div>
+                    <div className="text-[16px] font-[400] pt-5 pb-7 text-left ">
+                        Upskilling teams in 20+ companies
+                    </div>
+                    <LogoCarousel />
                 </div>
             </div>
             <div className="flex flex-row items-start justify-between space-x-8 pt-12">
