@@ -1,3 +1,12 @@
+import LogoCarousel from "../LogoCarousel"
+
+const logos = [
+    "/skarion.png",
+    "/skarion.png",
+    "/skarion.png",
+    "/skarion.png",
+]
+
 export default function Hero() {
     return (
         <div className="w-full bg-[#ffffff] py-10 px-12">
@@ -15,12 +24,12 @@ export default function Hero() {
                         Skarion helps individuals gain the skills and experience needed to secure high-demand jobs through specialized, hands-on training.                     
                     </div>
                 </div>
-                <div className=" w-[35%]">
+                <div className="w-[35%]">
                     <div className="bg-[#ff686b] rounded-[14px] h-[180px]"></div>
                     <div className="text-[16px] font-[400] pt-5 pb-7 text-left ">
                         Upskilling teams in 20+ companies
                     </div>
-                    {/* <LogoCarousel /> */}
+                    <LogoCarousel logos={logos} />
                 </div>
             </div>
             <div className="flex flex-row items-start justify-between space-x-8 pt-12">
