@@ -1,11 +1,9 @@
-import LogoCarousel from "@/components/LogoCarousel";
-
 export default function Hero() {
     return (
         <div className="w-full bg-[#ffffff] py-10 px-12">
             <div className="flex flex-row items-start justify-between space-x-8">
                 <div className="w-[60%]">
-                    <div className="inline-flex items-center space-x-2 px-5 py-2 border border-black rounded-full mb-3">
+                    <div className="inline-flex items-center space-x-2 px-4 py-2 border border-black rounded-full mb-3">
                         <span className="text-[12px] font-[500]">
                             Learn More About Skarion
                         </span>
@@ -22,15 +20,12 @@ export default function Hero() {
                     <div className="text-[16px] font-[400] pt-5 pb-7 text-left ">
                         Upskilling teams in 20+ companies
                     </div>
-                    <LogoCarousel />
+                    {/* <LogoCarousel /> */}
                 </div>
             </div>
             <div className="flex flex-row items-start justify-between space-x-8 pt-12">
             <div className="flex flex-col gap-8 w-[62%] h-[500px]">
-                <div className="rounded-[14px] relative flex-2 overflow-hidden">
-                    <video src={"/skarion.mp4"} className="absolute top-0 left-0 w-full h-full object-cover" autoPlay loop muted>
-                    </video>
-                    <div className="absolute top-0 left-0 w-full h-full bg-[#122461] opacity-50"></div>
+                <div className="rounded-[14px] relative flex-2 bg-[#122461]">
                 </div>
                 <div className="flex flex-row items-start justify-between flex-1 space-x-8">
                     <div className="bg-[#c3ddf5] rounded-[14px] w-[70%] h-full"></div>
