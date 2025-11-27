@@ -1,3 +1,4 @@
+import CourseCards from "../CourseCards"
 import LogoCarousel from "../LogoCarousel"
 
 const logos = [
@@ -53,8 +54,6 @@ export default function Hero() {
 
             </div>
         </div>
-
-
         </div>
     )
 }
