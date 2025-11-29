@@ -68,15 +68,15 @@ export default function Testimonials() {
   });
 
   const y1 = useTransform(scrollYProgress, [0, 1], [-500, 700]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [-500, 100]);
-  const y3 = useTransform(scrollYProgress, [0, 1], [-1000, 1200]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [-50, 100]);
+  const y3 = useTransform(scrollYProgress, [0, 1], [-1000, 900]);
 
   return (
     <section className="w-full bg-[#ffffff] py-10 px-12 h-[100vh]">
       <div ref={container} className="flex gap-8 justify-between overflow-hidden">
         <Column testimonials={[testimonials[0], testimonials[1], testimonials[2], testimonials[3], testimonials[4], testimonials[5], testimonials[0], testimonials[1], testimonials[2],]} y={y1} />
-        <Column testimonials={[testimonials[0], testimonials[1], testimonials[2], testimonials[3], testimonials[4], testimonials[5], testimonials[0], testimonials[1], testimonials[2],]} y={y2} />
         <Column testimonials={[testimonials[0], testimonials[1], testimonials[2], testimonials[3], testimonials[4], testimonials[5], testimonials[0], testimonials[1], testimonials[2],]} y={y3} />
+        <Column testimonials={[testimonials[0], testimonials[1], testimonials[2], testimonials[3], testimonials[4], testimonials[5], testimonials[0], testimonials[1], testimonials[2],]} y={y2} />
       </div>
     </section>
   );
