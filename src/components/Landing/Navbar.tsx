@@ -45,30 +45,30 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:block">
             <div className="ml-6 flex items-center space-x-8">
-              <a
-                href="#home"
-                className="px-3 py-2 rounded-md text-sm font-medium hover:opacity-80 transition-colors duration-300"
-              >
-                Home
-              </a>
-              <a
-                href="#about"
-                className="px-3 py-2 rounded-md text-sm font-medium hover:opacity-80 transition-colors duration-300"
-              >
-                About
-              </a>
-              <a
-                href="#services"
-                className="px-3 py-2 rounded-md text-sm font-medium hover:opacity-80 transition-colors duration-300"
-              >
-                Services
-              </a>
-              <a
-                href="#contact"
-                className="px-3 py-2 rounded-md text-sm font-medium hover:opacity-80 transition-colors duration-300"
-              >
-                Contact
-              </a>
+                <a
+                    href="#home"
+                    className="px-3 py-2 rounded-md text-sm font-medium hover:opacity-80 transition-colors duration-300"
+                >
+                    Home
+                </a>
+                <a
+                    href="#about"
+                    className="px-3 py-2 rounded-md text-sm font-medium hover:opacity-80 transition-colors duration-300"
+                >
+                    About
+                </a>
+                <a
+                    href="#services"
+                    className="px-3 py-2 rounded-md text-sm font-medium hover:opacity-80 transition-colors duration-300"
+                >
+                    Services
+                </a>
+                <a
+                    href="#contact"
+                    className="px-3 py-2 rounded-md text-sm font-medium hover:opacity-80 transition-colors duration-300"
+                >
+                    Contact
+                </a>
 
               {/* Email Button */}
               <button
@@ -102,7 +102,7 @@ export default function Navbar() {
           isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="px-2 pt-2 pb-3 space-y-1 bg-black border-t border-gray-200">
+        <div className="px-2 pt-2 pb-3 space-y-1 bg-[#122461] opacity-90 border-t border-gray-200">
           <a
             href="#home"
             className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-600 hover:bg-gray-100 transition-all duration-300 transform hover:translate-x-1"
