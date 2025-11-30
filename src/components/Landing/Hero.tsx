@@ -1,5 +1,6 @@
 import CourseCards from "../CourseCards"
 import LogoCarousel from "../LogoCarousel"
+import SlideshowCarousel from "../SlideshowCarousel"
 
 const logos = [
     "/skarion.png",
@@ -10,15 +11,15 @@ const logos = [
 
 export default function Hero() {
     return (
-        <div className="w-full bg-[#ffffff] px-4 sm:px-6 md:px-12 py-8 sm:py-10">
+        <div className="w-full bg-[#ffffff] px-4 sm:px-6 md:px-12 py-10 sm:py-10">
             <div className="flex flex-col md:flex-row items-start justify-between gap-8">
                 <div className="w-full md:w-[60%]">
                     <div className="inline-flex items-center gap-2 px-4 py-2 border border-black rounded-full mb-3">
-                        <span className="text-xs sm:text-sm font-[500]">
+                        <span className="text-xs sm:text-xs md:text-sm lg:text-m">
                             Learn More About Skarion
                         </span>
                     </div>
-                    <div className="text-[#000000] text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-left">
+                    <div className="text-[#000000] text-4xl sm:text-4xl md:text-5xl lg:text-7xl leading-tight text-left">
                         Advancing Careers Through Specialized Training
                     </div>
                     <div className="text-base sm:text-lg md:text-xl font-[300] pt-5 text-left w-full md:w-[80%]">
@@ -51,7 +52,7 @@ export default function Hero() {
                 </div>
 
                 <div className="flex flex-col gap-8 bg-[#c3ddf5] rounded-[14px] w-full md:w-[35%] min-h-[200px] sm:min-h-[260px] md:min-h-[500px]">
-
+                    <SlideshowCarousel />
                 </div>
             </div>
         </div>

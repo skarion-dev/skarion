@@ -41,7 +41,7 @@ export default function SmoothScroll({
 
   return (
     <ScrollContainerContext.Provider value={containerRef}>
-      <div id="smooth-scroll-container" ref={containerRef} className={`h-[100vh] w-full overflow-y-auto ${className}`}>
+      <div id="smooth-scroll-container" ref={containerRef} className={`h-[100vh] w-full overflow-y-auto pt-16 ${className}`}>
         {children}
       </div>
     </ScrollContainerContext.Provider>
