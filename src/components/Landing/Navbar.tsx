@@ -32,7 +32,7 @@ export default function Navbar() {
   return (
     <nav className="fixed bg-transparent top-5 inset-x-5 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 bg-[#122461] text-white rounded-full shadow-2xl ring-1 ring-black/10 px-6">
+        <div className="flex justify-between items-center h-16 bg-[#122461] opacity-90 text-white rounded-full shadow-2xl ring-1 ring-black/10 px-6">
         
           <div className="flex-shrink-0">
             <a href="#" className="inline-flex items-center justify-center group">
