@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, PropsWithChildren } from "react";
 import Lenis from "lenis";
+import { ScrollContainerContext } from "./Common/ScrollContainerContext";
 
 type SmoothScrollProps = PropsWithChildren<{
   duration?: number;
@@ -39,8 +40,10 @@ export default function SmoothScroll({
   }, [duration]);
 
   return (
-    <div ref={containerRef} className={`h-[100vh] w-full overflow-y-auto ${className}`}>
-      {children}
-    </div>
+    <ScrollContainerContext.Provider value={containerRef}>
+      <div id="smooth-scroll-container" ref={containerRef} className={`h-[100vh] w-full overflow-y-auto ${className}`}>
+        {children}
+      </div>
+    </ScrollContainerContext.Provider>
   );
 }

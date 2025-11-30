@@ -185,3 +185,23 @@
   -webkit-clip-path: circle(0% at 292px 88%);
   clip-path: circle(0% at 292px 88%);
 }
+
+.scroller{
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+@keyframes infinite-scroll {
+  100% {
+    transform: translateX(calc(-50% - 0.25rem)); 
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 10s linear infinite;
+}
+
+.inner-scroll {
+  width: max-content;
+}
