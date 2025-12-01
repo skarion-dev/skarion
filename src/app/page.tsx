@@ -8,6 +8,7 @@ import Navbar from "@/components/Landing/Navbar";
 export default function Home() {
   return (
     <SmoothScroll>
+      <div className="mt-20"></div>
       <Navbar /> 
       <Hero />
       <Courses />

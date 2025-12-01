@@ -84,7 +84,7 @@ export default function Navbar() {
               {/* Email Button */}
               <button
                 onClick={copyEmail}
-                className="ml-8 inline-flex items-center px-4 py-2 rounded-full bg-red-400 text-black font-medium shadow hover:shadow-md transition-all duration-200"
+                className="ml-8 inline-flex items-center px-4 py-2 rounded-full bg-red-400 text-white font-medium shadow hover:bg-[#c3ddf5] hover:text-black  hover:shadow-md transition-all duration-200"
               >
                 {copied ? 'Copied ✅' : 'info@skarion.com'}
               </button>

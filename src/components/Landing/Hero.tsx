@@ -9,6 +9,14 @@ const logos = [
     "/skarion.png",
 ]
 
+const profiles=[
+    "black",
+    "red",
+    "green",
+    "blue",
+    "yellow",
+]
+
 export default function Hero() {
     return (
         <div className="w-full bg-[#ffffff] px-4 sm:px-6 md:px-12 py-10 sm:py-10">
@@ -51,8 +59,8 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className="flex flex-col gap-8 bg-[#c3ddf5] rounded-[14px] w-full md:w-[35%] min-h-[200px] sm:min-h-[260px] md:min-h-[500px]">
-                    <SlideshowCarousel />
+                <div className="flex flex-col gap-8 bg-[#fffff] rounded-[14px] w-full md:w-[35%] min-h-[200px] sm:min-h-[260px] md:min-h-[495px]">
+                    <SlideshowCarousel logos={profiles} />
                 </div>
             </div>
         </div>
