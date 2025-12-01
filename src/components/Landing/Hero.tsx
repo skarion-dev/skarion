@@ -20,7 +20,9 @@ const profiles=[
 const images=[
     "/image 1.jpg",
     "/image 3.jpg",
-    "/image 2.jpg"
+    "/image 2.jpg",
+    "/profile 1.jpg",
+    "/profile 2.jpg"
 ]
 
 export default function Hero() {
