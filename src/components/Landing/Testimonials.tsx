@@ -72,21 +72,33 @@ export default function Testimonials() {
   const y3 = useTransform(scrollYProgress, [0, 1], [-1000, 900]);
 
   return (
-    <section className="w-full bg-[#ffffff] py-10 px-12 h-[100vh]">
-      <div ref={container} className="flex gap-8 justify-between overflow-hidden">
-        <Column testimonials={[testimonials[0], testimonials[1], testimonials[2], testimonials[3], testimonials[4], testimonials[5], testimonials[0], testimonials[1], testimonials[2],]} y={y1} />
-        <Column testimonials={[testimonials[0], testimonials[1], testimonials[2], testimonials[3], testimonials[4], testimonials[5], testimonials[0], testimonials[1], testimonials[2],]} y={y3} />
-        <Column testimonials={[testimonials[0], testimonials[1], testimonials[2], testimonials[3], testimonials[4], testimonials[5], testimonials[0], testimonials[1], testimonials[2],]} y={y2} />
+    <section className="w-full bg-[#ffffff] py-10 px-12 h-[100vh] overflow-hidden">
+      <div ref={container} className="flex gap-6 overflow-hidden">
+        <Column
+          testimonials={[testimonials[0], testimonials[1], testimonials[2], testimonials[3], testimonials[4], testimonials[5], testimonials[0], testimonials[1], testimonials[2]]}
+          y={y1}
+          className="w-full sm:w-1/2 lg:w-1/3 "
+        />
+        <Column
+          testimonials={[testimonials[0], testimonials[1], testimonials[2], testimonials[3], testimonials[4], testimonials[5], testimonials[0], testimonials[1], testimonials[2]]}
+          y={y3}
+          className="hidden sm:flex sm:w-1/2 lg:w-1/3 "
+        />
+        <Column
+          testimonials={[testimonials[0], testimonials[1], testimonials[2], testimonials[3], testimonials[4], testimonials[5], testimonials[0], testimonials[1], testimonials[2]]}
+          y={y2}
+          className="hidden lg:flex lg:w-1/3 "
+        />
       </div>
     </section>
   );
 }
 
-const Column = ({ testimonials, y }: { testimonials: ITestimonial[]; y: MotionValue<number> }) => {
+const Column = ({ testimonials, y, className = "" }: { testimonials: ITestimonial[]; y: MotionValue<number>; className?: string }) => {
   return (
     <motion.div
       style={{ y }}
-      className="flex flex-col w-1/3"
+      className={`flex flex-col ${className}`}
     >
       {testimonials.map((item, i) => {
         return (
