@@ -72,7 +72,7 @@ export default function Testimonials() {
   const y3 = useTransform(scrollYProgress, [0, 1], [-1000, 900]);
 
   return (
-    <section className="w-full bg-[#ffffff] py-10 px-12 h-[100vh] overflow-hidden">
+    <div className="w-full bg-[#ffffff] py-10 px-12 h-[100vh] overflow-hidden">
       <div ref={container} className="flex gap-6 overflow-hidden">
         <Column
           testimonials={[testimonials[0], testimonials[1], testimonials[2], testimonials[3], testimonials[4], testimonials[5], testimonials[0], testimonials[1], testimonials[2]]}
@@ -90,7 +90,7 @@ export default function Testimonials() {
           className="hidden lg:flex lg:w-1/3 "
         />
       </div>
-    </section>
+    </div>
   );
 }
 
