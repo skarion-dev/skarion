@@ -34,10 +34,10 @@ export default function Hero() {
                 <div className="w-[60%]">
                     <div className="flex items-center gap-4 mb-3">
                         <div className="flex -space-x-2">
-                            <Image src="/image 1.jpg" alt="student" width={32} height={32} className="rounded-full  " />
-                            <Image src="/profile 1.jpg" alt="student" width={32} height={32} className="rounded-full " />
-                            <Image src="/image 3.jpg" alt="student" width={32} height={32} className="rounded-full " />
-                            <Image src="/profile 2.jpg" alt="student" width={32} height={32} className="rounded-full" />
+                            <Image src="/image 1.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover" />
+                            <Image src="/profile 1.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover" />
+                            <Image src="/image 3.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover" />
+                            <Image src="/profile 2.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover" />
                         </div>
                         <div className="flex flex-col">
                             <div className="flex items-center gap-1 text-[#f5b942]">
@@ -200,13 +200,8 @@ const Background = () => {
 
 const TeamBackground = () => {
   return (
-    <motion.svg
-      width="100%"
-      height="100%"
-      viewBox="0 -40 320 240"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="absolute inset-0 z-0 overflow-visible"
+    <motion.div
+      className="absolute inset-0 z-0 overflow-visible w-full h-full"
       variants={{
         hover: {
           scale: 1,
@@ -217,11 +212,14 @@ const TeamBackground = () => {
         ease: "backInOut",
       }}
     >
-      <motion.circle
+      <motion.img
+        src="/arifin.png"
+        alt="arifin"
+        className="w-[100%] h-[100%] object-contain"
         variants={{
-        
           hover: {
-            y: -90,
+            y: -80,
+            scale: 1.5,
           },
         }}
         transition={{
@@ -229,11 +227,7 @@ const TeamBackground = () => {
           ease: "backInOut",
           delay: 0.2,
         }}
-        cx="160.5"
-        cy="94.5"
-        r="101.5"
-        fill="#122461"
       />
-    </motion.svg>
+    </motion.div>
   );
 };
