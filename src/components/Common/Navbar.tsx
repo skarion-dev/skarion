@@ -1,4 +1,5 @@
 "use client";
+import CourseCards from "@/components/CourseCards";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -281,67 +282,80 @@ export default function Header() {
                             <div className="overflow-y-auto max-h-[65vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                 {selectedMenu === "programs" && (
                                     <div className="p-4">
-                                        <p className="text-[20px] text-[#191F38] font-[600]">Programs</p>
+                                        <CourseCards />
+                                        <div className='mt-6 md:mt-8 lg:mt-10 border-t border-black/20' />
+                                        <Link href="#" className="hover:text-[#191F38]">See All Programs</Link>
                                     </div>
                                 )}
                                 {selectedMenu === "company" && (
-                                    <div className="p-4">
-                                        <p className="text-[20px] text-[#191F38] font-[600]">Company</p>
+                                    <div className="p-4 sm:p-6 md:p-8 lg:p-10 col-span-1 md:col-span-2 lg:col-span-3">
+                                        <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-6">
+                                            <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                                                <div className="flex flex-col">
+                                                    <p className="text-[18px] sm:text-[20px] md:text-[24px] text-[#191F38] font-[500] mb-2 md:mb-3">About</p>
+                                                    <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
+                                                        <Link href="#" className="inline-block rounded px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full">About Skarion</Link>
+                                                    </div>
+                                                    <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
+                                                        <Link href="#" className="inline-block rounded px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full">Student Journey</Link>
+                                                    </div>
+                                                    <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
+                                                        <Link href="#" className="inline-block rounded px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full">Contact Us</Link>
+                                                    </div>
+                                                    <p className="mt-3 md:mt-4 text-[18px] sm:text-[20px] md:text-[24px] text-[#191F38] font-[500] mb-2 md:mb-3">Resources</p>
+                                                    <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
+                                                        <Link href="#" className="inline-block rounded px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full">Blogs</Link>
+                                                    </div>
+                                                    <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
+                                                        <Link href="#" className="inline-block rounded px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full">FAQ</Link>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <p className="text-[18px] sm:text-[20px] md:text-[24px] text-[#191F38] font-[500] mb-2 md:mb-3">Community</p>
+                                                    <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
+                                                        <Link href="#" className="inline-block rounded px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full">Facebook</Link>
+                                                    </div>
+                                                    <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
+                                                        <Link
+                                                            href="#"
+                                                            className="inline-block rounded px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full">
+                                                            Linkedin
+                                                        </Link>
+                                                    </div>
+                                                    <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
+                                                        <Link
+                                                            href="#"
+                                                            className="inline-block rounded  px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full" >
+                                                            X
+                                                        </Link>
+                                                    </div>
+                                                    <p className="mt-3 md:mt-4 text-[22px] sm:text-[24px] md:text-[28px] text-[#191F38] font-[500] mb-1 md:mb-2">Company</p>
+                                                    <div className="space-y-1 md:space-y-2">
+                                                        <Link
+                                                            href="#"
+                                                            className="inline-block rounded  px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full">
+                                                            Career
+                                                        </Link>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="lg:col-span-2 mt-4 md:mt-0">
+                                                <p className="text-[32px] sm:text-[48px] md:text-[56px] lg:text-[64px] tracking-[0.15em] text-[#191F38] font-[500] break-words">SKARION</p>
+                                                <p className="mt-2 md:mt-3 text-[14px] sm:text-[15px] md:text-[16px] text-[#4B5563] max-w-xs md:max-w-sm">
+                                                    Skarion is a career-focused bootcamp that equips you with job-ready skills and helps you get hired through expert training and personalized support
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className='mt-6 md:mt-8 lg:mt-10 border-t border-black/20' />
+                                        <div className="mt-auto pt-2 flex flex-col sm:flex-row sm:flex-wrap sm:justify-between sm:items-center text-[#4B5563] text-[14px] sm:text-[16px] md:text-[18px] gap-2">
+                                            <span>info@skarion.com</span>
+                                            <div className="flex flex-wrap gap-2 sm:gap-4 mt-1 sm:mt-2">
+                                                <Link href="#" className="hover:text-[#191F38]">Terms and Conditions</Link>
+                                                <Link href="#" className="hover:text-[#191F38]">Privacy Policy</Link>
+                                            </div>
+                                        </div>
                                     </div>
                                 )}
-                            </div>
-
-                            <div className="border-t sm:m-4 pt-6">
-                                <div className="flex flex-wrap gap-3">
-                                    <div className="flex gap-3 w-full md:w-auto">
-                                        <Link
-                                            href={`/auth/sign-up`}
-                                            className="rounded-[8px] flex items-center gap-2 font-[600] transition-all cursor-pointer border-2 border-[#4157FE] text-[#4157FE] px-4 py-2 text-[16px] max-h-[40px]"
-                                        >
-                                            Try For Free!
-                                        </Link>
-                                        <Link
-                                            href="/resources/video-guides"
-                                            className="rounded-[8px] flex items-center gap-2 font-[600] transition-all cursor-pointer bg-[#F0F5FF] text-[#2377FC] border-2 border-[#4157FE] px-4 py-2 text-[16px] max-h-[40px] shadow-[0px_2px_4px_0px_#00000014,0px_0px_6px_0px_#00000005]"
-                                        >
-                                            <svg
-                                                width="18"
-                                                height="18"
-                                                viewBox="0 0 18 18"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M7.5075 4.41539C6.25725 3.68639 4.6875 4.58789 4.6875 6.03539V11.9649C4.6875 13.4124 6.25725 14.3139 7.5075 13.5849L12.5903 10.6194C13.83 9.89639 13.83 8.10389 12.5903 7.38089L7.5075 4.41539Z"
-                                                    fill="#4157FE"
-                                                />
-                                            </svg>
-                                            Watch Demo
-                                        </Link>
-                                    </div>
-                                    <Link
-                                        href="/contact-sales"
-                                        className="w-full md:w-auto rounded-[8px] flex items-center justify-center gap-2 font-[600] transition-all cursor-pointer bg-[#4157FE] border border-[#317EF3] text-[#FFFFFF] px-4 py-2 text-[16px] max-h-[40px]"
-                                    >
-                                        <svg
-                                            width="19"
-                                            height="18"
-                                            viewBox="0 0 19 18"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M8.7875 11.2125L7.4 12.6C7.1075 12.8925 6.6425 12.8925 6.3425 12.6075C6.26 12.525 6.1775 12.45 6.095 12.3675C5.3225 11.5875 4.625 10.77 4.0025 9.915C3.3875 9.06 2.8925 8.205 2.5325 7.3575C2.18 6.5025 2 5.685 2 4.905C2 4.395 2.09 3.9075 2.27 3.4575C2.45 3 2.735 2.58 3.1325 2.205C3.6125 1.7325 4.1375 1.5 4.6925 1.5C4.9025 1.5 5.1125 1.545 5.3 1.635C5.495 1.725 5.6675 1.86 5.8025 2.055L7.5425 4.5075C7.6775 4.695 7.775 4.8675 7.8425 5.0325C7.91 5.19 7.9475 5.3475 7.9475 5.49C7.9475 5.67 7.895 5.85 7.79 6.0225C7.6925 6.195 7.55 6.375 7.37 6.555L6.8 7.1475C6.7175 7.23 6.68 7.3275 6.68 7.4475C6.68 7.5075 6.6875 7.56 6.7025 7.62C6.725 7.68 6.7475 7.725 6.7625 7.77C6.8975 8.0175 7.13 8.34 7.46 8.73C7.7975 9.12 8.1575 9.5175 8.5475 9.915C8.6225 9.99 8.705 10.065 8.78 10.14C9.08 10.4325 9.0875 10.9125 8.7875 11.2125Z"
-                                                fill="white"
-                                            />
-                                            <path
-                                                d="M16.9767 13.7473C16.9767 13.9573 16.9392 14.1748 16.8642 14.3848C16.8417 14.4448 16.8192 14.5048 16.7892 14.5648C16.6617 14.8348 16.4967 15.0898 16.2792 15.3298C15.9117 15.7348 15.5067 16.0273 15.0492 16.2148C15.0417 16.2148 15.0342 16.2223 15.0267 16.2223C14.5842 16.4023 14.1042 16.4998 13.5867 16.4998C12.8217 16.4998 12.0042 16.3198 11.1417 15.9523C10.2792 15.5848 9.41672 15.0898 8.56172 14.4673C8.26922 14.2498 7.97672 14.0323 7.69922 13.7998L10.1517 11.3473C10.3617 11.5048 10.5492 11.6248 10.7067 11.7073C10.7442 11.7223 10.7892 11.7448 10.8417 11.7673C10.9017 11.7898 10.9617 11.7973 11.0292 11.7973C11.1567 11.7973 11.2542 11.7523 11.3367 11.6698L11.9067 11.1073C12.0942 10.9198 12.2742 10.7773 12.4467 10.6873C12.6192 10.5823 12.7917 10.5298 12.9792 10.5298C13.1217 10.5298 13.2717 10.5598 13.4367 10.6273C13.6017 10.6948 13.7742 10.7923 13.9617 10.9198L16.4442 12.6823C16.6392 12.8173 16.7742 12.9748 16.8567 13.1623C16.9317 13.3498 16.9767 13.5373 16.9767 13.7473Z"
-                                                fill="white"
-                                            />
-                                        </svg>
-                                        Contact Sales
-                                    </Link>
-                                </div>
                             </div>
                         </div>
                     </div>

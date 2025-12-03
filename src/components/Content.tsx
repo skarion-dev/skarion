@@ -44,8 +44,8 @@ export default function Content() {
           </div>
         </div>
 
-        <div className='text-white text-sm sm:text-base space-y-6 ml-auto grid grid-cols-4 gap-16'>
-            <div className='text-white text-sm sm:text-base space-y-2 '>
+        <div className='text-gray-500 text-sm sm:text-base space-y-6 ml-auto grid grid-cols-4 gap-16'>
+            <div className='text-gray-500 text-sm sm:text-base space-y-2 '>
                 <a href='#' className='block hover:text-[#c3ddf5] transition-colors relative group'>
                   Install
                   <span className='absolute left-0 bottom-[-2px] w-0 h-0.5 bg-[#c3ddf5] transition-all duration-300 group-hover:w-full'></span>
@@ -68,7 +68,7 @@ export default function Content() {
                 </a>
             </div>
 
-            <div className='text-white text-sm sm:text-base space-y-2 '>
+            <div className='text-gray-500 text-sm sm:text-base space-y-2 '>
                  <a href='#' className='block hover:text-[#c3ddf5] transition-colors relative group'>
                   Feedback
                   <span className='absolute left-0 bottom-[-2px] w-0 h-0.5 bg-[#c3ddf5] transition-all duration-300 group-hover:w-full'></span>
@@ -87,7 +87,7 @@ export default function Content() {
                 </a>
             </div>
 
-             <div className='text-white text-sm sm:text-base space-y-2 '>
+             <div className='text-gray-500 text-sm sm:text-base space-y-2 '>
                 <a href='#' className='block hover:text-[#c3ddf5] transition-colors relative group'>
                   Install
                   <span className='absolute left-0 bottom-[-2px] w-0 h-0.5 bg-[#c3ddf5] transition-all duration-300 group-hover:w-full'></span>
@@ -110,7 +110,7 @@ export default function Content() {
                 </a>
             </div>
 
-            <div className='text-white text-sm sm:text-base space-y-2 '>
+            <div className='text-gray-500 text-sm sm:text-base space-y-2 '>
                  <a href='#' className='block hover:text-[#c3ddf5] transition-colors relative group'>
                   Feedback
                   <span className='absolute left-0 bottom-[-2px] w-0 h-0.5 bg-[#c3ddf5] transition-all duration-300 group-hover:w-full'></span>
