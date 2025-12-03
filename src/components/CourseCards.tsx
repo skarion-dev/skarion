@@ -41,10 +41,9 @@ export default function CourseCards() {
                             key={index}
                             className={clsx(
                                 "relative bg-white border rounded-lg transition-all ease-out", 
-                                "min-w-[300px]", 
-                                isActive
-                                    ? "w-[500px] duration-300" 
-                                    : "w-[300px] duration-300"
+                                "min-w-[300px] lg:min-w-[300px]", 
+                                "w-full lg:w-[300px]",
+                                isActive && "lg:w-[500px]"
                             )}
                             onMouseEnter={() => setActiveId(index)}
                             onMouseLeave={() => setActiveId(null)} 
