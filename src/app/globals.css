@@ -161,7 +161,6 @@
   border-radius: 5px;
 }
 
-/* Card specific colors */
 #dribbble .card-content {
   background-color: #F46899;
   -webkit-clip-path: circle(0% at 76px 88%);

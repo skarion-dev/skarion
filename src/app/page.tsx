@@ -1,3 +1,4 @@
+import Navbar from "@/components/Common/Navbar";
 import Footer from "@/components/Footer";
 import Courses from "@/components/Landing/Courses";
 import Hero from "@/components/Landing/Hero";
@@ -7,6 +8,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 export default function Home() {
   return (
     <SmoothScroll>
+      <Navbar /> 
       <Hero />
       <Courses />
       <Testimonials />

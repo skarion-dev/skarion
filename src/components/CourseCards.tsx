@@ -1,6 +1,7 @@
 'use client'
 import clsx from "clsx"
 import { useState } from "react"
+import Link from "next/link";
 
 const courses = [
     {
@@ -9,6 +10,7 @@ const courses = [
         modules: 13,
         tag: "Most Popular",
         isPopular: true,
+        href: "/course/outside-plant-engineering",
     },
     {
         courseName: "AutoCAD Fundamentals",
@@ -16,6 +18,7 @@ const courses = [
         modules: 13,
         tag: "Coming Soon",
         isPopular: false,
+        href: "/course/autocad-fundamentals",
     },
     {
         courseName: "GIS Essentials",
@@ -23,6 +26,7 @@ const courses = [
         modules: 13,
         tag: "Coming Soon",
         isPopular: false,
+        href: "/course/gis-essentials",
     }
 ]
 
@@ -35,9 +39,9 @@ export default function CourseCards() {
                 {courses.map((course, index) => {
                     const isActive = index === activeId
                     const { courseName, courseDescription, modules, tag, isPopular } = course || {}
-
                     return (
-                        <div
+                        <Link
+                            href={course.href}
                             key={index}
                             className={clsx(
                                 "relative bg-white border rounded-lg transition-all ease-out", 
@@ -67,7 +71,7 @@ export default function CourseCards() {
                             <div className="mt-4 px-4 pb-4 flex justify-between items-center">
                                 <span className="text-xs text-gray-500">{modules} Modules</span>
                             </div>
-                        </div>
+                        </Link>
                     )
                 })}
             </div>
