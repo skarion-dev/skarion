@@ -11,6 +11,7 @@ const courses = [
         tag: "Most Popular",
         isPopular: true,
         href: "/course/outside-plant-engineering",
+        published: true,
     },
     {
         courseName: "AutoCAD Fundamentals",
@@ -18,7 +19,8 @@ const courses = [
         modules: 13,
         tag: "Coming Soon",
         isPopular: false,
-        href: "/course/autocad-fundamentals",
+        href: "/",
+        published: false,
     },
     {
         courseName: "GIS Essentials",
@@ -26,7 +28,8 @@ const courses = [
         modules: 13,
         tag: "Coming Soon",
         isPopular: false,
-        href: "/course/gis-essentials",
+        href: "/",
+        published: false,
     }
 ]
 
@@ -38,27 +41,20 @@ export default function CourseCards() {
             <div className="flex gap-8 flex-wrap overflow-x-auto">
                 {courses.map((course, index) => {
                     const isActive = index === activeId
-                    const { courseName, courseDescription, modules, tag, isPopular } = course || {}
-                    return (
-                        <Link
-                            href={course.href}
-                            key={index}
-                            className={clsx(
-                                "relative bg-white border rounded-lg transition-all ease-out", 
-                                "min-w-[300px]", 
-                                isActive
-                                    ? "w-[500px] duration-300" 
-                                    : "w-[300px] duration-300"
-                            )}
-                            onMouseEnter={() => setActiveId(index)}
-                            onMouseLeave={() => setActiveId(null)} 
-                        >
+                    const { courseName, courseDescription, modules, tag, isPopular, published } = course || {}
+                    const baseClasses = clsx(
+                        "relative bg-white border rounded-lg transition-all ease-out",
+                        "min-w-[300px]",
+                        isActive ? "w-[500px] duration-300" : "w-[300px] duration-300"
+                    )
+                    const disabledClasses = clsx(baseClasses, "opacity-60 cursor-not-allowed pointer-events-none")
+                    const content = (
+                        <>
                             <div className="relative bg-gray-300 rounded-lg h-[150px] m-2">
                                 <div className={`absolute -bottom-4 left-2 inline-flex items-center justify-center px-4 py-1 text-[11px] font-[600] rounded-full border-3 border-white z-10 ${isPopular ? 'text-green-800 bg-green-200' : 'text-red-800 bg-red-200'}`}>
                                     {tag}
                                 </div>
                             </div>
-
                             <div className="px-4">
                                 <div className="mt-6 text-[20px] font-[600] text-black">
                                     {courseName}
@@ -67,11 +63,32 @@ export default function CourseCards() {
                                     {courseDescription}
                                 </div>
                             </div>
-
                             <div className="mt-4 px-4 pb-4 flex justify-between items-center">
                                 <span className="text-xs text-gray-500">{modules} Modules</span>
                             </div>
+                        </>
+                    )
+                    return published ? (
+                        <Link
+                            href={course.href}
+                            key={index}
+                            className={baseClasses}
+                            onMouseEnter={() => setActiveId(index)}
+                            onMouseLeave={() => setActiveId(null)}
+                        >
+                            {content}
                         </Link>
+                    ) : (
+                        <div
+                            key={index}
+                            className={disabledClasses}
+                            aria-disabled="true"
+                            tabIndex={-1}
+                            onMouseEnter={() => setActiveId(index)}
+                            onMouseLeave={() => setActiveId(null)}
+                        >
+                            {content}
+                        </div>
                     )
                 })}
             </div>

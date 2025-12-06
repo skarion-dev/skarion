@@ -100,7 +100,7 @@ export default function Header() {
                         </div>
                     </div>
                     <div className="hidden lg:flex items-center h-full gap-8" onMouseEnter={() => setIsMenuOpen(false)}>
-                        <div className="bg-[#000000] border border-[#EBEBEB] rounded-[12px] px-4 pt-2 pb-2.5 cursor-pointer">
+                        <div className="bg-[#122461] border border-[#EBEBEB] rounded-[12px] px-4 pt-2 pb-2.5 cursor-pointer">
                             <Link href={"/contact"}>
                                 <p className="text-[14px] text-[#FFFFFF] font-[500]">
                                     Contact Us

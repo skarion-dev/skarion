@@ -193,7 +193,7 @@
 
 @keyframes infinite-scroll {
   100% {
-    transform: translateX(calc(-50% - 0.25rem)); 
+    transform: translateX(calc(-50% - 0.5rem)); 
   }
 }
 
