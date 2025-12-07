@@ -32,7 +32,7 @@ export default function Header() {
         <div className="sticky top-4 z-30">
             <div className="relative"
             onMouseLeave={() => setIsMenuOpen(false)}>
-                <div className="lg:max-w-[1400px] sm:mx-auto flex justify-between mt-4 mx-2 h-[70px] bg-[#FFFFFF] rounded-[12px] border border-[#EBEBEB] px-6">
+                <div className="lg:max-w-[1400px] sm:mx-auto flex justify-between mt-4 mx-2 h-[70px] bg-[#FFFFFF] rounded-[12px] border border-[#9BA49E] px-6">
                     <div className="flex items-center h-full gap-12">
                         <div className="" onMouseEnter={() => setIsMenuOpen(false)}>
                             <Link href="/">
@@ -102,7 +102,7 @@ export default function Header() {
                     </div>
                     <div className="hidden lg:flex items-center h-full gap-8" onMouseEnter={() => setIsMenuOpen(false)}>
                         <div className="bg-[#000000] border border-[#EBEBEB] rounded-[12px] px-4 pt-2 pb-2.5 cursor-pointer">
-                            <Link href={"/contact"}>
+                            <Link href={"/Contact"}>
                                 <p className="text-[14px] text-[#FFFFFF] font-[500]">
                                     Contact Us
                                 </p>

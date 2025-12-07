@@ -1,7 +1,7 @@
 'use client'
 import clsx from "clsx"
 import { useState } from "react"
-
+import Link from "next/link";
 const courses = [
     {
         courseName: "Outside Plant Engineering",
@@ -9,6 +9,8 @@ const courses = [
         modules: 13,
         tag: "Most Popular",
         isPopular: true,
+        href: "/course/outside-plant-engineering",
+        published: true,
     },
     {
         courseName: "AutoCAD Fundamentals",
@@ -16,6 +18,8 @@ const courses = [
         modules: 13,
         tag: "Coming Soon",
         isPopular: false,
+        href: "/",
+        published: false,
     },
     {
         courseName: "GIS Essentials",
@@ -23,6 +27,8 @@ const courses = [
         modules: 13,
         tag: "Coming Soon",
         isPopular: false,
+        href: "/",
+        published: false,
     }
 ]
 
@@ -56,10 +62,23 @@ export default function CourseCards() {
 
                             <div className="px-4">
                                 <div className="mt-6 text-[20px] font-[600] text-black">
-                                    {courseName}
+                                    <Link 
+                                        href={course.href} 
+                                        onMouseEnter={() => setActiveId(index)}
+                                        onMouseLeave={() => setActiveId(null)}
+                                    >
+                                        {courseName}
+                                    </Link>
                                 </div>
                                 <div className="mt-1 text-[14px] text-gray-600 line-clamp-2">
-                                    {courseDescription}
+                                    <Link 
+                                        href={course.href} 
+                                        onMouseEnter={() => setActiveId(index)}
+                                        onMouseLeave={() => setActiveId(null)}
+                                    >
+                                        {courseDescription}
+                                    </Link>
+                                   
                                 </div>
                             </div>
 
@@ -67,6 +86,7 @@ export default function CourseCards() {
                                 <span className="text-xs text-gray-500">{modules} Modules</span>
                             </div>
                         </div>
+                        
                     )
                 })}
             </div>

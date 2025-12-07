@@ -24,7 +24,7 @@ export default function RootLayout({
         <link rel="icon" href="/skarion.png" type="image/png" sizes="any" />
       </head>
       <body
-        className={`${inter.variable} font-sans antialiased overflow-x-hidden bg-[#000000]`}
+        className={`${inter.variable} font-sans antialiased overflow-x-hidden bg-white`}
       >
         <div className="min-h-screen">
           {children}
