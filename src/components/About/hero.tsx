@@ -17,7 +17,7 @@ export default function AboutHero() {
           <div className="text-[#000000] text-[40px] sm:text-[48px] md:text-[64px] leading-[1.2] text-left">
               <b>The <b className="text-[#ff686b]">Skarion</b> Story </b>
           </div>
-          <div className="text-[14px] font-[300] pt-5 text-left w-full md:w-[40%] lg:w-[30%] ml-auto">
+          <div className="text-[16px] font-[300] pt-5 text-left w-full md:w-[40%] lg:w-[30%] ml-auto">
             <b className="text-[#122461]">People </b><b className="text-[#ff686b]">Ask: </b> How do you make an Impact? And How can I believe you?
             <br/>
             <b className="text-[#122461]">Skarion </b><b className="text-[#ff686b]">tell: </b> Read this Page. You will hear the voice of the stories.              
