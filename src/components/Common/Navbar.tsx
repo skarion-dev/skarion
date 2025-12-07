@@ -91,7 +91,7 @@ export default function Header() {
                                 </svg>
                             </div>
                             <div className="flex gap-2 cursor-pointer" onMouseEnter={() => setIsMenuOpen(false)}>
-                                <Link href={"/pricing"}>
+                                <Link href={"/"}>
                                     <p className="text-[14px] text-[#191F38] font-[500]">
                                         Success Stories
                                     </p>
@@ -219,7 +219,7 @@ export default function Header() {
                                     </svg>
                                 </div>
                                 <Link
-                                    href="/pricing"
+                                    href="/"
                                     onClick={() => {
                                         setIsMobileMenuOpen(false);
                                     }}
