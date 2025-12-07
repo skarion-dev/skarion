@@ -7,12 +7,10 @@ import SmoothScroll from "@/components/SmoothScroll";
 
 export default function Home() {
   return (
-    <SmoothScroll>
-      <Navbar /> 
+    <div>
       <Hero />
       <Courses />
       <Testimonials />
-      <Footer />
-    </SmoothScroll>
+    </div>
   );
 }

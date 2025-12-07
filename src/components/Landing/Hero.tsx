@@ -41,12 +41,12 @@ export default function Hero() {
                                 <span className="text-base">★</span>
                                 <span className="text-base">★</span>
                                 <span className="text-base">★</span>
-                                <span className="ml-[8px] text-gray-500 text-[14px] font-[600]">4.8 (10+)</span>
+                                <span className="ml-[8px] text-gray-500 text-[12px] font-[500]">4.8 (10+)</span>
                             </div>
-                            <span className="text-[14px] font-[400]">Trusted by 20+ Students Worldwide</span>
+                            <span className="text-[12px] font-[400]">Trusted by 20+ Students Worldwide</span>
                         </div>
                     </div>
-                    <div className="text-[#000000] text-[64px] leading-[1.2] text-left">
+                    <div className="text-[64px] leading-[1.2] text-left">
                         Advancing Careers Through Specialized Training
                     </div>
                     <div className="text-[20px] font-[300] pt-5 text-left w-[80%]">

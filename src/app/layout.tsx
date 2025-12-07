@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Common/Navbar";
+import Footer from "@/components/Footer";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,7 +30,11 @@ export default function RootLayout({
         className={`${inter.variable} font-sans antialiased overflow-x-hidden`}
       >
         <div className="min-h-screen">
-          {children}
+          <SmoothScroll>
+            <Navbar />
+              {children}
+            <Footer/>
+          </SmoothScroll>
         </div>
       </body>
     </html>
