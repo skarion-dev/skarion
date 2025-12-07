@@ -1,9 +1,8 @@
 import React from 'react'
-
 export default function Content() {
   return (
-    <div className='absolute bg-[#122461] pt-12 px-12 h-full w-full flex flex-col overflow-hidden justify-between'>
-      <div className='grid grid-cols-4 gap-12 items-start'>
+    <div className='absolute bg-[#122461] pt-12 px-6 md:px-12 h-full w-full flex flex-col overflow-hidden justify-between'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 items-start'>
         <div className='text-white'>
           <div className='flex items-center gap-3 mb-4'>
             <img src="/skarion.png" alt="Skarion" className='w-8 h-8' />
@@ -19,10 +18,16 @@ export default function Content() {
             <span className='inline-flex items-center justify-center w-8 h-8 rounded-md border border-white/40 text-white/80 hover:bg-white/10 transition-colors'>
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </span>
+            <span className='inline-flex items-center justify-center w-8 h-8 rounded-md border border-white/40 text-white/80 hover:bg-white/10 transition-colors'>
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </span>
+            <span className='inline-flex items-center justify-center w-8 h-8 rounded-md border border-white/40 text-white/80 hover:bg-white/10 transition-colors'>
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802C9.042 3.965 8.71 3.977 7.433 4.032c-2.43.11-3.483 1.15-3.593 3.593-.056 1.277-.067 1.604-.067 4.375s.011 3.098.067 4.375c.11 2.443 1.163 3.483 3.593 3.593 1.277.056 1.604.067 4.567.067s3.29-.011 4.567-.067c2.43-.11 3.483-1.15 3.593-3.593.056-1.277.067-1.604.067-4.375s-.011-3.098-.067-4.375c-.11-2.443-1.163-3.483-3.593-3.593-1.277-.055-1.604-.067-4.567-.067zM12 6.837c-2.846 0-5.163 2.317-5.163 5.163s2.317 5.163 5.163 5.163 5.163-2.317 5.163-5.163-2.317-5.163-5.163-5.163zm0 8.482c-1.833 0-3.319-1.486-3.319-3.319s1.486-3.319 3.319-3.319 3.319 1.486 3.319 3.319-1.486 3.319-3.319 3.319zm4.332-6.605c-.624 0-1.13.506-1.13 1.13s.506 1.13 1.13 1.13 1.13-.506 1.13-1.13-.506-1.13-1.13-1.13z"/></svg>
+            </span>
           </div>
-          <p className="text-white/80 text-[14px] mt-8">Copyright 2025 © Skarion</p>
+          <p className="text-white/80 text-[14px] mt-8">Copyright 2025 © Skarion. All Rights Reserved</p>
         </div>
-
+        <div className='text-white sm:ml-16 lg:ml-0'></div>
         <div className='text-white ml-16'>
             <div>
                 <p className='block text-[20px] font-[500] relative group'>

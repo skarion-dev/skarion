@@ -80,7 +80,7 @@ export default function Hero() {
                             </svg>
                         </Link>
                         <Link
-                            href="/contact"
+                            href="/About"
                             className="border-[1px] border-black rounded-[8px] px-6 py-3 flex justify-center items-center gap-2 group cursor-pointer whitespace-nowrap"
                         >
                             <p className="text-[12px] sm:text-[14px] font-[500] flex">
