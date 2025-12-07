@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 export default function Content() {
   return (
@@ -6,7 +7,7 @@ export default function Content() {
       <div className='grid grid-cols-4 gap-12 items-start'>
         <div className='text-white'>
           <div className='flex items-center gap-3 mb-4'>
-            <img src="/skarion.png" alt="Skarion" className='w-8 h-8' />
+            <Image src="/skarion.png" alt="Skarion" className='w-8 h-8' />
             <span className='text-white font-semibold tracking-wide'>Skarion</span>
           </div>
           <p className='text-white/80 leading-relaxed'>

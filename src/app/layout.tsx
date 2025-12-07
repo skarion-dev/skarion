@@ -29,13 +29,13 @@ export default function RootLayout({
       <body
         className={`${inter.variable} font-sans antialiased overflow-x-hidden`}
       >
-        <div className="min-h-screen">
+        <main className="min-h-screen">
           <SmoothScroll>
             <Navbar />
               {children}
             <Footer/>
           </SmoothScroll>
-        </div>
+        </main>
       </body>
     </html>
   );
