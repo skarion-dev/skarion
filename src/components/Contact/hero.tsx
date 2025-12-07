@@ -4,22 +4,22 @@ import ContactForm from "../ContactForm"
 
 export default function ContactHero() {
   return (
-    <div className="w-full bg-[#ffffff] py-10 px-22">
-        <div className="flex flex-row items-start justify-between space-x-1">
-            <div className="text-[#000000] text-[64px] leading-[1.2] text-left mt-30">
+    <div className="w-full bg-[#ffffff] py-10 px-6 md:px-12 lg:px-22">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:space-x-1">
+            <div className="text-[#000000] text-4xl md:text-5xl lg:text-[64px] leading-[1.2] text-left mt-10 lg:mt-30">
             Get in Touch with <b className="text-[#ff686b]">Skarion</b>
             <br/>
             Today To Learn More
-            <div className="text-[20px] font-[300] pt-5 text-left w-[80%]">
+            <div className="text-base md:text-lg lg:text-[20px] font-[300] pt-5 text-left w-full lg:w-[80%]">
                 Skarion helps individuals gain the skills and experience needed to secure high-demand jobs through specialized, hands-on training.                     
             </div>
             </div>
             
-            <div className="flex-shrink-0 w-full max-w-lg -ml-auto">
+            <div className="flex-shrink-0 w-full lg:w-auto lg:max-w-lg lg:-ml-auto">
                 <ContactForm />
             </div>
         </div>
-            <div className="flex flex-row items-start justify-between space-x-8 mt-auto pt-10">
+            <div className="flex flex-col lg:flex-row items-start justify-between gap-6 lg:space-x-8 mt-auto pt-10">
                 <div className="relative w-full h-[480px] md:h-[600px] rounded-xl overflow-hidden border">
                     <iframe
                         title="fairfax-virginia-map"
