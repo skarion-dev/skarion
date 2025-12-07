@@ -5,9 +5,9 @@ import ContactForm from "../ContactForm"
 export default function ContactHero() {
   return (
     <div className="w-full bg-[#ffffff] py-10 px-22">
-        <div className="flex flex-row items-start justify-between space-x-4">
+        <div className="flex flex-row items-start justify-between space-x-1">
             <div className="text-[#000000] text-[64px] leading-[1.2] text-left mt-30">
-            Get in Touch with <b className="text-[#db2777]">Skarion</b>
+            Get in Touch with <b className="text-[#ff686b]">Skarion</b>
             <br/>
             Today To Learn More
             <div className="text-[20px] font-[300] pt-5 text-left w-[80%]">
@@ -20,7 +20,7 @@ export default function ContactHero() {
             </div>
         </div>
             <div className="flex flex-row items-start justify-between space-x-8 mt-auto pt-10">
-                <div className="relative w-full h-[380px] md:h-[460px] rounded-xl overflow-hidden border">
+                <div className="relative w-full h-[480px] md:h-[600px] rounded-xl overflow-hidden border">
                     <iframe
                         title="fairfax-virginia-map"
                         className="absolute inset-0 w-full h-full"
