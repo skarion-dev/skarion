@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/Image'
+import Image from 'next/image'
 import LogoCarousel from "../LogoCarousel"
 
 const logos = [
@@ -18,9 +18,9 @@ export default function AboutHero() {
               <b>The <b className="text-[#ff686b]">Skarion</b> Story </b>
           </div>
           <div className="text-[14px] font-[300] pt-5 text-left w-full md:w-[40%] lg:w-[30%] ml-auto">
-            <b className="text-[#122461]">People Ask: </b> How do you make an Impact? And How can I believe you?
+            <b className="text-[#122461]">People </b><b className="text-[#ff686b]">Ask: </b> How do you make an Impact? And How can I believe you?
             <br/>
-            <b className="text-[#122461]">Skarion tells: </b> Read this Page. You will hear the voice of the stories.              
+            <b className="text-[#122461]">Skarion </b><b className="text-[#ff686b]">tell: </b> Read this Page. You will hear the voice of the stories.              
           </div>
         </div>
         <div className="mt-15"></div>
@@ -54,6 +54,36 @@ export default function AboutHero() {
             </div>
           </div>
         </div>
+        <div className="rounded-[14px] bg-[#ffffff] mt-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start px-4 py-6">
+            <div>
+              <p className="text-black/50 text-[14px] md:text-[18px]">Our Crew, Our story</p>
+            </div>
+            <div>
+              <p className="text-black/70 text-[14px] md:text-[18px] w-[80%]">
+                We offer hands on training to launch your career in high demand industries.
+              </p>
+              <div className="mt-4 flex items-center gap-3">
+                <div className="relative w-10 h-10 rounded-full overflow-hidden">
+                  <Image src="/profile 2.jpg" alt="John Doe" fill className="object-cover" />
+                </div>
+                <div>
+                  <p className="text-black font-semibold text-sm md:text-base">Rianul Amin</p>
+                  <p className="text-black/60 text-xs md:text-sm">Software Lead</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p className="text-black/90 font-bold text-[14px] md:text-[20px] leading-relaxed">
+                Skarion is a collective of strategists, engineers, and operators who turn raw ambition into scalable industry. 
+                Our story is written in code shipped, plants opened, and revenue multiplied—proof that disciplined execution outruns luck.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+
         <div className="flex justify-center mt-3 text-sm md:text-base text-gray-700 mt-20">
             <h2 className="text-3xl font-semibold text-black">Our Graduates are working with </h2>
         </div>
