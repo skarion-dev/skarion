@@ -1,5 +1,5 @@
 "use client";
-import CourseCards from "@/components/CourseCards";
+import NavbarCards from "@/components/NavbarCards";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -281,10 +281,10 @@ export default function Header() {
                         >
                             <div className="overflow-y-auto max-h-[65vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                 {selectedMenu === "programs" && (
-                                    <div className="p-4">
-                                        <CourseCards />
+                                    <div className="p-4 col-span-1 md:col-span-2 lg:col-span-3">
+                                        <NavbarCards />
                                         <div className='mt-6 md:mt-8 lg:mt-10 border-t border-black/20' />
-                                        <Link href="#" className="hover:text-[#191F38]">See All Programs</Link>
+                                        <Link href="Courses" className="hover:text-[#191F38]">See All Programs</Link>
                                     </div>
                                 )}
                                 {selectedMenu === "company" && (

@@ -3,24 +3,15 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 export default function SlideshowCarousel({ logos }: { logos: string[] }) {
-  const extendedLogos = [...logos, ...logos, ...logos];
-  const middleStart = logos.length; // start in the middle block
+    const [currentIndex, setCurrentIndex] = useState(0);
 
-  const [currentIndex, setCurrentIndex] = useState(middleStart);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex(prev => (prev + 1) % logos.length);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [logos.length]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => {
-        // when we go too far into the last block, snap back to middle
-        if (prev >= 2 * logos.length) {
-          return middleStart;
-        }
-        return prev + 1;
-      });
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [logos.length, middleStart]);
     return (
         <div
             className="relative rounded-[14px] w-full h-[495px] overflow-hidden hover:scale-[1.01] duration-700">

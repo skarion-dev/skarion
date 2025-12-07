@@ -1,22 +1,17 @@
 'use client'
 import Link from "next/link"
-import Image from "next/image"
 import LogoCarousel from "../LogoCarousel"
-import SlideshowCarousel from "../SlideshowCarousel"
-import Card from "../SquishyCard"
-import { motion } from "framer-motion"
-import { Input } from "../ui/input"
-import { Button } from "../ui/button"
+import { hover, motion } from "framer-motion"
+import Image from "next/image"
+import SwiperComponent from "../SwiperComponent"
+import IndustryLeadersCard from "../IndustryLeadersCard"
 
 const logos = [
-    "/6wind.png",
-    "/adb.png",
-    "/tplink.png",
     "/benton.png",
-    "/aspire.png",
-    "/netadmin.png",
-    "/wav.png",
-    "/radd.png"
+    "/circet.png",
+    "/gme.png",
+    "/radd.png",
+    "/westell.png",
 ]
 
 const images=[
@@ -32,23 +27,23 @@ export default function Hero() {
         <div className="w-full bg-[#ffffff] py-10 px-12">
             <div className="flex flex-row items-start justify-between space-x-8">
                 <div className="w-[60%]">
-                    <div className="flex items-center gap-4 mb-3">
+                  <div className="flex items-center gap-4 mb-5 mt-2">
                         <div className="flex -space-x-2">
-                            <Image src="/image 1.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover" />
-                            <Image src="/profile 1.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover" />
-                            <Image src="/image 3.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover" />
-                            <Image src="/profile 2.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover" />
+                            <Image src="/image 1.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover border border-[#ffffff]" />
+                            <Image src="/profile 1.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover border border-[#ffffff]" />
+                            <Image src="/image 3.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover border border-[#ffffff]" />
+                            <Image src="/profile 2.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover border border-[#ffffff]" />
                         </div>
-                        <div className="flex flex-col">
-                            <div className="flex items-center gap-1 text-[#f5b942]">
+                        <div className="flex flex-col justify-between">
+                            <div className="flex items-center gap-[2px] text-[#f5b942]">
                                 <span className="text-base">★</span>
                                 <span className="text-base">★</span>
                                 <span className="text-base">★</span>
                                 <span className="text-base">★</span>
                                 <span className="text-base">★</span>
-                                <span className="ml-2 text-[#000000] text-sm font-semibold">4.8 (10+)</span>
+                                <span className="ml-[8px] text-gray-500 text-[14px] font-[600]">4.8 (10+)</span>
                             </div>
-                            <span className="text-gray-600 text-sm">Trusted by 4+ Students Worldwide</span>
+                            <span className="text-[14px] font-[400]">Trusted by 20+ Students Worldwide</span>
                         </div>
                     </div>
                     <div className="text-[#000000] text-[64px] leading-[1.2] text-left">
@@ -59,11 +54,13 @@ export default function Hero() {
                     </div>
                     <div className="flex gap-6 mt-8">
                         <Link
-                            href="/contact"
+                            href="https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="bg-[#122461] rounded-[8px] px-6 py-3 flex justify-center items-center gap-2 group transition-all duration-300 cursor-pointer whitespace-nowrap"
                         >
                             <p className="text-[#FFFFFF] text-[12px] sm:text-[14px] font-[500] flex">
-                                Book Consultation Call
+                                Book a Consultation Call
                                 <span className="inline-block w-0 overflow-hidden group-hover:w-[72px] transition-all duration-300 whitespace-nowrap">
                                     , It&apos;s FREE!
                                 </span>
@@ -92,13 +89,10 @@ export default function Hero() {
                         </Link>
                     </div>
                 </div>
-                <div className="w-[35%] mt-12">
-                    <motion.div whileHover="hover" className="relative bg-[#EBEBEB] border border-[#EBEBEB] rounded-[14px] h-[180px]">
-                        <TeamBackground />
-                        <div className="absolute bottom-0 bg-[#ffffff] border rounded-[14px] h-[150px] z-5 w-full">
-                        </div>
-                    </motion.div>
-                    <div className="text-[16px] font-[400] pt-5 pb-7 text-left">
+                <div className="w-[35%]">
+                    <div className="rounded-[14px] h-[200px] relative flex-2 bg-[#122461] mt-4">
+                    </div>
+                    <div className="text-[16px] font-[400] pt-10 pb-7 text-left">
                         Upskilling teams in 20+ companies
                     </div>
                     <LogoCarousel logos={logos} />
@@ -151,8 +145,8 @@ export default function Hero() {
                 </div>
             </div>
 
-            <div className="flex flex-col gap-8 bg-[#fffff] rounded-[14px] w-full md:w-[35%] min-h-[200px] sm:min-h-[260px] md:min-h-[495px]">
-                <SlideshowCarousel logos={images} />
+            <div className="relative flex flex-col gap-8 bg-[#ffffff] rounded-[14px] w-full md:w-[35%] min-h-[200px] sm:min-h-[260px] md:min-h-[495px] h-[200px] sm:h-[260px] md:h-[495px]">
+                <SwiperComponent images={images} />
             </div>
         </div>
         </div>
@@ -195,39 +189,5 @@ const Background = () => {
         fill="#122461"
       />
     </motion.svg>
-  );
-};
-
-const TeamBackground = () => {
-  return (
-    <motion.div
-      className="absolute inset-0 z-0 overflow-visible w-full h-full"
-      variants={{
-        hover: {
-          scale: 1,
-        },
-      }}
-      transition={{
-        duration: 1,
-        ease: "backInOut",
-      }}
-    >
-      <motion.img
-        src="/arifin.png"
-        alt="arifin"
-        className="w-[100%] h-[100%] object-contain"
-        variants={{
-          hover: {
-            y: -80,
-            scale: 1.5,
-          },
-        }}
-        transition={{
-          duration: 1,
-          ease: "backInOut",
-          delay: 0.2,
-        }}
-      />
-    </motion.div>
   );
 };
