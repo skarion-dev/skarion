@@ -22,19 +22,17 @@ export default function About() {
         </div>
         <div className='border-t border-black/20 mt-10'/>
         <div className="mt-10"/>
-        <div className="grid grid-cols-3 items-center text-gray-600 text-sm md:text-base">
-          <div className="justify-self-start flex gap-6">
-            <button onClick={() => setCurrentImage('/Team image.jpg')} className="text-[18px] hover:text-black cursor-pointer transition-colors duration-200">Information</button>
-            <button onClick={() => setCurrentImage('/Team image2.jpg')} className="text-[18px] hover:text-black cursor-pointer transition-colors duration-200">Work</button>
-            <button onClick={() => setCurrentImage('/Team image3.jpg')} className="text-[18px] hover:text-black cursor-pointer transition-colors duration-200">Journal</button>
-            <button onClick={() => setCurrentImage('/Team image4.jpg')} className="text-[18px] hover:text-black cursor-pointer transition-colors duration-200">Archive</button>
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center text-gray-600 text-sm md:text-base gap-4 md:gap-0">
+          <div className="justify-self-start flex flex-wrap gap-4 md:gap-6">
+            <button onClick={() => setCurrentImage('/Team image.jpg')} className="text-[16px] md:text-[18px] hover:text-black cursor-pointer transition-colors duration-200">Information</button>
+            <button onClick={() => setCurrentImage('/Team image2.jpg')} className="text-[16px] md:text-[18px] hover:text-black cursor-pointer transition-colors duration-200">Work</button>
+            <button onClick={() => setCurrentImage('/Team image3.jpg')} className="text-[16px] md:text-[18px] hover:text-black cursor-pointer transition-colors duration-200">Journal</button>
+            <button onClick={() => setCurrentImage('/Team image4.jpg')} className="text-[16px] md:text-[18px] hover:text-black cursor-pointer transition-colors duration-200">Archive</button>
           </div>
-          <div className="justify-between text-[18px] text-black font-semibold ml-auto">
-            United States 
-            <br/>
-            <span className="ml-5 font-normal text-gray-500 text-[16px]">Bangladesh</span>
+          <div className="justify-self-start md:justify-self-center text-[16px] md:text-[18px] text-black font-semibold ml-0 md:ml-auto mt-4 md:mt-0">
+            <span className="font-normal text-black font-semibold text-[16px] md:text-[18px]">United States</span>
+            <span className="font-normal text-black text-[16px] md:text-[18px] ml-4 sm:ml-8 md:ml-20">+1 (415) 555 0199</span>
           </div>
-          <div className="justify-self-center text-[18px]">+1 (415) 555 0199</div>
         </div>
         <div className="mt-10 rounded-[12px] overflow-hidden">
           <div className="relative w-full h-[420px] md:h-[700px]">
