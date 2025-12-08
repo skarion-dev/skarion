@@ -25,8 +25,8 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 items-center text-gray-600 text-sm md:text-base gap-4 md:gap-0">
           <div className="justify-self-start flex flex-wrap gap-4 md:gap-6">
             <button onClick={() => setCurrentImage('/Team image.jpg')} className="text-[16px] md:text-[18px] hover:text-black cursor-pointer transition-colors duration-200">Information</button>
-            <button onClick={() => setCurrentImage('/Team image2.jpg')} className="text-[16px] md:text-[18px] hover:text-black cursor-pointer transition-colors duration-200">Work</button>
-            <button onClick={() => setCurrentImage('/Team image3.jpg')} className="text-[16px] md:text-[18px] hover:text-black cursor-pointer transition-colors duration-200">Journal</button>
+            <button onClick={() => setCurrentImage('/Team image2.jpg')} className="text-[16px] md:text-[18px] hover:text-black cursor-pointer transition-colors duration-200">Mission</button>
+            <button onClick={() => setCurrentImage('/Team image3.jpg')} className="text-[16px] md:text-[18px] hover:text-black cursor-pointer transition-colors duration-200">Vision</button>
             <button onClick={() => setCurrentImage('/Team image4.jpg')} className="text-[16px] md:text-[18px] hover:text-black cursor-pointer transition-colors duration-200">Archive</button>
           </div>
           <div className="justify-self-start md:justify-self-center text-[16px] md:text-[18px] text-black font-semibold ml-0 md:ml-auto mt-4 md:mt-0">

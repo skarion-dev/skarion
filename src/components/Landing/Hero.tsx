@@ -1,10 +1,11 @@
 'use client'
 import Link from "next/link"
 import LogoCarousel from "../LogoCarousel"
-import { hover, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import Image from "next/image"
 import SwiperComponent from "../SwiperComponent"
-import IndustryLeadersCard from "../IndustryLeadersCard"
+import Counter from "../Counter"
+import Steps from "../Steps"
 
 const logos = [
     "/benton.png",
@@ -100,10 +101,23 @@ export default function Hero() {
             </div>
             <div className="flex flex-row items-start justify-between space-x-8 pt-12">
             <div className="flex flex-col gap-8 w-[62%] h-[500px]">
-                <div className="rounded-[14px] relative flex-2 bg-[#122461]">
+                <div className="absolute rounded-[14px] relative text-white flex-2 bg-[#122461]"> 
+                  <Steps />
                 </div>
                 <div className="flex flex-row items-start justify-between flex-1 space-x-8">
-                    <div className="flex flex-col justify-between bg-[#c3ddf5] rounded-[14px] w-[70%] h-full pt-4 pb-6 px-6">
+                    <div className="text-left flex flex-row justify-between gap-4 rounded-[14px] w-[70%] h-full pt-4 pb-6 px-6">
+                        <div className="flex flex-col items-start justify-center">
+                            <Counter value={100} duration={2} />
+                            <p className="text-[#122461] text-[24px] font-[600] leading-[1.3] mt-1">Total Registration</p>
+                        </div>
+                        <div className="flex flex-col items-start justify-center">
+                            <Counter value={50} duration={2} />
+                            <p className="text-[#122461] text-[24px] font-[600] leading-[1.3] mt-1">Total Certifications</p>
+                        </div>
+                        <div className="flex flex-col items-start justify-center">
+                            <Counter value={20} duration={2} />
+                            <p className="text-[#122461] text-[24px] font-[600] leading-[1.3] mt-1">Job Placements</p>
+                        </div>
                     </div>
                         <div className="w-[30%] h-full">
                             <motion.div

@@ -11,8 +11,8 @@ export default function Home() {
     <SmoothScroll>
       <Navbar /> 
       <Hero />
-      <About />
       <Courses />
+      <About />
       <Testimonials />
       <Footer />
     </SmoothScroll>

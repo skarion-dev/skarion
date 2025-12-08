@@ -294,7 +294,7 @@ export default function Header() {
                                                 <div className="flex flex-col">
                                                     <p className="text-[18px] sm:text-[20px] md:text-[24px] text-[#191F38] font-[500] mb-2 md:mb-3">About</p>
                                                     <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
-                                                        <Link href="{'/About'}" className="inline-block rounded px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full">About Skarion</Link>
+                                                        <Link href='{"/About"}' className="inline-block rounded px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full">About Skarion</Link>
                                                     </div>
                                                     <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
                                                         <Link href="#" className="inline-block rounded px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full">Student Journey</Link>

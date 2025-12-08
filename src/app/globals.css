@@ -123,7 +123,7 @@
   width: 0;
 }
 
-/* Add this to your global CSS or in a separate CSS file for the animation effects */
+Add this to your global CSS or in a separate CSS file for the animation effects
 .contact-form {
   position: absolute;
   width: 100%;
@@ -156,35 +156,95 @@
   left: 0;
   top: 0;
   transition: -webkit-clip-path 1s ease;
-  padding: 100px 0 0;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 14px;
+  padding: 28px 0 0;
 }
-
-/* Card specific colors */
+ 
 #dribbble .card-content {
   background-color: #F46899;
   -webkit-clip-path: circle(0% at 76px 88%);
   clip-path: circle(0% at 50px 88%);
 }
-
+ 
+#dribbble.active .card-content {
+  -webkit-clip-path: circle(270% at 76px 88%);
+  clip-path: circle(270% at 50px 88%);
+}
+ 
 #behance .card-content {
   background-color: #2F98D1;
   -webkit-clip-path: circle(0% at 150px 88%);
   clip-path: circle(0% at 150px 88%);
 }
-
+ 
+#behance.active .card-content {
+  -webkit-clip-path: circle(270% at 150px 88%);
+  clip-path: circle(270% at 150px 88%);
+}
+ 
 #linkedin .card-content {
   background-color: #03679B;
   -webkit-clip-path: circle(0% at 220px 88%);
   clip-path: circle(0% at 220px 88%);
 }
-
+ 
+#linkedin.active .card-content {
+  -webkit-clip-path: circle(270% at 220px 88%);
+  clip-path: circle(270% at 220px 88%);
+}
+ 
 #twitter .card-content {
   background-color: #7FD0ED;
   -webkit-clip-path: circle(0% at 292px 88%);
   clip-path: circle(0% at 292px 88%);
 }
+ 
+#twitter.active .card-content {
+  -webkit-clip-path: circle(270% at 292px 88%);
+  clip-path: circle(270% at 292px 88%);
+}
+ 
+#hired .card-content {
+  background-color: #10b981;
+  -webkit-clip-path: circle(0% at 364px 88%);
+  clip-path: circle(0% at 364px 88%);
+}
+ 
+#hired.active .card-content {
+  -webkit-clip-path: circle(270% at 364px 88%);
+  clip-path: circle(270% at 364px 88%);
+}
+ 
+.cards {
+  background: #fefefe;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 30px;
+}
+ 
+.cards .card-toggle {
+  z-index: 4;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: block;
+  text-align: center;
+  line-height: 1.8;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: .3s ease;
+  margin-right: 14px;
+}
+.cards .card-toggle.active { color: white; border-color: white; }
+.cards .card-toggle.inactive { color: black; border-color: black; }
+ 
+.card-content .row { display: table; width: 100%; height: 100%; }
+.card-content .col { width: 50%; height: 100%; display: table-cell; vertical-align: top; }
 
 .scroller{
   overflow: hidden;
