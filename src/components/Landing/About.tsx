@@ -13,7 +13,7 @@ export default function About() {
             <div className="text-[#000000] text-[36px] sm:text-[48px] md:text-[64px] leading-[1.2] text-left">
                 The Skarion Story 
             </div>
-            <div className="text-[18px] font-bold font-[300] pt-5 text-left w-full md:w-[40%] lg:w-[30%] ml-auto">
+            <div className="text-[18px] font-semibold font-[300] pt-5 text-left w-full md:w-[40%] lg:w-[30%] ml-auto">
                 <p>
                 From zero-day ideation to Series B and beyond, we embed ourselves as co-founders: writing the first lines of code, modeling unit-economics down to the cent, and recruiting the exact talent required to win.  
                 Our engine combines engineering, strategy, and execution. The result is a portfolio of businesses that do not just enter markets—they rewrite their economics.

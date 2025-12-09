@@ -240,8 +240,8 @@ Add this to your global CSS or in a separate CSS file for the animation effects
   transition: .3s ease;
   margin-right: 14px;
 }
-.cards .card-toggle.active { color: white; border-color: white; }
-.cards .card-toggle.inactive { color: black; border-color: black; }
+.cards .card-toggle.active { color: #ff686b; border-color:#ff686b; }
+.cards .card-toggle.inactive { color: white; border-color: white; }
  
 .card-content .row { display: table; width: 100%; height: 100%; }
 .card-content .col { width: 50%; height: 100%; display: table-cell; vertical-align: top; }
