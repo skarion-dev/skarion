@@ -1,0 +1,126 @@
+Got it ✅ — here’s a minimal version of connecting a contact form to Resend in Next.js without Zod.
+This is simpler but still includes basic validation and error handling.
+
+1️⃣ API Route — app/api/contact/route.ts
+Tsimport { NextResponse } from 'next/server';
+import { Resend } from 'resend';
+
+// Initialize Resend client
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+export async function POST(req: Request) {
+  try {
+    const { name, email, message } = await req.json();
+
+    // Basic validation
+    if (!name || !email || !message) {
+      return NextResponse.json(
+        { error: 'All fields are required' },
+        { status: 400 }
+      );
+    }
+
+    // Send email
+    const data = await resend.emails.send({
+      from: 'Your Website <onboarding@resend.dev>', // Must be verified in Resend
+      to: 'you@example.com', // Your receiving email
+      subject: `New Contact Form Submission from ${name}`,
+      reply_to: email,
+      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+    });
+
+    return NextResponse.json({ success: true, data });
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json(
+      { error: 'Failed to send message' },
+      { status: 500 }
+    );
+  }
+}
+
+
+2️⃣ Contact Form Page — app/contact/page.tsx
+Tsx'use client';
+
+import { useState } from 'react';
+
+export default function ContactPage() {
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState<string | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('Sending...');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+
+      if (res.ok) {
+        setStatus('Message sent successfully!');
+        setForm({ name: '', email: '', message: '' });
+      } else {
+        const data = await res.json();
+        setStatus(`Error: ${data.error || 'Something went wrong'}`);
+      }
+    } catch {
+      setStatus('Error sending message.');
+    }
+  };
+
+  return (
+    <div style={{ maxWidth: 500, margin: 'auto' }}>
+      <h1>Contact Us</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          name="name"
+          placeholder="Your Name"
+          value={form.name}
+          onChange={handleChange}
+          required
+        />
+        <input
+          name="email"
+          type="email"
+          placeholder="Your Email"
+          value={form.email}
+          onChange={handleChange}
+          required
+        />
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          value={form.message}
+          onChange={handleChange}
+          required
+        />
+        <button type="submit">Send</button>
+      </form>
+      {status && <p>{status}</p>}
+    </div>
+  );
+}
+
+
+3️⃣ .env.local
+EnvRESEND_API_KEY=your_resend_api_key_here
+
+
+4️⃣ Notes
+
+From address must be verified in Resend before sending.
+In development, you can use onboarding@resend.dev.
+This works with Next.js App Router.
+If you use Pages Router, move the API route to pages/api/contact.ts and adjust accordingly.
+
+
+If you want, I can also give you a version that supports file attachments with Resend so users can send files through the contact form.
+Do you want me to prepare that?
