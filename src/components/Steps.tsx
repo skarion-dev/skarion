@@ -53,14 +53,13 @@ export default function SocialCards() {
               setActiveStep(idx + 1);
             }}
           >
-            <p>{idx + 1}</p>
+            <i>{idx + 1}</i>
           </button>
  
           <div
             className="card-content text-white relative w-full h-full bg-cover bg-center"
             style={{ backgroundImage: `url(${steps[idx].image})` }}
           >
-            {/* Black to transparent gradient from left to right */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-transparent" />
             <div className="row h-full relative z-10">
               <div className="left col px-8">
