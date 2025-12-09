@@ -10,7 +10,7 @@ interface AnimatedCounterProps {
   suffix?: string;
 }
 
-export default function Counter({ value, duration = 5, className = "text-[#000000] text-[64px] font-[650] leading-[1.1]", suffix = "+" }: AnimatedCounterProps) {
+export default function Counter({ value, duration = 5, className = "text-[#000000] text-[32px] sm:text-[48px] md:text-[64px] font-[650] leading-[1.1]", suffix = "+" }: AnimatedCounterProps) {
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest: number) => Math.floor(latest));
 

@@ -25,10 +25,12 @@ const images=[
 
 export default function Hero() {
     return (
-        <div className="w-full bg-[#ffffff] py-10 px-12">
-            <div className="flex flex-row items-start justify-between space-x-8">
-                <div className="w-[60%]">
-                  <div className="flex items-center gap-4 mb-5 mt-2">
+        <div className="w-full bg-[#ffffff] py-10 px-4 sm:px-6 md:px-8 lg:px-12">
+            {/* Top section: two columns on desktop, stack on small screens */}
+            <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:space-x-8">
+                {/* Left column: text & CTA */}
+                <div className="w-full lg:w-[60%]">
+                    <div className="flex items-center gap-4 mb-5 mt-2">
                         <div className="flex -space-x-2">
                             <Image src="/image 1.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover border border-[#ffffff]" />
                             <Image src="/profile 1.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover border border-[#ffffff]" />
@@ -47,13 +49,13 @@ export default function Hero() {
                             <span className="text-[14px] font-[400]">Trusted by 20+ Students Worldwide</span>
                         </div>
                     </div>
-                    <div className="text-[#000000] text-[64px] leading-[1.2] text-left">
+                    <div className="text-[#000000] text-4xl sm:text-5xl md:text-6xl lg:text-[64px] leading-[1.2] text-left">
                         Advancing Careers Through Specialized Training
                     </div>
-                    <div className="text-[20px] font-[300] pt-5 text-left w-[80%]">
+                    <div className="text-base sm:text-lg md:text-[20px] font-[300] pt-5 text-left w-full lg:w-[80%]">
                         Skarion helps individuals gain the skills and experience needed to secure high-demand jobs through specialized, hands-on training.                     
                     </div>
-                    <div className="flex gap-6 mt-8">
+                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8">
                         <Link
                             href="https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled"
                             target="_blank"
@@ -90,7 +92,9 @@ export default function Hero() {
                         </Link>
                     </div>
                 </div>
-                <div className="w-[35%]">
+
+                {/* Right column: placeholder + logos */}
+                <div className="w-full lg:w-[35%]">
                     <div className="rounded-[14px] h-[200px] relative flex-2 bg-[#122461] mt-4">
                     </div>
                     <div className="text-[16px] font-[400] pt-10 pb-7 text-left">
@@ -99,27 +103,32 @@ export default function Hero() {
                     <LogoCarousel logos={logos} />
                 </div>
             </div>
-            <div className="flex flex-row items-start justify-between space-x-8 pt-12">
-            <div className="flex flex-col gap-8 w-[62%] h-[500px]">
-                <div className="absolute rounded-[14px] relative text-white flex-2 bg-[#122461]"> 
-                  <Steps />
-                </div>
-                <div className="flex flex-row items-start justify-between flex-1 space-x-8">
-                    <div className="text-left flex flex-row justify-between gap-4 rounded-[14px] w-[70%] h-full pt-4 pb-6 px-6">
-                        <div className="flex flex-col items-start justify-center">
-                            <Counter value={100} duration={2} />
-                            <p className="text-[#122461] text-[24px] font-[600] leading-[1.3] mt-1">Total Registration</p>
-                        </div>
-                        <div className="flex flex-col items-start justify-center">
-                            <Counter value={50} duration={2} />
-                            <p className="text-[#122461] text-[24px] font-[600] leading-[1.3] mt-1">Total Certifications</p>
-                        </div>
-                        <div className="flex flex-col items-start justify-center">
-                            <Counter value={20} duration={2} />
-                            <p className="text-[#122461] text-[24px] font-[600] leading-[1.3] mt-1">Job Placements</p>
-                        </div>
+
+            {/* Bottom section: two columns on desktop, stack on small screens */}
+            <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:space-x-8 pt-12">
+                {/* Left block: Steps + stats */}
+                <div className="flex flex-col gap-8 w-full lg:w-[62%] h-auto lg:h-[500px]">
+                    <div className="relative rounded-[14px] text-white flex-2 bg-[#122461]"> 
+                      <Steps />
                     </div>
-                        <div className="w-[30%] h-full">
+                    {/* Stats row: 3 columns on desktop → 1 column on small screens */}
+                    <div className="flex flex-col sm:flex-row items-start justify-between flex-1 gap-4 sm:space-x-4 lg:space-x-8">
+                        <div className="text-left grid grid-cols-1 sm:grid-cols-3 gap-4 rounded-[14px] w-full h-full pt-4 pb-6 px-6">
+                            <div className="flex flex-col items-start justify-center">
+                                <Counter value={100} duration={2} />
+                                <p className="text-[#122461] text-lg md:text-[24px] font-[600] leading-[1.3] mt-1">Total Registration</p>
+                            </div>
+                            <div className="flex flex-col items-start justify-center ">
+                                <Counter value={50} duration={2} />
+                                <p className="text-[#122461] text-lg md:text-[24px] font-[600] leading-[1.3] mt-1">Total Certifications</p>
+                            </div>
+                            <div className="flex flex-col items-start justify-center ">
+                                <Counter value={20} duration={2} />
+                                <p className="text-[#122461] text-lg md:text-[24px] font-[600] leading-[1.3] mt-1">Job Placements</p>
+                            </div>
+                        </div>
+                        {/* 50+ card */}
+                        <div className="w-full sm:w-auto sm:min-w-[30%] h-full">
                             <motion.div
                               whileHover="hover"
                               transition={{
@@ -145,11 +154,11 @@ export default function Hero() {
                                     duration: 1,
                                     ease: "backInOut",
                                   }}
-                                  className="block origin-top-left text-[#ffffff] text-[72px] font-[600] leading-[1.1]"
+                                  className="block origin-top-left text-[#ffffff] text-5xl md:text-[72px] font-[600] leading-[1.1]"
                                 >
                                   50+
                                 </motion.span>
-                                <p className="text-[#ffffff] text-[14px] font-[500] leading-[1.3]">
+                                <p className="text-[#ffffff] text-sm md:text-[14px] font-[500] leading-[1.3]">
                                   Candidates Have Trusted Skarion to Launch Their Careers
                                 </p>
                               </div>
@@ -159,7 +168,8 @@ export default function Hero() {
                 </div>
             </div>
 
-            <div className="relative flex flex-col gap-8 bg-[#ffffff] rounded-[14px] w-full md:w-[35%] min-h-[200px] sm:min-h-[260px] md:min-h-[495px] h-[200px] sm:h-[260px] md:h-[495px]">
+            {/* Right block: image swiper */}
+            <div className="relative flex flex-col gap-8 bg-[#ffffff] rounded-[14px] w-full lg:w-[35%] min-h-[200px] sm:min-h-[260px] md:min-h-[495px] h-[200px] sm:h-[260px] md:h-[500px]">
                 <SwiperComponent images={images} />
             </div>
         </div>
