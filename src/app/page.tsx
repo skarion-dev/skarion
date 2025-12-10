@@ -4,6 +4,7 @@ import About from "@/components/Landing/About";
 import Courses from "@/components/Landing/Courses";
 import Hero from "@/components/Landing/Hero";
 import Testimonials from "@/components/Landing/Testimonials";
+import Workstep from "@/components/Landing/Workstep";
 import SmoothScroll from "@/components/SmoothScroll";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <Courses />
       <About />
+      <Workstep />
       <Testimonials />
       <Footer />
     </SmoothScroll>

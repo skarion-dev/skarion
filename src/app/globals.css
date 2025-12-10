@@ -1,5 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @custom-variant dark (&:is(.dark *));
 
@@ -237,7 +240,7 @@ Add this to your global CSS or in a separate CSS file for the animation effects
   line-height: 1.8;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: .3s ease;
+  transition: 1s ease;
   margin-right: 14px;
 }
 .cards .card-toggle.active { color: #ff686b; border-color:#ff686b; }
@@ -266,3 +269,65 @@ Add this to your global CSS or in a separate CSS file for the animation effects
   width: max-content;
 }
 
+.left-container-arrow{
+    position:absolute;
+    top:20px;
+    z-index: 1 ;
+    width:0;
+    height:0;
+    border-top:15px solid transparent;
+    border-bottom:15px solid transparent;
+    border-left:15px solid #000000;
+    right:-15px;
+}
+.right-container-arrow{
+    position:absolute;
+    top:20px;
+    z-index: 1 ;
+    width:0;
+    height:0;
+    border-top:15px solid transparent;
+    border-bottom:15px solid transparent;
+    border-right:15px solid #000000;
+    left:-15px;
+}
+.container {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    animation: movedown 1s linear forwards;
+    opacity: 0;
+}
+
+@keyframes movedown {
+    0%{
+        transform: translateY(-30px);
+        opacity:1;
+    }
+    100%{
+        transform: translateY(0);
+        opacity:1;
+    }
+}
+
+.timeline::after {
+    content: " ";
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #ffffff;
+    top: 0;
+    left:50%;
+    margin-left: -3px;
+    z-index: -1;
+    animation: moveline 6s linear forwards;
+}
+
+@keyframes moveline {
+    0%{
+        height:0;
+    }
+    100%{
+        height:100%;
+    }
+}

@@ -28,7 +28,7 @@ export default function Content() {
           <p className="text-white/80 text-[14px] mt-8">Copyright 2025 © Skarion. All Rights Reserved</p>
         </div>
         <div className='text-white sm:ml-16 lg:ml-0'></div>
-        <div className='text-white ml-16'>
+        <div className='text-white '>
             <div>
                 <p className='block text-[20px] font-[500] relative group'>
                   Programs

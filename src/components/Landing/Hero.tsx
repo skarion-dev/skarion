@@ -128,7 +128,7 @@ export default function Hero() {
                             </div>
                         </div>
                         {/* 50+ card */}
-                        <div className="w-full sm:w-auto sm:min-w-[30%] h-full">
+                        <div className="w-full sm:w-auto h-auto sm:min-w-[10%] min-h-[80%] lg:h-full">
                             <motion.div
                               whileHover="hover"
                               transition={{

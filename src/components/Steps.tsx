@@ -38,7 +38,7 @@ export default function SocialCards() {
   const cardIds: CardId[] = ['dribbble','behance','linkedin','twitter','hired'];
   
   return (
-    <div className="cards w-full h-screen sm:h-80 md:h-80 lg:h-full h-auto">
+    <div className="cards w-full min-h-[300px] h-full h-auto">
       {cardIds.map((id, idx) => (
         <div
           key={id}
@@ -66,10 +66,10 @@ export default function SocialCards() {
                 <span className="px-3 py-1 rounded-full bg-white/20 text-[12px] sm:text-[14px] md:text-[14px] lg:text-[12px] inline-block">
                   SKARION PROGRAM STEPS
                 </span>
-                <h2 className="mt-5 text-[36px] sm:text-[28px] md:text-[30px] lg:text-[36px] font-[600]">
+                <h2 className="mt-5 text-[24px] sm:text-[28px] md:text-[30px] lg:text-[36px] font-[600]">
                   {steps[idx].title}
                 </h2>
-                <p className="mt-2 max-w-lg text-white/90 text-[24px] sm:text-[16px] md:text-[16px] lg:text-[16px]">
+                <p className="mt-2 max-w-lg text-white/90 text-[14px] sm:text-[16px] md:text-[16px] lg:text-[16px]">
                   {steps[idx].detail}
                 </p>
               </div>

@@ -3,7 +3,7 @@ import { Input } from "./ui/input";
 
 export default function ContactForm() {
   return (
-    <div className="w-full max-w-lg p-8 bg-white shadow-xl rounded-lg border border-black/20">
+    <div className="w-screen max-w-lg p-8 bg-white shadow-xl rounded-lg border border-black/20">
       <div className="grid grid-cols-2 gap-10">
         <div>
           <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">
