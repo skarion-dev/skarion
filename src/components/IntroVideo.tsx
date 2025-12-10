@@ -1,6 +1,6 @@
-'use client'
-import { useEffect, useRef, useState } from 'react';
-import { useScrollContainer } from './Common/ScrollContainerContext';
+"use client";
+import { useEffect, useRef, useState } from "react";
+import { useScrollContainer } from "./Common/ScrollContainerContext";
 
 const VideoComponent = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -24,7 +24,7 @@ const VideoComponent = () => {
       {
         root: scrollContainerRef?.current ?? null,
         threshold: 0.1,
-      }
+      },
     );
 
     observer.observe(node);
