@@ -22,22 +22,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-        <SmoothScroll>
-        <html lang="en">
-          <head>
-            <link rel="icon" href="/skarion.png" type="image/png" sizes="any" />
-          </head>
-          <body
-            className={`${inter.variable} font-sans antialiased overflow-x-hidden`}
-          >
-            <main>
-              
-                <Navbar />
-                {children}
-                <Footer />
-            </main>
-          </body>
-        </html>
-        </SmoothScroll>
+    <SmoothScroll>
+      <html lang="en">
+        <head>
+          <link rel="icon" href="/skarion.png" type="image/png" sizes="any" />
+        </head>
+        <body
+          className={`${inter.variable} font-sans antialiased overflow-x-hidden`}
+        >
+          <main>
+            <Navbar />
+            {children}
+            <Footer />
+          </main>
+        </body>
+      </html>
+    </SmoothScroll>
   );
 }
