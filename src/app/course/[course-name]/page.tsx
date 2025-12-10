@@ -1,4 +1,51 @@
 import Image from "next/image";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import IntroVideo from "@/components/IntroVideo";
+
+const bootcampSchedule = [
+  {
+    week: 1,
+    title: "AI Coding Agents",
+    lessons: [
+      { id: "01", name: "Cursor & Claude", isLocked: true, link: "/pdfs/lesson01.pdf" },
+      { id: "02", name: "Frontend Environment", isLocked: false, link: "/pdfs/lesson02.pdf" },
+      { id: "03", name: "Github Version Control", isLocked: false, link: "/pdfs/lesson03.pdf" },
+      { id: "04", name: "Office hours", isLocked: true, link: "/pdfs/lesson04.pdf" },
+    ],
+  },
+  {
+    week: 2,
+    title: "JSX Structure",
+    lessons: [
+      { id: "05", name: "JSX Fundamentals & Semantics", isLocked: true, link: "/pdfs/lesson05.pdf" },
+      { id: "06", name: "Layouts in Next.js", isLocked: false, link: "/pdfs/lesson06.pdf" },
+      { id: "07", name: "Styling with Tailwind CSS", isLocked: false, link: "/pdfs/lesson07.pdf" },
+    ],
+  },
+  {
+    week: 3,
+    title: "React State Management",
+    lessons: [
+      { id: "08", name: "useState and useEffect", isLocked: true, link: "/pdfs/lesson08.pdf" },
+      { id: "09", name: "Context API for Global State", isLocked: false, link: "/pdfs/lesson09.pdf" },
+      { id: "10", name: "Building Custom Hooks", isLocked: false, link: "/pdfs/lesson10.pdf" },
+    ],
+  },
+  {
+    week: 4,
+    title: "Deployment & Advanced Topics",
+    lessons: [
+      { id: "11", name: "Vercel Deployment Pipeline", isLocked: true, link: "/pdfs/lesson11.pdf" },
+      { id: "12", name: "Serverless Functions (APIs)", isLocked: false, link: "/pdfs/lesson12.pdf" },
+      { id: "13", name: "Final Project Review", isLocked: true, link: "/pdfs/lesson13.pdf" },
+    ],
+  },
+];
 
 export default function CoursePage(){
     return (
@@ -41,9 +88,15 @@ export default function CoursePage(){
                 <hr className="my-14 border border-[#EBEBEB]" />
                 <div className="flex justify-between items-start">
                     <div className="w-[40%]">
-                        <p className="text-[32px] leading-[1.4] font-[500] capitalize">Why OSP engineering could be your next big step</p>
-                        <p className="text-[16px] font-[300] mt-4">
+                        <p className="text-[46px] leading-[1.2] capitalize">Why OSP engineering could be your next big step</p>
+                        <p className="text-[16px] font-[300] mt-6">
                             Demand for skilled professionals in telecom industry continues to rise, offering long-term stability and career advancement.
+                        </p>
+                        <p className="text-[48px] font-[500] mt-8">
+                            300% +
+                        </p>
+                        <p className="text-[16px] font-[300] mt-2">
+                            Growth in Job Openings Since 2020
                         </p>
                     </div>
                     <div className="w-[50%] flex flex-col gap-5">
@@ -51,7 +104,7 @@ export default function CoursePage(){
                             <p className="text-[16px] font-[700] text-[#ffffff]">
                                 HIGH DEMAND, HIGH OPPORTUNITY          
                             </p>
-                            <p className="text-[14px] font-[400] mt-1 text-[#ffffff]">
+                            <p className="text-[14px] font-[400] mt-3 text-[#ffffff]">
                                 The demand for OSP engineers is exploding, with thousands of open roles across the industry.
                             </p>
                         </div>
@@ -59,7 +112,7 @@ export default function CoursePage(){
                             <p className="text-[16px] font-[700] text-[#ffffff]">
                                 NO EXPERIENCE NEEDED       
                             </p>
-                            <p className="text-[14px] font-[400] mt-1 text-[#ffffff]">
+                            <p className="text-[14px] font-[400] mt-3 text-[#ffffff]">
                                 Start from scratch with comprehensive training designed for new grads and career changers.
                             </p>
                         </div>
@@ -67,7 +120,7 @@ export default function CoursePage(){
                             <p className="text-[16px] font-[700] text-[#ffffff]">
                                 FAST-TRACK CAREER GROWTH                 
                             </p>
-                            <p className="text-[14px] font-[400] mt-1 text-[#ffffff]">
+                            <p className="text-[14px] font-[400] mt-3 text-[#ffffff]">
                                 OSP engineering provides rapid career advancement with practical, hands-on experience.
                             </p>
                         </div>
@@ -75,13 +128,143 @@ export default function CoursePage(){
                             <p className="text-[16px] font-[700] text-[#ffffff]">
                                 LONG-TERM CAREER SECURITY     
                             </p>
-                            <p className="text-[14px] font-[400] mt-1 text-[#ffffff]">
+                            <p className="text-[14px] font-[400] mt-3 text-[#ffffff]">
                                 OSP offers a stable career path, with clear growth from entry-level to senior roles and high earnings.
                             </p>
                         </div>
                     </div>
                 </div>
                 <hr className="my-14 border border-[#EBEBEB]" />
+                <div className="rounded-[14px] h-[400px] relative overflow-hidden border border-[#EBEBEB]">
+                    <IntroVideo />
+                </div>
+                <div className="w-[70%] mt-10">
+                    <p className="text-[16px] font-[300]">
+                        Over a comprehensive 10 module program, you'll master the principles of OSP engineering from fiber network design to real world implementation. Supported by hands on projects and expert mentors, this course equips you with the skills to excel in a fast growing, high demand industry.
+                    </p>
+                </div>
+                <div className="flex gap-5 mt-10">
+                    <div className="w-full py-5 px-6 bg-[#122461] rounded-[14px]">
+                        <p className="text-[16px] font-[700] text-[#ffffff]">
+                            OSP FOUNDATIONS     
+                        </p>
+                        <p className="text-[14px] font-[400] mt-2 text-[#ffffff]">
+                            Understand the key principles behind the design and construction of fiber optic networks.
+                        </p>
+                    </div>
+                    <div className="w-full py-5 px-6 bg-[#122461] rounded-[14px]">
+                        <p className="text-[16px] font-[700] text-[#ffffff]">
+                            NETWORK DESIGN
+                        </p>
+                        <p className="text-[14px] font-[400] mt-2 text-[#ffffff]">
+                            Learn how to design and implement fiber networks to serve residential and commercial areas efficiently.
+                        </p>
+                    </div>
+                </div>
+                <hr className="my-14 border border-[#EBEBEB]" />
+                <div className="w-[50%]">
+                        <p className="text-[32px] leading-[1.4] font-[500] capitalize">Learn by Designing</p>
+                        <p className="text-[16px] font-[300] mt-4">
+                            From foundational theory to hands-on projects, our course ensures you gain the skills needed for OSP engineering success.
+                        </p>
+                </div>
+                <div className="flex gap-14 justify-between items-start mt-10">
+                    <div className="rounded-[14px] h-[400px] relative bg-[#122461] w-full overflow-hidden">
+                        <div className="py-5 px-8">
+                            <p className="text-[26px] text-[#ffffff] leading-[1.4] font-[500] capitalize">Hands-On Learning</p>
+                            <p className="text-[14px] font-[300] mt-4 text-[#ffffff]">
+                                Work on real-world challenges and enhance your skills with expert-designed video content.
+                            </p>
+                        </div>
+                        <Image src="/ppt.jpg" alt="ppt" width={400} height={400} className="absolute bottom-0 right-[-10%] rounded-tl-[14px] border border-[#EBEBEB] shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)]" />
+                        <Image src="/autocad.jpg" alt="ppt" width={400} height={400} className="absolute bottom-0 right-[-30%] rounded-tl-[14px] border border-[#EBEBEB] shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)]" />
+                        <Image src="/video.jpg" alt="ppt" width={400} height={400} className="absolute bottom-0 right-[-50%] rounded-tl-[14px] border border-[#EBEBEB] shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)]" />
+                    </div>
+                    <div className="rounded-[14px] h-[400px] relative bg-[#122461] w-full overflow-hidden">
+                        <div className="py-5 px-8">
+                            <p className="text-[26px] text-[#ffffff] leading-[1.4] font-[500] capitalize">Tailored Mentorship</p>
+                            <p className="text-[14px] font-[300] mt-4 text-[#ffffff]">
+                                Get exclusive, tailored guidance with dedicated one-on-one sessions designed just for you.
+                            </p>
+                        </div>
+                        <Image src="/meeting.jpg" alt="meeting" width={400} height={400} className="absolute bottom-0 right-[-10%] rounded-tl-[14px] border border-[#EBEBEB] shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)]" />
+                    </div>
+                </div>
+                <hr className="my-14 border border-[#EBEBEB]" />
+                <div className="w-full rounded-[14px] border border-[#EBEBEB] pt-6 pb-4 px-8">
+                    <div className="mb-6 border-b border-gray-700">
+                        <p className="text-[26px] leading-[1.4] font-[500] capitalize">Hands-On Learning</p>
+                        <p className="text-[14px] font-[300] mt-3">
+                            Work on real-world challenges and enhance your skills with expert-designed video content.
+                        </p>
+                        <div className="w-full py-4 px-6 border border-[#EBEBEB] rounded-[14px] my-8 flex items-center justify-between">
+                            <div className=" w-[20%]">
+                                <p className="text-[24px] font-[500] leading-[1.2]">10</p>
+                                <p className="text-[14px] font-[400] mt-2 mb-1">Theory Modules</p>
+                            </div>
+                            <span className="w-[2px] h-14 bg-[#EBEBEB] self-center mr-6"></span>
+                            <div className="text-[14px] font-[400] w-[20%]">
+                                <p className="text-[24px] font-[500] leading-[1.2]">5</p>
+                                <p className="text-[14px] font-[400] mt-2 mb-1">HLD Projects</p>
+                            </div>
+                            <span className="w-[2px] h-14 bg-[#EBEBEB] self-center mr-6"></span>
+                            <div className="text-[14px] font-[400] w-[20%]">
+                                <p className="text-[24px] font-[500] leading-[1.2]">5</p>
+                                <p className="text-[14px] font-[400] mt-2 mb-1">LLD Projects</p>
+                            </div>
+                            <span className="w-[2px] h-14 bg-[#EBEBEB] self-center mr-6"></span>
+                            <div className="w-[20%]">
+                                <p className="text-[24px] font-[500] leading-[1.2]">10</p>
+                                <p className="text-[14px] font-[400] mt-2 mb-1">Quizzes</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <Accordion type="multiple" className="w-full">
+                        {bootcampSchedule.map((weekData) => (
+                            <AccordionItem
+                                key={weekData.week}
+                                value={`week-${weekData.week}`}
+                                className="border-b border-[#EBEBEB] last:border-b-0"
+                            >
+                                <AccordionTrigger className="hover:no-underline text-left py-4">
+                                <span className="font-[400] text-[18px]">
+                                    Week {weekData.week}: {weekData.title}
+                                </span>
+                                </AccordionTrigger>
+                                
+                                <AccordionContent className="p-0">
+                                <div className="space-y-2 pb-4">
+                                    {weekData.lessons.map((lesson) => (
+                                    <div
+                                        key={lesson.id}
+                                        className={`flex items-center justify-between py-3 px-4 rounded-[14px] text-white ${lesson.isLocked ? 'bg-[#1e3a8a] opacity-60 cursor-not-allowed' : 'bg-[#122461]'}`}
+                                    >
+                                        <div className="flex items-center space-x-4">
+                                        <span className="text-[16px] font-[400]">{lesson.id}</span>
+                                        <a 
+                                            href={lesson.link} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className={`font-medium ${lesson.isLocked ? 'pointer-events-none' : 'text-white hover:text-blue-400'}`}
+                                        >
+                                            {lesson.name}
+                                        </a>
+                                        
+                                        </div>
+                                        {lesson.isLocked && (
+                                            <span className="flex items-center text-[14px] font-[400]">
+                                                Locked
+                                            </span>
+                                        )}
+                                    </div>
+                                    ))}
+                                </div>
+                            </AccordionContent>
+                        </AccordionItem>
+                        ))}
+                    </Accordion>
+                </div>
             </div>
             <div className="w-[30%]">
                 <div className="sticky top-[126px] rounded-[14px] bg-[#122461] h-[600px] w-full">

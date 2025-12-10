@@ -1,10 +1,11 @@
 'use client'
 import Link from "next/link"
 import LogoCarousel from "../LogoCarousel"
-import { hover, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import Image from "next/image"
 import SwiperComponent from "../SwiperComponent"
-import IndustryLeadersCard from "../IndustryLeadersCard"
+import SocialCards from "../SocialCards"
+import Counter from "../Counter"
 
 const logos = [
     "/benton.png",
@@ -91,6 +92,7 @@ export default function Hero() {
                 </div>
                 <div className="w-[35%]">
                     <div className="rounded-[14px] h-[200px] relative flex-2 bg-[#122461] mt-4">
+
                     </div>
                     <div className="text-[16px] font-[400] pt-10 pb-7 text-left">
                         Upskilling teams in 20+ companies
@@ -100,10 +102,11 @@ export default function Hero() {
             </div>
             <div className="flex flex-row items-start justify-between space-x-8 pt-12">
             <div className="flex flex-col gap-8 w-[62%] h-[500px]">
-                <div className="rounded-[14px] relative flex-2 bg-[#122461]">
+                <div className="rounded-[14px] relative flex-2">
+                  <SocialCards></SocialCards>
                 </div>
                 <div className="flex flex-row items-start justify-between flex-1 space-x-8">
-                    <div className="flex flex-col justify-between bg-[#c3ddf5] rounded-[14px] w-[70%] h-full pt-4 pb-6 px-6">
+                    <div className="flex justify-between bg-[#122461] rounded-[14px] w-[70%] h-full pt-2 py-6 px-6">
                     </div>
                         <div className="w-[30%] h-full">
                             <motion.div
@@ -117,7 +120,7 @@ export default function Hero() {
                                   scale: 1.05,
                                 },
                               }}
-                              className="w-full h-full relative shrink-0 overflow-hidden rounded-xl bg-indigo-500 py-[5px] px-[18px]"
+                              className="w-full h-full relative shrink-0 overflow-hidden rounded-xl bg-indigo-500 py-[8px] px-[18px]"
                             >
                               <div className="relative flex flex-col justify-between z-10 text-white">
                                 <motion.span
@@ -133,10 +136,10 @@ export default function Hero() {
                                   }}
                                   className="block origin-top-left text-[#ffffff] text-[72px] font-[600] leading-[1.1]"
                                 >
-                                  50+
+                                  <Counter value={50} />
                                 </motion.span>
-                                <p className="text-[#ffffff] text-[14px] font-[500] leading-[1.3]">
-                                  Candidates Have Trusted Skarion to Launch Their Careers
+                                <p className="text-[#ffffff] text-[14px] font-[500] leading-[1.3] mt-[1px]">
+                                  Candidates Have Found a Career in the US Through Skarion
                                 </p>
                               </div>
                             <Background />
@@ -144,7 +147,6 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
-
             <div className="relative flex flex-col gap-8 bg-[#ffffff] rounded-[14px] w-full md:w-[35%] min-h-[200px] sm:min-h-[260px] md:min-h-[495px] h-[200px] sm:h-[260px] md:h-[495px]">
                 <SwiperComponent images={images} />
             </div>
