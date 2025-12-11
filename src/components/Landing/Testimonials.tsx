@@ -94,29 +94,25 @@ export default function Testimonials() {
 
   return (
     <div className="w-full bg-[#ffffff] py-10 px-6 md:px-12 min-h-screen overflow-hidden">
-      <div ref={container} className="flex gap-6 overflow-hidden justify-center">
-        <Column
-          testimonials={[testimonials[0], testimonials[3], testimonials[1], testimonials[4], testimonials[2], testimonials[5], testimonials[0], testimonials[3]]}
-          y={y1}
-          className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4"
-        />
-        <Column
-          testimonials={[testimonials[1], testimonials[4], testimonials[2], testimonials[5], testimonials[0], testimonials[3], testimonials[1], testimonials[4]]}
-          y={y3}
-          className="hidden sm:flex sm:w-1/2 lg:w-1/3 xl:w-1/4"
-        />
-        <Column
-          testimonials={[testimonials[2], testimonials[5], testimonials[0], testimonials[3], testimonials[1], testimonials[4], testimonials[2], testimonials[5]]}
-          y={y2}
-          className="hidden lg:flex lg:w-1/3 xl:w-1/4"
-        />
-        <Column
-          testimonials={[testimonials[2], testimonials[5], testimonials[0], testimonials[3], testimonials[1], testimonials[4], testimonials[2], testimonials[5]]}
-          y={y4}
-          className="hidden xl:flex xl:w-1/4"
-        />
+        <div ref={container} className="flex gap-6 overflow-hidden justify-center">
+          <Column
+            testimonials={[testimonials[0], testimonials[3], testimonials[1], testimonials[4], testimonials[2], testimonials[5], testimonials[0], testimonials[3]]}
+            y={y1}
+            className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+          <Column
+            testimonials={[testimonials[1], testimonials[4], testimonials[2], testimonials[5], testimonials[0], testimonials[3], testimonials[1], testimonials[4]]}
+            y={y3}
+            className="hidden sm:flex sm:w-1/2 lg:w-1/3 xl:w-1/4" />
+          <Column
+            testimonials={[testimonials[2], testimonials[5], testimonials[0], testimonials[3], testimonials[1], testimonials[4], testimonials[2], testimonials[5]]}
+            y={y2}
+            className="hidden lg:flex lg:w-1/3 xl:w-1/4" />
+          <Column
+            testimonials={[testimonials[2], testimonials[5], testimonials[0], testimonials[3], testimonials[1], testimonials[4], testimonials[2], testimonials[5]]}
+            y={y4}
+            className="hidden xl:flex xl:w-1/4" />
+        </div>
       </div>
-    </div>
   );
 }
 
@@ -128,6 +124,7 @@ const Column = ({ testimonials, y, className = "" }: { testimonials: ITestimonia
     >
       {testimonials.map((item, i) => {
         return (
+          
           <div key={i} className="mb-6 border border-gray-500 rounded-xl p-5 flex flex-col bg-[#001440] opacity-90 overflow-hidden">
             <div className="flex items-start">
               <p className="text-[20px] font-bold text-[#ff686b]">{item.company}</p>
