@@ -1,12 +1,10 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { signIn } from "next-auth/react";
 import { useActionState, useEffect, useState, useTransition } from "react";
-import { redirect } from "next/navigation";
-// import FormError from "./common/form-error"
-// import { handleSignIn } from "@/app/auth/sign-in/actions"
+import { redirect, useRouter } from "next/navigation";
 import { toast } from "sonner";
 import Image from "next/image";
 
@@ -14,44 +12,40 @@ export function SignInForm({
   className,
   ...props
 }: React.ComponentProps<"form">) {
+  const router = useRouter();
   const [isPending, setIsPending] = useState(false);
-  // const [state, action]: any = useActionState(handleSignIn, {});
+  const [error, setError] = useState<string | null>(null);
 
-  const [transition, startTransition] = useTransition();
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      setIsPending(true);
+      setError(null);
+  
+      const form = e.target as HTMLFormElement & {
+        email: { value: string };
+        password: { value: string };
+      };
+  
+      const res = await signIn("credentials", {
+        redirect: false,
+        email: form.email.value,
+        password: form.password.value,
+      });
+    
+      if (res?.error) {
+        setError("Invalid email or password");
+        setIsPending(false);
+        return;
+      }
 
-  // useEffect(() => {
-  //   if (state.error) {
-  //     toast(state.error)
-  //     setIsPending(false);
-  //   }
-  //   if (state.success) {
-  //     setIsPending(false);
-  //     redirect(`/app/dashboard`);
-  //   }
-  //   if (state.formErrors) {
-  //     setIsPending(false);
-  //     console.log("state.formErrors", state.formErrors);
-  //   }
-  // }, [state]);
-
-  // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-  //   event.preventDefault();
-
-  //   setIsPending(true);
-  //   const formData = new FormData(event.currentTarget);
-  //   const email = formData.get("email") || "";
-  //   const password = formData.get("password") || "";
-
-  //   formData.set("email", email);
-  //   formData.set("password", password);
-
-  //   startTransition(() => {
-  //     action(formData);
-  //   });
-  // };
+      if (res?.ok) {
+        setIsPending(false);
+        router.push("/");
+      }
+    };
 
   return (
-    <form className={cn("flex flex-col gap-6", className)} {...props}>
+    <form className={cn("flex flex-col gap-6", className)} {...props} onSubmit={handleSubmit}>
       <div className="grid gap-6">
         <div className="grid">
           <Label htmlFor="email">Email</Label>
@@ -63,7 +57,6 @@ export function SignInForm({
             required
             className="mt-3"
           />
-          {/* {state.formErrors?.email && <FormError error={state.formErrors?.email} />} */}
         </div>
         <div className="grid">
           <div className="flex items-center">
@@ -76,7 +69,7 @@ export function SignInForm({
             required
             className="mt-3"
           />
-          {/* {state.formErrors?.password && <FormError error={state.formErrors?.password} />} */}
+          {error && <p className="text-red-500 text-sm mt-4">{error}</p>}
         </div>
         <button
           type="submit"
@@ -93,6 +86,7 @@ export function SignInForm({
         <button
           type="button"
           className="w-full flex items-center justify-center gap-4 py-2.5 px-6 text-[15px] font-medium tracking-wide text-slate-900 border border-slate-300 rounded-md hover:bg-slate-100 focus:outline-none cursor-pointer"
+          onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

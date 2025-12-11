@@ -1,7 +1,7 @@
 import { SignUpForm } from "@/components/sign-up-form";
 export default function SignUpPage() {
   return (
-    <div className="flex flex-col items-center justify-center gap-6 p-6 md:p-10">
+    <div className="h-[100vh] flex flex-col items-center justify-center">  
       <div className="w-full max-w-sm">
         <SignUpForm />
       </div>
