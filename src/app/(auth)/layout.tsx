@@ -28,9 +28,7 @@ export default function RootLayout({
         <body
           className={`${inter.variable} font-sans antialiased overflow-x-hidden`}
         >
-          <main>
-            {children}
-          </main>
+          <main>{children}</main>
         </body>
       </html>
     </SmoothScroll>

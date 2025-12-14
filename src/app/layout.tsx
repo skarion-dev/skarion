@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../globals.css";
+import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
-import { redirect } from "next/navigation";
-import { auth } from "@/auth";
+import { Toaster } from "sonner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,15 +15,11 @@ export const metadata: Metadata = {
   description: "Advancing careers through specialized training",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await auth();
-  console.log("Current user:", session?.user || null);
-  if (!session?.user) return redirect(`/auth/sign-in`);
-
   return (
     <SmoothScroll>
       <html lang="en">
@@ -34,7 +29,10 @@ export default async function RootLayout({
         <body
           className={`${inter.variable} font-sans antialiased overflow-x-hidden`}
         >
-          <main>{children}</main>
+          <main>
+            <Toaster />
+            {children}
+          </main>
         </body>
       </html>
     </SmoothScroll>
