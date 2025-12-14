@@ -82,6 +82,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
         token.role = user.role;
         token.image = user.image;
         token.lastLogin = user.lastLogin;
+        token.email = user.email;
         token.accessToken = user.accessToken;
       }
       return token;
@@ -92,6 +93,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
         session.user.role = token.role as string;
         session.user.image = token.image as string;
         session.user.lastLogin = token.lastLogin as string;
+        session.user.email = token.email as string;
       }
       (session as any).accessToken = token.accessToken as string;
       return session;

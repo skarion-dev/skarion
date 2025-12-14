@@ -17,35 +17,39 @@ export function SignInForm({
   const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      setIsPending(true);
-      setError(null);
-  
-      const form = e.target as HTMLFormElement & {
-        email: { value: string };
-        password: { value: string };
-      };
-  
-      const res = await signIn("credentials", {
-        redirect: false,
-        email: form.email.value,
-        password: form.password.value,
-      });
-    
-      if (res?.error) {
-        setError("Invalid email or password");
-        setIsPending(false);
-        return;
-      }
+    e.preventDefault();
+    setIsPending(true);
+    setError(null);
 
-      if (res?.ok) {
-        setIsPending(false);
-        router.push("/");
-      }
+    const form = e.target as HTMLFormElement & {
+      email: { value: string };
+      password: { value: string };
     };
 
+    const res = await signIn("credentials", {
+      redirect: false,
+      email: form.email.value,
+      password: form.password.value,
+    });
+
+    if (res?.error) {
+      setError("Invalid email or password");
+      setIsPending(false);
+      return;
+    }
+
+    if (res?.ok) {
+      setIsPending(false);
+      router.push("/");
+    }
+  };
+
   return (
-    <form className={cn("flex flex-col gap-6", className)} {...props} onSubmit={handleSubmit}>
+    <form
+      className={cn("flex flex-col gap-6", className)}
+      {...props}
+      onSubmit={handleSubmit}
+    >
       <div className="grid gap-6">
         <div className="grid">
           <Label htmlFor="email">Email</Label>

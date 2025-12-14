@@ -8,21 +8,17 @@ export default async function NavbarProvider({
   children: React.ReactNode;
   user?: any;
 }>) {
-
   return (
     <SidebarProvider>
-        <AppSidebar user={user} />
-        <main className="ml-[sidebar-width] w-full">
+      <AppSidebar user={user} />
+      <main className="ml-[sidebar-width] w-full">
         <div className="border-b flex justify-between items-center w-full px-4 py-3 sticky bg-[#FAFAF9] dark:bg-[#1B1917] top-0 z-10">
-            <SidebarTrigger />
+          <SidebarTrigger />
         </div>
-            <div className="flex-1 w-full h-[calc(100vh - 56px)] overflow-auto">
-            {children}
-            </div>
-        </main>
+        <div className="flex-1 w-full h-[calc(100vh - 56px)] overflow-auto">
+          {children}
+        </div>
+      </main>
     </SidebarProvider>
   );
 }
-
-
-

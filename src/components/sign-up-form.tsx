@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { useActionState, useState, useTransition, useEffect } from "react";
 // import FormError from "./common/form-error";
 // import { handleSignUp } from "@/app/auth/sign-up/actions";
-import { toast } from "sonner"
+import { toast } from "sonner";
 import { redirect } from "next/navigation";
 import { signIn } from "next-auth/react";
 
@@ -17,8 +17,8 @@ export function SignUpForm({
 }: React.ComponentProps<"form">) {
   const [isPending, setIsPending] = useState(false);
   // const [state, action]: any = useActionState(handleSignUp, {});
-  
-  const [transition, startTransition] = useTransition(); 
+
+  const [transition, startTransition] = useTransition();
 
   // useEffect(() => {
   //   if (state.error) {
