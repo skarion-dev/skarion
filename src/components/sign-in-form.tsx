@@ -3,10 +3,19 @@ import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { signIn } from "next-auth/react";
-import { useActionState, useEffect, useState, useTransition } from "react";
-import { redirect, useRouter } from "next/navigation";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import Image from "next/image";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+export const loginSchema = z.object({
+  email: z.string().email("Invalid email address"),
+  password: z.string().min(8, "Password must be at least 8 characters"),
+});
+
+type LoginFormValues = z.infer<typeof loginSchema>;
 
 export function SignInForm({
   className,
@@ -14,26 +23,30 @@ export function SignInForm({
 }: React.ComponentProps<"form">) {
   const router = useRouter();
   const [isPending, setIsPending] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginFormValues>({
+    resolver: zodResolver(loginSchema),
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+
+  const onSubmit = async (data: LoginFormValues) => {
     setIsPending(true);
-    setError(null);
-
-    const form = e.target as HTMLFormElement & {
-      email: { value: string };
-      password: { value: string };
-    };
 
     const res = await signIn("credentials", {
       redirect: false,
-      email: form.email.value,
-      password: form.password.value,
+      email: data.email,
+      password: data.password,
     });
 
     if (res?.error) {
-      setError("Invalid email or password");
+      toast.error("Invalid email or password");
       setIsPending(false);
       return;
     }
@@ -48,19 +61,19 @@ export function SignInForm({
     <form
       className={cn("flex flex-col gap-6", className)}
       {...props}
-      onSubmit={handleSubmit}
+      onSubmit={handleSubmit(onSubmit)}
     >
       <div className="grid gap-6">
         <div className="grid">
           <Label htmlFor="email">Email</Label>
           <Input
             id="email"
-            name="email"
             type="email"
             placeholder="m@example.com"
-            required
             className="mt-3"
+            {...register("email")}
           />
+          {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
         </div>
         <div className="grid">
           <div className="flex items-center">
@@ -68,12 +81,11 @@ export function SignInForm({
           </div>
           <Input
             id="password"
-            name="password"
             type="password"
-            required
             className="mt-3"
+            {...register("password")}
           />
-          {error && <p className="text-red-500 text-sm mt-4">{error}</p>}
+          {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>}
         </div>
         <button
           type="submit"

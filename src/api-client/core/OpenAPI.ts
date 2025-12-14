@@ -24,11 +24,7 @@ export const OpenAPI: OpenAPIConfig = {
     VERSION: '1.0',
     WITH_CREDENTIALS: false,
     CREDENTIALS: 'include',
-    TOKEN: async () => {
-        const { auth } = await import('@/auth');
-        const session = await auth();
-        return session?.accessToken || '';
-    },
+    TOKEN: '',
     USERNAME: undefined,
     PASSWORD: undefined,
     HEADERS: undefined,
