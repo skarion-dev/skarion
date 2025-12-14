@@ -55,7 +55,7 @@ export default function CoursePage(){
                 <p className="text-[16px] sm:text-[18px] font-[300] mt-4">
                     OSP Engineering involves the design, installation, and maintenance of outdoor infrastructure, including fiber optic routes, cables, and utility networks.
                 </p>
-                <div className="rounded-[14px] h-[250px] sm:h-[300px] md:h-[400px] relative bg-[#122461] mt-10"></div>
+                <div className="rounded-[14px] h-[250px] sm:h-[300px] md:h-[400px] relative bg-[#122461] mt-10 text-white"></div>
                 <p className="text-[20px] sm:text-[24px] font-[500] mt-10 capitalize">Unlock high-demand careers in the US with OSP engineering!</p>
                 <p className="text-[14px] sm:text-[16px] font-[500] text-[#666666] font-[300] mt-2">
                     13 Theory Modules · Live & On-Demand · 10+ Real World Projects
@@ -267,8 +267,24 @@ export default function CoursePage(){
                 </div>
             </div>
             <div className="w-full lg:w-[30%]">
-                <div className="sticky top-[126px] rounded-[14px] bg-[#122461] h-[400px] sm:h-[500px] md:h-[600px] w-full">
-
+                <div className="hidden lg:block sticky top-[126px] rounded-[14px] bg-[#122461] h-[400px] sm:h-[500px] md:h-[600px] w-full text-white font-bold">
+                    <h1 className="text-[24px] sm:text-[32px] md:text-[40px]">OSP Engineering Bootcamp</h1>
+                    <button className="flex items-center justify-center bg-[#F5F5F5] text-black py-2 px-4 rounded-[14px]">
+                        Join Bootcamp
+                    </button>
+                </div>
+                <div className="block lg:hidden h-[80px]" />
+            </div>
+            <div className="block lg:hidden fixed bottom-0 left-0 right-0 z-50 h-[180px] bg-[#000000]/70 py-3 px-4 border-t border-black/20">
+                <div className="max-w-6xl mx-auto flex items-center gap-3">
+                    <div className="flex flex-col gap-1 w-full">
+                        <span className="text-white text-[24px] font-[600]">OSP Engineering Bootcamp</span>
+                        <span className="text-white text-[18px] font-[600]">$45.95</span>
+                        <button className="flex items-center justify-center bg-white text-black py-3 px-6 rounded-[16px] font-[600] mt-4">
+                            Reserve seat
+                        </button>
+                    </div>
+                    
                 </div>
             </div>
         </div>
