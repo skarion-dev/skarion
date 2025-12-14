@@ -268,7 +268,7 @@ export default function CoursePage(){
             </div>
             <div className="w-full lg:w-[30%]">
                 <div className="sticky top-[126px] rounded-[14px] bg-[#122461] w-full px-8 py-8">
-                    <div className="bg-[#ffffff] rounded-[14px] h-[250px]">
+                    <div className="bg-[#ffffff] rounded-[14px] h-[350px]">
 
                     </div>
                     <p className="text-[24px] leading-[1.2] text-white mt-4 font-[600]">Outside Plant Engineering</p>
