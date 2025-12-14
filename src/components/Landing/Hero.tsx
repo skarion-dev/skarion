@@ -111,10 +111,10 @@ export default function Hero() {
                     <div className="relative rounded-[14px] text-white flex-2 bg-[#122461]"> 
                       <Steps />
                     </div>
-                    {/* Stats row: 3 columns on desktop → 1 column on small screens */}
+                    
                     <div className="flex flex-col sm:flex-row items-start justify-between flex-1 gap-4 sm:space-x-4 lg:space-x-8">
                         <div className="text-left grid grid-cols-1 sm:grid-cols-3 gap-4 rounded-[14px] w-full h-full pt-4 pb-6 px-6">
-                            <div className="flex flex-col items-start justify-center">
+                            {/* <div className="flex flex-col items-start justify-center">
                                 <Counter value={100} duration={2} />
                                 <p className="text-[#122461] text-lg md:text-[24px] font-[600] leading-[1.3] mt-1">Total Registration</p>
                             </div>
@@ -125,7 +125,7 @@ export default function Hero() {
                             <div className="flex flex-col items-start justify-center ">
                                 <Counter value={20} duration={2} />
                                 <p className="text-[#122461] text-lg md:text-[24px] font-[600] leading-[1.3] mt-1">Job Placements</p>
-                            </div>
+                            </div> */}
                         </div>
                         {/* 50+ card */}
                         <div className="w-full sm:w-auto h-auto sm:min-w-[10%] min-h-[80%] lg:h-full">

@@ -49,22 +49,22 @@ const bootcampSchedule = [
 
 export default function CoursePage(){
     return (
-        <div className="w-full bg-[#ffffff] py-10 px-12 flex justify-between">
-            <div className="w-[65%]">
-                <p className="text-[42px] leading-[1.2]">Outside Plant Engineering</p>
-                <p className="text-[18px] font-[300] mt-4">
+        <div className="w-full bg-[#ffffff] py-10 px-4 sm:px-6 md:px-8 lg:px-12 flex flex-col lg:flex-row justify-between gap-8">
+            <div className="w-full lg:w-[65%]">
+                <p className="text-[32px] sm:text-[36px] md:text-[42px] leading-[1.2]">Outside Plant Engineering</p>
+                <p className="text-[16px] sm:text-[18px] font-[300] mt-4">
                     OSP Engineering involves the design, installation, and maintenance of outdoor infrastructure, including fiber optic routes, cables, and utility networks.
                 </p>
-                <div className="rounded-[14px] h-[400px] relative bg-[#122461] mt-10"></div>
-                <p className="text-[24px] font-[500] mt-10 capitalize">Unlock high-demand careers in the US with OSP engineering!</p>
-                <p className="text-[16px] font-[500] text-[#666666] font-[300] mt-2">
+                <div className="rounded-[14px] h-[250px] sm:h-[300px] md:h-[400px] relative bg-[#122461] mt-10"></div>
+                <p className="text-[20px] sm:text-[24px] font-[500] mt-10 capitalize">Unlock high-demand careers in the US with OSP engineering!</p>
+                <p className="text-[14px] sm:text-[16px] font-[500] text-[#666666] font-[300] mt-2">
                     13 Theory Modules · Live & On-Demand · 10+ Real World Projects
                 </p>
-                <div className="w-full py-4 px-6 border border-[#EBEBEB] rounded-[14px] mt-8 flex items-center justify-between">
-                    <p className="text-[14px] font-[400] w-[45%]">
+                <div className="w-full py-4 px-4 sm:px-6 border border-[#EBEBEB] rounded-[14px] mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <p className="text-[14px] font-[400] sm:w-[45%]">
                         Gain hands-on fiber optic design experience under expert mentorship, ready to showcase on your resume.                    
                     </p>
-                    <span className="w-[2px] h-14 bg-[#EBEBEB] self-center"></span>
+                    <span className="hidden sm:block w-[2px] h-14 bg-[#EBEBEB] self-center"></span>
                     <div className="flex items-center gap-4">
                         <div className="flex -space-x-2">
                             <Image src="/image 1.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover border border-[#ffffff]" />
@@ -85,21 +85,21 @@ export default function CoursePage(){
                         </div>
                     </div>
                 </div>
-                <hr className="my-14 border border-[#EBEBEB]" />
-                <div className="flex justify-between items-start">
-                    <div className="w-[40%]">
-                        <p className="text-[46px] leading-[1.2] capitalize">Why OSP engineering could be your next big step</p>
+                <hr className="my-10 md:my-14 border border-[#EBEBEB]" />
+                <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
+                    <div className="w-full lg:w-[40%]">
+                        <p className="text-[32px] sm:text-[40px] md:text-[46px] leading-[1.2] capitalize">Why OSP engineering could be your next big step</p>
                         <p className="text-[16px] font-[300] mt-6">
                             Demand for skilled professionals in telecom industry continues to rise, offering long-term stability and career advancement.
                         </p>
-                        <p className="text-[48px] font-[500] mt-8">
+                        <p className="text-[36px] sm:text-[42px] md:text-[48px] font-[500] mt-8">
                             300% +
                         </p>
                         <p className="text-[16px] font-[300] mt-2">
                             Growth in Job Openings Since 2020
                         </p>
                     </div>
-                    <div className="w-[50%] flex flex-col gap-5">
+                    <div className="w-full lg:w-[50%] flex flex-col gap-5">
                         <div className="w-full py-4 px-6 bg-[#122461] rounded-[14px]">
                             <p className="text-[16px] font-[700] text-[#ffffff]">
                                 HIGH DEMAND, HIGH OPPORTUNITY          
@@ -134,16 +134,16 @@ export default function CoursePage(){
                         </div>
                     </div>
                 </div>
-                <hr className="my-14 border border-[#EBEBEB]" />
-                <div className="rounded-[14px] h-[400px] relative overflow-hidden border border-[#EBEBEB]">
+                <hr className="my-10 md:my-14 border border-[#EBEBEB]" />
+                <div className="rounded-[14px] h-[250px] sm:h-[300px] md:h-[400px] relative overflow-hidden border border-[#EBEBEB]">
                     <IntroVideo />
                 </div>
-                <div className="w-[70%] mt-10">
+                <div className="w-full md:w-[70%] mt-10">
                     <p className="text-[16px] font-[300]">
                         Over a comprehensive 10 module program, you'll master the principles of OSP engineering from fiber network design to real world implementation. Supported by hands on projects and expert mentors, this course equips you with the skills to excel in a fast growing, high demand industry.
                     </p>
                 </div>
-                <div className="flex gap-5 mt-10">
+                <div className="flex flex-col sm:flex-row gap-5 mt-10">
                     <div className="w-full py-5 px-6 bg-[#122461] rounded-[14px]">
                         <p className="text-[16px] font-[700] text-[#ffffff]">
                             OSP FOUNDATIONS     
@@ -161,17 +161,17 @@ export default function CoursePage(){
                         </p>
                     </div>
                 </div>
-                <hr className="my-14 border border-[#EBEBEB]" />
-                <div className="w-[50%]">
-                        <p className="text-[32px] leading-[1.4] font-[500] capitalize">Learn by Designing</p>
+                <hr className="my-10 md:my-14 border border-[#EBEBEB]" />
+                <div className="w-full md:w-[50%]">
+                        <p className="text-[24px] sm:text-[28px] md:text-[32px] leading-[1.4] font-[500] capitalize">Learn by Designing</p>
                         <p className="text-[16px] font-[300] mt-4">
                             From foundational theory to hands-on projects, our course ensures you gain the skills needed for OSP engineering success.
                         </p>
                 </div>
-                <div className="flex gap-14 justify-between items-start mt-10">
-                    <div className="rounded-[14px] h-[400px] relative bg-[#122461] w-full overflow-hidden">
+                <div className="flex flex-col lg:flex-row gap-8 lg:gap-14 justify-between items-start mt-10">
+                    <div className="rounded-[14px] sm:h-[350px] md:h-[400px] min-h-[370px] relative bg-[#122461] w-full overflow-hidden">
                         <div className="py-5 px-8">
-                            <p className="text-[26px] text-[#ffffff] leading-[1.4] font-[500] capitalize">Hands-On Learning</p>
+                            <p className="text-[22px] sm:text-[24px] md:text-[26px] text-[#ffffff] leading-[1.4] font-[500] capitalize">Hands-On Learning</p>
                             <p className="text-[14px] font-[300] mt-4 text-[#ffffff]">
                                 Work on real-world challenges and enhance your skills with expert-designed video content.
                             </p>
@@ -180,9 +180,9 @@ export default function CoursePage(){
                         <Image src="/autocad.jpg" alt="ppt" width={400} height={400} className="absolute bottom-0 right-[-30%] rounded-tl-[14px] border border-[#EBEBEB] shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)]" />
                         <Image src="/video.jpg" alt="ppt" width={400} height={400} className="absolute bottom-0 right-[-50%] rounded-tl-[14px] border border-[#EBEBEB] shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)]" />
                     </div>
-                    <div className="rounded-[14px] h-[400px] relative bg-[#122461] w-full overflow-hidden">
+                    <div className="rounded-[14px]  sm:h-[350px] md:h-[400px] min-h-[370px] relative bg-[#122461] w-full overflow-hidden">
                         <div className="py-5 px-8">
-                            <p className="text-[26px] text-[#ffffff] leading-[1.4] font-[500] capitalize">Tailored Mentorship</p>
+                            <p className="text-[22px] sm:text-[24px] md:text-[26px] text-[#ffffff] leading-[1.4] font-[500] capitalize">Tailored Mentorship</p>
                             <p className="text-[14px] font-[300] mt-4 text-[#ffffff]">
                                 Get exclusive, tailored guidance with dedicated one-on-one sessions designed just for you.
                             </p>
@@ -190,31 +190,31 @@ export default function CoursePage(){
                         <Image src="/meeting.jpg" alt="meeting" width={400} height={400} className="absolute bottom-0 right-[-10%] rounded-tl-[14px] border border-[#EBEBEB] shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)]" />
                     </div>
                 </div>
-                <hr className="my-14 border border-[#EBEBEB]" />
-                <div className="w-full rounded-[14px] border border-[#EBEBEB] pt-6 pb-4 px-8">
+                <hr className="my-10 md:my-14 border border-[#EBEBEB]" />
+                <div className="w-full rounded-[14px] border border-[#EBEBEB] pt-6 pb-4 px-4 sm:px-6 md:px-8">
                     <div className="mb-6 border-b border-gray-700">
-                        <p className="text-[26px] leading-[1.4] font-[500] capitalize">Hands-On Learning</p>
+                        <p className="text-[22px] sm:text-[24px] md:text-[26px] leading-[1.4] font-[500] capitalize">Hands-On Learning</p>
                         <p className="text-[14px] font-[300] mt-3">
                             Work on real-world challenges and enhance your skills with expert-designed video content.
                         </p>
-                        <div className="w-full py-4 px-6 border border-[#EBEBEB] rounded-[14px] my-8 flex items-center justify-between">
-                            <div className=" w-[20%]">
-                                <p className="text-[24px] font-[500] leading-[1.2]">10</p>
+                        <div className="w-full py-4 px-2 sm:px-4 md:px-6 border border-[#EBEBEB] rounded-[14px] my-8 flex flex-wrap items-center justify-between gap-4">
+                            <div className="w-full sm:w-[45%] md:w-[20%]">
+                                <p className="text-[20px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2]">10</p>
                                 <p className="text-[14px] font-[400] mt-2 mb-1">Theory Modules</p>
                             </div>
-                            <span className="w-[2px] h-14 bg-[#EBEBEB] self-center mr-6"></span>
-                            <div className="text-[14px] font-[400] w-[20%]">
-                                <p className="text-[24px] font-[500] leading-[1.2]">5</p>
+                            <span className="hidden md:block w-[2px] h-14 bg-[#EBEBEB] self-center"></span>
+                            <div className="w-full sm:w-[45%] md:w-[20%]">
+                                <p className="text-[20px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2]">5</p>
                                 <p className="text-[14px] font-[400] mt-2 mb-1">HLD Projects</p>
                             </div>
-                            <span className="w-[2px] h-14 bg-[#EBEBEB] self-center mr-6"></span>
-                            <div className="text-[14px] font-[400] w-[20%]">
-                                <p className="text-[24px] font-[500] leading-[1.2]">5</p>
+                            <span className="hidden md:block w-[2px] h-14 bg-[#EBEBEB] self-center"></span>
+                            <div className="w-full sm:w-[45%] md:w-[20%]">
+                                <p className="text-[20px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2]">5</p>
                                 <p className="text-[14px] font-[400] mt-2 mb-1">LLD Projects</p>
                             </div>
-                            <span className="w-[2px] h-14 bg-[#EBEBEB] self-center mr-6"></span>
-                            <div className="w-[20%]">
-                                <p className="text-[24px] font-[500] leading-[1.2]">10</p>
+                            <span className="hidden md:block w-[2px] h-14 bg-[#EBEBEB] self-center"></span>
+                            <div className="w-full sm:w-[45%] md:w-[20%]">
+                                <p className="text-[20px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2]">10</p>
                                 <p className="text-[14px] font-[400] mt-2 mb-1">Quizzes</p>
                             </div>
                         </div>
@@ -228,7 +228,7 @@ export default function CoursePage(){
                                 className="border-b border-[#EBEBEB] last:border-b-0"
                             >
                                 <AccordionTrigger className="hover:no-underline text-left py-4">
-                                <span className="font-[400] text-[18px]">
+                                <span className="font-[400] text-[16px] sm:text-[18px]">
                                     Week {weekData.week}: {weekData.title}
                                 </span>
                                 </AccordionTrigger>
@@ -266,8 +266,8 @@ export default function CoursePage(){
                     </Accordion>
                 </div>
             </div>
-            <div className="w-[30%]">
-                <div className="sticky top-[126px] rounded-[14px] bg-[#122461] h-[600px] w-full">
+            <div className="w-full lg:w-[30%]">
+                <div className="sticky top-[126px] rounded-[14px] bg-[#122461] h-[400px] sm:h-[500px] md:h-[600px] w-full">
 
                 </div>
             </div>

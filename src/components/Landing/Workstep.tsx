@@ -1,112 +1,105 @@
-"use client";
-import Image from "next/image";
-import { useEffect, useRef } from "react";
+'use client'
+import Image from 'next/image';
+import { useTransform, useScroll, motion } from 'framer-motion';
+import { useRef } from 'react';
 
-export default function Timeline() {
-  const rootRef = useRef<HTMLDivElement | null>(null);
+export const projects = [
+  {
+    title: "Matthias Leidinger",
+    description: "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
+    src: "/profile 1.jpg",
+    link: "https://www.ignant.com/2023/03/25/ad2186-matthias-leidingers-photographic-exploration-of-awe-and-wonder/",
+    color: "#BBACAF"
+  },
+  {
+    title: "Clément Chapillon",
+    description: "This is a story on the border between reality and imaginary, about the contradictory feelings that the insularity of a rocky, arid, and wild territory provokes”—so French photographer Clément Chapillon describes his latest highly c).",
+    src: "/profile 2.jpg",
+    link: "https://www.ignant.com/2022/09/30/clement-chapillon-questions-geographical-and-mental-isolation-with-les-rochers-fauves/",
+    color: "#977F6D"
+  },
+  {
+    title: "Zissou",
+    description: "Though he views photography as a medium for storytelling, Zissou’s images don’t insist on a narrative. Both crisp and ethereal, they’re encoded with an ambiguity—a certain tension—that lets the viewer find their own story within them.",
+    src: "/image 1.jpg",
+    link: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
+    color: "#C2491D"
+  }
+]
 
-  useEffect(() => {
-    const root = rootRef.current;
-    if (!root) return;
-    const items = Array.from(root.querySelectorAll(".timeline-item")) as HTMLElement[];
-    const line = root.querySelector(".timeline-line__progress") as HTMLElement;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const el = entry.target as HTMLElement;
-          if (entry.isIntersecting) {
-            el.classList.add("opacity-100", "translate-y-0");
-            el.classList.remove("opacity-0", "translate-y-6");
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-    items.forEach((el) => observer.observe(el));
+interface CardProps {
+  title: string;
+  description: string;
+  src: string;
+  url: string;
+  color: string;
+  i: number;
+}
 
-    // Animate the line as items come into view
-    const lineObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const idx = items.indexOf(entry.target as HTMLElement);
-            const progress = ((idx + 1) / items.length) * 100;
-            line.style.height = `${progress}%`;
-            line.style.transition = "height 0.7s ease-out";
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-    items.forEach((el) => lineObserver.observe(el));
-
-    return () => {
-      observer.disconnect();
-      lineObserver.disconnect();
-    };
-  }, []);
+const Card = ({ title, description, src, url, color, i }: CardProps) => {
+  const container = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    axis: 'x',
+    offset: ['start end', 'start start']
+  });
+  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
 
   return (
-    <div ref={rootRef} className="relative max-w-6xl mx-auto my-24">
-      {/* Vertical line with animated progress */}
-      <div className="timeline-line absolute left-1/2 top-0 bottom-0 w-1 bg-gray-300 transform -translate-x-1/2">
-        <div className="timeline-line__progress w-full bg-indigo-600 h-0" />
-      </div>
+    <div ref={container} className="h-screen flex items-center justify-center sticky top-0">
+      <div
+        className="flex flex-col relative h-[600px] w-[1100px] rounded-xl p-12 opacity-100"
+        style={{ backgroundColor: color, transform: `translateY(calc(-5vh + ${i * 25}px))` }}
+      >
+        <h2 className="text-center text-[48px] font-semibold text-black">{title}</h2>
+        <div className="flex h-full mt-12 gap-12">
+          <div className="w-2/5 relative top-10">
+            <p className="text-[24px] text-black first-letter:text-4xl first-letter:font-title">{description}</p>
+            <span className="flex items-center gap-2 mt-5">
+              <a href={url} target="_blank" rel="noopener noreferrer" className="text-sm underline cursor-pointer text-black ">
+                See more
+              </a>
+              <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.5303 6.53033C21.8232 6.23744 21.8232 5.76256 21.5303 5.46967L16.7574 0.696699C16.4645 0.403806 15.9896 0.403806 15.6967 0.696699C15.4038 0.989592 15.4038 1.46447 15.6967 1.75736L19.9393 6L15.6967 10.2426C15.4038 10.5355 15.4038 11.0104 15.6967 11.3033C15.9896 11.5962 16.4645 11.5962 16.7574 11.3033L21.5303 6.53033ZM0 6.75L21 6.75V5.25L0 5.25L0 6.75Z" fill="black" />
+              </svg>
+            </span>
+          </div>
 
-      <div className="timeline-item left-container flex items-center space-x-8 p-4 relative w-1/2 transition-all duration-700 ease-out opacity-0 translate-y-6">
-        <div className="text-box bg-indigo-500 bg-opacity-80 p-5 rounded-lg shadow-lg">
-          <h2 className="font-bold text-lg text-black">Skarion Bootcamp Launch</h2>
-          <small className="block text-sm text-black opacity-80 mb-4">January 1, 2023</small>
-          <p className="text-black opacity-90">
-            Skarion successfully launched its first bootcamp, offering comprehensive training in OSP fiber optics and AutoCAD, aimed at helping underserved communities gain new skills and career opportunities.
-          </p>
-          <span className="left-container-arrow absolute top-5 right-[-25px] w-0 h-0 border-t-8 border-b-8 border-l-8 border-transparent border-l-black rotate-[180deg]"></span>
+          <div className="relative w-3/5 h-full rounded-xl overflow-hidden">
+            <motion.div
+              className="w-full h-full"
+              style={{ scale: imageScale }}
+            >
+              <Image
+                fill
+                src={`${src}`}
+                alt={title}
+                className="object-cover"
+                sizes="(max-width: 1000px) 100vw, 600px"
+                priority
+              />
+            </motion.div>
+          </div>
         </div>
       </div>
+    </div>
+  );
+};
 
-      <div className="timeline-item right-container flex items-center space-x-8 p-4 relative w-1/2 transition-all duration-700 ease-out opacity-0 translate-y-6 ml-auto">
-        <div className="text-box bg-[#ff686b] bg-opacity-80 p-5 rounded-lg shadow-lg">
-          <h2 className="font-semibold text-lg text-black">Partnership with American Products</h2>
-          <small className="block text-sm text-black opacity-80 mb-4">February 15, 2023</small>
-          <p className="text-black opacity-90">
-            Skarion entered a strategic partnership with American Products to provide real-world training equipment for our students, enhancing their learning experience.
-          </p>
-          <span className="right-container-arrow absolute top-5 left-[-15px] w-0 h-0 border-t-8 border-b-8 border-r-8 border-transparent border-r-black rotate-[180deg]"></span>
-        </div>
-      </div>
-
-      <div className="timeline-item left-container flex items-center space-x-8 p-4 relative w-1/2 transition-all duration-700 ease-out opacity-0 translate-y-6">
-        <div className="text-box bg-indigo-500 bg-opacity-80 p-5 rounded-lg shadow-lg">
-          <h2 className="font-semibold text-lg text-black">Skarion OSP Program Certification</h2>
-          <small className="block text-sm text-black opacity-80 mb-4">March 10, 2023</small>
-          <p className="text-black opacity-90">
-            Graduates from Skarion's OSP program received their industry-recognized certification, which boosted their employability in the rapidly growing fiber optics sector.
-          </p>
-          <span className="left-container-arrow absolute top-5 right-[-15px] w-0 h-0 border-t-8 border-b-8 border-l-8 border-transparent border-l-black rotate-[180deg]"></span>
-        </div>
-      </div>
-
-      <div className="timeline-item right-container flex items-center space-x-8 p-4 relative w-1/2 transition-all duration-700 ease-out opacity-0 translate-y-6 ml-auto">
-        <div className="text-box bg-[#ff686b] bg-opacity-80 p-5 rounded-lg shadow-lg">
-          <h2 className="font-semibold text-lg text-black">International Expansion in Bangladesh</h2>
-          <small className="block text-sm text-black opacity-80 mb-4">May 5, 2023</small>
-          <p className="text-black opacity-90">
-            Skarion expanded its bootcamp program to Bangladesh, aiming to bridge the skills gap in the telecom sector and provide career opportunities for underrepresented populations.
-          </p>
-          <span className="right-container-arrow absolute top-5 left-[-15px] w-0 h-0 border-t-8 border-b-8 border-r-8 border-transparent border-r-black rotate-[180deg]"></span>
-        </div>
-      </div>
-
-      <div className="timeline-item left-container flex items-center space-x-8 p-4 relative w-1/2 transition-all duration-700 ease-out opacity-0 translate-y-6">
-        <div className="text-box bg-indigo-500 bg-opacity-50 p-5 rounded-lg shadow-lg">
-          <h2 className="font-semibold text-lg text-black">Skarion’s Job Placement Program</h2>
-          <small className="block text-sm text-black opacity-80 mb-4">July 1, 2023</small>
-          <p className="text-black opacity-90">
-            Skarion’s job placement program successfully placed 80% of its graduates in telecom and engineering roles, with strong industry partnerships ensuring high-quality placements.
-          </p>
-          <span className="left-container-arrow absolute top-5 right-[-15px] w-0 h-0 border-t-8 border-b-8 border-l-8 border-transparent border-l-black rotate-[180deg]"></span>
-        </div>
-      </div>
+export default function Timeline() {
+  return (
+    <div className="relative ">
+      {projects.map((p, i) => (
+        <Card
+          key={p.title}
+          title={p.title}
+          description={p.description}
+          src={p.src}
+          url={p.link}
+          color={p.color}
+          i={i}
+        />
+      ))}
     </div>
   );
 }

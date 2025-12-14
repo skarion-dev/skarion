@@ -355,7 +355,7 @@ Add this to your global CSS or in a separate CSS file for the animation effects
     animation-delay: 3.8s;
 }
 .timeline-item:nth-child(5){
-    animation-delay: 5s;
+    animation-delay: 5.5s;
 }
 
 .timeline-line__progress::after {

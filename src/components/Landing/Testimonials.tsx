@@ -135,7 +135,7 @@ const Column = ({ testimonials, y, className = "" }: { testimonials: ITestimonia
               <p className="text-[18px] text-[#c3ddf5] font-bold">
                 {item.name}
                 <br/>
-                <p className="text-[14px] text-[#ffffff] font-[300]">{item.position}</p>
+                <span className="text-[14px] text-[#ffffff] font-[300]">{item.position}</span>
               </p>
             </div>
             

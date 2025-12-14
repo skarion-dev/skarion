@@ -10,16 +10,16 @@ import SmoothScroll from "@/components/SmoothScroll";
 export default function Home() {
   return (
     <SmoothScroll>
-      {/* <Navbar /> 
+      <Navbar /> 
       <Hero />
       <Courses />
-      <About /> */}
+      <About />
       <div className="text-[#000000] text-[36px] sm:text-[48px] md:text-[64px] leading-[1.2] text-left mx-4 sm:mx-8 md:mx-12">
                 The Skarion Advantage
             </div>
       <Workstep />
-      {/* <Testimonials />
-      <Footer /> */}
+      <Testimonials />
+      <Footer />
     </SmoothScroll>
   );
 }
