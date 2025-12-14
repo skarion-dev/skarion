@@ -267,21 +267,32 @@ export default function CoursePage(){
                 </div>
             </div>
             <div className="w-full lg:w-[30%]">
-                <div className="hidden lg:block sticky top-[126px] rounded-[14px] bg-[#122461] h-[400px] sm:h-[500px] md:h-[600px] w-full text-white font-bold">
-                    <h1 className="text-[24px] sm:text-[32px] md:text-[40px]">OSP Engineering Bootcamp</h1>
-                    <button className="flex items-center justify-center bg-[#F5F5F5] text-black py-2 px-4 rounded-[14px]">
-                        Join Bootcamp
+                <div className="sticky top-[126px] rounded-[14px] bg-[#122461] w-full px-8 py-8">
+                    <div className="bg-[#ffffff] rounded-[14px] h-[250px]">
+
+                    </div>
+                    <p className="text-[24px] leading-[1.2] text-white mt-4 font-[600]">Outside Plant Engineering</p>
+                    <div className="mt-3 flex gap-3 mt-2">
+                        <p className="text-[20px] leading-[1.2] text-white/80 line-through font-[500]">$500</p>
+                        <p className="text-[20px] leading-[1.2] text-white font-[500]">$300</p>
+                    </div>
+                    <button className="flex items-center justify-center bg-white text-black py-3 px-6 rounded-[16px] font-[600] mt-4 w-full">
+                                Enroll Now
                     </button>
-                </div>
+                {/* <EnrollButton /> */}
+            </div>
                 <div className="block lg:hidden h-[80px]" />
             </div>
             <div className="block lg:hidden fixed bottom-0 left-0 right-0 z-50 h-[180px] bg-[#000000]/70 py-3 px-4 border-t border-black/20">
                 <div className="max-w-6xl mx-auto flex items-center gap-3">
                     <div className="flex flex-col gap-1 w-full">
-                        <span className="text-white text-[24px] font-[600]">OSP Engineering Bootcamp</span>
-                        <span className="text-white text-[18px] font-[600]">$45.95</span>
+                        <span className="text-white leading-[1.2] text-[24px] font-[600]">OSP Engineering Bootcamp</span>
+                        <div className="flex items-center gap-3 mt-2">
+                            <p className="text-[20px] leading-[1.2] text-white/80 line-through font-[500]">$500</p>
+                            <p className="text-[20px] leading-[1.2] text-white font-[500]">$300</p>
+                        </div>
                         <button className="flex items-center justify-center bg-white text-black py-3 px-6 rounded-[16px] font-[600] mt-4">
-                            Reserve seat
+                            Enroll Now
                         </button>
                     </div>
                     
