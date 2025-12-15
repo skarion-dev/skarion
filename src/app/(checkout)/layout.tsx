@@ -13,7 +13,7 @@ export default async function CheckoutLayout({
   children: React.ReactNode;
 }>) {
   const session = await auth();
-  console.log("Current user:", session?.user || null);
+  // console.log("Current user:", session?.user || null);
   if (!session?.user) return redirect(`/auth/sign-in`);
 
   return <main>{children}</main>;
