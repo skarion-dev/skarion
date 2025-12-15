@@ -125,7 +125,7 @@ const Column = ({ testimonials, y, className = "" }: { testimonials: ITestimonia
       {testimonials.map((item, i) => {
         return (
           
-          <div key={i} className="mb-6 border border-gray-500 rounded-xl p-5 flex flex-col bg-[#001440] opacity-90 overflow-hidden">
+          <div key={i} className="mb-6 border border-gray-500 rounded-xl p-5 flex flex-col bg-black/80 overflow-hidden">
             <div className="flex items-start">
               <p className="text-[20px] font-bold text-[#ff686b]">{item.company}</p>
             </div>

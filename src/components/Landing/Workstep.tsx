@@ -5,25 +5,25 @@ import { useRef } from 'react';
 
 export const projects = [
   {
-    title: "Matthias Leidinger",
-    description: "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
-    src: "/profile 1.jpg",
-    link: "https://www.ignant.com/2023/03/25/ad2186-matthias-leidingers-photographic-exploration-of-awe-and-wonder/",
-    color: "#BBACAF"
+    title: "Job‑Ready OSP Skills",
+    description: "Learn fiber networks, AutoCAD layouts, and real telecom workflows so you can contribute from day one.",
+    src: "/step3.jpg",
+    link: "/course/outside-plant-engineering",
+    color: "#1a5244ff"
   },
   {
-    title: "Clément Chapillon",
-    description: "This is a story on the border between reality and imaginary, about the contradictory feelings that the insularity of a rocky, arid, and wild territory provokes”—so French photographer Clément Chapillon describes his latest highly c).",
-    src: "/profile 2.jpg",
-    link: "https://www.ignant.com/2022/09/30/clement-chapillon-questions-geographical-and-mental-isolation-with-les-rochers-fauves/",
-    color: "#977F6D"
+    title: "Career Acceleration",
+    description: "Resume grooming, LinkedIn optimization, mock interviews, and placement support focused on telecom roles.",
+    src: "/step4.jpg",
+    link: "/course/outside-plant-engineering",
+    color: "#1a8a92ff"
   },
   {
-    title: "Zissou",
-    description: "Though he views photography as a medium for storytelling, Zissou’s images don’t insist on a narrative. Both crisp and ethereal, they’re encoded with an ambiguity—a certain tension—that lets the viewer find their own story within them.",
-    src: "/image 1.jpg",
-    link: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
-    color: "#C2491D"
+    title: "Pay After Placement",
+    description: "Train now and defer most of your fee until you land a role through Skarion.",
+    src: "/step5.jpg",
+    link: "/course/outside-plant-engineering",
+    color: "#c9af6aff"
   }
 ]
 

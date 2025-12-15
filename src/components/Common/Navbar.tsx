@@ -30,9 +30,9 @@ export default function Header() {
     }, []);
     return (
         <div className="sticky top-4 z-30">
-            <div className="relative"
+            <div className="relative mx-5"
             onMouseLeave={() => setIsMenuOpen(false)}>
-                <div className="lg:max-w-[1400px] sm:mx-auto flex justify-between mt-4 mx-2 h-[70px] bg-[#FFFFFF] rounded-[12px] border border-[#9BA49E] px-6">
+                <div className="lg:max-w-[1440px] sm:mx-auto  flex justify-between mt-4 mx- h-[70px] bg-[#FFFFFF] rounded-[12px] border border-[#9BA49E] px-6">
                     <div className="flex items-center h-full gap-12">
                         <div className="" onMouseEnter={() => setIsMenuOpen(false)}>
                             <Link href="/">
@@ -98,15 +98,30 @@ export default function Header() {
                                     </p>
                                 </Link>
                             </div>
-                        </div>
-                    </div>
-                    <div className="hidden lg:flex items-center h-full gap-8" onMouseEnter={() => setIsMenuOpen(false)}>
-                        <div className="bg-[#000000] border border-[#EBEBEB] rounded-[12px] px-4 pt-2 pb-2.5 cursor-pointer">
-                            <Link href={"/Contact"}>
-                                <p className="text-[14px] text-[#FFFFFF] font-[500]">
+                            <div className="flex gap-2 cursor-pointer" onMouseEnter={() => setIsMenuOpen(false)}>
+                                <Link href={"/Contact"}>
+                                <p className="text-[14px] text-[#191F38] font-[500]">
                                     Contact Us
                                 </p>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="hidden lg:flex items-center h-full gap-4" onMouseEnter={() => setIsMenuOpen(false)}>
+                        <div className="bg-[#ffffff] border border-black-500 rounded-[12px] px-6 pt-2 pb-2.5 cursor-pointer">
+                            <Link href={"/auth/sign-in"}>
+                                <p className="text-[14px] text-[#000000] font-[500]">
+                                    Login
+                                </p>
                             </Link>
+                        </div>
+                        <div className="bg-[#000000] border border-[#EBEBEB] rounded-[12px] px-6 pt-2 pb-2.5 cursor-pointer">
+                            <Link href={"/auth/sign-up"}>
+                                <p className="text-[14px] text-[#FFFFFF] font-[500]">
+                                    Sign up
+                                </p>
+                            </Link>
+                            
                         </div>
                     </div>
 
@@ -283,8 +298,8 @@ export default function Header() {
                                 {selectedMenu === "programs" && (
                                     <div className="p-4 col-span-1 md:col-span-2 lg:col-span-3">
                                         <NavbarCards />
-                                        <div className='mt-6 md:mt-8 lg:mt-10 border-t border-black/20' />
-                                        <Link href="Courses" className="hover:text-[#191F38]">See All Programs</Link>
+                                        <div className='mt-6 md:mt-8 lg:mt-10  mb-3 border-t border-black/20' />
+                                        <Link href="Courses" className="hover:text-[#191F38] mt-8">See All Programs</Link>
                                     </div>
                                 )}
                                 {selectedMenu === "company" && (
@@ -292,66 +307,60 @@ export default function Header() {
                                         <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-6">
                                             <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                                                 <div className="flex flex-col">
-                                                    <p className="text-[18px] sm:text-[20px] md:text-[24px] text-[#191F38] font-[500] mb-2 md:mb-3">About</p>
+                                                    <p className="text-[16px] sm:text-[18px] md:text-[20px] text-[#191F38] font-[500] mb-1 md:mb-1.5">About</p>
                                                     <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
-                                                        <Link href='{"/About"}' className="inline-block rounded px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full">About Skarion</Link>
+                                                        <Link href="/About" className="inline-block rounded  py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] hover:text-[#4B5563]">About Skarion</Link>
                                                     </div>
                                                     <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
-                                                        <Link href="#" className="inline-block rounded px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full">Student Journey</Link>
+                                                        <Link href="#" className="inline-block rounded  py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] hover:text-[#4B5563]">Student Journey</Link>
                                                     </div>
                                                     <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
-                                                        <Link href="{'/Contact'}" className="inline-block rounded px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full">Contact Us</Link>
+                                                        <Link href="/Contact" className="inline-block rounded py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] hover:text-[#4B5563]">Contact Us</Link>
                                                     </div>
-                                                    <p className="mt-3 md:mt-4 text-[18px] sm:text-[20px] md:text-[24px] text-[#191F38] font-[500] mb-2 md:mb-3">Resources</p>
+                                                    <p className="mt-3 md:mt-4 text-[16px] sm:text-[18px] md:text-[20px] text-[#191F38] font-[500] mb-1 md:mb-1.5">Resources</p>
                                                     <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
-                                                        <Link href="#" className="inline-block rounded px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full">Blogs</Link>
+                                                        <Link href="#" className="inline-block rounded py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] hover:text-[#4B5563]">Blogs</Link>
                                                     </div>
                                                     <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
-                                                        <Link href="#" className="inline-block rounded px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full">FAQ</Link>
+                                                        <Link href="#" className="inline-block rounded py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] hover:text-[#4B5563]">FAQ</Link>
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <p className="text-[18px] sm:text-[20px] md:text-[24px] text-[#191F38] font-[500] mb-2 md:mb-3">Community</p>
+                                                    <p className="text-[16px] sm:text-[18px] md:text-[20px] text-[#191F38] font-[500] mb-1 md:mb-1.5">Community</p>
                                                     <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
-                                                        <Link href="#" className="inline-block rounded px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full">Facebook</Link>
+                                                        <Link href="#" className="inline-block rounded py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] hover:text-[#4B5563]">Facebook</Link>
                                                     </div>
                                                     <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
-                                                        <Link
-                                                            href="#"
-                                                            className="inline-block rounded px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full">
-                                                            Linkedin
-                                                        </Link>
+                                                        <Link href="#" className="inline-block rounded py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] hover:text-[#4B5563]">Linkedin</Link>
                                                     </div>
                                                     <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
-                                                        <Link
-                                                            href="#"
-                                                            className="inline-block rounded  px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full" >
-                                                            X
-                                                        </Link>
+                                                        <Link href="#" className="inline-block rounded py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] hover:text-[#4B5563]">X</Link>
                                                     </div>
-                                                    <p className="mt-3 md:mt-4 text-[22px] sm:text-[24px] md:text-[28px] text-[#191F38] font-[500] mb-1 md:mb-2">Company</p>
+                                                    <p className="mt-3 md:mt-4 text-[16px] sm:text-[18px] md:text-[20px] text-[#191F38] font-[500] mb-1 md:mb-1.5">Company</p>
                                                     <div className="space-y-1 md:space-y-2">
-                                                        <Link
-                                                            href="#"
-                                                            className="inline-block rounded  px-2 py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#191F38] after:transition-all after:duration-300 hover:after:w-full">
-                                                            Career
-                                                        </Link>
+                                                        <Link href="#" className="inline-block rounded py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] hover:text-[#4B5563]">Career</Link>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="lg:col-span-2 mt-4 md:mt-0">
-                                                <p className="text-[32px] sm:text-[48px] md:text-[56px] lg:text-[64px] tracking-[0.15em] text-[#191F38] font-[500] break-words">SKARION</p>
-                                                <p className="mt-2 md:mt-3 text-[14px] sm:text-[15px] md:text-[16px] text-[#4B5563] max-w-xs md:max-w-sm">
+                                                <Image
+                                                    src="/logo.svg"
+                                                    alt="Skarion"
+                                                    width={100}
+                                                    height={64}
+                                                    className="object-contain"
+                                                />
+                                                <p className="mt-3 md:mt-6 text-[14px] sm:text-[15px] md:text-[16px] text-[#4B5563] max-w-xs md:max-w-sm">
                                                     Skarion is a career-focused bootcamp that equips you with job-ready skills and helps you get hired through expert training and personalized support
                                                 </p>
                                             </div>
                                         </div>
-                                        <div className='mt-6 md:mt-8 lg:mt-10 border-t border-black/20' />
-                                        <div className="mt-auto pt-2 flex flex-col sm:flex-row sm:flex-wrap sm:justify-between sm:items-center text-[#4B5563] text-[14px] sm:text-[16px] md:text-[18px] gap-2">
+                                        <div className='mt-8 md:mt-10 lg:mt-12 border-t border-black/20' />
+                                        <div className="mt-auto pt-5 flex flex-col sm:flex-row sm:flex-wrap sm:justify-between sm:items-center text-[#4B5563] text-[11px] sm:text-[12px] md:text-[14px] gap-2">
                                             <span>info@skarion.com</span>
-                                            <div className="flex flex-wrap gap-2 sm:gap-4 mt-1 sm:mt-2">
-                                                <Link href="#" className="hover:text-[#191F38]">Terms and Conditions</Link>
-                                                <Link href="#" className="hover:text-[#191F38]">Privacy Policy</Link>
+                                            <div className="flex flex-wrap gap-15 mt-1 sm:mt-2">
+                                                <Link href="#" className="hover:text-[#191F38] ">Terms and Conditions</Link>
+                                                <Link href="#" className="hover:text-[#191F38] ">Privacy Policy</Link>
                                             </div>
                                         </div>
                                     </div>
