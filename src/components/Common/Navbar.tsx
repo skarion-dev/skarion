@@ -2,7 +2,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { auth } from "@/auth";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,19 +9,19 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const [user, setUser] = useState<any>(null);
-  
+
   const handleChangeMenu = (name: string) => {
     setSelectedMenu(name);
     setIsMenuOpen(true);
   };
 
   useEffect(() => {
-    const fetchUser = async () => {
-      const session = await auth();
-      setUser(session?.user);
-    };
+    // const fetchUser = async () => {
+    //   const session = await auth();
+    //   setUser(session?.user);
+    // };
 
-    fetchUser();
+    // fetchUser();
 
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -35,7 +34,6 @@ export default function Header() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
 
   return (
     <div className="sticky top-4 z-30">

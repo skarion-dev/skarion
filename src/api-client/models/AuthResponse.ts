@@ -2,10 +2,12 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type SignupDto = {
-  username: string;
+export type AuthResponse = {
+  id: string;
   name: string;
   email: string;
-  password: string;
-  confirmPassword: string;
+  role: string;
+  image?: string;
+  lastLogin: string;
+  accessToken: string;
 };

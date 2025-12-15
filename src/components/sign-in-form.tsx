@@ -53,7 +53,7 @@ export function SignInForm({
 
     if (res?.ok) {
       setIsPending(false);
-      router.push("/");
+      router.push("/dashboard");
     }
   };
 
@@ -73,7 +73,9 @@ export function SignInForm({
             className="mt-3"
             {...register("email")}
           />
-          {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+          {errors.email && (
+            <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+          )}
         </div>
         <div className="grid">
           <div className="flex items-center">
@@ -85,7 +87,11 @@ export function SignInForm({
             className="mt-3"
             {...register("password")}
           />
-          {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>}
+          {errors.password && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.password.message}
+            </p>
+          )}
         </div>
         <button
           type="submit"

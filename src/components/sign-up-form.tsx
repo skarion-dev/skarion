@@ -66,7 +66,9 @@ export function SignUpForm({
       router.push("/auth/sign-in");
     } catch (error: unknown) {
       if (error instanceof ApiError) {
-        toast.error(error.body.message as string || "Failed to create account");
+        toast.error(
+          (error.body.message as string) || "Failed to create account",
+        );
       } else {
         toast.error("Failed to create account");
       }
@@ -76,7 +78,11 @@ export function SignUpForm({
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={cn("flex flex-col gap-6", className)} {...props}>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className={cn("flex flex-col gap-6", className)}
+      {...props}
+    >
       <div className="grid gap-6">
         <div className="grid">
           <Label htmlFor="name">Full Name</Label>
@@ -87,7 +93,9 @@ export function SignUpForm({
             placeholder="John Doe"
             className="mt-3"
           />
-          {errors.name && <p className="text-sm text-red-500 mt-1">{errors.name.message}</p>}
+          {errors.name && (
+            <p className="text-sm text-red-500 mt-1">{errors.name.message}</p>
+          )}
         </div>
         <div className="grid">
           <Label htmlFor="email">Email</Label>
@@ -98,7 +106,9 @@ export function SignUpForm({
             placeholder="m@example.com"
             className="mt-3"
           />
-          {errors.email && <p className="text-sm text-red-500 mt-1">{errors.email.message}</p>}
+          {errors.email && (
+            <p className="text-sm text-red-500 mt-1">{errors.email.message}</p>
+          )}
         </div>
         <div className="grid">
           <Label htmlFor="username">Username</Label>
@@ -109,7 +119,11 @@ export function SignUpForm({
             placeholder="rianulamin.r"
             className="mt-3"
           />
-          {errors.username && <p className="text-sm text-red-500 mt-1">{errors.username.message}</p>}
+          {errors.username && (
+            <p className="text-sm text-red-500 mt-1">
+              {errors.username.message}
+            </p>
+          )}
         </div>
         <div className="grid">
           <div className="flex items-center">
@@ -121,7 +135,11 @@ export function SignUpForm({
             type="password"
             className="mt-3"
           />
-          {errors.password && <p className="text-sm text-red-500 mt-1">{errors.password.message}</p>}
+          {errors.password && (
+            <p className="text-sm text-red-500 mt-1">
+              {errors.password.message}
+            </p>
+          )}
         </div>
         <div className="grid">
           <div className="flex items-center">
@@ -133,7 +151,11 @@ export function SignUpForm({
             type="password"
             className="mt-3"
           />
-          {errors.confirmPassword && <p className="text-sm text-red-500 mt-1">{errors.confirmPassword.message}</p>}
+          {errors.confirmPassword && (
+            <p className="text-sm text-red-500 mt-1">
+              {errors.confirmPassword.message}
+            </p>
+          )}
         </div>
         <button
           type="submit"

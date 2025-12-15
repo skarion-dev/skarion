@@ -1,0 +1,14 @@
+/* generated using openapi-typescript-codegen -- do not edit */
+/* istanbul ignore file */
+/* tslint:disable */
+/* eslint-disable */
+export type CourseResponse = {
+  id: string;
+  title: string;
+  description?: string | null;
+  price: number;
+  currency: string;
+  imageUrl?: string | null;
+  createdAt: string;
+  updatedAt: string;
+};
