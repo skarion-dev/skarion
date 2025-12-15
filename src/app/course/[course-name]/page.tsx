@@ -60,28 +60,28 @@ export default function CoursePage(){
                 <p className="text-[14px] sm:text-[16px] font-[500] text-[#666666] font-[300] mt-2">
                     13 Theory Modules · Live & On-Demand · 10+ Real World Projects
                 </p>
-                <div className="w-full py-4 px-4 sm:px-6 border border-[#EBEBEB] rounded-[14px] mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <p className="text-[14px] font-[400] sm:w-[45%]">
+                <div className="w-full py-4 px-4 sm:px-6 border border-[#EBEBEB] rounded-[14px] mt-8 flex flex-col sm:flex-row items-left justify-between gap-4">
+                    <p className="text-[14px] font-[400] sm:w-[30%]">
                         Gain hands-on fiber optic design experience under expert mentorship, ready to showcase on your resume.                    
                     </p>
                     <span className="hidden sm:block w-[2px] h-14 bg-[#EBEBEB] self-center"></span>
-                    <div className="flex items-center gap-4">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5 mb-0 sm:mb-3 mt-3">
                         <div className="flex -space-x-2">
-                            <Image src="/image 1.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover border border-[#ffffff]" />
-                            <Image src="/profile 1.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover border border-[#ffffff]" />
-                            <Image src="/image 3.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover border border-[#ffffff]" />
-                            <Image src="/profile 2.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover border border-[#ffffff]" />
+                            <Image src="/image 1.jpg" alt="student" width={28} height={28} className="rounded-full aspect-square object-cover border border-[#ffffff] sm:w-[35px] sm:h-[35px]" />
+                            <Image src="/profile 1.jpg" alt="student" width={28} height={28} className="rounded-full aspect-square object-cover border border-[#ffffff] sm:w-[35px] sm:h-[35px]" />
+                            <Image src="/image 3.jpg" alt="student" width={28} height={28} className="rounded-full aspect-square object-cover border border-[#ffffff] sm:w-[35px] sm:h-[35px]" />
+                            <Image src="/profile 2.jpg" alt="student" width={28} height={28} className="rounded-full aspect-square object-cover border border-[#ffffff] sm:w-[35px] sm:h-[35px]" />
                         </div>
-                        <div className="flex flex-col justify-between pr-4">
+                        <div className="flex flex-col items-start sm:items-start">
                             <div className="flex items-center gap-[2px] text-[#f5b942]">
                                 <span className="text-base">★</span>
                                 <span className="text-base">★</span>
                                 <span className="text-base">★</span>
                                 <span className="text-base">★</span>
                                 <span className="text-base">★</span>
-                                <span className="ml-[8px] text-gray-500 text-[12px] font-[500]">4.8 (10+)</span>
+                                <span className="ml-[8px] text-gray-500 text-[14px] font-[600]">4.8 (10+)</span>
                             </div>
-                            <span className="text-[12px] font-[400]">Trusted by 20+ Students Worldwide</span>
+                            <span className="text-[14px] font-[400]">Trusted by 20+ Students Worldwide</span>
                         </div>
                     </div>
                 </div>
@@ -267,7 +267,7 @@ export default function CoursePage(){
                 </div>
             </div>
             <div className="w-full lg:w-[30%]">
-                <div className="sticky top-[126px] rounded-[14px] bg-[#122461] w-full px-8 py-8">
+                <div className="sticky top-[126px] rounded-[14px] bg-[#122461] w-full px-8 py-8 hidden lg:block">
                     <div className="bg-[#ffffff] rounded-[14px] h-[350px]">
 
                     </div>
@@ -286,10 +286,10 @@ export default function CoursePage(){
             <div className="block lg:hidden fixed bottom-0 left-0 right-0 z-50 h-[180px] bg-[#000000]/70 py-3 px-4 border-t border-black/20">
                 <div className="max-w-6xl mx-auto flex items-center gap-3">
                     <div className="flex flex-col gap-1 w-full">
-                        <span className="text-white leading-[1.2] text-[24px] font-[600]">OSP Engineering Bootcamp</span>
+                        <span className="text-white leading-[1.2] text-[24px] font-[500]">OSP Engineering Bootcamp</span>
                         <div className="flex items-center gap-3 mt-2">
-                            <p className="text-[20px] leading-[1.2] text-white/80 line-through font-[500]">$500</p>
-                            <p className="text-[20px] leading-[1.2] text-white font-[500]">$300</p>
+                            <p className="text-[18px] leading-[1.2] text-white/80 line-through font-[400]">$500</p>
+                            <p className="text-[18px] leading-[1.2] text-white font-[400]">$300</p>
                         </div>
                         <button className="flex items-center justify-center bg-white text-black py-3 px-6 rounded-[16px] font-[600] mt-4">
                             Enroll Now

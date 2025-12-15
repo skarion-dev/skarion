@@ -25,17 +25,17 @@ const images=[
 
 export default function Hero() {
     return (
-        <div className="w-full bg-[#ffffff] py-10 px-4 sm:px-12 px-6 ">
+        <div className="w-full bg-[#ffffff] py-10 px-4  sm:px-12 px-6 ">
             {/* Top section: two columns on desktop, stack on small screens */}
             <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:space-x-8">
                 {/* Left column: text & CTA */}
                 <div className="w-full lg:w-[60%]">
-                    <div className="flex items-center gap-4 mb-5 mt-2">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5 mb-5 mt-2">
                         <div className="flex -space-x-2">
-                            <Image src="/image 1.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover border border-[#ffffff]" />
-                            <Image src="/profile 1.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover border border-[#ffffff]" />
-                            <Image src="/image 3.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover border border-[#ffffff]" />
-                            <Image src="/profile 2.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover border border-[#ffffff]" />
+                            <Image src="/image 1.jpg" alt="student" width={28} height={28} className="rounded-full aspect-square object-cover border border-[#ffffff] sm:w-[35px] sm:h-[35px]" />
+                            <Image src="/profile 1.jpg" alt="student" width={28} height={28} className="rounded-full aspect-square object-cover border border-[#ffffff] sm:w-[35px] sm:h-[35px]" />
+                            <Image src="/image 3.jpg" alt="student" width={28} height={28} className="rounded-full aspect-square object-cover border border-[#ffffff] sm:w-[35px] sm:h-[35px]" />
+                            <Image src="/profile 2.jpg" alt="student" width={28} height={28} className="rounded-full aspect-square object-cover border border-[#ffffff] sm:w-[35px] sm:h-[35px]" />
                         </div>
                         <div className="flex flex-col justify-between">
                             <div className="flex items-center gap-[2px] text-[#f5b942]">
@@ -128,7 +128,7 @@ export default function Hero() {
                             </div> */}
                         </div>
                         {/* 50+ card */}
-                        <div className="w-full sm:w-auto h-auto sm:min-w-[10%] min-h-[80%] lg:h-full">
+                        <div className="w-full min-h-[135px] sm:w-auto h-auto lg:h-[140px]">
                             <motion.div
                               whileHover="hover"
                               transition={{
