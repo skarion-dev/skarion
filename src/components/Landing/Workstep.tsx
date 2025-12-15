@@ -46,15 +46,15 @@ const Card = ({ title, description, src, url, color, i }: CardProps) => {
   const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
 
   return (
-    <div ref={container} className="h-screen flex items-center justify-center sticky top-0">
+    <div ref={container} className="h-screen flex items-center justify-center sticky top-0 sm:px-12 px-6 ">
       <div
         className="flex flex-col relative h-[600px] w-[1100px] rounded-xl p-12 opacity-100"
         style={{ backgroundColor: color, transform: `translateY(calc(-5vh + ${i * 25}px))` }}
       >
-        <h2 className="text-center text-[48px] font-semibold text-black">{title}</h2>
-        <div className="flex h-full mt-12 gap-12">
-          <div className="w-2/5 relative top-10">
-            <p className="text-[24px] text-black first-letter:text-4xl first-letter:font-title">{description}</p>
+        <h2 className="text-center text-[36px] sm:text-[48px] font-semibold text-black">{title}</h2>
+        <div className="flex flex-col lg:flex-row h-full mt-6 sm:mt-8 md:mt-10 lg:mt-12 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+          <div className="w-full lg:w-2/5 relative lg:top-10">
+            <p className="text-[18px] sm:text-[24px] text-black first-letter:text-4xl first-letter:font-title">{description}</p>
             <span className="flex items-center gap-2 mt-5">
               <a href={url} target="_blank" rel="noopener noreferrer" className="text-sm underline cursor-pointer text-black ">
                 See more
@@ -65,7 +65,7 @@ const Card = ({ title, description, src, url, color, i }: CardProps) => {
             </span>
           </div>
 
-          <div className="relative w-3/5 h-full rounded-xl overflow-hidden">
+          <div className="relative w-full lg:w-3/5 h-full  rounded-xl overflow-hidden">
             <motion.div
               className="w-full h-full"
               style={{ scale: imageScale }}

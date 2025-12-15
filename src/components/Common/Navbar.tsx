@@ -2,6 +2,7 @@
 import NavbarCards from "@/components/NavbarCards";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+
 import Link from "next/link";
 
 export default function Header() {
@@ -25,6 +26,7 @@ export default function Header() {
             }
         }
         document.addEventListener("mousedown", handleClickOutside);
+
         return () =>
             document.removeEventListener("mousedown", handleClickOutside);
     }, []);
@@ -33,6 +35,7 @@ export default function Header() {
             <div className="relative mx-5"
             onMouseLeave={() => setIsMenuOpen(false)}>
                 <div className="lg:max-w-[1440px] sm:mx-auto  flex justify-between mt-4 mx- h-[70px] bg-[#FFFFFF] rounded-[12px] border border-[#9BA49E] px-6">
+
                     <div className="flex items-center h-full gap-12">
                         <div className="" onMouseEnter={() => setIsMenuOpen(false)}>
                             <Link href="/">
@@ -41,6 +44,7 @@ export default function Header() {
                                     alt="logo"
                                     width={40}
                                     height={40}
+
                                 />
                             </Link>
                         </div>
@@ -50,8 +54,8 @@ export default function Header() {
                                 className="flex gap-2 cursor-pointer"
                             >
                                 <p className="text-[14px] text-[#191F38] font-[500]">
-                                    Programs
-                                </p>
+                          text-[clamp(1rem,2.5vw,1.5rem)]     -black first-letter:text-4xl first-letter:font-title">{description}</p>      Programs
+                                </p> mt-4sm:
                                 <svg
                                     className="my-auto"
                                     width="16"
@@ -61,7 +65,7 @@ export default function Header() {
                                     xmlns="http://www.w3.org/2000/svg"
                                 >
                                     <path
-                                        d="M4.5 6L8 9.5L11.5 6"
+                                   w-full lg:     d="M4.5 6L8 9.5L11.5 6"
                                         stroke="#191F38"
                                         strokeWidth="2"
                                         strokeLinecap="round"
@@ -84,7 +88,7 @@ export default function Header() {
                                     xmlns="http://www.w3.org/2000/svg"
                                 >
                                     <path
-                                        d="M4.5 6L8 9.5L11.5 6"
+                                       d="M4.5 6L8 9.5L11.5 6"
                                         stroke="#191F38"
                                         strokeWidth="2"
                                         strokeLinecap="round"
@@ -299,11 +303,11 @@ export default function Header() {
                                     <div className="p-4 col-span-1 md:col-span-2 lg:col-span-3">
                                         <NavbarCards />
                                         <div className='mt-6 md:mt-8 lg:mt-10  mb-3 border-t border-black/20' />
-                                        <Link href="Courses" className="hover:text-[#191F38] mt-8">See All Programs</Link>
+                                        <Link href="Courses" className="hover:text-[#191F38] text-[14px] mt-8">See All Programs</Link>
                                     </div>
                                 )}
                                 {selectedMenu === "company" && (
-                                    <div className="p-4 sm:p-6 md:p-8 lg:p-10 col-span-1 md:col-span-2 lg:col-span-3">
+                                    <div className="p-4 col-span-1 md:col-span-2 lg:col-span-3">
                                         <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-6">
                                             <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                                                 <div className="flex flex-col">

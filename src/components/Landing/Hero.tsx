@@ -25,7 +25,7 @@ const images=[
 
 export default function Hero() {
     return (
-        <div className="w-full bg-[#ffffff] py-10 px-4 sm:px-6 md:px-8 lg:px-12">
+        <div className="w-full bg-[#ffffff] py-10 px-4 sm:px-12 px-6 ">
             {/* Top section: two columns on desktop, stack on small screens */}
             <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:space-x-8">
                 {/* Left column: text & CTA */}
