@@ -1,7 +1,7 @@
 import React from 'react'
 export default function Content() {
   return (
-    <div className='absolute bg-[#122461] pt-12 px-6 md:px-12 h-full w-full flex flex-col overflow-hidden justify-between'>
+    <div className='absolute bg-[#122461] pt-12 px-6 md:px-12 h-full w-full flex flex-col overflow-auto justify-between'>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 items-start'>
         <div className='text-white'>
           <div className='flex items-center gap-3 mb-4'>
@@ -77,7 +77,7 @@ export default function Content() {
     <div>
         <div className='border-t border-white/20 mt-10'/>
             <div className='flex flex-col items-center text-white/70 text-sm mt-10 mb-10'>
-                <div className='flex justify-between w-full'>
+                <div className='flex justify-between w-full max-w-xs'>
                     <a href="#" className='relative hover:text-white group'>
                         Privacy Policy
                     </a>

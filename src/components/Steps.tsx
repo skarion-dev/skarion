@@ -38,7 +38,7 @@ export default function SocialCards() {
   const cardIds: CardId[] = ['dribbble','behance','linkedin','twitter','hired'];
   
   return (
-    <div className="cards w-full min-h-[300px] h-full h-auto">
+    <div className="cards w-full min-h-[330px] h-full h-auto">
       {cardIds.map((id, idx) => (
         <div
           key={id}

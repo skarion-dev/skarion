@@ -2,7 +2,6 @@
 import NavbarCards from "@/components/NavbarCards";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-
 import Link from "next/link";
 
 export default function Header() {
@@ -26,7 +25,6 @@ export default function Header() {
             }
         }
         document.addEventListener("mousedown", handleClickOutside);
-
         return () =>
             document.removeEventListener("mousedown", handleClickOutside);
     }, []);
@@ -35,7 +33,6 @@ export default function Header() {
             <div className="relative mx-5"
             onMouseLeave={() => setIsMenuOpen(false)}>
                 <div className="lg:max-w-[1440px] sm:mx-auto  flex justify-between mt-4 mx- h-[70px] bg-[#FFFFFF] rounded-[12px] border border-[#9BA49E] px-6">
-
                     <div className="flex items-center h-full gap-12">
                         <div className="" onMouseEnter={() => setIsMenuOpen(false)}>
                             <Link href="/">
@@ -44,7 +41,6 @@ export default function Header() {
                                     alt="logo"
                                     width={40}
                                     height={40}
-
                                 />
                             </Link>
                         </div>
@@ -54,8 +50,8 @@ export default function Header() {
                                 className="flex gap-2 cursor-pointer"
                             >
                                 <p className="text-[14px] text-[#191F38] font-[500]">
-                          text-[clamp(1rem,2.5vw,1.5rem)]     -black first-letter:text-4xl first-letter:font-title">{description}</p>      Programs
-                                </p> mt-4sm:
+                                    Programs
+                                </p>
                                 <svg
                                     className="my-auto"
                                     width="16"
@@ -65,7 +61,7 @@ export default function Header() {
                                     xmlns="http://www.w3.org/2000/svg"
                                 >
                                     <path
-                                   w-full lg:     d="M4.5 6L8 9.5L11.5 6"
+                                        d="M4.5 6L8 9.5L11.5 6"
                                         stroke="#191F38"
                                         strokeWidth="2"
                                         strokeLinecap="round"
@@ -88,7 +84,7 @@ export default function Header() {
                                     xmlns="http://www.w3.org/2000/svg"
                                 >
                                     <path
-                                       d="M4.5 6L8 9.5L11.5 6"
+                                        d="M4.5 6L8 9.5L11.5 6"
                                         stroke="#191F38"
                                         strokeWidth="2"
                                         strokeLinecap="round"

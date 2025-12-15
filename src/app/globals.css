@@ -126,7 +126,7 @@
   width: 0;
 }
 
-Add this to your global CSS or in a separate CSS file for the animation effects
+
 .contact-form {
   position: absolute;
   width: 100%;
@@ -232,8 +232,8 @@ Add this to your global CSS or in a separate CSS file for the animation effects
 .cards .card-toggle {
   z-index: 4;
   position: relative;
-  width: 48px;
-  height: 48px;
+  width: clamp(40px, 4vw, 48px);
+  height: clamp(40px, 4vw, 48px);
   border-radius: 50%;
   display: block;
   text-align: center;
@@ -241,7 +241,7 @@ Add this to your global CSS or in a separate CSS file for the animation effects
   cursor: pointer;
   border: 2px solid transparent;
   transition: 1s ease;
-  margin-right: 14px;
+  margin-right: clamp(8px, 2vw, 14px);
 }
 .cards .card-toggle.active { color: #ff686b; border-color:#ff686b; }
 .cards .card-toggle.inactive { color: white; border-color: white; }
@@ -269,7 +269,7 @@ Add this to your global CSS or in a separate CSS file for the animation effects
   width: max-content;
 }
 
-/* Timeline center line animation */
+
 .timeline-line {
   position: absolute;
   left: 50%;

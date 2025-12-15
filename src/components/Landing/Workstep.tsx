@@ -5,25 +5,39 @@ import { useRef } from 'react';
 
 export const projects = [
   {
-    title: "Job‑Ready OSP Skills",
-    description: "Learn fiber networks, AutoCAD layouts, and real telecom workflows so you can contribute from day one.",
-    src: "/step3.jpg",
+    title: "Step 1 — Consultation",
+    description: "Begin with a personalized assessment to understand your background, goals, and the best path into OSP engineering.",
+    src: "/step1.jpg",
     link: "/course/outside-plant-engineering",
     color: "#1a5244ff"
   },
   {
-    title: "Career Acceleration",
-    description: "Resume grooming, LinkedIn optimization, mock interviews, and placement support focused on telecom roles.",
-    src: "/step4.jpg",
+    title: "Step 2 — Enroll & Learn",
+    description: "Join an industry-aligned bootcamp with live classes, structured modules, and real telecom workflows.",
+    src: "/step2.jpg",
     link: "/course/outside-plant-engineering",
-    color: "#1a8a92ff"
+    color: "#3372a5ff"
   },
   {
-    title: "Pay After Placement",
-    description: "Train now and defer most of your fee until you land a role through Skarion.",
-    src: "/step5.jpg",
+    title: "Step 3 — Build Experience",
+    description: "Develop a project portfolio through simulated OSP design projects, AutoCAD tasks, and real-world scenarios.",
+    src: "/step3.jpg",
     link: "/course/outside-plant-engineering",
     color: "#c9af6aff"
+  },
+  {
+    title: "Step 4 — Career Support",
+    description: "Get resume grooming, LinkedIn optimization, mock interviews, and job search guidance tailored to telecom roles.",
+    src: "/step4.jpg",
+    link: "/course/outside-plant-engineering",
+    color: "#c96a6aff"
+  },
+  {
+    title: "Step 5 — Get Hired & Pay Later",
+    description: "Secure a job through Skarion’s placement support and pay the bulk of your program fee only after you’re hired.",
+    src: "/step5.jpg",
+    link: "/course/outside-plant-engineering",
+    color: "#bdbdbdff"
   }
 ]
 
