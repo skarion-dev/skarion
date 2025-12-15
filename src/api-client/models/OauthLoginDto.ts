@@ -3,7 +3,8 @@
 /* tslint:disable */
 /* eslint-disable */
 export type OauthLoginDto = {
-  provider: string;
-  providerAccountId: string;
-  profile: Record<string, any>;
+    provider: string;
+    providerAccountId: string;
+    profile: Record<string, any>;
 };
+
