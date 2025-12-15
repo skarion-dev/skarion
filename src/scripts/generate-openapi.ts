@@ -7,7 +7,8 @@ const OPENAPI_JSON_URL: string = process.env.NEXT_PUBLIC_API_URL
   ? `${process.env.NEXT_PUBLIC_API_URL}/api-json`
   : "http://localhost:5001/api-json";
 
-const BASE_URL: string = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
+const BASE_URL: string =
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
 const TYPES_OUTPUT: string = "src/types/openapi.d.ts";
 const CLIENT_OUTPUT: string = "src/api-client";
 
@@ -27,12 +28,15 @@ function run(command: string, name: string): void {
 }
 
 // Generate types
-run(`npx openapi-typescript ${OPENAPI_JSON_URL} --output ${TYPES_OUTPUT}`, "Types generation");
+run(
+  `npx openapi-typescript ${OPENAPI_JSON_URL} --output ${TYPES_OUTPUT}`,
+  "Types generation",
+);
 
 // Generate client
 run(
   `npx openapi-typescript-codegen --input ${OPENAPI_JSON_URL} --output ${CLIENT_OUTPUT} --client fetch`,
-  "Client generation"
+  "Client generation",
 );
 
 // Patch OpenAPI.ts
@@ -44,20 +48,20 @@ try {
     // Patch BASE
     content = content.replace(/BASE:\s*(['"]).*?\1/, `BASE: '${BASE_URL}'`);
 
-    // Patch TOKEN
-    // Replace TOKEN: undefined with TOKEN: async () => { const session = await auth(); return session?.accessToken || ''; }
-    if (!content.includes("TOKEN: async () =>")) {
-      const tokenPatch = `TOKEN: async () => {
-        const { auth } = await import('@/auth');
-        const session = await auth();
-        return session?.accessToken || '';
-    }`;
+    // // Patch TOKEN
+    // // Replace TOKEN: undefined with TOKEN: async () => { const session = await auth(); return session?.accessToken || ''; }
+    // if (!content.includes("TOKEN: async () =>")) {
+    //   const tokenPatch = `TOKEN: async () => {
+    //     const { auth } = await import('@/auth');
+    //     const session = await auth();
+    //     return session?.accessToken || '';
+    // }`;
 
-      content = content.replace(/TOKEN:\s*undefined/, tokenPatch);
-    }
+    //   content = content.replace(/TOKEN:\s*undefined/, tokenPatch);
+    // }
 
     fs.writeFileSync(openApiFile, content, "utf-8");
-    console.log(`✅ Patched OpenAPI.BASE and TOKEN dynamically`);
+    // console.log(`✅ Patched OpenAPI.BASE and TOKEN dynamically`);
   } else {
     console.warn(`⚠️ OpenAPI.ts not found at ${openApiFile}, skipping patch`);
   }

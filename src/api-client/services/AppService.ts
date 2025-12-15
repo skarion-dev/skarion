@@ -2,28 +2,28 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { CancelablePromise } from '../core/CancelablePromise';
-import { OpenAPI } from '../core/OpenAPI';
-import { request as __request } from '../core/request';
+import type { CancelablePromise } from "../core/CancelablePromise";
+import { OpenAPI } from "../core/OpenAPI";
+import { request as __request } from "../core/request";
 export class AppService {
-    /**
-     * @returns any
-     * @throws ApiError
-     */
-    public static appControllerHealthCheck(): CancelablePromise<any> {
-        return __request(OpenAPI, {
-            method: 'GET',
-            url: '/health-check',
-        });
-    }
-    /**
-     * @returns any
-     * @throws ApiError
-     */
-    public static appControllerMe(): CancelablePromise<any> {
-        return __request(OpenAPI, {
-            method: 'GET',
-            url: '/me',
-        });
-    }
+  /**
+   * @returns any
+   * @throws ApiError
+   */
+  public static appControllerHealthCheck(): CancelablePromise<any> {
+    return __request(OpenAPI, {
+      method: "GET",
+      url: "/health-check",
+    });
+  }
+  /**
+   * @returns any
+   * @throws ApiError
+   */
+  public static appControllerMe(): CancelablePromise<any> {
+    return __request(OpenAPI, {
+      method: "GET",
+      url: "/me",
+    });
+  }
 }

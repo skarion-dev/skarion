@@ -2,10 +2,6 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type SignupDto = {
-  username: string;
-  name: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
+export type WebhookResponse = {
+  received: boolean;
 };
