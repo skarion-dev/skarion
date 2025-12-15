@@ -22,26 +22,24 @@ export default async function AuthenticatedLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-    const session = await auth();
-    console.log("Current user:", session?.user || null);
-    if (!session?.user) return redirect(`/auth/sign-in`);
-    
+  const session = await auth();
+  console.log("Current user:", session?.user || null);
+  if (!session?.user) return redirect(`/auth/sign-in`);
+
   return (
     <SmoothScroll>
-        <html lang="en">
-            <head>
-                <link rel="icon" href="/skarion.png" type="image/png" sizes="any" />
-            </head>
-            <body
-                className={`${inter.variable} font-sans antialiased overflow-x-hidden`}
-            >
-                <main>
-                    <NavbarProvider user={session?.user}>
-                        {children}
-                    </NavbarProvider>
-                </main>
-            </body>
-        </html>
+      <html lang="en">
+        <head>
+          <link rel="icon" href="/skarion.png" type="image/png" sizes="any" />
+        </head>
+        <body
+          className={`${inter.variable} font-sans antialiased overflow-x-hidden`}
+        >
+          <main>
+            <NavbarProvider user={session?.user}>{children}</NavbarProvider>
+          </main>
+        </body>
+      </html>
     </SmoothScroll>
   );
 }

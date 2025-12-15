@@ -2,19 +2,28 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { auth } from "@/auth";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedMenu, setSelectedMenu] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
-
+  const [user, setUser] = useState<any>(null);
+  
   const handleChangeMenu = (name: string) => {
     setSelectedMenu(name);
     setIsMenuOpen(true);
   };
 
   useEffect(() => {
+    const fetchUser = async () => {
+      const session = await auth();
+      setUser(session?.user);
+    };
+
+    fetchUser();
+
     function handleClickOutside(event: MouseEvent) {
       if (
         dropdownRef.current &&
@@ -26,6 +35,8 @@ export default function Header() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+
   return (
     <div className="sticky top-4 z-30">
       <div className="relative" onMouseLeave={() => setIsMenuOpen(false)}>
@@ -204,7 +215,7 @@ export default function Header() {
                 </Link>
                 <div className="pt-4 border-t border-[#EBEBEB] space-y-4">
                   <Link
-                    href="/contact-sales"
+                    href="/contact"
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                     }}

@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { ChevronsUpDown, Plus } from "lucide-react"
-import Image from "next/image"
+import * as React from "react";
+import { ChevronsUpDown, Plus } from "lucide-react";
+import Image from "next/image";
 
 import {
   DropdownMenu,
@@ -12,34 +12,34 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
 
 export function TeamSwitcher() {
-  const { isMobile } = useSidebar()
+  const { isMobile } = useSidebar();
 
   return (
     <SidebarMenu>
       <SidebarMenuItem>
         <DropdownMenu>
           {/* <DropdownMenuTrigger asChild> */}
-            <SidebarMenuButton
-              size="lg"
-              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
-            >
-              <div className="text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-                <Image src="/logo.svg" alt="logo" width={30} height={30} />
-              </div>
-              <div className="grid flex-1 text-left text-sm leading-tight ml-2">
-                <span className="truncate font-medium">Skarion</span>
-                <span className="truncate text-xs mt-[1px]">User Dashboard</span>
-              </div>
-            </SidebarMenuButton>
+          <SidebarMenuButton
+            size="lg"
+            className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+          >
+            <div className="text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
+              <Image src="/logo.svg" alt="logo" width={30} height={30} />
+            </div>
+            <div className="grid flex-1 text-left text-sm leading-tight ml-2">
+              <span className="truncate font-medium">Skarion</span>
+              <span className="truncate text-xs mt-[1px]">User Dashboard</span>
+            </div>
+          </SidebarMenuButton>
           {/* </DropdownMenuTrigger> */}
           {/* <DropdownMenuContent
             className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"
@@ -74,5 +74,5 @@ export function TeamSwitcher() {
         </DropdownMenu>
       </SidebarMenuItem>
     </SidebarMenu>
-  )
+  );
 }
