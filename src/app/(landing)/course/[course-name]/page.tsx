@@ -119,11 +119,10 @@ const bootcampSchedule = [
 
 export default async function CoursePage() {
   const session = await auth();
-  if (!session?.user || !session.accessToken) redirect("/auth/sign-in");
   let isPurchased = false;
 
   try {
-    OpenAPI.TOKEN = session.accessToken;
+    OpenAPI.TOKEN = session?.accessToken;
     const courseId = OutsidePlantEngineeringCourse.id.trim();
     const resp = await CoursesService.coursesControllerGetMyCourse(courseId);
     isPurchased = !!resp;
