@@ -7,6 +7,10 @@ import {
 } from "@/components/ui/accordion";
 import IntroVideo from "@/components/IntroVideo";
 import EnrollButton from "@/components/Course/EnrollButton";
+import { OutsidePlantEngineeringCourse } from "@/constants/course";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+import { CoursesService, OpenAPI } from "@/api-client";
 
 const bootcampSchedule = [
   {
@@ -113,7 +117,21 @@ const bootcampSchedule = [
   },
 ];
 
-export default function CoursePage() {
+export default async function CoursePage() {
+  const session = await auth();
+  if (!session?.user || !session.accessToken) redirect("/auth/sign-in");
+  let isPurchased = false;
+
+  try {
+    OpenAPI.TOKEN = session.accessToken;
+    const courseId = OutsidePlantEngineeringCourse.id.trim();
+    const resp = await CoursesService.coursesControllerGetMyCourse(courseId);
+    isPurchased = !!resp;
+  } catch (error) {
+    isPurchased = false;
+    console.warn("Course not purchased or unavailable:", error);
+  }
+
   return (
     <div className="w-full bg-[#ffffff] py-10 sm:px-12 px-6 max-w-[1440px] mx-auto flex flex-col lg:flex-row justify-between gap-8">
       <div className="w-full lg:w-[65%]">
@@ -339,14 +357,14 @@ export default function CoursePage() {
             Outside Plant Engineering
           </p>
           <div className="mt-3 flex gap-3">
-            <p className="text-[20px] leading-[1.2] text-white line-through font-[500]">
-              $500
+            <p className="text-[20px] leading-[1.2] text-white line-through font-medium">
+              ${OutsidePlantEngineeringCourse.originalPrice}
             </p>
-            <p className="text-[20px] leading-[1.2] text-white font-[500]">
-              $300
+            <p className="text-[20px] leading-[1.2] text-white font-medium">
+              ${OutsidePlantEngineeringCourse.discountedPrice}
             </p>
           </div>
-          <EnrollButton />
+          <EnrollButton isPurchased={isPurchased} />
           </div>
                 <div className="block lg:hidden h-[80px]" />
             </div>
@@ -358,7 +376,7 @@ export default function CoursePage() {
                             <p className="text-[18px] leading-[1.2] text-white/80 line-through font-[400]">$500</p>
                             <p className="text-[18px] leading-[1.2] text-white font-[400]">$300</p>
                         </div>
-                        <EnrollButton />
+                        <EnrollButton isPurchased={isPurchased} />
                     </div>
                     
                 </div>
