@@ -3,6 +3,5 @@
 /* tslint:disable */
 /* eslint-disable */
 export type WebhookResponse = {
-    received: boolean;
+  received: boolean;
 };
-

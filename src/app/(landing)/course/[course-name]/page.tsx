@@ -120,17 +120,29 @@ const bootcampSchedule = [
 export default async function CoursePage() {
   const session = await auth();
   if (!session?.user || !session.accessToken) redirect("/auth/sign-in");
+  console.log("session", session);
   let isPurchased = false;
+  let courseFound = false;
 
   try {
     OpenAPI.TOKEN = session.accessToken;
     const courseId = OutsidePlantEngineeringCourse.id.trim();
+    const course = await CoursesService.coursesControllerFindOne(courseId);
+    if (!course) {
+      throw new Error("Course not found");
+    }
+    courseFound = true;
+
     const resp = await CoursesService.coursesControllerGetMyCourse(courseId);
+    console.log("resp", resp);
     isPurchased = !!resp;
   } catch (error) {
     isPurchased = false;
     console.warn("Course not purchased or unavailable:", error);
   }
+
+  console.log("isPurchased", isPurchased);
+  console.log("courseFound", courseFound);
 
   return (
     <div className="w-full bg-white py-10 px-12 flex justify-between">

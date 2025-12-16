@@ -2,11 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -56,7 +52,7 @@ export default function Header({ user }: { user?: any }) {
                 onMouseEnter={() => handleChangeMenu("programs")}
                 className="flex gap-2 cursor-pointer"
               >
-                <p className="text-[14px] text-[#191F38] font-[500]">
+                <p className="text-[14px] text-[#191F38] font-medium">
                   Programs
                 </p>
                 <svg
@@ -79,7 +75,9 @@ export default function Header({ user }: { user?: any }) {
                 className="flex gap-2 cursor-pointer"
                 onMouseEnter={() => handleChangeMenu("company")}
               >
-                <p className="text-[14px] text-[#191F38] font-[500]">Company</p>
+                <p className="text-[14px] text-[#191F38] font-medium">
+                  Company
+                </p>
                 <svg
                   className="my-auto"
                   width="16"
@@ -101,7 +99,7 @@ export default function Header({ user }: { user?: any }) {
                 onMouseEnter={() => setIsMenuOpen(false)}
               >
                 <Link href={"/"}>
-                  <p className="text-[14px] text-[#191F38] font-[500]">
+                  <p className="text-[14px] text-[#191F38] font-medium">
                     Success Stories
                   </p>
                 </Link>
@@ -114,14 +112,14 @@ export default function Header({ user }: { user?: any }) {
           >
             <div className="bg-[#122461] border border-[#EBEBEB] rounded-[12px] px-4 pt-2 pb-2.5 cursor-pointer">
               <Link href={"/contact"}>
-                <p className="text-[14px] text-[#FFFFFF] font-[500]">
+                <p className="text-[14px] text-[#FFFFFF] font-medium">
                   Contact Us
                 </p>
               </Link>
             </div>
-            
+
             {user ? (
-               <DropdownMenu>
+              <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Avatar className="cursor-pointer">
                     <AvatarImage src={user.image} alt={user.name} />
@@ -132,7 +130,9 @@ export default function Header({ user }: { user?: any }) {
                   <DropdownMenuLabel>
                     <div className="flex flex-col">
                       <span className="font-semibold">{user.name}</span>
-                      <span className="text-xs text-muted-foreground">{user.email}</span>
+                      <span className="text-xs text-muted-foreground">
+                        {user.email}
+                      </span>
                     </div>
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
@@ -143,16 +143,16 @@ export default function Header({ user }: { user?: any }) {
               </DropdownMenu>
             ) : (
               <>
-                 <Link href={`/auth/sign-in`}>
+                <Link href={`/auth/sign-in`}>
                   <div className="bg-[#191F38] border border-[#EBEBEB] rounded-[12px] px-4 py-2 text-center cursor-pointer">
-                    <p className="text-[14px] text-white font-[600]">
+                    <p className="text-[14px] text-white font-semibold">
                       Login
                     </p>
                   </div>
                 </Link>
                 <Link href={`/auth/sign-up`}>
                   <div className="bg-white border border-[#EBEBEB] rounded-[12px] px-4 py-2 text-center cursor-pointer">
-                    <p className="text-[14px] text-[#191F38] font-[600]">
+                    <p className="text-[14px] text-[#191F38] font-semibold">
                       Sign up
                     </p>
                   </div>
@@ -218,7 +218,7 @@ export default function Header({ user }: { user?: any }) {
                   onClick={() => handleChangeMenu("programs")}
                   className="flex justify-between items-center cursor-pointer p-2"
                 >
-                  <p className="text-[16px] text-[#191F38] font-[400]">
+                  <p className="text-[16px] text-[#191F38] font-normal">
                     Programs
                   </p>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -234,7 +234,7 @@ export default function Header({ user }: { user?: any }) {
                   onClick={() => handleChangeMenu("company")}
                   className="flex justify-between items-center cursor-pointer p-2"
                 >
-                  <p className="text-[16px] text-[#191F38] font-[400]">
+                  <p className="text-[16px] text-[#191F38] font-normal">
                     Company
                   </p>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -253,7 +253,7 @@ export default function Header({ user }: { user?: any }) {
                   }}
                   className="p-2"
                 >
-                  <p className="text-[16px] text-[#191F38] font-[400]">
+                  <p className="text-[16px] text-[#191F38] font-normal">
                     Success Stories
                   </p>
                 </Link>
@@ -266,7 +266,7 @@ export default function Header({ user }: { user?: any }) {
                     className="block"
                   >
                     <div className="bg-[#F8FAFC] border border-[#bab9b9] rounded-[12px] px-4 py-2 text-center">
-                      <p className="text-[16px] text-[#191F38] font-[400]">
+                      <p className="text-[16px] text-[#191F38] font-normal">
                         Contact Us
                       </p>
                     </div>
@@ -278,10 +278,12 @@ export default function Header({ user }: { user?: any }) {
                         <AvatarFallback>{user.name?.[0]}</AvatarFallback>
                       </Avatar>
                       <div className="flex flex-col">
-                         <span className="font-medium text-sm">{user.name}</span>
-                         <span className="text-xs text-gray-500">{user.email}</span>
+                        <span className="font-medium text-sm">{user.name}</span>
+                        <span className="text-xs text-gray-500">
+                          {user.email}
+                        </span>
                       </div>
-                      <button 
+                      <button
                         onClick={() => signOut()}
                         className="ml-auto text-sm text-red-500 font-medium"
                       >
@@ -292,14 +294,14 @@ export default function Header({ user }: { user?: any }) {
                     <div className="flex gap-2">
                       <Link href={`/auth/sign-in`} className="flex-1">
                         <div className="bg-[#191F38] border border-[#EBEBEB] rounded-[12px] px-4 py-2 text-center">
-                          <p className="text-[16px] text-white font-[600]">
+                          <p className="text-[16px] text-white font-semibold">
                             Login
                           </p>
                         </div>
                       </Link>
                       <Link href={`/auth/sign-up`} className="flex-1">
                         <div className="bg-[#191F38] rounded-[12px] px-4 py-2 text-center">
-                          <p className="text-[16px] text-white font-[600]">
+                          <p className="text-[16px] text-white font-semibold">
                             Sign up
                           </p>
                         </div>
@@ -320,14 +322,14 @@ export default function Header({ user }: { user?: any }) {
               <div className="overflow-y-auto max-h-[65vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {selectedMenu === "programs" && (
                   <div className="p-4">
-                    <p className="text-[20px] text-[#191F38] font-[600]">
+                    <p className="text-[20px] text-[#191F38] font-semibold">
                       Programs
                     </p>
                   </div>
                 )}
                 {selectedMenu === "company" && (
                   <div className="p-4">
-                    <p className="text-[20px] text-[#191F38] font-[600]">
+                    <p className="text-[20px] text-[#191F38] font-semibold">
                       Company
                     </p>
                   </div>
@@ -339,13 +341,13 @@ export default function Header({ user }: { user?: any }) {
                   <div className="flex gap-3 w-full md:w-auto">
                     <Link
                       href={`/auth/sign-up`}
-                      className="rounded-[8px] flex items-center gap-2 font-[600] transition-all cursor-pointer border-2 border-[#4157FE] text-[#4157FE] px-4 py-2 text-[16px] max-h-[40px]"
+                      className="rounded-xl flex items-center gap-2 font-semibold transition-all cursor-pointer border-2 border-[#4157FE] text-[#4157FE] px-4 py-2 text-[16px] max-h-10"
                     >
                       Try For Free!
                     </Link>
                     <Link
                       href="/resources/video-guides"
-                      className="rounded-[8px] flex items-center gap-2 font-[600] transition-all cursor-pointer bg-[#F0F5FF] text-[#2377FC] border-2 border-[#4157FE] px-4 py-2 text-[16px] max-h-[40px] shadow-[0px_2px_4px_0px_#00000014,0px_0px_6px_0px_#00000005]"
+                      className="rounded-xl flex items-center gap-2 font-semibold transition-all cursor-pointer bg-[#F0F5FF] text-[#2377FC] border-2 border-[#4157FE] px-4 py-2 text-[16px] max-h-10 shadow-[0px_2px_4px_0px_#00000014,0px_0px_6px_0px_#00000005]"
                     >
                       <svg
                         width="18"
@@ -364,7 +366,7 @@ export default function Header({ user }: { user?: any }) {
                   </div>
                   <Link
                     href="/contact-sales"
-                    className="w-full md:w-auto rounded-[8px] flex items-center justify-center gap-2 font-[600] transition-all cursor-pointer bg-[#4157FE] border border-[#317EF3] text-[#FFFFFF] px-4 py-2 text-[16px] max-h-[40px]"
+                    className="w-full md:w-auto rounded-xl flex items-center justify-center gap-2 font-semibold transition-all cursor-pointer bg-[#4157FE] border border-[#317EF3] text-[#FFFFFF] px-4 py-2 text-[16px] max-h-10"
                   >
                     <svg
                       width="19"
