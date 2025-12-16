@@ -2,13 +2,26 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/avatar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { signOut } from "next-auth/react";
 
-export default function Header() {
+export default function Header({ user }: { user?: any }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedMenu, setSelectedMenu] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
-  const [user, setUser] = useState<any>(null);
 
   const handleChangeMenu = (name: string) => {
     setSelectedMenu(name);
@@ -16,13 +29,6 @@ export default function Header() {
   };
 
   useEffect(() => {
-    // const fetchUser = async () => {
-    //   const session = await auth();
-    //   setUser(session?.user);
-    // };
-
-    // fetchUser();
-
     function handleClickOutside(event: MouseEvent) {
       if (
         dropdownRef.current &&
@@ -103,7 +109,7 @@ export default function Header() {
             </div>
           </div>
           <div
-            className="hidden lg:flex items-center h-full gap-8"
+            className="hidden lg:flex items-center h-full gap-4"
             onMouseEnter={() => setIsMenuOpen(false)}
           >
             <div className="bg-[#122461] border border-[#EBEBEB] rounded-[12px] px-4 pt-2 pb-2.5 cursor-pointer">
@@ -113,6 +119,46 @@ export default function Header() {
                 </p>
               </Link>
             </div>
+            
+            {user ? (
+               <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Avatar className="cursor-pointer">
+                    <AvatarImage src={user.image} alt={user.name} />
+                    <AvatarFallback>{user.name?.[0]}</AvatarFallback>
+                  </Avatar>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuLabel>
+                    <div className="flex flex-col">
+                      <span className="font-semibold">{user.name}</span>
+                      <span className="text-xs text-muted-foreground">{user.email}</span>
+                    </div>
+                  </DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={() => signOut()}>
+                    Log out
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <>
+                 <Link href={`/auth/sign-in`}>
+                  <div className="bg-[#191F38] border border-[#EBEBEB] rounded-[12px] px-4 py-2 text-center cursor-pointer">
+                    <p className="text-[14px] text-white font-[600]">
+                      Login
+                    </p>
+                  </div>
+                </Link>
+                <Link href={`/auth/sign-up`}>
+                  <div className="bg-white border border-[#EBEBEB] rounded-[12px] px-4 py-2 text-center cursor-pointer">
+                    <p className="text-[14px] text-[#191F38] font-[600]">
+                      Sign up
+                    </p>
+                  </div>
+                </Link>
+              </>
+            )}
           </div>
 
           <div className="flex lg:hidden items-center">
@@ -225,22 +271,41 @@ export default function Header() {
                       </p>
                     </div>
                   </Link>
-                  <div className="flex gap-2">
-                    <Link href={`/auth/sign-in`} className="flex-1">
-                      <div className="bg-[#191F38] border border-[#EBEBEB] rounded-[12px] px-4 py-2 text-center">
-                        <p className="text-[16px] text-white font-[600]">
-                          Login
-                        </p>
+                  {user ? (
+                    <div className="flex items-center gap-3 p-2 bg-gray-50 rounded-lg">
+                      <Avatar>
+                        <AvatarImage src={user.image} alt={user.name} />
+                        <AvatarFallback>{user.name?.[0]}</AvatarFallback>
+                      </Avatar>
+                      <div className="flex flex-col">
+                         <span className="font-medium text-sm">{user.name}</span>
+                         <span className="text-xs text-gray-500">{user.email}</span>
                       </div>
-                    </Link>
-                    <Link href={`/auth/sign-up`} className="flex-1">
-                      <div className="bg-[#191F38] rounded-[12px] px-4 py-2 text-center">
-                        <p className="text-[16px] text-white font-[600]">
-                          Sign up
-                        </p>
-                      </div>
-                    </Link>
-                  </div>
+                      <button 
+                        onClick={() => signOut()}
+                        className="ml-auto text-sm text-red-500 font-medium"
+                      >
+                        Logout
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="flex gap-2">
+                      <Link href={`/auth/sign-in`} className="flex-1">
+                        <div className="bg-[#191F38] border border-[#EBEBEB] rounded-[12px] px-4 py-2 text-center">
+                          <p className="text-[16px] text-white font-[600]">
+                            Login
+                          </p>
+                        </div>
+                      </Link>
+                      <Link href={`/auth/sign-up`} className="flex-1">
+                        <div className="bg-[#191F38] rounded-[12px] px-4 py-2 text-center">
+                          <p className="text-[16px] text-white font-[600]">
+                            Sign up
+                          </p>
+                        </div>
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
