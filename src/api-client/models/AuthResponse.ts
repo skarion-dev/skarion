@@ -3,12 +3,11 @@
 /* tslint:disable */
 /* eslint-disable */
 export type AuthResponse = {
-    id: string;
-    name: string;
-    email: string;
-    role: string;
-    image?: string;
-    lastLogin: string;
-    accessToken: string;
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+  image?: string;
+  lastLogin: string;
+  accessToken: string;
 };
-

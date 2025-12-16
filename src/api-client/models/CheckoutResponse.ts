@@ -3,13 +3,12 @@
 /* tslint:disable */
 /* eslint-disable */
 export type CheckoutResponse = {
-    /**
-     * Checkout session URL
-     */
-    url: string;
-    /**
-     * Stripe session ID
-     */
-    sessionId: string;
+  /**
+   * Checkout session URL
+   */
+  url: string;
+  /**
+   * Stripe session ID
+   */
+  sessionId: string;
 };
-

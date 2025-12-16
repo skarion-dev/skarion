@@ -57,13 +57,15 @@ const FormCheckbox = ({
 export default function ContractForm({
   purchasePayload,
   token,
-  isPurchased = false,
+  courseFound,
+  isPurchased,
 }: {
   purchasePayload: {
     email: string;
     courseId: string;
   };
   token: string;
+  courseFound: boolean;
   isPurchased?: boolean;
 }) {
   const [isUsResident, setIsUsResident] = useState(false);
@@ -73,6 +75,9 @@ export default function ContractForm({
   const searchParam = useSearchParams();
 
   useEffect(() => {
+    if (!courseFound) {
+      toast.error("Course not found");
+    }
     const status = searchParam.get("status");
     if (!status) return;
     if (status === "success") {
@@ -161,8 +166,8 @@ export default function ContractForm({
       <div className="pt-4">
         <Button
           type="submit"
-          disabled={!isFormValid || isPurchased}
-          className="w-full"
+          disabled={!isFormValid || isPurchased || !courseFound}
+          className="w-full disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isPurchased ? "Already Purchased" : "Checkout with Stripe"}
         </Button>
