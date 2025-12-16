@@ -72,7 +72,7 @@ export default function Testimonials() {
   const y3 = useTransform(scrollYProgress, [0, 1], [-1000, 900]);
 
   return (
-    <div className="w-full bg-[#ffffff] py-10 px-12 h-[100vh] overflow-hidden">
+    <div className="w-full bg-[#ffffff] py-10 sm:px-12 px-6 h-[60vh] overflow-hidden max-w-[1440px] mx-auto">
       <div ref={container} className="flex gap-6 overflow-hidden">
         <Column
           testimonials={[
