@@ -255,24 +255,25 @@
 .cards .card-toggle {
   z-index: 4;
   position: relative;
-  width: 48px;
-  height: 48px;
+  width: clamp(40px, 4vw, 48px);
+  height: clamp(40px, 4vw, 48px);
   border-radius: 50%;
   display: block;
   text-align: center;
   line-height: 1.8;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: 0.3s ease;
-  margin-right: 14px;
+  transition: 1s ease;
+  margin-right: clamp(8px, 2vw, 14px);
 }
+
 .cards .card-toggle.active {
   color: white;
   border-color: white;
 }
 .cards .card-toggle.inactive {
-  color: black;
-  border-color: black;
+  color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .card-content .row {
