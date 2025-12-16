@@ -54,8 +54,8 @@ export default function CourseCards() {
           } = course || {};
           const baseClasses = clsx(
             "relative bg-white border rounded-lg transition-all ease-out",
-            "min-w-[300px]",
-            isActive ? "w-[500px] duration-300" : "w-[300px] duration-300",
+            "min-w-[270px] w-full sm:min-w-[300px]",
+            isActive ? "lg:w-[500px] duration-300" : "sm:w-[300px] duration-300",
           );
           const disabledClasses = clsx(
             baseClasses,
