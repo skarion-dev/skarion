@@ -17,37 +17,102 @@ const bootcampSchedule = [
     week: 1,
     title: "AI Coding Agents",
     lessons: [
-      { id: "01", name: "Cursor & Claude", isLocked: true, link: "/pdfs/lesson01.pdf" },
-      { id: "02", name: "Frontend Environment", isLocked: false, link: "/pdfs/lesson02.pdf" },
-      { id: "03", name: "Github Version Control", isLocked: false, link: "/pdfs/lesson03.pdf" },
-      { id: "04", name: "Office hours", isLocked: true, link: "/pdfs/lesson04.pdf" },
+      {
+        id: "01",
+        name: "Cursor & Claude",
+        isLocked: true,
+        link: "/pdfs/lesson01.pdf",
+      },
+      {
+        id: "02",
+        name: "Frontend Environment",
+        isLocked: false,
+        link: "/pdfs/lesson02.pdf",
+      },
+      {
+        id: "03",
+        name: "Github Version Control",
+        isLocked: false,
+        link: "/pdfs/lesson03.pdf",
+      },
+      {
+        id: "04",
+        name: "Office hours",
+        isLocked: true,
+        link: "/pdfs/lesson04.pdf",
+      },
     ],
   },
   {
     week: 2,
     title: "JSX Structure",
     lessons: [
-      { id: "05", name: "JSX Fundamentals & Semantics", isLocked: true, link: "/pdfs/lesson05.pdf" },
-      { id: "06", name: "Layouts in Next.js", isLocked: false, link: "/pdfs/lesson06.pdf" },
-      { id: "07", name: "Styling with Tailwind CSS", isLocked: false, link: "/pdfs/lesson07.pdf" },
+      {
+        id: "05",
+        name: "JSX Fundamentals & Semantics",
+        isLocked: true,
+        link: "/pdfs/lesson05.pdf",
+      },
+      {
+        id: "06",
+        name: "Layouts in Next.js",
+        isLocked: false,
+        link: "/pdfs/lesson06.pdf",
+      },
+      {
+        id: "07",
+        name: "Styling with Tailwind CSS",
+        isLocked: false,
+        link: "/pdfs/lesson07.pdf",
+      },
     ],
   },
   {
     week: 3,
     title: "React State Management",
     lessons: [
-      { id: "08", name: "useState and useEffect", isLocked: true, link: "/pdfs/lesson08.pdf" },
-      { id: "09", name: "Context API for Global State", isLocked: false, link: "/pdfs/lesson09.pdf" },
-      { id: "10", name: "Building Custom Hooks", isLocked: false, link: "/pdfs/lesson10.pdf" },
+      {
+        id: "08",
+        name: "useState and useEffect",
+        isLocked: true,
+        link: "/pdfs/lesson08.pdf",
+      },
+      {
+        id: "09",
+        name: "Context API for Global State",
+        isLocked: false,
+        link: "/pdfs/lesson09.pdf",
+      },
+      {
+        id: "10",
+        name: "Building Custom Hooks",
+        isLocked: false,
+        link: "/pdfs/lesson10.pdf",
+      },
     ],
   },
   {
     week: 4,
     title: "Deployment & Advanced Topics",
     lessons: [
-      { id: "11", name: "Vercel Deployment Pipeline", isLocked: true, link: "/pdfs/lesson11.pdf" },
-      { id: "12", name: "Serverless Functions (APIs)", isLocked: false, link: "/pdfs/lesson12.pdf" },
-      { id: "13", name: "Final Project Review", isLocked: true, link: "/pdfs/lesson13.pdf" },
+      {
+        id: "11",
+        name: "Vercel Deployment Pipeline",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "12",
+        name: "Serverless Functions (APIs)",
+        isLocked: false,
+        link: "/pdfs/lesson12.pdf",
+      },
+      {
+        id: "13",
+        name: "Final Project Review",
+        isLocked: true,
+        link: "/pdfs/lesson13.pdf",
+      },
     ],
   },
 ];
@@ -55,16 +120,24 @@ const bootcampSchedule = [
 export default async function CoursePage() {
   const session = await auth();
   if (!session?.user || !session.accessToken) redirect("/auth/sign-in");
-
-  OpenAPI.TOKEN = session.accessToken;
-  const resp = await CoursesService.coursesControllerGetMyCourse(OutsidePlantEngineeringCourse.id);
   let isPurchased = false;
-  if(resp) isPurchased = true;
-  
+
+  try {
+    OpenAPI.TOKEN = session.accessToken;
+    const courseId = OutsidePlantEngineeringCourse.id.trim();
+    const resp = await CoursesService.coursesControllerGetMyCourse(courseId);
+    isPurchased = !!resp;
+  } catch (error) {
+    isPurchased = false;
+    console.warn("Course not purchased or unavailable:", error);
+  }
+
   return (
     <div className="w-full bg-white py-10 px-12 flex justify-between">
       <div className="w-[65%]">
-        <p className="text-[42px] leading-[1.2]">{OutsidePlantEngineeringCourse.title}</p>
+        <p className="text-[42px] leading-[1.2]">
+          {OutsidePlantEngineeringCourse.title}
+        </p>
         <p className="text-[18px] font-light mt-4">
           OSP Engineering involves the design, installation, and maintenance of
           outdoor infrastructure, including fiber optic routes, cables, and
@@ -85,10 +158,34 @@ export default async function CoursePage() {
           <span className="w-0.5 h-14 bg-[#EBEBEB] self-center"></span>
           <div className="flex items-center gap-4">
             <div className="flex -space-x-2">
-              <Image src="/image 1.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover border border-white" />
-              <Image src="/profile 1.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover border border-white" />
-              <Image src="/image 3.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover border border-white" />
-              <Image src="/profile 2.jpg" alt="student" width={35} height={35} className="rounded-full aspect-square object-cover border border-white" />
+              <Image
+                src="/image 1.jpg"
+                alt="student"
+                width={35}
+                height={35}
+                className="rounded-full aspect-square object-cover border border-white"
+              />
+              <Image
+                src="/profile 1.jpg"
+                alt="student"
+                width={35}
+                height={35}
+                className="rounded-full aspect-square object-cover border border-white"
+              />
+              <Image
+                src="/image 3.jpg"
+                alt="student"
+                width={35}
+                height={35}
+                className="rounded-full aspect-square object-cover border border-white"
+              />
+              <Image
+                src="/profile 2.jpg"
+                alt="student"
+                width={35}
+                height={35}
+                className="rounded-full aspect-square object-cover border border-white"
+              />
             </div>
             <div className="flex flex-col justify-between pr-4">
               <div className="flex items-center gap-0.5 text-[#f5b942]">
@@ -97,26 +194,42 @@ export default async function CoursePage() {
                 <span className="text-base">★</span>
                 <span className="text-base">★</span>
                 <span className="text-base">★</span>
-                <span className="ml-2 text-gray-500 text-[12px] font-medium">4.8 (10+)</span>
+                <span className="ml-2 text-gray-500 text-[12px] font-medium">
+                  4.8 (10+)
+                </span>
               </div>
-              <span className="text-[12px] font-normal">Trusted by 20+ Students Worldwide</span>
+              <span className="text-[12px] font-normal">
+                Trusted by 20+ Students Worldwide
+              </span>
             </div>
           </div>
         </div>
         <hr className="my-14 border border-[#EBEBEB]" />
         <div className="flex justify-between items-start">
           <div className="w-[40%]">
-            <p className="text-[46px] leading-[1.2] capitalize">Why OSP engineering could be your next big step</p>
+            <p className="text-[46px] leading-[1.2] capitalize">
+              Why OSP engineering could be your next big step
+            </p>
             <p className="text-[16px] font-light mt-6">
               Demand for skilled professionals in telecom industry continues to
               rise, offering long-term stability and career advancement.
             </p>
             <p className="text-[48px] font-medium mt-8">300% +</p>
-            <p className="text-[16px] font-light mt-2">Growth in Job Openings Since 2020</p>
+            <p className="text-[16px] font-light mt-2">
+              Growth in Job Openings Since 2020
+            </p>
           </div>
           <div className="w-[50%] flex flex-col gap-5">
-            {["HIGH DEMAND, HIGH OPPORTUNITY","NO EXPERIENCE NEEDED","FAST-TRACK CAREER GROWTH","LONG-TERM CAREER SECURITY"].map((text, i) => (
-              <div key={i} className="w-full py-4 px-6 bg-[#122461] rounded-[14px]">
+            {[
+              "HIGH DEMAND, HIGH OPPORTUNITY",
+              "NO EXPERIENCE NEEDED",
+              "FAST-TRACK CAREER GROWTH",
+              "LONG-TERM CAREER SECURITY",
+            ].map((text, i) => (
+              <div
+                key={i}
+                className="w-full py-4 px-6 bg-[#122461] rounded-[14px]"
+              >
                 <p className="text-[16px] font-bold text-white">{text}</p>
               </div>
             ))}
@@ -139,7 +252,11 @@ export default async function CoursePage() {
         <div className="w-full rounded-[14px] border border-[#EBEBEB] pt-6 pb-4 px-8">
           <Accordion type="multiple" className="w-full">
             {bootcampSchedule.map((weekData) => (
-              <AccordionItem key={weekData.week} value={`week-${weekData.week}`} className="border-b border-[#EBEBEB] last:border-b-0">
+              <AccordionItem
+                key={weekData.week}
+                value={`week-${weekData.week}`}
+                className="border-b border-[#EBEBEB] last:border-b-0"
+              >
                 <AccordionTrigger className="hover:no-underline text-left py-4">
                   <span className="font-normal text-[18px]">
                     Week {weekData.week}: {weekData.title}
@@ -153,7 +270,9 @@ export default async function CoursePage() {
                         className={`flex items-center justify-between py-3 px-4 rounded-[14px] text-white ${lesson.isLocked ? "bg-[#1e3a8a] opacity-60 cursor-not-allowed" : "bg-[#122461]"}`}
                       >
                         <div className="flex items-center space-x-4">
-                          <span className="text-[16px] font-normal">{lesson.id}</span>
+                          <span className="text-[16px] font-normal">
+                            {lesson.id}
+                          </span>
                           <a
                             href={lesson.link}
                             target="_blank"
@@ -163,7 +282,11 @@ export default async function CoursePage() {
                             {lesson.name}
                           </a>
                         </div>
-                        {lesson.isLocked && <span className="text-[14px] font-normal">Locked</span>}
+                        {lesson.isLocked && (
+                          <span className="text-[14px] font-normal">
+                            Locked
+                          </span>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -176,7 +299,9 @@ export default async function CoursePage() {
       <div className="w-[30%]">
         <div className="sticky top-[126px] rounded-[14px] bg-[#122461] w-full px-8 py-8">
           <div className="bg-white rounded-[14px] h-[200px]" />
-          <p className="text-[24px] leading-[1.2] text-white mt-4 font-medium">{OutsidePlantEngineeringCourse.title}</p>
+          <p className="text-[24px] leading-[1.2] text-white mt-4 font-medium">
+            {OutsidePlantEngineeringCourse.title}
+          </p>
           <div className="mt-3 flex gap-3">
             <p className="text-[20px] leading-[1.2] text-white line-through font-medium">
               ${OutsidePlantEngineeringCourse.originalPrice}

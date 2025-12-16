@@ -1,7 +1,11 @@
 "use client";
 import { useRouter } from "next/navigation";
 
-export default function EnrollButton({ isPurchased }: { isPurchased: boolean }) {
+export default function EnrollButton({
+  isPurchased,
+}: {
+  isPurchased: boolean;
+}) {
   const router = useRouter();
 
   return (
