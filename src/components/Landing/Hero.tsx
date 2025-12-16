@@ -16,11 +16,10 @@ const logos = [
 ]
 
 const images=[
-    "/image 1.jpg",
-    "/image 3.jpg",
-    "/image 2.jpg",
-    "/profile 1.jpg",
-    "/profile 2.jpg"
+    "/story1.png",
+    "/story2.png",
+    "/story3.png",
+    "/story4.png"
 ]
 
 export default function Hero() {
@@ -169,7 +168,7 @@ export default function Hero() {
             </div>
 
             {/* Right block: image swiper */}
-            <div className="relative flex flex-col gap-8 bg-[#ffffff] rounded-[14px] w-full lg:w-[35%] min-h-[200px] sm:min-h-[260px] md:min-h-[495px] h-[200px] sm:h-[260px] md:h-[500px]">
+            <div className="relative flex flex-col gap-8 bg-[#ffffff] rounded-[14px] w-full lg:w-[35%] min-h-[200px] sm:min-h-[260px] md:min-h-[495px] h-[200px] sm:h-[260px] md:h-[505px]">
                 <SwiperComponent images={images} />
             </div>
         </div>

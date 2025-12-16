@@ -37,13 +37,22 @@ const SwiperComponent: FC<SwiperComponentProps> = ({ images }) => {
 				>
 					{images.map((image, index) => (
 						<SwiperSlide key={index} className="!h-full">
-							<div className="relative w-full h-full rounded-[14px] overflow-hidden">
-								<Image
-									src={image}
-									alt={`Slide ${index + 1}`}
-									fill
-									className="object-cover"
-								/>
+							<div className="group relative w-full h-full rounded-[14px] overflow-hidden">
+								<div className="relative w-full h-full">
+									<Image
+										src={image}
+										alt={`Slide ${index + 1}`}
+										fill
+										className="object-cover scale-101"
+									/>
+									<div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+								</div>
+								{/* Gradient overlay */}
+								<div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300" />
+								{/* Stories button */}
+								<button className="absolute bottom-4 right-4 px-5 py-2.5 bg-white backdrop-blur-md text-black text-sm font-semibold rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-105 hover:shadow-gray-300 hover:bg-black hover:text-white">
+									See the Stories
+								</button>
 							</div>
 						</SwiperSlide>
 					))}
