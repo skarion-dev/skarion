@@ -107,47 +107,49 @@ export default function Hero() {
             <Steps />
           </div>
           <div className="flex flex-row items-start justify-between flex-1 space-x-8">
-            <div className="flex justify-between bg-[#122461] rounded-[14px] w-[70%] h-full pt-2 py-6 px-6"></div>
-            <div className="w-[30%] h-full">
-              <motion.div
-                whileHover="hover"
-                transition={{
-                  duration: 1,
-                  ease: "backInOut",
-                }}
-                variants={{
-                  hover: {
-                    scale: 1.05,
-                  },
-                }}
-                className="w-full h-full relative shrink-0 overflow-hidden rounded-xl bg-indigo-500 py-[8px] px-[18px]"
-              >
-                <div className="relative flex flex-col justify-between z-10 text-white">
-                  <motion.span
-                    initial={{ scale: 0.85 }}
-                    variants={{
-                      hover: {
-                        scale: 1,
-                      },
-                    }}
-                    transition={{
-                      duration: 1,
-                      ease: "backInOut",
-                    }}
-                    className="block origin-top-left text-[#ffffff] text-[72px] font-[600] leading-[1.1]"
-                  >
-                    <Counter value={50} />
-                  </motion.span>
-                  <p className="text-[#ffffff] text-[14px] font-[500] leading-[1.3] mt-[1px]">
-                    Candidates Have Found a Career in the US Through Skarion
-                  </p>
-                </div>
-                <Background />
-              </motion.div>
+            <div className="flex flex-col sm:flex-row gap-4 w-full h-full">
+              <div className="flex justify-between bg-[#122461] rounded-[14px] w-full min-h-[133px] sm:w-[70%] h-full pt-2 py-6 px-6"/>
+              <div className="w-full min-h-[133px] sm:w-[30%] h-full">
+                <motion.div
+                  whileHover="hover"
+                  transition={{
+                    duration: 1,
+                    ease: "backInOut",
+                  }}
+                  variants={{
+                    hover: {
+                      scale: 1.05,
+                    },
+                  }}
+                  className="w-full h-full relative shrink-0 overflow-hidden rounded-xl bg-indigo-500 py-[8px] px-[18px]"
+                >
+                  <div className="relative flex flex-col justify-between z-10 text-white">
+                    <motion.span
+                      initial={{ scale: 0.85 }}
+                      variants={{
+                        hover: {
+                          scale: 1,
+                        },
+                      }}
+                      transition={{
+                        duration: 1,
+                        ease: "backInOut",
+                      }}
+                      className="block origin-top-left text-[#ffffff] text-[72px] font-[600] leading-[1.1]"
+                    >
+                      <Counter value={50} />
+                    </motion.span>
+                    <p className="text-[#ffffff] text-[14px] font-[500] leading-[1.3] mt-[1px]">
+                      Candidates Have Found a Career in the US Through Skarion
+                    </p>
+                  </div>
+                  <Background />
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="relative flex flex-col gap-8 bg-[#ffffff] rounded-[14px] w-full md:w-[35%] min-h-[200px] sm:min-h-[280px] md:min-h-[500px] h-[200px] sm:h-[260px] md:h-[510px]">
+        <div className="relative flex flex-col gap-8 bg-[#ffffff] rounded-[14px] w-full md:w-[35%] min-h-[200px] sm:min-h-[280px] md:min-h-[500px] h-[200px] sm:h-[260px] md:h-[512px]">
           <SwiperComponent images={images} />
         </div>
       </div>

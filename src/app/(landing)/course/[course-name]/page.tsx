@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import IntroVideo from "@/components/IntroVideo";
 import EnrollButton from "@/components/Course/EnrollButton";
+import MobileCTA from "@/components/Course/MobileCTA";
 import { OutsidePlantEngineeringCourse } from "@/constants/course";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
@@ -378,19 +379,7 @@ export default async function CoursePage() {
           </div>
                 <div className="block lg:hidden h-[80px]" />
             </div>
-            <div className="block lg:hidden fixed bottom-0 left-0 right-0 z-50 h-[180px] bg-[#000000]/70 py-3 px-4 border-t border-black/20">
-                <div className="max-w-6xl mx-auto flex items-center gap-3">
-                    <div className="flex flex-col gap-1 w-full">
-                        <span className="text-white leading-[1.2] text-[24px] font-[500]">OSP Engineering Bootcamp</span>
-                        <div className="flex items-center gap-3 mt-2">
-                            <p className="text-[18px] leading-[1.2] text-white/80 line-through font-[400]">$500</p>
-                            <p className="text-[18px] leading-[1.2] text-white font-[400]">$300</p>
-                        </div>
-                        <EnrollButton isPurchased={isPurchased} />
-                    </div>
-                    
-                </div>
-            </div>
+            <MobileCTA isPurchased={isPurchased} />
         </div>
   );
 }
