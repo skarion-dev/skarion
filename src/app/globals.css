@@ -188,7 +188,7 @@
 }
 
 #dribbble .card-content {
-  background-color: #f46899;
+  background-color: #122461;
   -webkit-clip-path: circle(0% at 76px 88%);
   clip-path: circle(0% at 50px 88%);
 }
@@ -199,7 +199,7 @@
 }
 
 #behance .card-content {
-  background-color: #2f98d1;
+  background-color: #122461;
   -webkit-clip-path: circle(0% at 150px 88%);
   clip-path: circle(0% at 150px 88%);
 }
@@ -210,7 +210,7 @@
 }
 
 #linkedin .card-content {
-  background-color: #03679b;
+  background-color: #122461;
   -webkit-clip-path: circle(0% at 220px 88%);
   clip-path: circle(0% at 220px 88%);
 }
@@ -221,7 +221,7 @@
 }
 
 #twitter .card-content {
-  background-color: #7fd0ed;
+  background-color: #122461;
   -webkit-clip-path: circle(0% at 292px 88%);
   clip-path: circle(0% at 292px 88%);
 }
@@ -232,7 +232,7 @@
 }
 
 #hired .card-content {
-  background-color: #10b981;
+  background-color: #122461;
   -webkit-clip-path: circle(0% at 364px 88%);
   clip-path: circle(0% at 364px 88%);
 }

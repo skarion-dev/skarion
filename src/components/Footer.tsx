@@ -3,6 +3,7 @@ import XIcon from "@/svg/XIcon";
 import FacebookIcon from "@/svg/FacebookIcon";
 import InstagramIcon from "@/svg/InstagramIcon";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   const FooterContent = (
@@ -48,7 +49,14 @@ export default function Footer() {
               <div>
                   <p className='block text-[20px] font-[500] relative group'>Company</p>
                   <a href='/' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-4'>About Us</a>
-                  <a href='/' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-2'>Contact Us</a>
+                  <Link
+                    href="https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-2'
+                  >
+                    Contact Us
+                  </Link>
                   <a href='/' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-2'>Career</a>
                   <p className='block text-[20px] font-[500] relative group mt-6'>Resources</p>
                   <a href='/' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-4'>Blogs</a>
