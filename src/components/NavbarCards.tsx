@@ -1,5 +1,6 @@
 'use client'
 import { useState } from "react"
+import Link from "next/link"
 
 const courses = [
     {
@@ -36,15 +37,13 @@ export default function CourseCards() {
 
     return (
         <div className="container">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-7">
                 {courses.map((course, index) => {
-                    const { courseName, courseDescription, modules, tag, isPopular } = course || {}
+                    const { courseName, courseDescription, modules, tag, isPopular, href } = course || {}
+                    const isComingSoon = tag.toLowerCase() === "coming soon"
 
-                    return (
-                        <div
-                            key={index}
-                            className="relative bg-white border rounded-lg w-full"
-                        >
+                    const CardContent = (
+                        <div className={isComingSoon ? "opacity-50" : ""}>
                             <div className="relative bg-gray-300 rounded-lg h-[150px] m-2">
                                 <div className={`absolute -bottom-4 left-2 inline-flex items-center justify-center px-4 py-1 text-[11px] font-[600] rounded-full border-3 border-white z-10 ${isPopular ? 'text-green-800 bg-green-200' : 'text-red-800 bg-red-200'}`}>
                                     {tag}
@@ -63,6 +62,21 @@ export default function CourseCards() {
                             <div className="mt-4 px-4 pb-4 flex justify-between items-center">
                                 <span className="text-xs text-gray-500">{modules} Modules</span>
                             </div>
+                        </div>
+                    )
+
+                    return (
+                        <div
+                            key={index}
+                            className="relative bg-white border rounded-lg w-full"
+                        >
+                            {courseName === "Outside Plant Engineering" ? (
+                                <Link href={href} passHref legacyBehavior>
+                                    <a className="block">{CardContent}</a>
+                                </Link>
+                            ) : (
+                                <>{CardContent}</>
+                            )}
                         </div>
                     )
                 })}

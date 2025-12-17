@@ -369,7 +369,7 @@ export default function Header({ user }: { user?: any }) {
                                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-6">
                                     <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                                         <div className="flex flex-col">
-                                            <p className="text-[12px] sm:text-[14px] md:text-[16px] text-[#191F38] font-[500] mb-1 md:mb-1.5">About</p>
+                                            <p className="text-[12px] sm:text-[14px] md:text-[16px] text-[#191F38] font-bold mb-1 md:mb-1.5">About</p>
                                             <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
                                                 <Link href="/About" className="inline-block rounded  py-1 text-[11px] sm:text-[12px] md:text-[14px] text-[#191F38] hover:text-[#4B5563]">About Skarion</Link>
                                             </div>
@@ -379,7 +379,7 @@ export default function Header({ user }: { user?: any }) {
                                             <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
                                                 <Link href="https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" className="inline-block rounded py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] hover:text-[#4B5563]">Contact Us</Link>
                                             </div>
-                                            <p className="mt-3 md:mt-4 text-[12px] sm:text-[14px] md:text-[16px] text-[#191F38] font-[500] mb-1 md:mb-1.5">Resources</p>
+                                            <p className="mt-3 md:mt-4 text-[12px] sm:text-[14px] md:text-[16px] text-[#191F38] font-bold mb-1 md:mb-1.5">Resources</p>
                                             <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
                                                 <Link href="#" className="inline-block rounded py-1 text-[11px] sm:text-[12px] md:text-[14px] text-[#191F38] hover:text-[#4B5563]">Blogs</Link>
                                             </div>
@@ -388,7 +388,7 @@ export default function Header({ user }: { user?: any }) {
                                             </div>
                                         </div>
                                         <div>
-                                            <p className="text-[12px] sm:text-[14px] md:text-[16px] text-[#191F38] font-[500] mb-1 md:mb-1.5">Community</p>
+                                            <p className="text-[12px] sm:text-[14px] md:text-[16px] text-[#191F38] font-bold mb-1 md:mb-1.5">Community</p>
                                             <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
                                                 <Link href="#" className="inline-block rounded py-1 text-[11px] sm:text-[12px] md:text-[14px] text-[#191F38] hover:text-[#4B5563]">Facebook</Link>
                                             </div>
@@ -398,7 +398,7 @@ export default function Header({ user }: { user?: any }) {
                                             <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
                                                 <Link href="#" className="inline-block rounded py-1 text-[11px] sm:text-[12px] md:text-[14px] text-[#191F38] hover:text-[#4B5563]">X</Link>
                                             </div>
-                                            <p className="mt-3 md:mt-4 text-[12px] sm:text-[14px] md:text-[16px] text-[#191F38] font-[500] mb-1 md:mb-1.5">Company</p>
+                                            <p className="mt-3 md:mt-4 text-[12px] sm:text-[14px] md:text-[16px] text-[#191F38] font-bold mb-1 md:mb-1.5">Company</p>
                                             <div className="space-y-1 md:space-y-2">
                                                 <Link href="#" className="inline-block rounded py-1 text-[11px] sm:text-[12px] md:text-[14px] text-[#191F38] hover:text-[#4B5563]">Career</Link>
                                             </div>

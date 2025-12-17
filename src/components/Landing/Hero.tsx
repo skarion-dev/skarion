@@ -102,96 +102,33 @@ export default function Hero() {
         </div>
       </div>
       <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:space-x-8 pt-12">
-        <div className="flex flex-col gap-8 w-full lg:w-[62%] h-auto lg:h-[500px]">
-          <div className="relative rounded-[14px] flex-2"> 
+        <div className="flex flex-col gap-8 w-full lg:w-[62%] h-auto lg:h-[512px]">
+          <div className="relative rounded-[14px] flex-1">
             <Steps />
           </div>
           <div className="flex flex-row items-start justify-between flex-1 space-x-8">
             <div className="flex flex-col sm:flex-row gap-4 w-full h-full">
-              <div className="flex justify-between bg-[#122461] rounded-[14px] w-full min-h-[133px] sm:w-[70%] h-full pt-2 py-6 px-6"/>
-              <div className="w-full min-h-[133px] sm:w-[30%] h-full">
-                <motion.div
-                  whileHover="hover"
-                  transition={{
-                    duration: 1,
-                    ease: "backInOut",
-                  }}
-                  variants={{
-                    hover: {
-                      scale: 1.05,
-                    },
-                  }}
-                  className="w-full h-full relative shrink-0 overflow-hidden rounded-xl bg-indigo-500 py-[8px] px-[18px]"
-                >
-                  <div className="relative flex flex-col justify-between z-10 text-white">
-                    <motion.span
-                      initial={{ scale: 0.85 }}
-                      variants={{
-                        hover: {
-                          scale: 1,
-                        },
-                      }}
-                      transition={{
-                        duration: 1,
-                        ease: "backInOut",
-                      }}
-                      className="block origin-top-left text-[#ffffff] text-[72px] font-[600] leading-[1.1]"
-                    >
+              <div className="flex justify-between bg-[#122461] rounded-[14px] w-full sm:w-full pt-2 py-6 px-6 min-h-[130px]">
+              </div>
+              <div className="w-full sm:w-[40%]">
+                <div className="w-full h-full relative shrink-0 overflow-hidden rounded-xl bg-[#122461] pl-5 pr-5 pb-4 pt-1">
+                  <div className="relative z-10 text-white">
+                    <span className="text-[#ffffff] text-[64px] leading-[1.2] font-[600]">
                       <Counter value={50} />
-                    </motion.span>
-                    <p className="text-[#ffffff] text-[14px] font-[500] leading-[1.3] mt-[1px]">
+                    </span>
+                    <p className="text-[#ffffff] text-[14px] font-[500] leading-[1.3]">
                       Candidates Have Found a Career in the US Through Skarion
                     </p>
                   </div>
-                  <Background />
-                </motion.div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="relative flex flex-col gap-8 bg-[#ffffff] rounded-[14px] w-full lg:w-[35%] min-h-[200px] sm:min-h-[280px] md:min-h-[500px] h-[200px] sm:h-[260px] md:h-[512px]">
+        <div className="relative flex flex-col gap-8 bg-[#ffffff] rounded-[14px] w-full lg:w-[35%] h-[512px]">
           <SwiperComponent images={images} />
         </div>
       </div>
     </div>
   );
 }
-
-const Background = () => {
-  return (
-    <motion.svg
-      width="320"
-      height="384"
-      viewBox="0 0 170 384"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="absolute inset-0 z-0"
-      variants={{
-        hover: {
-          scale: 3,
-        },
-      }}
-      transition={{
-        duration: 1,
-        ease: "backInOut",
-      }}
-    >
-      <motion.circle
-        variants={{
-          hover: {
-            y: -5,
-          },
-        }}
-        transition={{
-          duration: 1,
-          ease: "backInOut",
-          delay: 0.2,
-        }}
-        cx="160.5"
-        cy="114.5"
-        r="101.5"
-        fill="#122461"
-      />
-    </motion.svg>
-  );
-};
