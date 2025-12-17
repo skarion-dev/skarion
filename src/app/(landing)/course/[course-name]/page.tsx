@@ -14,37 +14,25 @@ import { CoursesService, OpenAPI } from "@/api-client";
 
 const bootcampSchedule = [
   {
-    week: 1,
-    title: "AI Coding Agents",
+    module: 1,
+    title: "Career & Industry Focus",
     lessons: [
       {
-        id: "01",
-        name: "Cursor & Claude",
-        isLocked: true,
+        id: "1.1",
+        name: "OSP Engineering: Roles & Outlook",
+        isLocked: false,
         link: "/pdfs/lesson01.pdf",
       },
       {
-        id: "02",
-        name: "Frontend Environment",
+        id: "1.2",
+        name: "Essential Soft Skills for OSP Engineers",
         isLocked: false,
         link: "/pdfs/lesson02.pdf",
-      },
-      {
-        id: "03",
-        name: "Github Version Control",
-        isLocked: false,
-        link: "/pdfs/lesson03.pdf",
-      },
-      {
-        id: "04",
-        name: "Office hours",
-        isLocked: true,
-        link: "/pdfs/lesson04.pdf",
-      },
+      }
     ],
   },
   {
-    week: 2,
+    module: 2,
     title: "JSX Structure",
     lessons: [
       {
@@ -68,7 +56,7 @@ const bootcampSchedule = [
     ],
   },
   {
-    week: 3,
+    module: 3,
     title: "React State Management",
     lessons: [
       {
@@ -92,7 +80,7 @@ const bootcampSchedule = [
     ],
   },
   {
-    week: 4,
+    module: 4,
     title: "Deployment & Advanced Topics",
     lessons: [
       {
@@ -315,21 +303,21 @@ export default async function CoursePage() {
             </div>
             
             <Accordion type="multiple" className="w-full">
-                {bootcampSchedule.map((weekData) => (
+                {bootcampSchedule.map((moduleData) => (
                     <AccordionItem
-                        key={weekData.week}
-                        value={`week-${weekData.week}`}
+                        key={moduleData.module}
+                        value={`module-${moduleData.module}`}
                         className="border-b border-[#EBEBEB] last:border-b-0"
                     >
                         <AccordionTrigger className="hover:no-underline text-left py-4">
                         <span className="font-[400] text-[16px] sm:text-[18px]">
-                            Week {weekData.week}: {weekData.title}
+                            Module {moduleData.module}: {moduleData.title}
                         </span>
                         </AccordionTrigger>
                         
                         <AccordionContent className="p-0">
                         <div className="space-y-2 pb-4">
-                            {weekData.lessons.map((lesson) => (
+                            {moduleData.lessons.map((lesson) => (
                             <div
                                 key={lesson.id}
                                 className={`flex items-center justify-between py-3 px-4 rounded-[14px] text-white ${lesson.isLocked ? 'bg-[#1e3a8a] opacity-60 cursor-not-allowed' : 'bg-[#122461]'}`}
