@@ -3,7 +3,6 @@
 /* tslint:disable */
 /* eslint-disable */
 export type CreateCheckoutDto = {
-    email: string;
-    courseId: string;
+  email: string;
+  courseId: string;
 };
-

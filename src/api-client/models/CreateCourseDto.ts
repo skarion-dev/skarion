@@ -3,12 +3,11 @@
 /* tslint:disable */
 /* eslint-disable */
 export type CreateCourseDto = {
-    title: string;
-    description?: string;
-    slug?: string;
-    price: number;
-    currency?: string;
-    imageUrl?: string;
-    videoUrl?: string;
+  title: string;
+  description?: string;
+  slug?: string;
+  price: number;
+  currency?: string;
+  imageUrl?: string;
+  videoUrl?: string;
 };
-

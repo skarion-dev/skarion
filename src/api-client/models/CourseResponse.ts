@@ -3,15 +3,14 @@
 /* tslint:disable */
 /* eslint-disable */
 export type CourseResponse = {
-    id: string;
-    title: string;
-    description?: string | null;
-    price: number;
-    currency: string;
-    slug?: string | null;
-    imageUrl?: string | null;
-    videoUrl?: string | null;
-    createdAt: string;
-    updatedAt: string;
+  id: string;
+  title: string;
+  description?: string | null;
+  price: number;
+  currency: string;
+  slug?: string | null;
+  imageUrl?: string | null;
+  videoUrl?: string | null;
+  createdAt: string;
+  updatedAt: string;
 };
-

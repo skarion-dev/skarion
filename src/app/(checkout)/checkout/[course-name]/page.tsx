@@ -22,12 +22,23 @@ export default async function CheckoutPage(props: {
   };
 
   let isCoursePurchased = false;
+  let courseFound = false;
   try {
     OpenAPI.TOKEN = session.accessToken;
-    const myCourses = await CoursesService.coursesControllerGetMyCourses();
-    isCoursePurchased = myCourses.some(
-      (course) => course.id === purchasePayload.courseId,
+
+    const course = await CoursesService.coursesControllerFindOne(
+      purchasePayload.courseId,
     );
+    if (!course) {
+      throw new Error("Course not found");
+    }
+    courseFound = true;
+
+    const resp = await CoursesService.coursesControllerGetMyCourse(
+      purchasePayload.courseId,
+    );
+    console.log("resp", resp);
+    isCoursePurchased = !!resp;
   } catch (error) {
     console.log("error: ", error);
     // return redirect(`/auth/sign-in`);
@@ -40,6 +51,7 @@ export default async function CheckoutPage(props: {
         <ContractForm
           purchasePayload={purchasePayload}
           token={session.accessToken}
+          courseFound={courseFound}
           isPurchased={isCoursePurchased}
         />
       </div>
