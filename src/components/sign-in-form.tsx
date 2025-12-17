@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Image from "next/image";
 
 export const loginSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -59,11 +60,14 @@ export function SignInForm({
 
   return (
     <form
-      className={cn("flex flex-col gap-6", className)}
+      className={cn("flex flex-col gap-6 h-[50vh]", className)}
       {...props}
       onSubmit={handleSubmit(onSubmit)}
     >
-      <div className="grid gap-6">
+      <div className="grid gap-6 px-5">
+        <a href="/" className="flex justify-center mb-2 group relative">
+          <Image src="/logo.svg" alt="Skarion Logo" width={16} height={16} className="w-[70]" />
+        </a>
         <div className="grid">
           <Label htmlFor="email">Email</Label>
           <Input
