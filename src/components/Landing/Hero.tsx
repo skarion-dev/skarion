@@ -147,7 +147,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="relative flex flex-col gap-8 bg-[#ffffff] rounded-[14px] w-full md:w-[35%] min-h-[200px] sm:min-h-[280px] md:min-h-[495px] h-[200px] sm:h-[260px] md:h-[495px]">
+        <div className="relative flex flex-col gap-8 bg-[#ffffff] rounded-[14px] w-full md:w-[35%] min-h-[200px] sm:min-h-[280px] md:min-h-[500px] h-[200px] sm:h-[260px] md:h-[510px]">
           <SwiperComponent images={images} />
         </div>
       </div>
