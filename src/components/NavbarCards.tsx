@@ -43,7 +43,7 @@ export default function CourseCards() {
                     const isComingSoon = tag.toLowerCase() === "coming soon"
 
                     const CardContent = (
-                        <div className={isComingSoon ? "opacity-50" : ""}>
+                        <div className={isComingSoon ? "opacity-60" : ""}>
                             <div className="relative bg-gray-300 rounded-lg h-[150px] m-2">
                                 <div className={`absolute -bottom-4 left-2 inline-flex items-center justify-center px-4 py-1 text-[11px] font-[600] rounded-full border-3 border-white z-10 ${isPopular ? 'text-green-800 bg-green-200' : 'text-red-800 bg-red-200'}`}>
                                     {tag}
