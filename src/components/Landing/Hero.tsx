@@ -7,6 +7,7 @@ import SwiperComponent from "../SwiperComponent";
 import SocialCards from "../SocialCards";
 import Counter from "../Counter";
 import Steps from "../Steps";
+import { ArrowRight, ArrowRightToLine, BadgeCheck } from "lucide-react";
 
 const logos = [
   "/benton.png",
@@ -17,12 +18,26 @@ const logos = [
 ];
 
 const images = [
-  "/image 1.jpg",
-  "/image 3.jpg",
-  "/image 2.jpg",
-  "/profile 1.jpg",
-  "/profile 2.jpg",
-  "/rabbi.png",
+  {
+    src: "/pay when hired.jpg",
+    title: "Pay-When-Hired Model",
+    details: "Zero Upfront Risk. Join Now and Pay only after you land a Job."
+  },
+  {
+    src: "/end to end.jpg",
+    title: "End-to-End Placement",
+    details: "From Resume to Interview, We handle every stepof your Job Journey."
+  },
+  {
+    src: "/no degree.jpg",
+    title: "No Degree or Immigration Barriers",
+    details: "No Degree? No Problem. We Welcome All backgrounds and stories."
+  },
+  {
+    src: "/globe to us.jpg",
+    title: "Global-to-U.S.A Visa Support",
+    details: "Get Career-Ready with pathaways tailored for OPT, CPT,and H-18 Success."
+  }
 ];
 
 export default function Hero() {
@@ -93,7 +108,22 @@ export default function Hero() {
           </div>
         </div>
         <div className="w-full lg:w-[35%]">
-            <div className="rounded-[14px] h-[200px] relative flex-2 bg-[#122461] mt-4">
+            <div className="rounded-[14px] h-[200px] relative flex-2 bg-[#122461] mt-4 overflow-hidden">
+              <Image
+                src="/words.jpg"
+                alt="Skarion training"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent via black/10 to-black/90" />
+              
+              <p className="absolute left-5 top-36 -translate-y-1/2 text-white text-[20px] font-[600]">
+                Locating Niche Industries where Opportunities knock on your door
+              </p>
+              {/* <i className="absolute left-25 bottom-1/5 -translate-y-1/2 text-white text-[14px] font-[600]">
+                .....CEO of Skarion
+              </i> */}
             </div>
             <div className="text-[16px] font-[400] pt-10 pb-7 text-left">
                 Upskilling teams in 20+ companies
@@ -108,7 +138,34 @@ export default function Hero() {
           </div>
           <div className="flex flex-row items-start justify-between flex-1 space-x-8">
             <div className="flex flex-col sm:flex-row gap-4 w-full h-full">
-              <div className="flex justify-between bg-[#122461] rounded-[14px] w-full sm:w-full pt-2 py-6 px-6 min-h-[130px]">
+              <div className="relative flex items-center justify-between bg-[#122461] rounded-[14px] w-full sm:w-full pt-2 py-6 px-6 min-h-[130px] overflow-hidden">
+                <Image
+                  src="/image.png"
+                  alt="Skarion training"
+                  fill
+                  className="object-cover object-left"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-transparent" />
+                <div className="flex items-start gap-4 z-10">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white/20 text-white">
+                    <BadgeCheck className="w-5 h-5" />
+                  </div>
+                  <div className="flex flex-col">
+                    <i className="text-white/80 text-[15px] mt-1">
+                      Skarion Says...
+                    </i>
+                    <p className="text-white text-[18px] font-[600] leading-[1.2]">
+                      Know where You are irreplacable
+                    </p>
+                  </div>
+                </div>
+                <button
+                  aria-label="Learn more"
+                  className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-black text-black hover:bg-black hover:text-white transition-colors z-10"
+                >
+                  <ArrowRight className="w-4 h-4" />
+                </button>
               </div>
               <div className="w-full sm:w-[40%]">
                 <div className="w-full h-full relative shrink-0 overflow-hidden rounded-xl bg-[#122461] pl-5 pr-5 pb-4 pt-1">
