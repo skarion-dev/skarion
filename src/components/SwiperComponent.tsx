@@ -24,7 +24,6 @@ const SwiperComponent: FC<SwiperComponentProps> = ({ images }) => {
             stretch: 0,
             depth: 150,
             modifier: 1,
-
             slideShadows: false,
           }}
           autoplay={{
