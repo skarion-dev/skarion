@@ -74,7 +74,6 @@ export default function ContractForm({
   const [workAuth, setWorkAuth] = useState("");
   const [degree, setDegree] = useState("");
   const [willNotDrop, setWillNotDrop] = useState(false);
-  const [agreedToTerms, setAgreedToTerms] = useState(false);
   const searchParam = useSearchParams();
 
   useEffect(() => {
@@ -106,9 +105,8 @@ export default function ContractForm({
     isFlexible &&
     degree &&
     canCommitTime &&
-    willNotDrop &&
-    agreedToTerms;
-
+    willNotDrop
+    
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(purchasePayload);
