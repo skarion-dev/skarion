@@ -40,7 +40,7 @@ export default function CourseCards() {
 
   return (
     <div className="container">
-      <div className="flex gap-8 flex-wrap overflow-x-auto">
+      <div className="grid gap-8 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
         {courses.map((course, index) => {
           const {
             courseName,
@@ -52,7 +52,6 @@ export default function CourseCards() {
           } = course || {};
           const baseClasses = clsx(
             "relative bg-white border rounded-lg transition-all ease-out",
-            "w-full sm:w-[300px]",
           );
           const disabledClasses = clsx(
             baseClasses,
