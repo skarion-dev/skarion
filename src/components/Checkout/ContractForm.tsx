@@ -18,10 +18,10 @@ const DegreeCard = ({
   onSelect: (degree: string) => void;
 }) => {
   const baseStyle =
-    "p-4 border rounded-lg transition-all cursor-pointer text-center text-sm font-medium";
+    "p-4 border rounded-lg transition-all cursor-pointer text-center  text-sm font-medium";
   const selectedStyle = "bg-blue-50 text-[#122461]";
   const unselectedStyle =
-    "border-gray-300 hover:border-blue-400 hover:bg-gray-50 text-white";
+    "border-gray-300 text-white hover:border-blue-400 hover:bg-gray-50 hover:text-[#122461]";
 
   return (
     <div
@@ -132,18 +132,19 @@ export default function ContractForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full h-full  text-white max-w-full bg-[#122461] rounded-tl-2xl rounded-bl-2xl shadow-2xl shadow-blue-100/40 p-8 md:p-10 space-y-10 ring-1 ring-gray-200/50 text-left"
+      className=" flex flex-col justify-between w-full h-full  text-white max-w-full bg-[#122461] rounded-tl-2xl rounded-bl-2xl shadow-2xl shadow-blue-100/40 p-8 md:p-10 space-y-10 ring-1 ring-gray-200/50 text-left"
     >
+      
       <div>
         <h2 className="text-[24px] md:text-3xl font-[600] text-white tracking-tight">
           Complete Your Enrollment
         </h2>
-        <p className="mt-2 text-[14px] text-white/80">
+        <p className="mt-2 text-[14px] text-white/80 ">
           Please confirm a few details before checkout
         </p>
-      </div>
+      
 
-      <div className="space-y-6">
+      <div className="space-y-6 mt-auto pt-8">
         <FormCheckbox
           id="us-resident"
           checked={isUsResident}
@@ -223,7 +224,7 @@ export default function ContractForm({
         </FormCheckbox>
 
       </div>
-
+      </div>
       <div>
         <Button
           type="submit"
