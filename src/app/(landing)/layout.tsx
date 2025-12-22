@@ -18,7 +18,9 @@ export default async function LandingLayout({
     <main>
       <Navbar user={session?.user} />
       {children}
-      <Footer />
+      <footer id="site-footer">
+        <Footer />
+      </footer>
     </main>
   );
 }
