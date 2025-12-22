@@ -106,6 +106,111 @@ const bootcampSchedule = [
   },
 ];
 
+// const bootcampSchedule = [
+//   {
+//     week: 1,
+//     title: "AI Coding Agents",
+//     lessons: [
+//       {
+//         id: "01",
+//         name: "Cursor & Claude",
+//         isLocked: true,
+//         link: "/pdfs/lesson01.pdf",
+//       },
+//       {
+//         id: "02",
+//         name: "Frontend Environment",
+//         isLocked: false,
+//         link: "/pdfs/lesson02.pdf",
+//       },
+//       {
+//         id: "03",
+//         name: "Github Version Control",
+//         isLocked: false,
+//         link: "/pdfs/lesson03.pdf",
+//       },
+//       {
+//         id: "04",
+//         name: "Office hours",
+//         isLocked: true,
+//         link: "/pdfs/lesson04.pdf",
+//       },
+//     ],
+//   },
+//   {
+//     week: 2,
+//     title: "JSX Structure",
+//     lessons: [
+//       {
+//         id: "05",
+//         name: "JSX Fundamentals & Semantics",
+//         isLocked: true,
+//         link: "/pdfs/lesson05.pdf",
+//       },
+//       {
+//         id: "06",
+//         name: "Layouts in Next.js",
+//         isLocked: false,
+//         link: "/pdfs/lesson06.pdf",
+//       },
+//       {
+//         id: "07",
+//         name: "Styling with Tailwind CSS",
+//         isLocked: false,
+//         link: "/pdfs/lesson07.pdf",
+//       },
+//     ],
+//   },
+//   {
+//     week: 3,
+//     title: "React State Management",
+//     lessons: [
+//       {
+//         id: "08",
+//         name: "useState and useEffect",
+//         isLocked: true,
+//         link: "/pdfs/lesson08.pdf",
+//       },
+//       {
+//         id: "09",
+//         name: "Context API for Global State",
+//         isLocked: false,
+//         link: "/pdfs/lesson09.pdf",
+//       },
+//       {
+//         id: "10",
+//         name: "Building Custom Hooks",
+//         isLocked: false,
+//         link: "/pdfs/lesson10.pdf",
+//       },
+//     ],
+//   },
+//   {
+//     week: 4,
+//     title: "Deployment & Advanced Topics",
+//     lessons: [
+//       {
+//         id: "11",
+//         name: "Vercel Deployment Pipeline",
+//         isLocked: true,
+//         link: "/pdfs/lesson11.pdf",
+//       },
+//       {
+//         id: "12",
+//         name: "Serverless Functions (APIs)",
+//         isLocked: false,
+//         link: "/pdfs/lesson12.pdf",
+//       },
+//       {
+//         id: "13",
+//         name: "Final Project Review",
+//         isLocked: true,
+//         link: "/pdfs/lesson13.pdf",
+//       },
+//     ],
+//   },
+// ];
+
 export default async function CoursePage() {
   const session = await auth();
   let isPurchased = false;
