@@ -64,7 +64,7 @@ export default async function CheckoutPage(props: {
             src="/checkout1.png"
             alt="Checkout"
             fill
-            className="object-cover animate-in fade-in-0 zoom-in-95 duration-1000"
+            className="object-cover"
             priority
           />
           {/* Gradient overlay from bottom */}
