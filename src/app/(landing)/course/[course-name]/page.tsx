@@ -7,33 +7,45 @@ import {
 } from "@/components/ui/accordion";
 import IntroVideo from "@/components/IntroVideo";
 import EnrollButton from "@/components/Course/EnrollButton";
+import MobileCTA from "@/components/Course/MobileCTA";
 import { OutsidePlantEngineeringCourse } from "@/constants/course";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { CoursesService, OpenAPI } from "@/api-client";
-import MobileCTA from "@/components/Course/MobileCTA";
 
 const bootcampSchedule = [
   {
-    module: 1,
-    title: "Career & Industry Focus",
+    week: 1,
+    title: "AI Coding Agents",
     lessons: [
       {
-        id: "1.1",
-        name: "OSP Engineering: Roles & Outlook",
-        isLocked: false,
+        id: "01",
+        name: "Cursor & Claude",
+        isLocked: true,
         link: "/pdfs/lesson01.pdf",
       },
       {
-        id: "1.2",
-        name: "Essential Soft Skills for OSP Engineers",
+        id: "02",
+        name: "Frontend Environment",
         isLocked: false,
         link: "/pdfs/lesson02.pdf",
-      }
+      },
+      {
+        id: "03",
+        name: "Github Version Control",
+        isLocked: false,
+        link: "/pdfs/lesson03.pdf",
+      },
+      {
+        id: "04",
+        name: "Office hours",
+        isLocked: true,
+        link: "/pdfs/lesson04.pdf",
+      },
     ],
   },
   {
-    module: 2,
+    week: 2,
     title: "JSX Structure",
     lessons: [
       {
@@ -57,7 +69,7 @@ const bootcampSchedule = [
     ],
   },
   {
-    module: 3,
+    week: 3,
     title: "React State Management",
     lessons: [
       {
@@ -81,7 +93,7 @@ const bootcampSchedule = [
     ],
   },
   {
-    module: 4,
+    week: 4,
     title: "Deployment & Advanced Topics",
     lessons: [
       {
@@ -105,111 +117,6 @@ const bootcampSchedule = [
     ],
   },
 ];
-
-// const bootcampSchedule = [
-//   {
-//     week: 1,
-//     title: "AI Coding Agents",
-//     lessons: [
-//       {
-//         id: "01",
-//         name: "Cursor & Claude",
-//         isLocked: true,
-//         link: "/pdfs/lesson01.pdf",
-//       },
-//       {
-//         id: "02",
-//         name: "Frontend Environment",
-//         isLocked: false,
-//         link: "/pdfs/lesson02.pdf",
-//       },
-//       {
-//         id: "03",
-//         name: "Github Version Control",
-//         isLocked: false,
-//         link: "/pdfs/lesson03.pdf",
-//       },
-//       {
-//         id: "04",
-//         name: "Office hours",
-//         isLocked: true,
-//         link: "/pdfs/lesson04.pdf",
-//       },
-//     ],
-//   },
-//   {
-//     week: 2,
-//     title: "JSX Structure",
-//     lessons: [
-//       {
-//         id: "05",
-//         name: "JSX Fundamentals & Semantics",
-//         isLocked: true,
-//         link: "/pdfs/lesson05.pdf",
-//       },
-//       {
-//         id: "06",
-//         name: "Layouts in Next.js",
-//         isLocked: false,
-//         link: "/pdfs/lesson06.pdf",
-//       },
-//       {
-//         id: "07",
-//         name: "Styling with Tailwind CSS",
-//         isLocked: false,
-//         link: "/pdfs/lesson07.pdf",
-//       },
-//     ],
-//   },
-//   {
-//     week: 3,
-//     title: "React State Management",
-//     lessons: [
-//       {
-//         id: "08",
-//         name: "useState and useEffect",
-//         isLocked: true,
-//         link: "/pdfs/lesson08.pdf",
-//       },
-//       {
-//         id: "09",
-//         name: "Context API for Global State",
-//         isLocked: false,
-//         link: "/pdfs/lesson09.pdf",
-//       },
-//       {
-//         id: "10",
-//         name: "Building Custom Hooks",
-//         isLocked: false,
-//         link: "/pdfs/lesson10.pdf",
-//       },
-//     ],
-//   },
-//   {
-//     week: 4,
-//     title: "Deployment & Advanced Topics",
-//     lessons: [
-//       {
-//         id: "11",
-//         name: "Vercel Deployment Pipeline",
-//         isLocked: true,
-//         link: "/pdfs/lesson11.pdf",
-//       },
-//       {
-//         id: "12",
-//         name: "Serverless Functions (APIs)",
-//         isLocked: false,
-//         link: "/pdfs/lesson12.pdf",
-//       },
-//       {
-//         id: "13",
-//         name: "Final Project Review",
-//         isLocked: true,
-//         link: "/pdfs/lesson13.pdf",
-//       },
-//     ],
-//   },
-// ];
 
 export default async function CoursePage() {
   const session = await auth();
@@ -409,21 +316,21 @@ export default async function CoursePage() {
             </div>
             
             <Accordion type="multiple" className="w-full">
-                {bootcampSchedule.map((moduleData) => (
+                {bootcampSchedule.map((weekData) => (
                     <AccordionItem
-                        key={moduleData.module}
-                        value={`module-${moduleData.module}`}
+                        key={weekData.week}
+                        value={`week-${weekData.week}`}
                         className="border-b border-[#EBEBEB] last:border-b-0"
                     >
                         <AccordionTrigger className="hover:no-underline text-left py-4">
                         <span className="font-[400] text-[16px] sm:text-[18px]">
-                            Module {moduleData.module}: {moduleData.title}
+                            Week {weekData.week}: {weekData.title}
                         </span>
                         </AccordionTrigger>
                         
                         <AccordionContent className="p-0">
                         <div className="space-y-2 pb-4">
-                            {moduleData.lessons.map((lesson) => (
+                            {weekData.lessons.map((lesson) => (
                             <div
                                 key={lesson.id}
                                 className={`flex items-center justify-between py-3 px-4 rounded-[14px] text-white ${lesson.isLocked ? 'bg-[#1e3a8a] opacity-60 cursor-not-allowed' : 'bg-[#122461]'}`}
@@ -470,7 +377,7 @@ export default async function CoursePage() {
           </div>
           <EnrollButton isPurchased={isPurchased} />
           </div>
-                <div className="block lg:hidden h-[80px]" />
+            <div className="block lg:hidden h-[80px]" />
             </div>
             <MobileCTA isPurchased={isPurchased} />
         </div>
