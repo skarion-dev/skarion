@@ -47,9 +47,10 @@ export default function Header({ user }: { user?: any }) {
   }, [isMobileMenuOpen]);
 
   return (
-    <div className="sticky top-4 z-30">
+    <div className="sticky top-0 lg:top-4 z-30">
       <div className="relative" onMouseLeave={() => setIsMenuOpen(false)}>
-        <div className="lg:max-w-[1400px] sm:mx-auto flex justify-between mt-4 mx-2 h-[70px] bg-[#FFFFFF] rounded-[12px] border border-[#EBEBEB] px-6">
+        <div className="lg:max-w-[1400px] lg:mx-auto lg:px-4">
+          <div className="flex justify-between lg:mt-4 mt-0 mx-0 h-[70px] bg-[#FFFFFF] lg:rounded-[12px] border border-[#EBEBEB] px-6">
           <div className="flex items-center h-full gap-12">
             <div className="" onMouseEnter={() => setIsMenuOpen(false)}>
               <Link href="/">
@@ -239,9 +240,11 @@ export default function Header({ user }: { user?: any }) {
               )}
             </button>
           </div>
+          </div>
+        
 
           {isMobileMenuOpen && (
-            <div className="lg:hidden absolute top-[75px] left-0 right-0 bg-white border-b border-[#EBEBEB] shadow-lg rounded-b-[12px] mx-2 p-4">
+            <div className="lg:hidden absolute top-[75px] left-0 right-0 bg-white border-b border-[#EBEBEB] shadow-lg rounded-b-[12px] lg:mx-2 mx-0 p-4">
               <div className="flex flex-col space-y-4">
                 <div
                   onClick={() => handleChangeMenu("programs")}
@@ -347,7 +350,7 @@ export default function Header({ user }: { user?: any }) {
         {isMenuOpen && (
             <div
                 ref={dropdownRef}
-                className="absolute left-1/2 transform -translate-x-1/2 lg:max-w-[1400px] w-[95%] sm:w-full mx-auto -mt-1 pt-4 z-50"
+                className="absolute left-1/2 transform -translate-x-1/2 lg:max-w-[1400px] w-full lg:w-auto lg:mx-auto mx-0 -mt-1 lg:pt-4 pt-0 z-50"
             >
                 <div
                     className="bg-[#FFFFFF] rounded-[12px] border border-[#EBEBEB] shadow-md p-4"
