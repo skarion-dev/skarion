@@ -53,7 +53,7 @@ export function SignInForm({
 
     if (res?.ok) {
       setIsPending(false);
-      router.push("/dashboard");
+      router.push("/");
     }
   };
 
@@ -108,7 +108,7 @@ export function SignInForm({
         <button
           type="button"
           className="w-full flex items-center justify-center gap-4 py-2.5 px-6 text-[15px] font-medium tracking-wide text-slate-900 border border-slate-300 rounded-md hover:bg-slate-100 focus:outline-none cursor-pointer"
-          onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+          onClick={() => signIn("google", { callbackUrl: "/" })}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

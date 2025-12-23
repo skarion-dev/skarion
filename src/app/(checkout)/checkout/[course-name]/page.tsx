@@ -53,6 +53,7 @@ export default async function CheckoutPage(props: {
             token={session.accessToken}
             courseFound={courseFound}
             isPurchased={isCoursePurchased}
+            user={session.user}
           />
         </div>
         <div className="bg-white h-full w-full relative overflow-hidden">
@@ -60,7 +61,7 @@ export default async function CheckoutPage(props: {
             src="/checkout1.png"
             alt="Checkout"
             fill
-            className="object-cover animate-in fade-in-0 zoom-in-95 duration-1000"
+            className="object-cover"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#122461]/50 to-[#ff686b]/20" />
