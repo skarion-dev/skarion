@@ -27,7 +27,7 @@ const images = [
 
 export default function Hero() {
   return (
-    <div className="w-full bg-[#ffffff] py-10 sm:px-12 px-6 max-w-[1440px] mx-auto">
+    <div className="w-full bg-[#ffffff] sm:py-10 py-5 sm:px-12 px-6 max-w-[1440px] mx-auto">
       <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:space-x-8">
         <div className="w-full lg:w-[60%]">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5 mb-5 mt-2">
@@ -93,9 +93,9 @@ export default function Hero() {
           </div>
         </div>
         <div className="w-full lg:w-[35%]">
-            <div className="rounded-[14px] h-[200px] relative flex-2 bg-[#122461] mt-4">
+            <div className="rounded-[14px] h-[200px] relative flex-2 bg-[#122461] sm:mt-4 mt-2">
             </div>
-            <div className="text-[16px] font-[400] pt-10 pb-7 text-left">
+            <div className="text-[16px] font-[400] sm:pt-10 pt-7 pb-7 text-left">
                 Upskilling teams in 20+ companies
             </div>
             <LogoCarousel logos={logos} />
