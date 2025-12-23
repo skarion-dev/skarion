@@ -16,107 +16,601 @@ import { CoursesService, OpenAPI } from "@/api-client";
 const bootcampSchedule = [
   {
     week: 1,
-    title: "AI Coding Agents",
+    title: "Career & Industry Focus",
     lessons: [
       {
-        id: "01",
-        name: "Cursor & Claude",
-        isLocked: true,
+        id: "1.1",
+        name: "OSP Engineering Roles & Outlook",
+        isLocked: false,
         link: "/pdfs/lesson01.pdf",
       },
       {
-        id: "02",
-        name: "Frontend Environment",
+        id: "1.2",
+        name: "Essential Soft Skills for OSP Engineers",
         isLocked: false,
         link: "/pdfs/lesson02.pdf",
-      },
-      {
-        id: "03",
-        name: "Github Version Control",
-        isLocked: false,
-        link: "/pdfs/lesson03.pdf",
-      },
-      {
-        id: "04",
-        name: "Office hours",
-        isLocked: true,
-        link: "/pdfs/lesson04.pdf",
-      },
+      }
     ],
   },
   {
     week: 2,
-    title: "JSX Structure",
+    title: "Network Architecture Fundamentals",
     lessons: [
       {
-        id: "05",
-        name: "JSX Fundamentals & Semantics",
+        id: "2.1",
+        name: "Submarine to Home Journey",
         isLocked: true,
         link: "/pdfs/lesson05.pdf",
       },
       {
-        id: "06",
-        name: "Layouts in Next.js",
-        isLocked: false,
+        id: "2.2",
+        name: "Core OSP Components and Hierarchy",
+        isLocked: true,
         link: "/pdfs/lesson06.pdf",
       },
       {
-        id: "07",
-        name: "Styling with Tailwind CSS",
-        isLocked: false,
-        link: "/pdfs/lesson07.pdf",
+        id: "2.3",
+        name: "PON Basics and Capacity Planning",
+        isLocked: true,
+        link: "/pdfs/lesson06.pdf",
       },
+      {
+        id: "Q1",
+        name: "Pop Quiz (13 Questions)",
+        isLocked: true,
+        link: "/pdfs/lesson06.pdf",
+      }
     ],
   },
   {
     week: 3,
-    title: "React State Management",
+    title: "Fiber Technology Essentials Phase-1",
     lessons: [
       {
-        id: "08",
-        name: "useState and useEffect",
+        id: "3.1",
+        name: "Fiber Construction and Fundamentals",
         isLocked: true,
         link: "/pdfs/lesson08.pdf",
       },
       {
-        id: "09",
-        name: "Context API for Global State",
-        isLocked: false,
+        id: "S1",
+        name: "SCORM: Color Coded Fiber Distribution",
+        isLocked: true,
         link: "/pdfs/lesson09.pdf",
       },
       {
-        id: "10",
-        name: "Building Custom Hooks",
-        isLocked: false,
+        id: "S2",
+        name: "SCORM: Total Internal Reflection",
+        isLocked: true,
+        link: "/pdfs/lesson09.pdf",
+      },
+      {
+        id: "Q2",
+        name: "Pop Quiz (10 Questions)",
+        isLocked: true,
         link: "/pdfs/lesson10.pdf",
       },
     ],
   },
   {
     week: 4,
-    title: "Deployment & Advanced Topics",
+    title: "Fiber Technology Essentials Phase-2",
     lessons: [
       {
-        id: "11",
-        name: "Vercel Deployment Pipeline",
+        id: "4.1",
+        name: "Fusion Splicing and Quality Control",
         isLocked: true,
         link: "/pdfs/lesson11.pdf",
       },
       {
-        id: "12",
-        name: "Serverless Functions (APIs)",
-        isLocked: false,
+        id: "S3",
+        name: "SCORM: Mini Fusion Lab",
+        isLocked: true,
         link: "/pdfs/lesson12.pdf",
       },
       {
-        id: "13",
-        name: "Final Project Review",
+        id: "Q3",
+        name: "Pop Quiz (15 Questions)",
         isLocked: true,
         link: "/pdfs/lesson13.pdf",
       },
     ],
   },
+  {
+    week: 5,
+    title: "Legal & Regulatory Framework",
+    lessons: [
+      {
+        id: "5.1",
+        name: "Site Planning: ROW, Easements and Maps",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "S4",
+        name: "SCORM: Permit Picker",
+        isLocked: true,
+        link: "/pdfs/lesson12.pdf",
+      },
+      {
+        id: "Q4",
+        name: "Pop Quiz (10 Questions)",
+        isLocked: true,
+        link: "/pdfs/lesson13.pdf",
+      },
+    ],
+  },
+  {
+    week: 6,
+    title: "Underground Infrastructure",
+    lessons: [
+      {
+        id: "6.1",
+        name: "Underground Infrastructure",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "S5",
+        name: "SCORM: 811 Locate",
+        isLocked: true,
+        link: "/pdfs/lesson12.pdf",
+      },
+      {
+        id: "6.2",
+        name: "Aerial Infrastructure",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "S6",
+        name: "SCORM: Span Sense",
+        isLocked: true,
+        link: "/pdfs/lesson12.pdf",
+      },
+      {
+        id: "6.3",
+        name: "Network Components Deep Dive",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "Q5",
+        name: "Pop Quiz (20 Questions)",
+        isLocked: true,
+        link: "/pdfs/lesson13.pdf",
+      }
+    ],
+  },
+  {
+    week: 7,
+    title: "GIS Address Classification & Capacity Planning",
+    lessons: [
+      {
+        id: "7.1",
+        name: "Type of OSP Service Locations",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "7.2",
+        name: "Capacity and Velocity Planning",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "Q6",
+        name: "Pop Quiz (9 Questions)",
+        isLocked: true,
+        link: "/pdfs/lesson13.pdf",
+      },
+    ],
+  },
+  {
+    week: 8,
+    title: "PON Technology & Network Architecture",
+    lessons: [
+      {
+        id: "8.1",
+        name: "PON Specifications, deployment, and QoS",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "Q7",
+        name: "Pop Quiz (10 Questions)",
+        isLocked: true,
+        link: "/pdfs/lesson13.pdf",
+      },
+    ],
+  },
+  {
+    week: 9,
+    title: "Design Constraints & Optimization",
+    lessons: [
+      {
+        id: "9.1",
+        name: "Design Rules and Engineering Principles",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "Q8",
+        name: "Pop Quiz (10 Questions)",
+        isLocked: true,
+        link: "/pdfs/lesson13.pdf",
+      },
+    ],
+  },
+  {
+    week: 10,
+    title: "HLD Theory",
+    lessons: [
+      {
+        id: "10.1",
+        name: "Introduction to HLD",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "10.2",
+        name: "Mapping Fundamentals",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "10.3",
+        name: "Project Definition and Network Planning",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "10.4",
+        name: "Network Hierarchy",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "10.5",
+        name: "Placement Principles",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "Q9",
+        name: "Pop Quiz (14 Questions)",
+        isLocked: true,
+        link: "/pdfs/lesson13.pdf",
+      },
+    ],
+  },
+  {
+    week: 11,
+    title: "SKARION Design Standards",
+    lessons: [
+      {
+        id: "11.1",
+        name: "SKARION Design Standards",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "Q10",
+        name: "Pop Quiz (20 Questions)",
+        isLocked: true,
+        link: "/pdfs/lesson13.pdf",
+      },
+    ],
+  },
+  {
+    week: 12,
+    title: "HLD Project 01 - Tracing EOP, CL and ROW",
+    lessons: [
+      {
+        id: "12.1",
+        name: "HLD Project 01 - Tracing EOP, CL and ROW (Slide)",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "12.2",
+        name: "HLD Project 01 - Tracing EOP, CL and ROW (Video)",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "Q11",
+        name: "Pop Quiz (10 Questions)",
+        isLocked: true,
+        link: "/pdfs/lesson13.pdf",
+      },
+      {
+        id: "P1",
+        name: "Project - Tracing EOP, CL and ROW",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+    ],
+  },
+  {
+    week: 13,
+    title: "HLD Project 02 - Service Groups",
+    lessons: [
+      {
+        id: "13.1",
+        name: "HLD Project 02 - Service Groups (Slide)",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "13.2",
+        name: "HLD Project 02 - Service Groups (Video)",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "Q12",
+        name: "Pop Quiz (10 Questions)",
+        isLocked: true,
+        link: "/pdfs/lesson13.pdf",
+      },
+      {
+        id: "P2",
+        name: "Project - Service Groups",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+    ],
+  },
+  {
+    week: 14,
+    title: "HLD Project 03 - Conduit, Handhole and Flowerpot Placement",
+    lessons: [
+      {
+        id: "14.1",
+        name: "HLD Project 03 - Conduit, Handhole and Flowerpot Placement (Slide)",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "14.2",
+        name: "HLD Project 03 - Conduit, Handhole and Flowerpot Placement (Video)",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "Q13",
+        name: "Pop Quiz (10 Questions)",
+        isLocked: true,
+        link: "/pdfs/lesson13.pdf",
+      },
+      {
+        id: "P3",
+        name: "Project - Conduit, Handhole and Flowerpot Placement",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+    ],
+  },
+  {
+    week: 15,
+    title: "HLD Project 04 - Splice Closure Placement",
+    lessons: [
+      {
+        id: "15.1",
+        name: "HLD Project 04 - Splice Closure Placement (Slide)",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "15.2",
+        name: "HLD Project 04 - Splice Closure Placement (Video)",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "Q14",
+        name: "Pop Quiz (10 Questions)",
+        isLocked: true,
+        link: "/pdfs/lesson13.pdf",
+      },
+      {
+        id: "P4",
+        name: "Project - Splice Closure Placement",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+    ],
+  },
+  {
+    week: 16,
+    title: "HLD Project 05 - Vicinity Map",
+    lessons: [
+      {
+        id: "16.1",
+        name: "HLD Project 05 - Vicinity Map (Slide)",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "16.2",
+        name: "HLD Project 05 - Vicinity Map (Video)",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "Q15",
+        name: "Pop Quiz (7 Questions)",
+        isLocked: true,
+        link: "/pdfs/lesson13.pdf",
+      },
+      {
+        id: "P5",
+        name: "Project - Vicinity Map",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+    ],
+  },
+  {
+    week: 17,
+    title: "LLD Project 01 - Labels and Callouts",
+    lessons: [
+      {
+        id: "17.1",
+        name: "LLD Project 01 - Labels and Callouts (Slide)",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "17.2",
+        name: "LLD Project 01 - Labels and Callouts (Video)",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "Q16",
+        name: "Pop Quiz (10 Questions)",
+        isLocked: true,
+        link: "/pdfs/lesson13.pdf",
+      },
+      {
+        id: "P6",
+        name: "Project -  Labels and Callouts",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+    ],
+  },
+  {
+    week: 18,
+    title: "LLD Project 02 - Schematic",
+    lessons: [
+      {
+        id: "18.1",
+        name: "LLD Project 02 - Schematic (Slide)",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "18.2",
+        name: "LLD Project 02 - Schematic (Video)",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "Q17",
+        name: "Pop Quiz (10 Questions)",
+        isLocked: true,
+        link: "/pdfs/lesson13.pdf",
+      },
+      {
+        id: "P7",
+        name: "Project - Schematic",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+    ],
+  },
+  {
+    week: 19,
+    title: "LLD Project 03 - Cable and Terminal Labelling",
+    lessons: [
+      {
+        id: "19.1",
+        name: "LLD Project 03 - Cable and Terminal Labelling (Slide)",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "19.2",
+        name: "LLD Project 03 - Cable and Terminal Labelling (Video)",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "Q18",
+        name: "Pop Quiz (10 Questions)",
+        isLocked: true,
+        link: "/pdfs/lesson13.pdf",
+      },
+      {
+        id: "P8",
+        name: "Project - Cable and Terminal Labelling",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+    ],
+  },
+  {
+    week: 20,
+    title: "LLD Project 04 - Paperspace, Splice Point & Splice Diagram",
+    lessons: [
+      {
+        id: "20.1",
+        name: "LLD Project 04 - Paperspace, Splice Point & Splice Diagram (Slide)",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "20.2",
+        name: "LLD Project 04 - Paperspace, Splice Point & Splice Diagram (Video)",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "Q19",
+        name: "Pop Quiz (10 Questions)",
+        isLocked: true,
+        link: "/pdfs/lesson13.pdf",
+      },
+      {
+        id: "P9",
+        name: "Project - Paperspace, Splice Point & Splice Diagram",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+    ],
+  },
+  {
+    week: 21,
+    title: "LLD Project 5 - BOM and Splice Matrix",
+    lessons: [
+      {
+        id: "21.1",
+        name: "LLD Project 5 - BOM and Splice Matrix (Slide)",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "21.2",
+        name: "LLD Project 5 - BOM and Splice Matrix (Video)",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+      {
+        id: "Q20",
+        name: "Pop Quiz (10 Questions)",
+        isLocked: true,
+        link: "/pdfs/lesson13.pdf",
+      },
+      {
+        id: "P10",
+        name: "Project - BOM and Splice Matrix",
+        isLocked: true,
+        link: "/pdfs/lesson11.pdf",
+      },
+    ],
+  }
 ];
+
+
+
+
+
+
+
+
 
 export default async function CoursePage() {
   const session = await auth();
@@ -150,7 +644,9 @@ export default async function CoursePage() {
         <p className="text-[16px] sm:text-[18px] font-[300] mt-4">
             OSP Engineering involves the design, installation, and maintenance of outdoor infrastructure, including fiber optic routes, cables, and utility networks.
         </p>
-        <div className="rounded-[14px] h-[250px] sm:h-[300px] md:h-[400px] relative bg-[#122461] mt-10 text-white"></div>
+        <div className="rounded-[14px] h-[250px] sm:h-[300px] md:h-[400px] relative bg-[#122461] mt-10 text-white overflow-hidden">
+         
+        </div>
         <p className="text-[24px] font-[500] mt-10 capitalize">Unlock high-demand careers in the US with OSP engineering!</p>
         <p className="text-[14px] sm:text-[16px] font-[500] text-[#666666] font-[300] mt-3">
             13 Theory Modules · Live & On-Demand · 10+ Real World Projects
@@ -309,7 +805,7 @@ export default async function CoursePage() {
                     </div>
                     <span className="hidden md:block w-[2px] h-14 bg-[#EBEBEB] self-center"></span>
                     <div className="w-full sm:w-[45%] md:w-[20%]">
-                        <p className="text-[20px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2]">10</p>
+                        <p className="text-[20px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2]">20</p>
                         <p className="text-[14px] font-[400] mt-2 mb-1">Quizzes</p>
                     </div>
                 </div>
@@ -324,35 +820,52 @@ export default async function CoursePage() {
                     >
                         <AccordionTrigger className="hover:no-underline text-left py-4">
                         <span className="font-[400] text-[16px] sm:text-[18px]">
-                            Week {weekData.week}: {weekData.title}
+                            Module {weekData.week}: {weekData.title}
                         </span>
                         </AccordionTrigger>
                         
                         <AccordionContent className="p-0">
                         <div className="space-y-2 pb-4">
                             {weekData.lessons.map((lesson) => (
-                            <div
-                                key={lesson.id}
-                                className={`flex items-center justify-between py-3 px-4 rounded-[14px] text-white ${lesson.isLocked ? 'bg-[#1e3a8a] opacity-60 cursor-not-allowed' : 'bg-[#122461]'}`}
-                            >
-                                <div className="flex items-center space-x-4">
-                                <span className="text-[16px] font-[400]">{lesson.id}</span>
-                                <a 
-                                    href={lesson.link} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className={`font-medium ${lesson.isLocked ? 'pointer-events-none' : 'text-white hover:text-blue-400'}`}
+                              lesson.isLocked ? (
+                                <div
+                                  key={lesson.id}
+                                  className="w-full flex items-center justify-between py-3 px-4 rounded-[14px] text-white bg-[#1e3a8a] opacity-60 cursor-not-allowed"
                                 >
-                                    {lesson.name}
-                                </a>
-                                
+                                  <div className="flex items-center space-x-4">
+                                    <span className="text-[16px] font-[400]">{lesson.id}</span>
+                                    <span className="font-[16px]">{lesson.name}</span>
+                                  </div>
+                                  <span className="text-[14px] font-[400]">Locked</span>
                                 </div>
-                                {lesson.isLocked && (
-                                    <span className="flex items-center text-[14px] font-[400]">
-                                        Locked
-                                    </span>
-                                )}
-                            </div>
+                              ) : (
+                                <AccordionItem
+                                  key={lesson.id}
+                                  value={`lesson-${lesson.id}`}
+                                  className="border-none"
+                                >
+                                  <AccordionTrigger
+                                    className="w-full flex items-center justify-between py-3 px-4 rounded-[14px] text-white transition hover:no-underline bg-[#122461]"
+                                  >
+                                    <div className="flex items-center space-x-4">
+                                      <span className="text-[16px] font-[400]">{lesson.id}</span>
+                                      <span className="font-[16px] hover:text-[#c3ddf5]">{lesson.name}</span>
+                                    </div>
+                                  </AccordionTrigger>
+                                  <AccordionContent className="p-0 mt-2">
+                                    <div className="rounded-[14px] overflow-hidden bg-black">
+                                      <video
+                                        className="w-full h-[350]"
+                                        controls
+                                        preload="metadata"
+                                      >
+                                        <source src={lesson.link.replace('.pdf', '.mp4')} type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                      </video>
+                                    </div>
+                                  </AccordionContent>
+                                </AccordionItem>
+                              )
                             ))}
                         </div>
                     </AccordionContent>
@@ -363,7 +876,8 @@ export default async function CoursePage() {
     </div>
       <div className="w-full lg:w-[30%]">
         <div className="sticky top-[126px] rounded-[14px] bg-[#122461] w-full px-8 py-8 hidden lg:block">
-          <div className="bg-[#ffffff] rounded-[14px] h-[200px]"></div>
+          <div className="relative bg-[#ffffff] rounded-[14px] h-[200px]">
+          </div>
           <p className="text-[24px] leading-[1.2] text-white mt-4 font-[500]">
             Outside Plant Engineering
           </p>
@@ -377,7 +891,7 @@ export default async function CoursePage() {
           </div>
           <EnrollButton isPurchased={isPurchased} />
           </div>
-            <div className="block lg:hidden h-[80px]" />
+                <div className="block lg:hidden h-[80px]" />
             </div>
             <MobileCTA isPurchased={isPurchased} />
         </div>
