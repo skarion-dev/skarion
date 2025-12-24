@@ -244,7 +244,7 @@ export default function Header({ user }: { user?: any }) {
         
 
           {isMobileMenuOpen && (
-            <div className="lg:hidden absolute top-[75px] left-0 right-0 bg-white border-b border-[#EBEBEB] shadow-lg rounded-b-[12px] lg:mx-2 mx-0 p-4">
+            <div className="lg:hidden absolute left-0 right-0 bg-white border-b border-[#EBEBEB] shadow-lg lg:mx-2 mx-0 p-4">
               <div className="flex flex-col space-y-4">
                 <div
                   onClick={() => handleChangeMenu("programs")}
@@ -350,7 +350,7 @@ export default function Header({ user }: { user?: any }) {
         {isMenuOpen && (
             <div
                 ref={dropdownRef}
-                className="absolute left-1/2 transform -translate-x-1/2 lg:max-w-[1400px] w-full lg:w-auto lg:mx-auto mx-0 -mt-1 lg:pt-4 pt-0 z-50"
+                className="absolute left-1/2 transform -translate-x-1/2 lg:max-w-[1400px] lg:mx-auto lg:px-4 w-full mx-0 -mt-1 lg:pt-4 pt-0 z-50"
             >
                 <div
                     className="bg-[#FFFFFF] rounded-[12px] border border-[#EBEBEB] shadow-md p-4"

@@ -881,14 +881,6 @@ export default async function CoursePage() {
           <p className="text-[24px] leading-[1.2] text-white mt-4 font-[500]">
             Outside Plant Engineering
           </p>
-          <div className="mt-3 flex gap-3">
-            <p className="text-[20px] leading-[1.2] text-white line-through font-medium">
-              ${OutsidePlantEngineeringCourse.originalPrice}
-            </p>
-            <p className="text-[20px] leading-[1.2] text-white font-medium">
-              ${OutsidePlantEngineeringCourse.discountedPrice}
-            </p>
-          </div>
           <EnrollButton isPurchased={isPurchased} />
           </div>
                 <div className="block lg:hidden h-[80px]" />
