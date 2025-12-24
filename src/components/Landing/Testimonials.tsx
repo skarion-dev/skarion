@@ -12,50 +12,51 @@ interface ITestimonial {
 const testimonials: ITestimonial[] = [
   {
     name: "Lauren Layre",
-    text: "I've loved digging into advanced prototyping, micro-interactions...",
-    avatar: "/skarion.png",
+    text: "Skarion's hands-on approach gave me the real-world skills I needed to jumpstart my career in OSP Engineering. The training was both practical and challenging!",
+    avatar: "/lauren.avif",
   },
   {
     name: "Tanvi Rakshe",
-    text: "Experience with Memorisely has been wonderful and engaging...",
-    avatar: "/skarion.png",
+    text: "I’ve gained valuable industry insights and practical knowledge from Skarion's focused bootcamp. The career support they offer is unparalleled.",
+    avatar: "/hadria.avif",
   },
   {
     name: "Bobby Shaw",
-    text: "I've loved digging into advanced prototyping, micro-interactions...",
-    avatar: "/skarion.png",
+    text: "The comprehensive curriculum and expert instructors at Skarion provided me with all the tools to succeed in fiber-optic design. Highly recommend!",
+    avatar: "/nicolas.avif",
   },
   {
     name: "Arnold Wei",
-    text: "Memorisely’s UX/UI bootcamp gave me the tools to feel confident...",
-    avatar: "/skarion.png",
+    text: "Skarion’s real-world training environment helped me build confidence and gave me the technical skills to land a job in telecom engineering.",
+    avatar: "/steffan.avif",
   },
   {
     name: "Hadria",
-    text: "It was very nice to be in a learning space with people from all over...",
-    avatar: "/skarion.png",
+    text: "What I loved most about Skarion was the collaboration with people from diverse backgrounds, creating an enriching learning environment that mirrors the workplace.",
+    avatar: "/andy.avif",
   },
   {
     name: "Neer Chaudhury",
-    text: "I've loved digging into advanced prototyping, micro-interactions...",
-    avatar: "/skarion.png",
+    text: "Skarion provided me with practical training that directly applies to the job market, and their job placement assistance helped me secure my position.",
+    avatar: "/jake.avif",
   },
   {
     name: "Mariam Gagnidze",
-    text: "The Bootcamp mirrors real-life work scenarios with diverse teachers...",
-    avatar: "/skarion.png",
+    text: "Skarion’s bootcamp reflects real-life work scenarios with industry professionals guiding us every step of the way. It's been a game-changer for my career.",
+    avatar: "/neer.avif",
   },
   {
     name: "Esther Plaatsman",
-    text: "I've loved digging into advanced prototyping, micro-interactions...",
-    avatar: "/skarion.png",
+    text: "The hands-on training and mentorship I received at Skarion gave me the confidence and skills to succeed in my OSP engineering role.",
+    avatar: "/bobby.avif",
   },
   {
     name: "Steffan Morris Hernandez",
-    text: "I've loved digging into advanced prototyping, micro-interactions...",
-    avatar: "/skarion.png",
+    text: "Thanks to Skarion, I gained the technical expertise and job-readiness that allowed me to thrive in my new engineering position. A great investment in my future!",
+    avatar: "/mariam.avif",
   },
 ];
+
 
 export default function Testimonials() {
   const container = useRef(null);
@@ -141,7 +142,15 @@ const Column = ({
             key={i}
             className={`break-inside-avoid mb-6 border border-gray-300 rounded-xl p-5 flex flex-col will-change-transform transform-gpu`}
           >
-            <p className="text-[16px] font-[400]">{item.text}</p>
+            <div className="flex items-center gap-3">
+              <img
+                src={item.avatar}
+                alt={item.name}
+                className="w-[30px] h-[30px] rounded-[10px]"
+              />
+              <span className="text-[16px] font-[500]">{item.name}</span>
+            </div>
+            <p className="text-[16px] font-[400] mt-3">{item.text}</p>
           </div>
         );
       })}
