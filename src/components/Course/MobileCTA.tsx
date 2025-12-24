@@ -43,14 +43,6 @@ export default function MobileCTA({ isPurchased }: { isPurchased: boolean }) {
           <span className="text-white leading-[1.2] text-[24px] font-[500]">
             OSP Engineering Bootcamp
           </span>
-          <div className="flex items-center gap-3 mt-2">
-            <p className="text-[18px] leading-[1.2] text-white/80 line-through font-[400]">
-              $500
-            </p>
-            <p className="text-[18px] leading-[1.2] text-white font-[400]">
-              $300
-            </p>
-          </div>
           <EnrollButton isPurchased={isPurchased} />
         </div>
       </div>
