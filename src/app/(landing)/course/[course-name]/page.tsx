@@ -644,8 +644,8 @@ export default async function CoursePage() {
         <p className="text-[16px] sm:text-[18px] font-[300] mt-4">
             OSP Engineering involves the design, installation, and maintenance of outdoor infrastructure, including fiber optic routes, cables, and utility networks.
         </p>
-        <div className="rounded-[14px] h-[250px] sm:h-[300px] md:h-[400px] relative bg-[#122461] mt-10 text-white overflow-hidden">
-         
+        <div className="rounded-[14px] bg-[#122461] mt-10 text-white overflow-hidden">
+          <IntroVideo />
         </div>
         <p className="text-[24px] font-[500] mt-10 capitalize">Unlock high-demand careers in the US with OSP engineering!</p>
         <p className="text-[14px] sm:text-[16px] font-[500] text-[#666666] font-[300] mt-3">
