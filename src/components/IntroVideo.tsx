@@ -35,8 +35,8 @@ const VideoComponent = () => {
   }, [scrollContainerRef]);
 
   return (
-    <div className="absolute inset-0 w-full h-full">
-      <div ref={sentinelRef} className="w-full h-full" />
+    <div className="w-full">
+      <div ref={sentinelRef} className="w-full h-[1px]" />
       {isVisible ? (
         <video
           autoPlay
@@ -44,13 +44,13 @@ const VideoComponent = () => {
           muted
           playsInline
           preload="none"
-          className="absolute inset-0 w-full h-full object-cover z-5"
+          className="w-full h-auto object-contain"
         >
           {shouldLoad && <source src="/intro.mp4" type="video/mp4" />}
           Your browser does not support the video tag.
         </video>
       ) : (
-        <div className="absolute inset-0 w-full h-full bg-gray-300" />
+        <div className="w-full h-[180px] sm:h-[220px] md:h-[260px] bg-gray-300" />
       )}
     </div>
   );
