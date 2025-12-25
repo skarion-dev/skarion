@@ -8,7 +8,6 @@ import SocialCards from "../SocialCards";
 import Counter from "../Counter";
 import Steps from "../Steps";
 import DiscountCard from "../DiscountCard";
-import DiscountCard from "../DiscountCard";
 import { ArrowRight, ArrowRightToLine, BadgeCheck } from "lucide-react";
 
 const logos = [
@@ -110,7 +109,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="w-full lg:w-[35%]">
-            <div className="rounded-[14px] h-[200px] relative flex-2 bg-white mt-4 overflow-hidden">
+            <div className="rounded-[14px] h-[200px] relative flex-2 bg-[#122461] mt-4 overflow-hidden">
               {/* <DiscountCard /> */}
             </div>
             <div className="text-[16px] font-[400] pt-10 pb-7 text-left">
