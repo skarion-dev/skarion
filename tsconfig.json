@@ -24,6 +24,7 @@
     "typeRoots": ["./types", "./node_modules/@types"]
   },
   "include": [
+    "video.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",

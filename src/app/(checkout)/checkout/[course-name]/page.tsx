@@ -2,7 +2,7 @@ import ContractForm from "@/components/Checkout/ContractForm";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { STATIC_COURSE_ID } from "@/constants/course";
-import { ApiError, CoursesService, OpenAPI } from "@/api-client";
+import { CoursesService, OpenAPI } from "@/api-client";
 import Image from "next/image";
 
 export default async function CheckoutPage(props: {
@@ -42,36 +42,30 @@ export default async function CheckoutPage(props: {
     isCoursePurchased = !!resp;
   } catch (error) {
     console.log("error: ", error);
-    // return redirect(`/auth/sign-in`);
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 h-screen items-center justify-between ">
-      <div className="bg-black h-full w-full relative overflow-hidden ">
-        <Image
-          src="/checkout1.jpg"
-          alt="Checkout"
-          fill
-          className="object-cover animate-in fade-in-0 zoom-in-95 duration-1000"
-          priority
-        />
-        {/* Gradient overlay from bottom */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent" />
-        {/* Text overlay */}
-        <div className="absolute bottom-10 sm:bottom-30 left-0 right-0 p-8">
-          <h2 className="text-white text-[64px] font-semibold animate-in fade-in-0 slide-in-from-bottom-10 duration-1000 ">
-            Taking a Leap!
-            Go Ahead
-          </h2>
+    <div className="min-h-screen flex items-center justify-center p-4 bg-white">
+      <div className="relative z-10 bg-white rounded-2xl shadow-lg overflow-hidden w-full max-w-6xl h-auto md:h-[80vh] grid grid-cols-1 md:grid-cols-2">
+        <div className="h-full w-full items-left justify-between flex">
+          <ContractForm
+            purchasePayload={purchasePayload}
+            token={session.accessToken}
+            courseFound={courseFound}
+            isPurchased={isCoursePurchased}
+            user={session.user}
+          />
         </div>
-      </div>
-      <div className="h-full w-full items-center justify-center flex bg-gray-200">
-        <ContractForm
-          purchasePayload={purchasePayload}
-          token={session.accessToken}
-          courseFound={courseFound}
-          isPurchased={isCoursePurchased}
-        />
+        <div className="bg-white h-full w-full relative overflow-hidden">
+          <Image
+            src="/checkout1.png"
+            alt="Checkout"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#122461]/50 to-[#ff686b]/20" />
+        </div>
       </div>
     </div>
   );

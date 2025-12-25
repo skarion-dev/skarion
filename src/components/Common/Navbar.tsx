@@ -377,7 +377,7 @@ export default function Header({ user }: { user?: any }) {
                                                 <Link href="#" className="inline-block rounded  py-1 text-[11px] sm:text-[12px] md:text-[14px] text-[#191F38] hover:text-[#4B5563]">Student Journey</Link>
                                             </div>
                                             <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
-                                                <Link href="https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" className="inline-block rounded py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] hover:text-[#4B5563]">Contact Us</Link>
+                                                <Link href="https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" className="inline-block rounded py-1 text-[11px] sm:text-[12px] md:text-[14px] text-[#191F38] hover:text-[#4B5563]">Contact Us</Link>
                                             </div>
                                             <p className="mt-3 md:mt-4 text-[12px] sm:text-[14px] md:text-[16px] text-[#191F38] font-bold mb-1 md:mb-1.5">Resources</p>
                                             <div className="space-y-1 md:space-y-2 bg-[#ffffff]">

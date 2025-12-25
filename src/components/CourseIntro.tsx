@@ -46,7 +46,7 @@ const VideoComponent = () => {
           preload="none"
           className="w-full h-auto object-contain"
         >
-          {shouldLoad && <source src="/intro.mp4" type="video/mp4" />}
+          {shouldLoad && <source src="/1217.mp4" type="video/mp4" />}
           Your browser does not support the video tag.
         </video>
       ) : (
