@@ -33,7 +33,7 @@ export default function MobileCTA({ isPurchased }: { isPurchased: boolean }) {
   return (
     <div
       className={[
-        "block lg:hidden fixed bottom-0 left-0 right-0 z-50 h-[180px] bg-[#000000]/70 py-3 px-4 border-t border-black/20",
+        "block lg:hidden fixed bottom-0 left-0 right-0 z-50 h-[150px] bg-[#000000]/70 py-3 px-4 border-t border-black/20",
         "transition-opacity duration-500 ease-out",
         showCTA ? "opacity-100" : "opacity-0 pointer-events-none",
       ].join(" ")}
@@ -43,15 +43,14 @@ export default function MobileCTA({ isPurchased }: { isPurchased: boolean }) {
           <span className="text-white leading-[1.2] text-[24px] font-[500]">
             OSP Engineering Bootcamp
           </span>
+         <div className="absolute top-10 right-4.5 inline-flex items-center justify-center px-4 py-1 text-[11px] font-[600] rounded-full border-3 border-white z-10 text-green-800 bg-green-200">
+              Popular
+            </div>
           <div className="flex items-center gap-3 mt-2">
-            <p className="text-[18px] leading-[1.2] text-white/80 line-through font-[400]">
-              $500
-            </p>
-            <p className="text-[18px] leading-[1.2] text-white font-[400]">
-              $300
-            </p>
+            
+            <EnrollButton isPurchased={isPurchased} />
           </div>
-          <EnrollButton isPurchased={isPurchased} />
+          
         </div>
       </div>
     </div>
