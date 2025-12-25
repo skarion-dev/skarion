@@ -46,16 +46,18 @@ export default async function CheckoutPage(props: {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 bg-white">
+      {/* Content wrapper with higher z-index */}
       <div className="relative z-10 bg-white rounded-2xl shadow-lg overflow-hidden w-full max-w-6xl h-auto md:h-[80vh] grid grid-cols-1 md:grid-cols-2">
         <div className="h-full w-full items-left justify-between flex">
+          {/* Left side panel */}
           <ContractForm
             purchasePayload={purchasePayload}
             token={session.accessToken}
             courseFound={courseFound}
             isPurchased={isCoursePurchased}
-            user={session.user}
           />
         </div>
+        {/* Right side image panel */}
         <div className="bg-white h-full w-full relative overflow-hidden">
           <Image
             src="/checkout1.png"
@@ -64,7 +66,14 @@ export default async function CheckoutPage(props: {
             className="object-cover"
             priority
           />
+          {/* Gradient overlay from bottom */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#122461]/50 to-[#ff686b]/20" />
+          
+          {/* <div className="absolute bottom-10 sm:bottom-30 left-0 right-0 p-8">
+            <h2 className="text-white text-[64px] font-semibold animate-in fade-in-0 slide-in-from-bottom-10 duration-1000">
+              One Step Ahead
+            </h2>
+          </div> */}
         </div>
       </div>
     </div>

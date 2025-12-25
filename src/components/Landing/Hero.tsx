@@ -8,6 +8,7 @@ import SocialCards from "../SocialCards";
 import Counter from "../Counter";
 import Steps from "../Steps";
 import DiscountCard from "../DiscountCard";
+import DiscountCard from "../DiscountCard";
 import { ArrowRight, ArrowRightToLine, BadgeCheck } from "lucide-react";
 
 const logos = [
