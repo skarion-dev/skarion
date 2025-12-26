@@ -1,16 +1,16 @@
 import Image from "next/image";
+import Video from "next-video"
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import IntroVideo from "@/components/IntroVideo";
 import EnrollButton from "@/components/Course/EnrollButton";
 import MobileCTA from "@/components/Course/MobileCTA";
 import { OutsidePlantEngineeringCourse } from "@/constants/course";
 import { auth } from "@/auth";
-import { redirect } from "next/navigation";
 import { CoursesService, OpenAPI } from "@/api-client";
 
 const bootcampSchedule = [
@@ -645,7 +645,7 @@ export default async function CoursePage() {
             OSP Engineering involves the design, installation, and maintenance of outdoor infrastructure, including fiber optic routes, cables, and utility networks.
         </p>
         <div className="rounded-[14px] bg-[#122461] mt-10 text-white overflow-hidden">
-          <IntroVideo />
+          <Video src="/videos/intro.mp4" />
         </div>
         <p className="text-[24px] font-[500] mt-10 capitalize">Unlock high-demand careers in the US with OSP engineering!</p>
         <p className="text-[14px] sm:text-[16px] font-[500] text-[#666666] font-[300] mt-3">
@@ -727,7 +727,16 @@ export default async function CoursePage() {
         </div>
         <hr className="my-10 md:my-14 border border-[#EBEBEB]" />
         <div className="rounded-[14px] h-[250px] sm:h-[300px] md:h-[400px] relative overflow-hidden border border-[#EBEBEB]">
-            <IntroVideo />
+<Video
+  src="/videos/overview.mp4"
+  autoPlay
+  muted
+  loop
+  playsInline
+  disablePictureInPicture
+  controls={false}
+  className="w-full h-full object-cover"
+/>
         </div>
         <div className="w-full md:w-[70%] mt-10">
             <p className="text-[16px] font-[300]">
