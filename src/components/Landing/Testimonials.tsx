@@ -69,7 +69,7 @@ export default function Testimonials() {
   });
 
   const y1 = useTransform(scrollYProgress, [0, 1], [-500, 700]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [-50, 100]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [-600, 1200]);
   const y3 = useTransform(scrollYProgress, [0, 1], [-1000, 900]);
 
   return (
