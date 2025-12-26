@@ -81,7 +81,7 @@ export default function Header({ user }: { user?: any }) {
                   />
                 </svg>
               </div>
-              <div
+              {/* <div
                 className="flex gap-2 cursor-pointer"
                 onMouseEnter={() => handleChangeMenu("company")}
               >
@@ -113,7 +113,7 @@ export default function Header({ user }: { user?: any }) {
                     Success Stories
                   </p>
                 </Link>
-              </div>
+              </div> */}
               <div
                 className="flex gap-2 cursor-pointer"
                 onMouseEnter={() => setIsMenuOpen(false)}
@@ -262,7 +262,7 @@ export default function Header({ user }: { user?: any }) {
                     />
                   </svg>
                 </div>
-                <div
+                {/* <div
                   onClick={() => handleChangeMenu("company")}
                   className="flex justify-between items-center cursor-pointer p-2"
                 >
@@ -288,7 +288,7 @@ export default function Header({ user }: { user?: any }) {
                   <p className="text-[16px] text-[#191F38] font-normal">
                     Success Stories
                   </p>
-                </Link>
+                </Link> */}
                 <div className="pt-4 border-t border-[#EBEBEB] space-y-4">
                   <Link
                     href="https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled"
