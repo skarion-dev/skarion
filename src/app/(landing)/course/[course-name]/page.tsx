@@ -726,16 +726,16 @@ export default async function CoursePage() {
             </div>
         </div>
         <hr className="my-10 md:my-14 border border-[#EBEBEB]" />
-        <div className="rounded-[14px] h-[250px] sm:h-[300px] md:h-[400px] relative overflow-hidden border border-[#EBEBEB]">
+        <div className="rounded-[14px] relative overflow-hidden border border-[#EBEBEB]">
 <Video
-  src="/videos/overview.mp4"
+  src="/videos/intro.mp4"
   autoPlay
   muted
   loop
   playsInline
   disablePictureInPicture
   controls={false}
-  className="w-full h-full object-cover"
+  className="w-full h-auto object-contain"
 />
         </div>
         <div className="w-full md:w-[70%] mt-10">
