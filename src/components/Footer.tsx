@@ -1,9 +1,9 @@
 import LinkedinIcon from "@/svg/LinkedinIcon";
-import XIcon from "@/svg/XIcon";
 import FacebookIcon from "@/svg/FacebookIcon";
 import InstagramIcon from "@/svg/InstagramIcon";
 import Image from "next/image";
 import Link from "next/link";
+import YouTubeIcon from "@/svg/YouTubeIcon";
 
 export default function Footer() {
   const FooterContent = (
@@ -23,7 +23,7 @@ export default function Footer() {
                 <LinkedinIcon />
               </span>
               <span className='inline-flex items-center justify-center w-8 h-8 rounded-md border border-white/40 text-white/80 hover:bg-white/10 transition-colors'>
-                <XIcon />
+                <YouTubeIcon />
               </span>
               <span className='inline-flex items-center justify-center w-8 h-8 rounded-md border border-white/40 text-white/80 hover:bg-white/10 transition-colors'>
                 <FacebookIcon />
@@ -35,20 +35,15 @@ export default function Footer() {
             <p className="text-white/80 text-[14px] mt-8">Copyright 2025 © Skarion. All Rights Reserved</p>
           </div>
           <div className='text-white sm:ml-16 lg:ml-0'></div>
-          <div className='text-white '>
+          
+          <div className='text-white grid grid-cols-2 gap-8 md:gap-12'>
               <div>
                   <p className='block text-[20px] font-[500] relative group'>Programs</p>
-                  <a href='/course/outside-plant-engineering' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-4'>Outside Plant Engineering</a>
-                  <p className='block text-[20px] font-[500] relative group mt-6'>Explore</p>
-                  <a href='/' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-4'>Success Stories</a>
-                  <a href='/' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-2'>Student Journey</a>
+                  <Link href='/course/outside-plant-engineering' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-4'>Outside Plant Engineering</Link>
               </div>
-          </div>
-
-          <div className='text-white'>
               <div>
                   <p className='block text-[20px] font-[500] relative group'>Company</p>
-                  <a href='/' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-4'>About Us</a>
+                  <Link href='/' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-4'>About Us</Link>
                   <Link
                     href="https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled"
                     target="_blank"
@@ -57,10 +52,13 @@ export default function Footer() {
                   >
                     Contact Us
                   </Link>
-                  <a href='/' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-2'>Career</a>
-                  <p className='block text-[20px] font-[500] relative group mt-6'>Resources</p>
-                  <a href='/' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-4'>Blogs</a>
-                  <a href='/' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-2'>FAQ</a>
+                  <Link href='/' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-2'>Career</Link>
+              </div>
+          </div>
+          <div className='text-white grid grid-cols-2 gap-8 md:gap-12'>
+              <div>
+                <p className='block text-[20px] font-[500] relative group'>Resources</p>
+                <Link href='/faq' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-2'>FAQ</Link>
               </div>
           </div>
         </div>
@@ -69,8 +67,8 @@ export default function Footer() {
             <div className='border-t border-white/20 mt-10'/>
             <div className='flex flex-col text-white/70 text-sm sm:my-10 my-5'>
                 <div className='flex gap-6 sm:gap-10'>
-                    <a href="#" className='relative hover:text-white group'>Privacy Policy</a>
-                    <a href="#" className='relative hover:text-white group'>Terms & Conditions</a>
+                    <Link href="/privacy-policy" className='relative hover:text-white group'>Privacy Policy</Link>
+                    <Link href="/terms-and-conditions" className='relative hover:text-white group'>Terms & Conditions</Link>
                 </div>
             </div>
         </div>
@@ -92,18 +90,10 @@ export default function Footer() {
                   Skarion is a career-focused bootcamp that equips you with job-ready skills and helps you get hired through expert training and personalized support
                 </p>
                 <div className='mt-6 flex flex-wrap gap-3'>
-                  <span className='inline-flex items-center justify-center w-8 h-8 rounded-md border border-white/40 text-white/80 hover:bg-white/10 transition-colors'>
-                    <LinkedinIcon />
-                  </span>
-                  <span className='inline-flex items-center justify-center w-8 h-8 rounded-md border border-white/40 text-white/80 hover:bg-white/10 transition-colors'>
-                    <XIcon />
-                  </span>
-                  <span className='inline-flex items-center justify-center w-8 h-8 rounded-md border border-white/40 text-white/80 hover:bg-white/10 transition-colors'>
-                    <FacebookIcon />
-                  </span>
-                  <span className='inline-flex items-center justify-center w-8 h-8 rounded-md border border-white/40 text-white/80 hover:bg-white/10 transition-colors'>
-                    <InstagramIcon />
-                  </span>
+                  <LinkedinIcon />
+                  <YouTubeIcon />
+                  <FacebookIcon />
+                  <InstagramIcon />
                 </div>
                 <p className="text-white/80 text-[14px] mt-8">Copyright 2025 © Skarion. All Rights Reserved</p>
               </div>
@@ -114,9 +104,7 @@ export default function Footer() {
                   <div>
                       <p className='block text-[20px] font-[500] relative group'>Programs</p>
                       <a href='/course/outside-plant-engineering' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-4'>Outside Plant Engineering</a>
-                      <p className='block text-[20px] font-[500] relative group mt-6'>Explore</p>
-                      <a href='/' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-4'>Success Stories</a>
-                      <a href='/' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-2'>Student Journey</a>
+
                   </div>
               </div>
 
@@ -125,9 +113,7 @@ export default function Footer() {
                       <p className='block text-[20px] font-[500] relative group'>Company</p>
                       <a href='/' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-4'>About Us</a>
                       <a href='/' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-2'>Contact Us</a>
-                      <a href='/' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-2'>Career</a>
                       <p className='block text-[20px] font-[500] relative group mt-6'>Resources</p>
-                      <a href='/' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-4'>Blogs</a>
                       <a href='/' className='block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-2'>FAQ</a>
                   </div>
               </div>
@@ -137,8 +123,8 @@ export default function Footer() {
                 <div className='border-t border-white/20 mt-10'/>
                     <div className='flex flex-col text-white/70 text-sm sm:my-10 my-5'>
                         <div className='flex gap-6 sm:gap-10'>
-                            <a href="#" className='relative hover:text-white group'>Privacy Policy</a>
-                            <a href="#" className='relative hover:text-white group'>Terms & Conditions</a>
+                            <Link href="/privacy-policy" className='relative hover:text-white group'>Privacy Policy</Link>
+                            <Link href="/terms-and-conditions" className='relative hover:text-white group'>Terms & Conditions</Link>
                         </div>
                     </div>
                 </div>

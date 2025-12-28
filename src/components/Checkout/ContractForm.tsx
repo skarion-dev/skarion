@@ -46,10 +46,10 @@ export default function ContractForm({
   user: any;
 }) {
   const [agreedToTerms, setAgreedToTerms] = useState(false);
-  const [understandsPayment, setUnderstandsPayment] = useState(false);
-  const [acceptsRefundPolicy, setAcceptsRefundPolicy] = useState(false);
-  const [agreesToConfidentiality, setAgreesToConfidentiality] = useState(false);
-  const [agreesToNonCompete, setAgreesToNonCompete] = useState(false);
+  // const [understandsPayment, setUnderstandsPayment] = useState(false);
+  // const [acceptsRefundPolicy, setAcceptsRefundPolicy] = useState(false);
+  // const [agreesToConfidentiality, setAgreesToConfidentiality] = useState(false);
+  // const [agreesToNonCompete, setAgreesToNonCompete] = useState(false);
   const searchParam = useSearchParams();
 
   useEffect(() => {
@@ -66,11 +66,11 @@ export default function ContractForm({
   }, []);
 
   const isFormValid =
-    agreedToTerms &&
-    understandsPayment &&
-    acceptsRefundPolicy &&
-    agreesToConfidentiality &&
-    agreesToNonCompete;
+    agreedToTerms
+    // understandsPayment &&
+    // acceptsRefundPolicy &&
+    // agreesToConfidentiality &&
+    // agreesToNonCompete;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -96,13 +96,37 @@ export default function ContractForm({
       onSubmit={handleSubmit}
       className="flex flex-col justify-between w-full h-full text-white max-w-full bg-[#122461] rounded-tl-2xl rounded-bl-2xl shadow-2xl shadow-blue-100/40 p-8 md:p-10 space-y-10 ring-1 ring-gray-200/50 text-left"
     >
+      
       <div>
-        <h2 className="text-[24px] md:text-3xl font-[600] text-white tracking-tight">
-          Complete Your Enrollment
-        </h2>
-        <p className="mt-2 text-[14px] text-white/80">
-          Please confirm a few details before checkout
-        </p>
+        <div className="flex flex-col items-start gap-3 mb-4">
+          <button
+            type="button"
+            onClick={() => (window.location.href = "/course/outside-plant-engineering")}
+            className="text-white/80 hover:text-white transition-colors hover:scale-110 duration-1000"
+            aria-label="Back to course page"
+          >
+            <svg
+            className="my-auto"
+            width="25"
+            height="25"
+            viewBox="0 0 21 21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ transform: "rotate(180deg)" }}
+          >
+            <path
+              d="M18.834 10.4998C18.834 5.89984 15.1007 2.1665 10.5007 2.1665C5.90065 2.1665 2.16732 5.89984 2.16732 10.4998C2.16732 15.0998 5.90065 18.8332 10.5007 18.8332C15.1007 18.8332 18.834 15.0998 18.834 10.4998ZM10.4757 13.4415C10.3507 13.3165 10.2923 13.1582 10.2923 12.9998C10.2923 12.8415 10.3507 12.6832 10.4757 12.5582L11.909 11.1248L7.58399 11.1248C7.24232 11.1248 6.95899 10.8415 6.95899 10.4998C6.95899 10.1582 7.24232 9.87484 7.58399 9.87484L11.909 9.87484L10.4757 8.4415C10.234 8.19984 10.234 7.79984 10.4757 7.55817C10.7173 7.3165 11.1173 7.3165 11.359 7.55817L13.859 10.0582C14.1007 10.2998 14.1007 10.6998 13.859 10.9415L11.359 13.4415C11.1173 13.6832 10.7173 13.6832 10.4757 13.4415Z"
+              fill="white"
+            />
+            </svg>
+          </button>
+          <h2 className="text-[24px] md:text-3xl font-[600] text-white tracking-tight">
+            Complete Your Enrollment
+          </h2>
+          <p className="text-[14px] text-white/80">
+            Please confirm a few details before checkout
+          </p>
+        </div>
 
         <div
           data-lenis-prevent
@@ -199,60 +223,16 @@ export default function ContractForm({
             >
               I, {user?.name}, have read and agree to the Terms and Agreeements.
             </FormCheckbox>
-            <FormCheckbox
-              id="understands-payment"
-              checked={understandsPayment}
-              onCheckedChange={setUnderstandsPayment}
-            >
-              I understand the payment terms, including the refundable deposit and job placement commission, as outlined in the Terms and Agreements.
-            </FormCheckbox>
-            <FormCheckbox
-              id="accepts-refund-policy"
-              checked={acceptsRefundPolicy}
-              onCheckedChange={setAcceptsRefundPolicy}
-            >
-              I acknowledge and accept the refund policy, including the 120-day guarantee and conditions for a refund.
-            </FormCheckbox>
-
-            <FormCheckbox
-              id="agrees-to-confidentiality"
-              checked={agreesToConfidentiality}
-              onCheckedChange={setAgreesToConfidentiality}
-            >
-              I agree to maintain the confidentiality of Skarion's proprietary materials and information as outlined in the Terms and Agreements.
-            </FormCheckbox>
-            <FormCheckbox
-              id="agrees-to-non-compete"
-              checked={agreesToNonCompete}
-              onCheckedChange={setAgreesToNonCompete}
-            >
-              I agree to the non-compete clause and post-program restrictions as detailed in the Terms and Agreements.
-            </FormCheckbox>
           </div>
         </div>
       </div>
       <div>
         <Button
-          type="button"
+          type="submit"
           disabled={!isFormValid || isPurchased || !courseFound}
-          onClick={() => window.open("https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled", "_blank")}
-          className="w-full h-12 text-[16px] rounded-[12px] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          className="w-full disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          
-          {isPurchased ? "Already Purchased" : "Book a Consultation Call"}
-          <svg
-            className="my-auto"
-            width="21"
-            height="21"
-            viewBox="0 0 21 21"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M18.834 10.4998C18.834 5.89984 15.1007 2.1665 10.5007 2.1665C5.90065 2.1665 2.16732 5.89984 2.16732 10.4998C2.16732 15.0998 5.90065 18.8332 10.5007 18.8332C15.1007 18.8332 18.834 15.0998 18.834 10.4998ZM10.4757 13.4415C10.3507 13.3165 10.2923 13.1582 10.2923 12.9998C10.2923 12.8415 10.3507 12.6832 10.4757 12.5582L11.909 11.1248L7.58399 11.1248C7.24232 11.1248 6.95899 10.8415 6.95899 10.4998C6.95899 10.1582 7.24232 9.87484 7.58399 9.87484L11.909 9.87484L10.4757 8.4415C10.234 8.19984 10.234 7.79984 10.4757 7.55817C10.7173 7.3165 11.1173 7.3165 11.359 7.55817L13.859 10.0582C14.1007 10.2998 14.1007 10.6998 13.859 10.9415L11.359 13.4415C11.1173 13.6832 10.7173 13.6832 10.4757 13.4415Z"
-              fill="white"
-            />
-          </svg>
+          {isPurchased ? "Already Purchased" : "Checkout with Stripe"}
         </Button>
       </div>
     </form>

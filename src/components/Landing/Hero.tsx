@@ -83,7 +83,7 @@ export default function Hero() {
                 </svg>
             </Link>
             <Link
-                href="/About"
+                href="/about"
                 className="border-[1px] border-black rounded-[8px] px-6 py-3 flex justify-center items-center gap-2 group cursor-pointer whitespace-nowrap"
             >
                 <p className="text-[12px] sm:text-[14px] font-[500] flex">
@@ -93,10 +93,16 @@ export default function Hero() {
           </div>
         </div>
         <div className="w-full lg:w-[35%]">
-            <div className="rounded-[14px] h-[200px] relative flex-2 bg-[#122461] sm:mt-4 mt-2">
+            <div className="rounded-[14px] relative flex-2 bg-[#122461] sm:mt-4 mt-2 px-6 py-5">
+              <p className="text-[#ffffff] text-[26px] sm:text-[26px] md:text-[28px] lg:text-[30px] font-[600] leading-[1.2] z-10">
+                YOUR OWN DEDICATED SUPPORT TEAM
+              </p>
+              <p className="text-[#ffffff] text-[16px] font-[400] leading-[1.2] z-10 mt-3">
+                Once you enroll, a dedicated team of instructors, managers, and industry experts supports your training, job search, and applications with a focus on placement within 90 days.
+              </p>
             </div>
             <div className="text-[16px] font-[400] sm:pt-10 pt-7 pb-7 text-left">
-                Upskilling teams in 20+ companies
+                Our candidates are working with,
             </div>
             <LogoCarousel logos={logos} />
         </div>
@@ -108,7 +114,7 @@ export default function Hero() {
           </div>
           <div className="flex flex-row items-start justify-between flex-1 space-x-8">
             <div className="flex flex-col sm:flex-row gap-4 w-full h-full">
-              <div className="relative flex items-center bg-[#122461] rounded-[14px] w-full sm:w-full px-6 min-h-[130px] overflow-hidden py-4">
+              <div className="relative flex flex-col justify-center bg-[#122461] rounded-[14px] w-full sm:w-full px-6 min-h-[130px] overflow-hidden py-5">
                 <Image
                   src="/online-meeting.jpg"
                   alt="Online Meeting"
@@ -117,12 +123,15 @@ export default function Hero() {
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent" />
-                <p className="text-[#ffffff] text-[28px] sm:text-[28px] md:text-[28px] lg:text-[32px] font-[600] leading-[1.2] z-5">
-                  WE ALWAYS<br/>START WITH A<br/>FREE CONSULTATION CALL
+                <p className="text-[#ffffff] text-[26px] sm:text-[26px] md:text-[28px] lg:text-[30px] font-[600] leading-[1.2] z-10">
+                  GUARANTEED<br/>JOB PLACEMENT
+                </p>
+                <p className="text-[#ffffff] text-[16px] font-[500] leading-[1.2] z-10 mt-2 w-[65%]">
+                  Get your initial deposit refunded if we can&apos;t place you within 90 days.
                 </p>
               </div>
               <div className="w-full sm:w-[40%]">
-                <div className="w-full h-full relative shrink-0 overflow-hidden rounded-xl bg-[#122461] pl-5 pr-5 pb-4 pt-1">
+                <div className="w-full h-full relative flex items-center shrink-0 overflow-hidden rounded-xl bg-[#122461] pl-5 pr-5 pb-4 pt-1">
                   <div className="relative z-10 text-white">
                     <span className="text-[#ffffff] text-[64px] leading-[1.2] font-[600]">
                       <Counter value={50} />
