@@ -650,8 +650,16 @@ export default async function CoursePage() {
         <p className="text-[16px] sm:text-[18px] font-[300] mt-4">
             OSP Engineering involves the design, installation, and maintenance of outdoor infrastructure, including fiber optic routes, cables, and utility networks.
         </p>
-        <div className="rounded-[14px] bg-[#122461] mt-10 text-white overflow-hidden">
-          <Video src={Intro} />
+        <div className="rounded-[14px] bg-[#122461] mt-10 text-white overflow-hidden aspect-video">
+          <iframe 
+            className="w-full h-full"
+            src="https://www.youtube-nocookie.com/embed/8ZYRpCTfY3c?si=kbaMZci2jPmz6jiI" 
+            title="YouTube video player" 
+            frameBorder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerPolicy="strict-origin-when-cross-origin" 
+            allowFullScreen>
+          </iframe>
         </div>
         <p className="text-[24px] font-[500] mt-10 capitalize">Unlock high-demand careers in the US with OSP engineering!</p>
         <p className="text-[14px] sm:text-[16px] font-[500] text-[#666666] font-[300] mt-3">
@@ -799,9 +807,9 @@ export default async function CoursePage() {
         <hr className="my-10 md:my-14 border border-[#EBEBEB]" />
         <div className="w-full rounded-[14px] border border-[#EBEBEB] pt-6 pb-4 px-6 sm:px-8">
             <div className="mb-6 border-b border-gray-700">
-                <p className="text-[22px] sm:text-[24px] md:text-[26px] leading-[1.4] font-[500] capitalize">Hands-On Learning</p>
+                <p className="text-[22px] sm:text-[24px] md:text-[26px] leading-[1.4] font-[500] capitalize">Course Outline</p>
                 <p className="text-[14px] font-[300] mt-3">
-                    Work on real-world challenges and enhance your skills with expert-designed video content.
+                    From foundational theory to hands-on projects, our course ensures you gain the skills needed for OSP engineering success.
                 </p>
                 <div className="w-full py-4 px-6 border border-[#EBEBEB] rounded-[14px] my-8 flex flex-wrap items-center justify-between gap-4">
                     <div className="w-full sm:w-[45%] md:w-[20%]">
