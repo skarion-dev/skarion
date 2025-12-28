@@ -655,10 +655,9 @@ export default async function CoursePage() {
             className="w-full h-full"
             src="https://www.youtube-nocookie.com/embed/8ZYRpCTfY3c?si=kbaMZci2jPmz6jiI" 
             title="YouTube video player" 
-            frameBorder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; " 
             referrerPolicy="strict-origin-when-cross-origin" 
-            allowFullScreen>
+            >
           </iframe>
         </div>
         <p className="text-[24px] font-[500] mt-10 capitalize">Unlock high-demand careers in the US with OSP engineering!</p>

@@ -23,7 +23,7 @@ export default function LogoCarousel({ logos }: { logos: string[] }) {
 
   return (
     <div ref={scrollerRef} className="scroller">
-      <div className="inner-scroll flex gap-4 animate-infinite-scroll">
+      <div className="inner-scroll flex gap-6 animate-infinite-scroll">
         {[...logos, ...logos].map((logo, index) => (
           <div key={index} className="relative w-[100px] h-[100px] shrink-0">
             <Image
