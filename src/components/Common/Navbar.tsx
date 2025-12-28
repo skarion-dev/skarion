@@ -353,16 +353,16 @@ export default function Header({ user }: { user?: any }) {
                 className="absolute left-1/2 transform -translate-x-1/2 lg:max-w-[1400px] lg:mx-auto lg:px-4 w-full mx-0 -mt-1 lg:pt-4 pt-0 z-50"
             >
                 <div
-                    className="bg-[#FFFFFF] rounded-[12px] border border-[#EBEBEB] shadow-md p-4"
+                    className="bg-[#FFFFFF] rounded-[12px] border border-[#EBEBEB] shadow-[0_8px_30px_0_rgba(0,0,0,0.12)] p-4"
                 >
                     <div className="overflow-y-auto max-h-[65vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {selectedMenu === "programs" && (
                             <div className="p-4 col-span-1 md:col-span-2 lg:col-span-3">
                                 <NavbarCards />
-                                <div className='mt-8 md:mt-10 lg:mt-12 border-t border-black/20' />
+                                {/* <div className='mt-8 md:mt-10 lg:mt-12 border-t border-black/20' />
                                 <div className="mt-auto pt-5 flex flex-col sm:flex-row sm:flex-wrap sm:justify-between sm:items-center text-[#4B5563] text-[11px] sm:text-[12px] md:text-[14px]">
                                     <Link href="/">See All Programs</Link>
-                                </div>                                
+                                </div>                                 */}
                             </div>
                         )}
                         {selectedMenu === "company" && (
