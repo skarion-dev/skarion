@@ -106,8 +106,8 @@ const FAQPage: React.FC = () => {
     );
   };
   return (
-    <div className="w-full bg-[#ffffff] py-5 px-4 sm:py-8 sm:px-6 md:py-10 md:px-8 lg:px-12 max-w-[1440px] mx-auto">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4 sm:mb-6 md:mb-8 text-center sm:text-left">
+    <div className="w-full bg-[#ffffff] sm:py-10 py-5 sm:px-12 px-6 max-w-[1440px] mx-auto">
+      <h1 className="text-[48px] sm:text-[64px] md:text-[72px] font-bold text-gray-800 mb-4 sm:mb-6 md:mb-8 text-center sm:text-left">
         Frequently Asked Questions
       </h1>
       <div className="w-full mb-4 sm:mb-6 md:mb-8">
