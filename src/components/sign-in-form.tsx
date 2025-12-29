@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Image from "next/image";
 
 export const loginSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -53,17 +54,20 @@ export function SignInForm({
 
     if (res?.ok) {
       setIsPending(false);
-      router.push("/");
+      router.push("/dashboard");
     }
   };
 
   return (
     <form
-      className={cn("flex flex-col gap-6", className)}
+      className={cn("flex flex-col gap-6 h-[50vh] justify-center", className)}
       {...props}
       onSubmit={handleSubmit(onSubmit)}
     >
-      <div className="grid gap-6">
+      <div className="grid gap-6 px-5">
+        <a href="/" className="flex justify-center mb-2 group relative">
+          <Image src="/logo.svg" alt="Skarion Logo" width={16} height={16} className="w-[70]" />
+        </a>
         <div className="grid">
           <Label htmlFor="email">Email</Label>
           <Input
@@ -108,7 +112,7 @@ export function SignInForm({
         <button
           type="button"
           className="w-full flex items-center justify-center gap-4 py-2.5 px-6 text-[15px] font-medium tracking-wide text-slate-900 border border-slate-300 rounded-md hover:bg-slate-100 focus:outline-none cursor-pointer"
-          onClick={() => signIn("google", { callbackUrl: "/" })}
+          onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
