@@ -17,12 +17,21 @@ const logos = [
 ];
 
 const images = [
-  "/image 1.jpg",
-  "/image 3.jpg",
-  "/image 2.jpg",
-  "/profile 1.jpg",
-  "/profile 2.jpg",
-  "/rabbi.png",
+  {
+    src: "/pay when hired.jpg",
+    title: "Pay-When-Hired Model",
+    details: "Zero upfront risk. Join now and pay only after you land a Job."
+  },
+  {
+    src: "/end to end.jpg",
+    title: "End-to-End Placement",
+    details: "From resume to interview, We handle every step of your job journey."
+  },
+  {
+    src: "/globe to us.jpg",
+    title: "Global-to-U.S.A Visa Support",
+    details: "Get career-ready with pathaways tailored for OPT, CPT, and H-18 success."
+  }
 ];
 
 export default function Hero() {
@@ -126,7 +135,7 @@ export default function Hero() {
                 <p className="text-[#ffffff] text-[26px] sm:text-[26px] md:text-[28px] lg:text-[30px] font-[600] leading-[1.2] z-10">
                   GUARANTEED<br/>JOB PLACEMENT
                 </p>
-                <p className="text-[#ffffff] text-[16px] font-[500] leading-[1.2] z-10 mt-2 w-[65%]">
+                <p className="text-[#ffffff] text-[16px] leading-[1.2] z-10 mt-2 w-[65%]">
                   Get your initial deposit refunded if we can&apos;t place you within 90 days.
                 </p>
               </div>
