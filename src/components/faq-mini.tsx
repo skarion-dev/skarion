@@ -78,7 +78,7 @@ const faqData: FAQItem[] = [
 
 const FAQPage: React.FC = () => {
   return (
-    <div className="w-full bg-[#ffffff] sm:py-5 sm:pl-2  max-w-[1440px] mx-auto">
+    <div className="w-full bg-[#ffffff]  sm:pl-2  max-w-[1440px] mx-auto">
       <div className="max-w-4xl">
         <p className="text-gray-400 text-[14px] font-medium uppercase tracking-wider mb-2">FAQ</p>
         <h3 className="text-[24px] sm:text-[28px] md:text-[32px] leading-[1.4] font-[500] text-[#0a0a0a] mb-8 text-left">

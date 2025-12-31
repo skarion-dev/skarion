@@ -16,6 +16,8 @@ import MobileCTA from "@/components/Course/MobileCTA";
 import { OutsidePlantEngineeringCourse } from "@/constants/course";
 import { auth } from "@/auth";
 import FAQMini from "@/components/faq-mini";
+import video1 from "../../../../../videos/1228.mp4";
+import video2 from "../../../../../videos/1.2.mp4";
 import { redirect } from "next/navigation";
 import { CoursesService, OpenAPI } from "@/api-client";
 
@@ -28,13 +30,13 @@ const bootcampSchedule = [
         id: "1.1",
         name: "OSP Engineering Roles & Outlook",
         isLocked: false,
-        link: "/pdfs/lesson01.pdf",
+        link: video1,
       },
       {
         id: "1.2",
         name: "Essential Soft Skills for OSP Engineers",
         isLocked: false,
-        link: "/pdfs/lesson02.pdf",
+        link: video2,
       }
     ],
   },
@@ -876,14 +878,12 @@ export default async function CoursePage() {
                                   </AccordionTrigger>
                                   <AccordionContent className="p-0 mt-2">
                                     <div className="rounded-[14px] overflow-hidden bg-black">
-                                      <video
-                                        className="w-full h-[350]"
+                                      <Video
+                                        src={lesson.link}
+                                        playsInline
+                                        disablePictureInPicture
                                         controls
-                                        preload="metadata"
-                                      >
-                                        <source src={lesson.link.replace('.pdf', '.mp4')} type="video/mp4" />
-                                        Your browser does not support the video tag.
-                                      </video>
+                                        className="object-cover" />
                                     </div>
                                   </AccordionContent>
                                 </AccordionItem>
