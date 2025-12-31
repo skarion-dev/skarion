@@ -9,7 +9,7 @@ export default async function Home() {
     <div>
       <Hero />
       <Courses />
-      <Workstep />
+      {/* <Workstep /> */}
       <Testimonials />
       <FAQ />
     </div>

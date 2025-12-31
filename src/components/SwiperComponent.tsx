@@ -21,7 +21,7 @@ const SwiperComponent: FC<SwiperComponentProps> = ({ images }) => {
     .map((item) =>
       typeof item === "string"
         ? { src: item }
-        : { src: item?.src ?? "", title: item?.title, details: item?.details }
+        : { src: item?.src ?? "", title: item?.title, details: item?.details },
     )
     .filter((s) => !!s.src);
 
@@ -64,7 +64,9 @@ const SwiperComponent: FC<SwiperComponentProps> = ({ images }) => {
                   <p className="text-[#ffffff] text-[40px] sm:text-[44px] md:text-[48px] lg:text-[52px] font-[600] leading-[1.2] z-10">
                     {image.title}
                   </p>
-                  <span className="relative top-3 text-[14px] md:text-[16px] opacity-90">{image.details}</span>
+                  <span className="relative top-3 text-[14px] md:text-[16px] opacity-90">
+                    {image.details}
+                  </span>
                 </div>
               </div>
             </SwiperSlide>

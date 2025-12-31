@@ -66,7 +66,13 @@ export function SignInForm({
     >
       <div className="grid gap-6 px-5">
         <a href="/" className="flex justify-center mb-2 group relative">
-          <Image src="/logo.svg" alt="Skarion Logo" width={16} height={16} className="w-[70]" />
+          <Image
+            src="/logo.svg"
+            alt="Skarion Logo"
+            width={16}
+            height={16}
+            className="w-[70]"
+          />
         </a>
         <div className="grid">
           <Label htmlFor="email">Email</Label>

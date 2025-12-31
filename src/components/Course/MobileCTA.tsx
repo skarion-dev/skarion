@@ -14,7 +14,7 @@ export default function MobileCTA({ isPurchased }: { isPurchased: boolean }) {
         const entry = entries[0];
         setFooterVisible(entry.isIntersecting);
       },
-      { root: null, threshold: 0 }
+      { root: null, threshold: 0 },
     );
     observer.observe(footer);
     return () => {
@@ -44,8 +44,7 @@ export default function MobileCTA({ isPurchased }: { isPurchased: boolean }) {
             OSP Engineering Bootcamp
           </span>
 
-            <EnrollButton isPurchased={isPurchased} />
-          
+          <EnrollButton isPurchased={isPurchased} />
         </div>
       </div>
     </div>

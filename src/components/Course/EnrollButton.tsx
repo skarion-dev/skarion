@@ -16,7 +16,10 @@ export default function EnrollButton({
         ${isPurchased ? "opacity-50 cursor-not-allowed" : "hover:bg-slate-100 cursor-pointer"}
       `}
       onClick={() => {
-        if (!isPurchased) router.push("https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled");
+        if (!isPurchased)
+          router.push(
+            "https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled",
+          );
       }}
     >
       {isPurchased ? "Meeting Scheduled" : "Schedule Enrollment Meeting"}
