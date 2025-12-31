@@ -37,7 +37,6 @@ const courses = [
 ];
 
 export default function CourseCards() {
-
   return (
     <div className="container">
       <div className="grid gap-8 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
@@ -80,11 +79,7 @@ export default function CourseCards() {
             </>
           );
           return published ? (
-            <Link
-              href={course.href}
-              key={index}
-              className={baseClasses}
-            >
+            <Link href={course.href} key={index} className={baseClasses}>
               {content}
             </Link>
           ) : (

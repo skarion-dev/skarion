@@ -57,7 +57,6 @@ const testimonials: ITestimonial[] = [
   },
 ];
 
-
 export default function Testimonials() {
   const container = useRef(null);
   const scrollContainerRef = useScrollContainer();
