@@ -60,8 +60,8 @@ const SwiperComponent: FC<SwiperComponentProps> = ({ images }) => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent rounded-[14px] pointer-events-none z-10" />
                 <div className="absolute bottom-5 left-1 right-0 p-6 text-white z-20">
-                  <span className="text-[48px] md:text-[40px] font-[600]">{image.title}<br/> </span>
-                  <span className="relative top-3 text-[22px] md:text-[18px] opacity-90">{image.details}</span>
+                  <span className="text-[36px] md:text-[40px] font-[600]">{image.title}<br/> </span>
+                  <span className="relative top-3 text-[20px] md:text-[18px] opacity-90">{image.details}</span>
                 </div>
               </div>
             </SwiperSlide>

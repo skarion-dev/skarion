@@ -123,8 +123,8 @@ export default function Hero() {
             <LogoCarousel logos={logos} />
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:space-x-8 pt-12">
-        <div className="flex flex-col gap-8 w-full lg:w-[62%] h-auto lg:h-[512px]">
+      <div className="flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:space-x-8 pt-12 h-auto lg:h-[515px]">
+        <div className="flex flex-col gap-8 w-full lg:w-[62%] h-full">
           <div className="relative rounded-[14px] flex-1">
             <Steps />
           </div>
@@ -161,7 +161,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="relative flex flex-col gap-8 bg-[#ffffff] rounded-[14px] w-full lg:w-[35%] h-[512px]">
+        <div className="relative flex flex-col gap-5 bg-[#ffffff] rounded-[14px] w-full lg:w-[35%] h-full lg:h-[518px] h-auto ">
           <SwiperComponent images={images} />
         </div>
       </div>

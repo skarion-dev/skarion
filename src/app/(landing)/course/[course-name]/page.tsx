@@ -15,7 +15,7 @@ import EnrollButton from "@/components/Course/EnrollButton";
 import MobileCTA from "@/components/Course/MobileCTA";
 import { OutsidePlantEngineeringCourse } from "@/constants/course";
 import { auth } from "@/auth";
-
+import FAQMini from "@/components/faq-mini";
 import { redirect } from "next/navigation";
 import { CoursesService, OpenAPI } from "@/api-client";
 
@@ -894,6 +894,10 @@ export default async function CoursePage() {
                 </AccordionItem>
                 ))}
             </Accordion>
+        </div>
+        <hr className="my-10 md:my-14 border border-[#EBEBEB]" />
+        <div className="w-full">
+          <FAQMini />
         </div>
     </div>
       <div className="w-full lg:w-[30%]">
