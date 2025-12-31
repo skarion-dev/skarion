@@ -78,10 +78,10 @@ const faqData: FAQItem[] = [
 
 const FAQPage: React.FC = () => {
   return (
-    <div className="w-full bg-[#ffffff] sm:py-10 py-5 sm:pl-2  max-w-[1440px] mx-auto">
+    <div className="w-full bg-[#ffffff] sm:py-5 sm:pl-2  max-w-[1440px] mx-auto">
       <div className="max-w-4xl">
-        <p className="text-gray-400 text-[14px] font-medium uppercase tracking-wider mb-3">FAQ</p>
-        <h3 className="text-[22px] sm:text-[24px] md:text-[26px] text-[#0a0a0a] leading-[1.4] font-[500] mb-8 text-left">
+        <p className="text-gray-400 text-[14px] font-medium uppercase tracking-wider mb-2">FAQ</p>
+        <h3 className="text-[24px] sm:text-[28px] md:text-[32px] leading-[1.4] font-[500] text-[#0a0a0a] mb-8 text-left">
           Got a question?
         </h3>
         <Accordion type="multiple" className="w-full space-y-3">
@@ -89,16 +89,16 @@ const FAQPage: React.FC = () => {
             <AccordionItem
               key={index}
               value={`faq-${index}`}
-              className="border border-black/20 rounded-lg bg-transparent px-2 last:border-b"
+              className="border border-[#EBEBEB] rounded-lg bg-transparent px-2 last:border-b"
             >
               <AccordionTrigger className="hover:no-underline py-4 justify-start gap-3 group [&>svg:last-child]:hidden">
                 <ChevronRightIcon className="size-5 text-gray-400 transition-transform duration-200 group-data-[state=open]:rotate-90 shrink-0" />
-                <span className="font-medium text-[16px] sm:text-[18px] text-black text-left">
+                <span className="font-[400] text-[16px] sm:text-[18px] text-black text-left">
                   {item.question}
                 </span>
               </AccordionTrigger>
               <AccordionContent className="pb-4 pl-8 sm:pl-8">
-                <div className="text-gray-700 text-[14px] sm:text-[16px] leading-relaxed">
+                <div className="text-gray-700 text-[14px] font-[300] leading-relaxed">
                   {item.answer}
                 </div>
               </AccordionContent>
