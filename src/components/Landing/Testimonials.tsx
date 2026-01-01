@@ -116,8 +116,9 @@ const Column = ({
             <Image
               src={item.src}
               alt="Testimonial"
+              width={500}
+              height={300}
               className="w-full h-auto rounded-lg"
-              fill
             />
           </div>
         );
