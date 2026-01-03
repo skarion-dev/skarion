@@ -2,7 +2,7 @@
 import clsx from "clsx";
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image"; // Import Next.js Image component
+import Image from "next/image"; 
 
 const courses = [
   {
