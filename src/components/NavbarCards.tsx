@@ -2,6 +2,7 @@
 import clsx from "clsx";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const courses = [
   {
@@ -11,6 +12,7 @@ const courses = [
     modules: 13,
     tag: "Most Popular",
     isPopular: true,
+    image: "/osp.jpg",
     href: "/course/outside-plant-engineering",
     published: true,
   },
@@ -58,7 +60,20 @@ export default function CourseCards() {
           );
           const content = (
             <>
-              <div className="relative bg-gray-300 rounded-lg h-[150px] m-2">
+              <div className="relative rounded-lg h-[150px] m-2">
+                {course.image ? (
+                <div className="absolute inset-0 bg-cover bg-center">
+                    <Image
+                    src={course.image}
+                    alt={`${course.courseName} Background`}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-lg"
+                    />
+                </div>
+                ) : (
+                <div className="relative bg-gray-300 rounded-lg h-full" />
+                )}
                 <div
                   className={`absolute -bottom-4 left-2 inline-flex items-center justify-center px-4 py-1 text-[11px] font-[600] rounded-full border-3 border-white z-10 ${isPopular ? "text-green-800 bg-green-200" : "text-red-800 bg-red-200"}`}
                 >

@@ -986,9 +986,19 @@ export default async function CoursePage() {
         </div>
       </div>
       <div className="w-full lg:w-[30%]">
-        <div className="sticky top-[126px] rounded-[14px] bg-[#122461] w-full px-8 py-8 hidden lg:block">
-          <div className="relative bg-[#ffffff] rounded-[14px] h-[200px]"></div>
-          <p className="text-[24px] leading-[1.2] text-white mt-4 font-[500]">
+        <div className="sticky top-[126px] rounded-[14px] bg-[#122461] w-full px-5 py-5 hidden lg:block">
+          <div className="relative bg-[#ffffff] rounded-[14px] h-[200px]">
+            <div className="absolute inset-0 bg-cover bg-center">
+              <Image
+                src={"/osp.jpg"}
+                alt={`Outside Plant Engineering`}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-[14px]"
+              />
+            </div>
+          </div>
+          <p className="text-[24px] leading-[1.2] text-white mt-5 font-[500]">
             Outside Plant Engineering
           </p>
           <EnrollButton isPurchased={isPurchased} />
