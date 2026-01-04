@@ -1,4 +1,5 @@
 import Courses from "@/components/Landing/Courses";
+import FAQ from "@/components/Landing/FAQ";
 import Hero from "@/components/Landing/Hero";
 import Testimonials from "@/components/Landing/Testimonials";
 import Workstep from "@/components/Landing/workstep";
@@ -10,6 +11,7 @@ export default async function Home() {
       <Courses />
       <Workstep />
       <Testimonials />
+      <FAQ />
     </div>
   );
 }
