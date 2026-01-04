@@ -68,7 +68,7 @@ export default function Footer() {
             <div className='border-t border-white/20 mt-10'/>
             <div className='flex flex-col text-white/70 text-sm sm:my-10 my-5'>
                 <div className='flex gap-6 sm:gap-10'>
-                    <Link href="/privacy_policy" className='relative hover:text-white group'>Privacy Policy</Link>
+                    <Link href="/privacy-policy" className='relative hover:text-white group'>Privacy Policy</Link>
                     <Link href="/terms" className='relative hover:text-white group'>Terms & Conditions</Link>
                 </div>
             </div>
@@ -127,7 +127,7 @@ export default function Footer() {
                 <div className='border-t border-white/20 mt-10'/>
                     <div className='flex flex-col text-white/70 text-sm sm:my-10 my-5'>
                         <div className='flex gap-6 sm:gap-10'>
-                            <Link href="/privacy_policy" className='relative hover:text-white group'>Privacy Policy</Link>
+                            <Link href="/privacy-policy" className='relative hover:text-white group'>Privacy Policy</Link>
                             <Link href="/terms" className='relative hover:text-white group'>Terms & Conditions</Link>
                         </div>
                     </div>

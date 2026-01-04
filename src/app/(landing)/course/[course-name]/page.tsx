@@ -15,7 +15,7 @@ import EnrollButton from "@/components/Course/EnrollButton";
 import MobileCTA from "@/components/Course/MobileCTA";
 import { OutsidePlantEngineeringCourse } from "@/constants/course";
 import { auth } from "@/auth";
-import FAQMini from "@/components/faq-mini";
+import FAQMini from "@/components/Course/faq-mini";
 import video1 from "../../../../../videos/1228.mp4";
 import video2 from "../../../../../videos/1.2.mp4";
 import { redirect } from "next/navigation";

@@ -390,13 +390,16 @@ export default function Header({ user }: { user?: any }) {
                                         <div>
                                             <p className="text-[12px] sm:text-[14px] md:text-[16px] text-[#191F38] font-bold mb-1 md:mb-1.5">Community</p>
                                             <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
-                                                <Link href="#" className="inline-block rounded py-1 text-[11px] sm:text-[12px] md:text-[14px] text-[#191F38] hover:text-[#4B5563]">Facebook</Link>
+                                                <Link href="https://www.facebook.com/profile.php?id=61575533223589" className="inline-block rounded py-1 text-[11px] sm:text-[12px] md:text-[14px] text-[#191F38] hover:text-[#4B5563]">Facebook</Link>
                                             </div>
                                             <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
-                                                <Link href="#" className="inline-block rounded py-1 text-[11px] sm:text-[12px] md:text-[14px] text-[#191F38] hover:text-[#4B5563]">Linkedin</Link>
+                                                <Link href="https://www.linkedin.com/company/skarion" className="inline-block rounded py-1 text-[11px] sm:text-[12px] md:text-[14px] text-[#191F38] hover:text-[#4B5563]">Linkedin</Link>
                                             </div>
                                             <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
-                                                <Link href="#" className="inline-block rounded py-1 text-[11px] sm:text-[12px] md:text-[14px] text-[#191F38] hover:text-[#4B5563]">X</Link>
+                                                <Link href="https://www.youtube.com/@SkarionYouTube" className="inline-block rounded py-1 text-[11px] sm:text-[12px] md:text-[14px] text-[#191F38] hover:text-[#4B5563]">YouTube</Link>
+                                            </div>
+                                            <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
+                                                <Link href="https://www.instagram.com/skarion__/" className="inline-block rounded py-1 text-[11px] sm:text-[12px] md:text-[14px] text-[#191F38] hover:text-[#4B5563]">Instagram</Link>
                                             </div>
                                             <p className="mt-3 md:mt-4 text-[12px] sm:text-[14px] md:text-[16px] text-[#191F38] font-bold mb-1 md:mb-1.5">Company</p>
                                             <div className="space-y-1 md:space-y-2">
@@ -419,10 +422,10 @@ export default function Header({ user }: { user?: any }) {
                                 </div>
                                 <div className='mt-8 md:mt-10 lg:mt-12 border-t border-black/20' />
                                 <div className="mt-auto pt-5 flex flex-col sm:flex-row sm:flex-wrap sm:justify-between sm:items-center text-[#4B5563] text-[11px] sm:text-[12px] md:text-[14px] gap-2">
-                                    <span>info@skarion.com</span>
+                                    <Link href="mailto:info@skarion.com" className="hover:text-[#191F38]">info@skarion.com</Link>
                                     <div className="flex flex-wrap gap-15 mt-1 sm:mt-2">
-                                        <Link href="#" className="hover:text-[#191F38] ">Terms and Conditions</Link>
-                                        <Link href="#" className="hover:text-[#191F38] ">Privacy Policy</Link>
+                                        <Link href="/terms" className="hover:text-[#191F38] ">Terms and Conditions</Link>
+                                        <Link href="/privacy-policy" className="hover:text-[#191F38] ">Privacy Policy</Link>
                                     </div>
                                 </div>
                             </div>
