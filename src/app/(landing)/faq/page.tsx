@@ -10,12 +10,13 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 
+
 interface FAQItem {
   question: string;
   answer: string;
 }
 
-const faqData: FAQItem[] = [
+const faqDataHardcoded: FAQItem[] = [
   {
       "question": "What is OSP (Outside Plant) Engineering?",
       "answer": "OSP engineering involves designing and building the fiber-optic and telecom infrastructure outside buildings, such as on streets, poles, and underground routes."
@@ -134,6 +135,7 @@ const faqData: FAQItem[] = [
       "answer": "Skarion provides personalized guidance, mock interviews, and job application coaching to help you land a full-time role in OSP engineering."
     }
 ];
+const faqData: FAQItem[] = faqDataHardcoded;
 
 const FAQPage: React.FC = () => {
   const [query, setQuery] = React.useState('');

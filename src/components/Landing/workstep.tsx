@@ -6,39 +6,39 @@ import Link from "next/link";
 
 export const projects = [
   {
-    title: "Step 1 — Consultation",
+    title: "Personal Discovery",
     description:
-      "Begin with a personalized assessment to understand your background, goals, and the best path into OSP engineering.",
-    src: "/step1.webp",
+      "Every journey starts with a conversation—our mentors sit down with you to map out your aspirations and craft a roadmap that fits your unique story.",
+    src: "/info.webp",
     color: "#1a5244ff",
   },
   {
-    title: "Step 2 — Enroll & Learn",
+    title: "Immersive Learning",
     description:
-      "Join an industry-aligned bootcamp with live classes, structured modules, and real telecom workflows.",
-    src: "/step2.webp",
+      "Dive into live sessions and collaborative labs where telecom theory meets everyday practice, guided by instructors who still work in the field.",
+    src: "/info2.webp",
     color: "#3372a5ff",
   },
   {
-    title: "Step 3 — Build Experience",
+    title: "Hands-On Creation",
     description:
-      "Develop a project portfolio through simulated OSP design projects, AutoCAD tasks, and real-world scenarios.",
-    src: "/step3.webp",
+      "Turn knowledge into proof—build portfolio pieces from fiber-route designs to CAD drafts that mirror the challenges real crews solve on-site.",
+    src: "/info3.webp",
     color: "#c9af6aff",
   },
   {
-    title: "Step 4 — Career Support",
+    title: "Career Coaching",
     description:
-      "Get resume grooming, LinkedIn optimization, mock interviews, and job search guidance tailored to telecom roles.",
+      "From résumé polish to mock interviews, our career team becomes your personal hype-squad, opening doors to telecom opportunities you didn’t know existed.",
     src: "/step4.webp",
     color: "#c96a6aff",
   },
   {
-    title: "Step 5 — Get Hired & Pay Later",
+    title: "Success Sharing",
     description:
-      "Secure a job through Skarion's placement support and pay the bulk of your program fee only after you're hired.",
+      "Land the role first, then invest in your future—our deferred tuition keeps risk low while we celebrate every job offer together.",
     src: "/step5.webp",
-    color: "#bdbdbdff",
+    color: "#747474ff",
   },
 ];
 
@@ -62,7 +62,7 @@ const Card = ({ title, description, src, color, i }: CardProps) => {
   return (
     <div
       ref={container}
-      className="h-[80vh] sm:h-screen flex items-center justify-center sticky top-50 lg:top-24 px-4 sm:px-12 my-10"
+      className="h-[80vh] sm:h-screen w-full flex items-center justify-center sticky top-50 lg:top-24 px-4 sm:px-12 my-10"
     >
       <div
         className="relative flex flex-col sm:flex-row justify-between items-center h-auto min-h-[350px] sm:h-[400px] w-full lg:w-full rounded-2xl p-6 sm:p-10 gap-5 shadow-lg overflow-hidden"
@@ -71,30 +71,41 @@ const Card = ({ title, description, src, color, i }: CardProps) => {
           top: `calc(-5vh + ${i * 25}px)`,
         }}
       >
-        <div className="flex flex-col gap-3 sm:gap-5 w-full sm:w-[45%] z-0">
-          <h2 className="text-[32px] sm:text-[40px] lg:text-[30px] font-bold text-white leading-tight">
-            {title}
-          </h2>
-          <p className="text-[14px] sm:text-[18px] lg:text-[18px] text-white/90 leading-relaxed">
-            {description}
-          </p>
-        </div>
-        
-        <div className="relative w-full sm:w-[55%] h-[200px] sm:h-full rounded-xl overflow-hidden shadow-md group">
-          <motion.div style={{ scale: imageScale }} className="w-full h-full">
-             <Image
-              fill
-              src={src}
-              alt={title}
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </motion.div>
+        {/* Card background image with black shade */}
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            fill
+            src={src}
+            alt={title}
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/30" />
         </div>
 
+        {/* Overlay that slides in from left on hover */}
+        <div className="absolute inset-0 w-full h-full flex items-center justify-center">
+          <div className="relative w-full h-full group">
+            {/* Color overlay */}
+            <div
+              className="absolute left-0 top-0 h-full w-3/7 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"
+              style={{ backgroundColor: color }}
+            />
+
+            {/* Text content */}
+            <div className="relative z-10 flex flex-col gap-3 sm:gap-5 w-full sm:w-[45%] h-full justify-center px-5 sm:px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out">
+              <h2 className="text-[32px] sm:text-[40px] lg:text-[30px] font-bold text-white leading-tight">
+                {title}
+              </h2>
+              <p className="text-[14px] sm:text-[18px] lg:text-[18px] text-white/90 leading-relaxed">
+                {description}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
-};
+}
 
 export default function Timeline() {
   return (
@@ -107,7 +118,7 @@ export default function Timeline() {
               Skarion helps individuals gain the skills and experience needed to secure high-demand jobs through specialized, hands-on training.                     
           </div>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8">
-            {/* <Link
+            <Link
                 href="https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -132,10 +143,10 @@ export default function Timeline() {
                         fill="white"
                     />
                 </svg>
-            </Link> */}
+            </Link>
         </div>
       </div>
-      <div className="lg:w-1/2">
+      <div className="w-full lg:w-1/2">
         {projects.map((p, i) => (
           <Card
             key={p.title}
