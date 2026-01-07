@@ -193,7 +193,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="relative flex flex-col bg-[#ffffff] rounded-[14px] w-full lg:w-[38%] h-[512px]">
+        <div className="relative flex flex-col bg-[#ffffff] rounded-[14px] w-full lg:w-[38%] h-[300px] lg:h-[512px]">
           <SwiperComponent images={images} />
         </div>
       </div>
