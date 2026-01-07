@@ -30,14 +30,14 @@ export const projects = [
     title: "Career Coaching",
     description:
       "From résumé polish to mock interviews, our career team becomes your personal hype-squad, opening doors to telecom opportunities you didn’t know existed.",
-    src: "/step4.webp",
+    src: "/info4.webp",
     color: "#c96a6aff",
   },
   {
     title: "Success Sharing",
     description:
       "Land the role first, then invest in your future—our deferred tuition keeps risk low while we celebrate every job offer together.",
-    src: "/step5.webp",
+    src: "/info5.webp",
     color: "#747474ff",
   },
 ];
@@ -84,19 +84,25 @@ const Card = ({ title, description, src, color, i }: CardProps) => {
 
         {/* Overlay that slides in from left on hover */}
         <div className="absolute inset-0 w-full h-full flex items-center justify-center">
-          <div className="relative w-full h-full group">
-            {/* Color overlay */}
-            <div
-              className="absolute left-0 top-0 h-full w-3/7 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"
-              style={{ backgroundColor: color }}
-            />
+          <div className="relative w-full h-full">
+            {/* SVG logo placeholder */}
+            {/* <div className="absolute bottom-30 left-5 sm:bottom-40 sm:left-6 w-8 h-8 sm:w-10 sm:h-10 z-10">
+              <svg
+                className="w-full h-full text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5-10-5-10 5z" />
+              </svg>
+            </div> */}
 
             {/* Text content */}
-            <div className="relative z-10 flex flex-col gap-3 sm:gap-5 w-full sm:w-[45%] h-full justify-center px-5 sm:px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out">
-              <h2 className="text-[32px] sm:text-[40px] lg:text-[30px] font-bold text-white leading-tight">
+            <div className="absolute bottom-5 left-5 sm:bottom-6 sm:left-6 right-5 sm:right-6 flex flex-col gap-2 sm:gap-3">
+              <h2 className="text-[30px] sm:text-[40px] lg:text-[36px] font-[600] text-white leading-tight">
                 {title}
               </h2>
-              <p className="text-[14px] sm:text-[18px] lg:text-[18px] text-white/90 leading-relaxed">
+              <p className="relative text-[20px] md:text-[18px] text-white/90 leading-relaxed">
                 {description}
               </p>
             </div>

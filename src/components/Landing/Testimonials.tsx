@@ -10,31 +10,31 @@ interface ITestimonial {
 
 const testimonials: ITestimonial[] = [
   {
-    src: "/testimonial-1.png",
+    src: "/testimonial-1.webp",
   },
   {
-    src: "/testimonial-2.png",
+    src: "/testimonial-2.webp",
   },
   {
-    src: "/testimonial-3.png",
+    src: "/testimonial-3.webp",
   },
   {
-    src: "/testimonial-4.png",
+    src: "/testimonial-4.webp",
   },
   {
-    src: "/testimonial-5.png",
+    src: "/testimonial-5.webp",
   },
   {
-    src: "/testimonial-6.png",
+    src: "/testimonial-6.webp",
   },
   {
-    src: "/testimonial-7.png",
+    src: "/testimonial-7.webp",
   },
   {
-    src: "/testimonial-8.png",
+    src: "/testimonial-8.webp",
   },
   {
-    src: "/testimonial-9.png",
+    src: "/testimonial-9.webp",
   },
 ];
 
