@@ -79,7 +79,7 @@ const Card = ({ title, description, src, color, i }: CardProps) => {
             alt={title}
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-black/10" />
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent rounded-[14px] pointer-events-none z-10" />
         </div>
