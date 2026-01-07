@@ -80,10 +80,12 @@ const Card = ({ title, description, src, color, i }: CardProps) => {
             className="object-cover"
           />
           <div className="absolute inset-0 bg-black/30" />
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent rounded-[14px] pointer-events-none z-10" />
         </div>
 
-        {/* Overlay that slides in from left on hover */}
-        <div className="absolute inset-0 w-full h-full flex items-center justify-center">
+        {/* Text content on top of gradient */}
+        <div className="absolute inset-0 w-full h-full flex items-end justify-start z-20 pointer-events-none">
           <div className="relative w-full h-full">
             {/* SVG logo placeholder */}
             {/* <div className="absolute bottom-30 left-5 sm:bottom-40 sm:left-6 w-8 h-8 sm:w-10 sm:h-10 z-10">
