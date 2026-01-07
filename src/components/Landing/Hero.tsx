@@ -143,7 +143,7 @@ export default function Hero() {
             <p className="text-[#ffffff] text-[16px] font-[400] leading-[1.2] z-10 mt-3">
               Once you enroll, a dedicated team of instructors, managers, and
               industry experts supports your training, job search, and
-              applications with a focus on placement within 90 days.
+              applications with a focus on placement within 120 days.
             </p>
           </div>
           <div className="text-[16px] font-[400] sm:pt-10 pt-7 pb-7 text-left">

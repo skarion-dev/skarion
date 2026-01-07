@@ -21,13 +21,13 @@ const steps = [
   {
     title: "Step 3 — Build Experience",
     detail:
-      "Develop a project portfolio through simulated OSP design projects, AutoCAD tasks, and real-world scenarios.",
+      "Develop a project portfolio through real-world OSP design projects.",
     image: "/step3.jpg",
   },
   {
     title: "Step 4 — Career Support",
     detail:
-      "Get resume grooming, LinkedIn optimization, mock interviews, and job search guidance tailored to telecom roles.",
+      "Get resume grooming, LinkedIn optimization, mock interviews, and job search guidance tailored to OSP Engineering roles.",
     image: "/step4.jpg",
   },
   {
