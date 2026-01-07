@@ -178,8 +178,7 @@ export default function ContractForm({
           </p>
           <ul className="list-disc text-[14px] leading-relaxed mb-6 pl-3">
             <li className="mb-2">
-              Total Fee: The Candidate agrees to pay a maximum of 10% of the
-              first-year salary or $6,000 USD, whichever is less, as a
+              Total Fee: The Candidate agrees to pay $6,000 USD as a
               commission for job placement services.
             </li>
             <li className="mb-2">
