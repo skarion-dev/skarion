@@ -61,7 +61,7 @@ const SwiperComponent: FC<SwiperComponentProps> = ({ images }) => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent rounded-[14px] pointer-events-none z-10" />
                 <div className="absolute bottom-5 left-1 right-0 p-6 text-white z-20">
-                  <p className="text-[#ffffff] text-[40px] sm:text-[44px] md:text-[48px] lg:text-[52px] font-[600] leading-[1.2] z-10">
+                  <p className="text-[#ffffff] text-[30px] sm:text-[30px] md:text-[48px] lg:text-[52px] font-[600] leading-[1.2] z-10">
                     {image.title}
                   </p>
                   <span className="relative top-3 text-[14px] md:text-[16px] opacity-90">
