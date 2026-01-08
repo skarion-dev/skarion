@@ -62,7 +62,7 @@ const Card = ({ title, description, src, color, i }: CardProps) => {
   return (
     <div
       ref={container}
-      className="h-[80vh] sm:h-screen w-full flex items-center justify-center sticky top-50 lg:top-24 px-4 sm:px-12 my-10"
+      className="h-[80vh] sm:h-screen w-full flex items-center justify-center sticky top-70the  sm:top-50 lg:top-5 px-4 sm:px-12 my-10"
     >
       <div
         className="relative flex flex-col sm:flex-row justify-between items-center h-auto min-h-[350px] sm:h-[400px] w-full lg:w-full rounded-2xl p-6 sm:p-10 gap-5 shadow-lg overflow-hidden"
@@ -104,7 +104,7 @@ const Card = ({ title, description, src, color, i }: CardProps) => {
               <h2 className="text-[30px] sm:text-[40px] lg:text-[36px] font-[600] text-white leading-tight">
                 {title}
               </h2>
-              <p className="relative text-[20px] md:text-[18px] text-white/90 leading-relaxed">
+              <p className="relative text-[14px] md:text-[18px] text-white/90 leading-relaxed">
                 {description}
               </p>
             </div>
@@ -118,8 +118,8 @@ const Card = ({ title, description, src, color, i }: CardProps) => {
 export default function Timeline() {
   return (
     <div className="flex flex-col lg:flex-row items-start justify-between relative w-full sm:py-10 py-5 sm:px-12 px-6 max-w-[1440px] mx-auto">
-      <div className="w-full lg:w-1/2 sticky top-16 sm:top-20 md:top-24 lg:top-24 h-auto lg:h-screen flex flex-col justify-center py-3 lg:py-3 bg-white z-5">
-        <div className="text-[#000000] text-[32px] sm:text-[40px] md:text-[48px] lg:text-[64px] leading-[1.2] text-left">
+      <div className="w-full lg:w-1/2 sticky top-20 sm:top-20 md:top-20 lg:top-0 h-auto lg:h-screen flex flex-col justify-center py-3 lg:py-3 bg-white z-5">
+        <div className="text-[#000000] text-[32px] sm:text-[36px] md:text-[40px] lg:text-[64px] leading-[1.2] text-left">
               Advancing Careers Through Specialized Training
           </div>
           <div className="text-[16px] sm:text-[18px] md:text-[20px] font-[300] pt-5 text-left w-full lg:w-[80%]">
