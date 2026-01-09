@@ -62,7 +62,7 @@ const Card = ({ title, description, src, color, i }: CardProps) => {
   return (
     <div
       ref={container}
-      className="h-[80vh] sm:h-screen w-full flex items-center justify-center sticky top-70 sm:top-50 lg:top-5 px-4 sm:px-12 my-10"
+      className="h-[80vh] sm:h-screen w-full flex items-center justify-center sticky top-65 sm:top-50 lg:top-5 sm:px-12 px-4 my-10"
     >
       <div
         className="relative flex flex-col sm:flex-row justify-between items-center h-auto min-h-[350px] sm:h-[400px] w-full lg:w-full rounded-2xl p-6 sm:p-10 gap-5 shadow-lg overflow-hidden"
@@ -118,7 +118,7 @@ const Card = ({ title, description, src, color, i }: CardProps) => {
 export default function Timeline() {
   return (
     <div className="flex flex-col lg:flex-row items-start justify-between relative w-full sm:py-10 py-5 sm:px-12 px-6 max-w-[1440px] mx-auto">
-      <div className="w-full lg:w-1/2 sticky top-20 sm:top-20 md:top-20 lg:top-0 h-auto lg:h-screen flex flex-col justify-center py-3 lg:py-3 bg-white z-5">
+      <div className="w-full lg:w-1/2 sticky pt-25 sm:pt-25 md:pt-28 lg:pt-0 top-0 h-auto lg:h-screen flex flex-col justify-center py-3 lg:py-3 bg-white z-5">
         <div className="text-[#000000] text-[32px] sm:text-[36px] md:text-[40px] lg:text-[64px] leading-[1.2] text-left">
               Advancing Careers Through Specialized Training
           </div>
