@@ -79,7 +79,7 @@ export function SignInForm({
           <Input
             id="email"
             type="email"
-            placeholder="m@example.com"
+            placeholder="mail@example.com"
             className="mt-3"
             {...register("email")}
           />
