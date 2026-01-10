@@ -103,7 +103,7 @@ export function SignUpForm({
             id="name"
             {...register("name")}
             type="text"
-            placeholder="John Doe"
+            placeholder="Enter Your Full Name"
             className="mt-3"
           />
           {errors.name && (
@@ -116,7 +116,7 @@ export function SignUpForm({
             id="email"
             {...register("email")}
             type="email"
-            placeholder="m@example.com"
+            placeholder="mail@example.com"
             className="mt-3"
           />
           {errors.email && (
@@ -129,7 +129,7 @@ export function SignUpForm({
             id="username"
             {...register("username")}
             type="text"
-            placeholder="rianulamin.r"
+            placeholder="Enter Your Username"
             className="mt-3"
           />
           {errors.username && (
