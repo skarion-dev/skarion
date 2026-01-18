@@ -24,7 +24,7 @@ export default function RootLayout({
     <SmoothScroll>
       <html lang="en">
         <head>
-          <link rel="icon" href="/skarion.png" type="image/png" sizes="any" />
+          <link rel="icon" type="image/x-icon" href="https://skarion.com/skarion.ico"/>
         </head>
         <body
           className={`${inter.variable} font-sans antialiased overflow-x-hidden`}
