@@ -19,19 +19,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: baseURL + "/faq",
             lastModified: new Date(),
             changeFrequency: "monthly",
-            priority: 0.8,
+            priority: 0.5,
         },
         {
             url: baseURL + "/privacy-policy",
             lastModified: new Date(),
             changeFrequency: "yearly",
-            priority: 0.7,
+            priority: 0.4,
         },
         {
             url: baseURL + "/terms-and-conditions",
             lastModified: new Date(),
             changeFrequency: "yearly",
-            priority: 0.6,
+            priority: 0.3,
         },
     ];
 }
