@@ -43,25 +43,21 @@ const bootcampSchedule = [
         id: "2.1",
         name: "Submarine to Home Journey",
         isLocked: true,
-        link: "/pdfs/lesson05.pdf",
       },
       {
         id: "2.2",
         name: "Core OSP Components and Hierarchy",
         isLocked: true,
-        link: "/pdfs/lesson06.pdf",
       },
       {
         id: "2.3",
         name: "PON Basics and Capacity Planning",
         isLocked: true,
-        link: "/pdfs/lesson06.pdf",
       },
       {
         id: "Q1",
         name: "Pop Quiz (13 Questions)",
         isLocked: true,
-        link: "/pdfs/lesson06.pdf",
       },
     ],
   },
@@ -73,25 +69,21 @@ const bootcampSchedule = [
         id: "3.1",
         name: "Fiber Construction and Fundamentals",
         isLocked: true,
-        link: "/pdfs/lesson08.pdf",
       },
       {
         id: "S1",
         name: "SCORM: Color Coded Fiber Distribution",
         isLocked: true,
-        link: "/pdfs/lesson09.pdf",
       },
       {
         id: "S2",
         name: "SCORM: Total Internal Reflection",
         isLocked: true,
-        link: "/pdfs/lesson09.pdf",
       },
       {
         id: "Q2",
         name: "Pop Quiz (10 Questions)",
         isLocked: true,
-        link: "/pdfs/lesson10.pdf",
       },
     ],
   },
@@ -103,19 +95,16 @@ const bootcampSchedule = [
         id: "4.1",
         name: "Fusion Splicing and Quality Control",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "S3",
         name: "SCORM: Mini Fusion Lab",
         isLocked: true,
-        link: "/pdfs/lesson12.pdf",
       },
       {
         id: "Q3",
         name: "Pop Quiz (15 Questions)",
         isLocked: true,
-        link: "/pdfs/lesson13.pdf",
       },
     ],
   },
@@ -127,19 +116,16 @@ const bootcampSchedule = [
         id: "5.1",
         name: "Site Planning: ROW, Easements and Maps",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "S4",
         name: "SCORM: Permit Picker",
         isLocked: true,
-        link: "/pdfs/lesson12.pdf",
       },
       {
         id: "Q4",
         name: "Pop Quiz (10 Questions)",
         isLocked: true,
-        link: "/pdfs/lesson13.pdf",
       },
     ],
   },
@@ -151,37 +137,31 @@ const bootcampSchedule = [
         id: "6.1",
         name: "Underground Infrastructure",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "S5",
         name: "SCORM: 811 Locate",
         isLocked: true,
-        link: "/pdfs/lesson12.pdf",
       },
       {
         id: "6.2",
         name: "Aerial Infrastructure",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "S6",
         name: "SCORM: Span Sense",
         isLocked: true,
-        link: "/pdfs/lesson12.pdf",
       },
       {
         id: "6.3",
         name: "Network Components Deep Dive",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "Q5",
         name: "Pop Quiz (20 Questions)",
         isLocked: true,
-        link: "/pdfs/lesson13.pdf",
       },
     ],
   },
@@ -193,19 +173,16 @@ const bootcampSchedule = [
         id: "7.1",
         name: "Type of OSP Service Locations",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "7.2",
         name: "Capacity and Velocity Planning",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "Q6",
         name: "Pop Quiz (9 Questions)",
         isLocked: true,
-        link: "/pdfs/lesson13.pdf",
       },
     ],
   },
@@ -217,13 +194,13 @@ const bootcampSchedule = [
         id: "8.1",
         name: "PON Specifications, deployment, and QoS",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
+
       },
       {
         id: "Q7",
         name: "Pop Quiz (10 Questions)",
         isLocked: true,
-        link: "/pdfs/lesson13.pdf",
+
       },
     ],
   },
@@ -235,13 +212,13 @@ const bootcampSchedule = [
         id: "9.1",
         name: "Design Rules and Engineering Principles",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
+
       },
       {
         id: "Q8",
         name: "Pop Quiz (10 Questions)",
         isLocked: true,
-        link: "/pdfs/lesson13.pdf",
+
       },
     ],
   },
@@ -253,37 +230,34 @@ const bootcampSchedule = [
         id: "10.1",
         name: "Introduction to HLD",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "10.2",
         name: "Mapping Fundamentals",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "10.3",
         name: "Project Definition and Network Planning",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
+
       },
       {
         id: "10.4",
         name: "Network Hierarchy",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
+
       },
       {
         id: "10.5",
         name: "Placement Principles",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
+
       },
       {
         id: "Q9",
         name: "Pop Quiz (14 Questions)",
         isLocked: true,
-        link: "/pdfs/lesson13.pdf",
       },
     ],
   },
@@ -295,13 +269,11 @@ const bootcampSchedule = [
         id: "11.1",
         name: "SKARION Design Standards",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "Q10",
         name: "Pop Quiz (20 Questions)",
         isLocked: true,
-        link: "/pdfs/lesson13.pdf",
       },
     ],
   },
@@ -313,25 +285,21 @@ const bootcampSchedule = [
         id: "12.1",
         name: "HLD Project 01 - Tracing EOP, CL and ROW (Slide)",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "12.2",
         name: "HLD Project 01 - Tracing EOP, CL and ROW (Video)",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "Q11",
         name: "Pop Quiz (10 Questions)",
         isLocked: true,
-        link: "/pdfs/lesson13.pdf",
       },
       {
         id: "P1",
         name: "Project - Tracing EOP, CL and ROW",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
     ],
   },
@@ -343,25 +311,21 @@ const bootcampSchedule = [
         id: "13.1",
         name: "HLD Project 02 - Service Groups (Slide)",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "13.2",
         name: "HLD Project 02 - Service Groups (Video)",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "Q12",
         name: "Pop Quiz (10 Questions)",
         isLocked: true,
-        link: "/pdfs/lesson13.pdf",
       },
       {
         id: "P2",
         name: "Project - Service Groups",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
     ],
   },
@@ -373,25 +337,22 @@ const bootcampSchedule = [
         id: "14.1",
         name: "HLD Project 03 - Conduit, Handhole and Flowerpot Placement (Slide)",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "14.2",
         name: "HLD Project 03 - Conduit, Handhole and Flowerpot Placement (Video)",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "Q13",
         name: "Pop Quiz (10 Questions)",
         isLocked: true,
-        link: "/pdfs/lesson13.pdf",
       },
       {
         id: "P3",
         name: "Project - Conduit, Handhole and Flowerpot Placement",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
+
       },
     ],
   },
@@ -403,25 +364,22 @@ const bootcampSchedule = [
         id: "15.1",
         name: "HLD Project 04 - Splice Closure Placement (Slide)",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "15.2",
         name: "HLD Project 04 - Splice Closure Placement (Video)",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "Q14",
         name: "Pop Quiz (10 Questions)",
         isLocked: true,
-        link: "/pdfs/lesson13.pdf",
+
       },
       {
         id: "P4",
         name: "Project - Splice Closure Placement",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
     ],
   },
@@ -433,25 +391,24 @@ const bootcampSchedule = [
         id: "16.1",
         name: "HLD Project 05 - Vicinity Map (Slide)",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "16.2",
         name: "HLD Project 05 - Vicinity Map (Video)",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
+
       },
       {
         id: "Q15",
         name: "Pop Quiz (7 Questions)",
         isLocked: true,
-        link: "/pdfs/lesson13.pdf",
+
       },
       {
         id: "P5",
         name: "Project - Vicinity Map",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
+
       },
     ],
   },
@@ -463,25 +420,24 @@ const bootcampSchedule = [
         id: "17.1",
         name: "LLD Project 01 - Labels and Callouts (Slide)",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "17.2",
         name: "LLD Project 01 - Labels and Callouts (Video)",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
+
       },
       {
         id: "Q16",
         name: "Pop Quiz (10 Questions)",
         isLocked: true,
-        link: "/pdfs/lesson13.pdf",
+
       },
       {
         id: "P6",
         name: "Project -  Labels and Callouts",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
+
       },
     ],
   },
@@ -493,25 +449,25 @@ const bootcampSchedule = [
         id: "18.1",
         name: "LLD Project 02 - Schematic (Slide)",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
+
       },
       {
         id: "18.2",
         name: "LLD Project 02 - Schematic (Video)",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
+
       },
       {
         id: "Q17",
         name: "Pop Quiz (10 Questions)",
         isLocked: true,
-        link: "/pdfs/lesson13.pdf",
+
       },
       {
         id: "P7",
         name: "Project - Schematic",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
+
       },
     ],
   },
@@ -523,25 +479,23 @@ const bootcampSchedule = [
         id: "19.1",
         name: "LLD Project 03 - Cable and Terminal Labelling (Slide)",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
+
       },
       {
         id: "19.2",
         name: "LLD Project 03 - Cable and Terminal Labelling (Video)",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
+
       },
       {
         id: "Q18",
         name: "Pop Quiz (10 Questions)",
         isLocked: true,
-        link: "/pdfs/lesson13.pdf",
       },
       {
         id: "P8",
         name: "Project - Cable and Terminal Labelling",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
     ],
   },
@@ -553,25 +507,24 @@ const bootcampSchedule = [
         id: "20.1",
         name: "LLD Project 04 - Paperspace, Splice Point & Splice Diagram (Slide)",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
       },
       {
         id: "20.2",
         name: "LLD Project 04 - Paperspace, Splice Point & Splice Diagram (Video)",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
+
       },
       {
         id: "Q19",
         name: "Pop Quiz (10 Questions)",
         isLocked: true,
-        link: "/pdfs/lesson13.pdf",
+
       },
       {
         id: "P9",
         name: "Project - Paperspace, Splice Point & Splice Diagram",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
+
       },
     ],
   },
@@ -583,25 +536,25 @@ const bootcampSchedule = [
         id: "21.1",
         name: "LLD Project 5 - BOM and Splice Matrix (Slide)",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
+
       },
       {
         id: "21.2",
         name: "LLD Project 5 - BOM and Splice Matrix (Video)",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
+
       },
       {
         id: "Q20",
         name: "Pop Quiz (10 Questions)",
         isLocked: true,
-        link: "/pdfs/lesson13.pdf",
+
       },
       {
         id: "P10",
         name: "Project - BOM and Splice Matrix",
         isLocked: true,
-        link: "/pdfs/lesson11.pdf",
+
       },
     ],
   },
