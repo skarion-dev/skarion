@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import Video from "next-video";
 import {
   Accordion,
@@ -15,6 +16,15 @@ import Overview from "@/../videos/intro.mp4.json";
 import video1 from "@/../videos/1.2.mp4.json";
 import video2 from "@/../videos/1228.mp4.json";
 import FAQMini from "@/components/Course/FAQMini";
+
+export const metadata: Metadata = {
+  title: "Outside Plant Engineering Course | Skarion",
+  description:
+    "Unlock high-demand careers in the US with OSP engineering",
+  alternates: {
+    canonical: "https://skarion.com/course/outside-plant-engineering",
+  },
+};
 
 const bootcampSchedule = [
   {
