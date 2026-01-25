@@ -23,7 +23,7 @@ const images = [
     details: "Zero upfront risk. Join now and pay only after you land a job.",
   },
   {
-    src: "/end to end.jpg",
+    src: "/post placement.jpg",
     title: "End-to-End Placement",
     details: "From resume to interview, We handle every step of your job journey.",
   },
