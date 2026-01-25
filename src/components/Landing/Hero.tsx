@@ -28,11 +28,6 @@ const images = [
     details: "From resume to interview, We handle every step of your job journey.",
   },
   {
-    src: "/globe to us.jpg",
-    title: "Global-to-U.S.A Visa Support",
-    details: "Get career-ready with pathaways tailored for OPT, CPT, and H-18 success.",
-  },
-  {
     src: "/end to end.jpg",
     title: "Post-Placement Career Support",
     details: "Enjoy ongoing career support even after securing your job, from salary negotiation to job advancement.",
