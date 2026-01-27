@@ -22,6 +22,8 @@ export const metadata: Metadata = {
   description: "Unlock high-demand careers in the US with OSP engineering",
   keywords: [
     "Outside Plant Engineering Course",
+    "OSP",
+    "OSP Course",
     "OSP Engineering",
     "Skarion",
     "Fiber Optic Design",
