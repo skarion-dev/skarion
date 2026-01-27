@@ -18,11 +18,60 @@ import video2 from "@/../videos/1228.mp4.json";
 import FAQMini from "@/components/Course/FAQMini";
 
 export const metadata: Metadata = {
-  title: "Outside Plant Engineering Course | Skarion",
-  description:
-    "Unlock high-demand careers in the US with OSP engineering",
-  alternates: {
-    canonical: "https://skarion.com/course/outside-plant-engineering",
+  title: "Outside Plant Engineering Course - Skarion",
+  description: "Unlock high-demand careers in the US with OSP engineering",
+  keywords: [
+    "Outside Plant Engineering Course",
+    "OSP Engineering",
+    "Skarion",
+    "Fiber Optic Design",
+    "Telecommunications Engineering",
+    "OSP Design Training",
+    "FTTH Design",
+    "Fiber to the Home",
+    "GIS for OSP",
+    "AutoCAD for OSP",
+    "Career Support",
+    "Job Placement",
+    "OSP Jobs",
+    "Job Guarantee",
+    "Telecom Infrastructure",
+    "Network Design",
+    "OSP Field Engineering",
+    "Fiber Optic Technician",
+    "Broadband Engineering",
+    "Utility Engineering",
+    "OSP Project Management",
+    "Fiber Network Planning",
+    "OSP Certification",
+    "Career in Telecommunications",
+    "US OSP Engineering Jobs",
+  ],
+  openGraph: {
+    title: "Outside Plant Engineering Course - Skarion",
+    description: "Unlock high-demand careers in the US with OSP engineering",
+    url: "https://skarion.com/course/outside-plant-engineering",
+    siteName: "Skarion",
+    images: [
+      {
+        url: "https://skarion.com/osp.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Outside Plant Engineering Course - Skarion",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Outside Plant Engineering Course - Skarion",
+    description: "Unlock high-demand careers in the US with OSP engineering",
+    images: ["https://skarion.com/osp.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
