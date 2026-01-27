@@ -1,3 +1,37 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy - Skarion",
+  description: "Privacy Policy of Skarion",
+  keywords: ["Privacy Policy", "Skarion", "Privacy Policy of Skarion"],
+  openGraph: {
+    title: "Privacy Policy - Skarion",
+    description: "Privacy Policy of Skarion",
+    url: "https://skarion.com/privacy-policy",
+    siteName: "Skarion",
+    images: [
+      {
+        url: "https://skarion.com/skarion-jpg.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Skarion Privacy Policy",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy - Skarion",
+    description: "Privacy Policy of Skarion",
+    images: ["https://skarion.com/skarion-jpg.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
 export default function PrivacyPage() {
   return (
     <div className="w-full bg-[#ffffff] sm:py-10 py-5 sm:px-12 px-6 max-w-[1440px] mx-auto">

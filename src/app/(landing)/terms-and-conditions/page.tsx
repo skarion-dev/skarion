@@ -1,3 +1,37 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms and Conditions - Skarion",
+  description: "Terms and Conditions of Skarion",
+  keywords: ["Terms and Conditions", "Skarion", "Terms and Conditions of Skarion"],
+  openGraph: {
+    title: "Terms and Conditions - Skarion",
+    description: "Terms and Conditions of Skarion",
+    url: "https://skarion.com/terms-and-conditions",
+    siteName: "Skarion",
+    images: [
+      {
+        url: "https://skarion.com/skarion-jpg.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Skarion Terms and Conditions",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms and Conditions - Skarion",
+    description: "Terms and Conditions of Skarion",
+    images: ["https://skarion.com/skarion-jpg.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
 export default function TermsPage() {
   return (
     <div className="w-full bg-[#ffffff] sm:py-10 py-5 sm:px-12 px-6 max-w-[1440px] mx-auto">
