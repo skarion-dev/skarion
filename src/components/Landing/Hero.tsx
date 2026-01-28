@@ -28,7 +28,7 @@ const images = [
     details: "From resume to interview, We handle every step of your job journey.",
   },
   {
-    src: "/checkout1.jpg",
+    src: "/globe to us.jpg",
     title: "Career Fast-Track",
     details: "Land high-paying US tech roles in 120 days with our specialized training and placement program."
   },
