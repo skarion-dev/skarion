@@ -163,9 +163,9 @@ const FAQPage: React.FC = () => {
   };
   return (
     <div className="w-full bg-[#ffffff] sm:py-10 py-5 sm:px-12 px-6 max-w-[1440px] mx-auto">
-      <div className="text-[#000000] text-[40px] sm:text-[64px] leading-[1.2] text-left mb-6 sm:mb-12 mt-10">
+      <h1 className="text-[#000000] text-[40px] sm:text-[64px] leading-[1.2] text-left mb-6 sm:mb-12 mt-10">
         Frequently Asked Questions
-      </div>
+      </h1>
       <div className="w-full mb-4 sm:mb-6 md:mb-8">
         <div className="flex items-center gap-2">
           <Input

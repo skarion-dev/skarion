@@ -91,9 +91,9 @@ export default function Hero() {
               </span>
             </div>
           </div>
-          <div className="text-[#000000] text-4xl sm:text-5xl md:text-6xl lg:text-[64px] leading-[1.2] text-left">
+          <h1 className="text-[#000000] text-4xl sm:text-5xl md:text-6xl lg:text-[64px] leading-[1.2] text-left">
             Advancing Careers Through Specialized Training
-          </div>
+          </h1>
           <div className="text-base sm:text-lg md:text-[20px] font-[300] pt-5 text-left w-full lg:w-[80%]">
             Skarion helps individuals gain the skills and experience needed to
             secure high-demand jobs through specialized, hands-on training.
