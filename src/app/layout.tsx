@@ -11,15 +11,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Skarion",
-  description: "Advancing careers through specialized training",
+  title: "Skarion - Advancing Careers Through Specialized Training",
+  description: "Skarion is dedicated to shaping the next generation of telecom professionals. Through specialized training in OSP, AutoCAD, and GIS, we equip candidates with hands-on skills and dedicated job placement support to help them thrive in the industry.",
   keywords: [
     "Skarion",
     "Outside Plant Engineering",
     "OSP Training",
     "OSP Job Placement",
-    "Money Back Guarantee",
-    "Job Guarantee",
+    "Telecom Career",
+    "AutoCAD Training",
+    "GIS Training",
     "Fiber Optics Training",
     "Telecommunications Engineering",
     "OSP Design",
@@ -31,8 +32,8 @@ export const metadata: Metadata = {
     "Career Placement",
   ],
   openGraph: {
-    title: "Skarion",
-    description: "Advancing careers through specialized training",
+    title: "Skarion - Advancing Careers Through Specialized Training",
+    description: "Skarion is dedicated to shaping the next generation of telecom professionals. Through specialized training in OSP, AutoCAD, and GIS, we equip candidates with hands-on skills and dedicated job placement support to help them thrive in the industry.",
     url: "https://skarion.com",
     siteName: "Skarion",
     images: [
@@ -48,8 +49,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Skarion",
-    description: "Advancing careers through specialized training",
+    title: "Skarion - Advancing Careers Through Specialized Training",
+    description: "Skarion is dedicated to shaping the next generation of telecom professionals. Through specialized training in OSP, AutoCAD, and GIS, we equip candidates with hands-on skills and dedicated job placement support to help them thrive in the industry.",
     images: ["https://skarion.com/skarion-jpg.jpg"],
   },
   robots: {
