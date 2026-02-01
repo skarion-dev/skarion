@@ -367,7 +367,7 @@ export default function Header({ user }: { user?: any }) {
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-6">
                       <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                         <div className="flex flex-col">
-                          <p className="text-[12px] sm:text-[14px] md:text-[16px] text-[#191F38] font-[500] mb-1 md:mb-1.5">
+                          {/* <p className="text-[12px] sm:text-[14px] md:text-[16px] text-[#191F38] font-[500] mb-1 md:mb-1.5">
                             About
                           </p>
                           <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
@@ -377,7 +377,7 @@ export default function Header({ user }: { user?: any }) {
                             >
                               About Skarion
                             </Link>
-                          </div>
+                          </div> */}
                           <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
                             <Link
                               href="#"

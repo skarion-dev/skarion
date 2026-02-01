@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms and Conditions - Skarion",
-  description: "Terms and Conditions of Skarion",
+  description: "Review the terms and conditions for Skarion's specialized telecom training and job placement services.",
   keywords: ["Terms and Conditions", "Skarion", "Terms and Conditions of Skarion"],
   openGraph: {
     title: "Terms and Conditions - Skarion",
-    description: "Terms and Conditions of Skarion",
+    description: "Review the terms and conditions for Skarion's specialized telecom training and job placement services.",
     url: "https://skarion.com/terms-and-conditions",
     siteName: "Skarion",
     images: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Terms and Conditions - Skarion",
-    description: "Terms and Conditions of Skarion",
+    description: "Review the terms and conditions for Skarion's specialized telecom training and job placement services.",
     images: ["https://skarion.com/skarion-jpg.jpg"],
   },
   robots: {
