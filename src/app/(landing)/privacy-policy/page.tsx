@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - Skarion",
-  description: "Privacy Policy of Skarion",
+  description: "Read Skarion's Privacy Policy to understand how we protect your personal information and manage your data during your training and job search.",
   keywords: ["Privacy Policy", "Skarion", "Privacy Policy of Skarion"],
   openGraph: {
     title: "Privacy Policy - Skarion",
-    description: "Privacy Policy of Skarion",
+    description: "Read Skarion's Privacy Policy to understand how we protect your personal information and manage your data during your training and job search.",
     url: "https://skarion.com/privacy-policy",
     siteName: "Skarion",
     images: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Privacy Policy - Skarion",
-    description: "Privacy Policy of Skarion",
+    description: "Read Skarion's Privacy Policy to understand how we protect your personal information and manage your data during your training and job search.",
     images: ["https://skarion.com/skarion-jpg.jpg"],
   },
   robots: {

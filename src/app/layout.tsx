@@ -53,9 +53,13 @@ export const metadata: Metadata = {
     description: "Skarion is dedicated to shaping the next generation of telecom professionals. Through specialized training in OSP, AutoCAD, and GIS, we equip candidates with hands-on skills and dedicated job placement support to help them thrive in the industry.",
     images: ["https://skarion.com/skarion-jpg.jpg"],
   },
-  robots: {
-    index: true,
-    follow: true,
+  verification: {
+    other: {
+      "msvalidate.01": "C6BC22315AAA3905A487DA8CF4F013C9",
+    },
+  },
+  icons: {
+    icon: "https://skarion.com/skarion.ico",
   },
 };
 
@@ -67,10 +71,6 @@ export default function RootLayout({
   return (
     <SmoothScroll>
       <html lang="en">
-        <head>
-          <link rel="icon" type="image/x-icon" href="https://skarion.com/skarion.ico" />
-          <meta name="msvalidate.01" content="C6BC22315AAA3905A487DA8CF4F013C9" />
-        </head>
         <body
           className={`${inter.variable} font-sans antialiased overflow-x-hidden`}
         >

@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "FAQ - Skarion",
-  description: "Frequently Asked Questions about Skarion",
+  description: "Find answers to common questions about Skarion's OSP engineering training, job placement support, and career advancement programs.",
   keywords: ["FAQ", "Skarion", "Frequently Asked Questions"],
   openGraph: {
     title: "FAQ - Skarion",
-    description: "Frequently Asked Questions about Skarion",
+    description: "Find answers to common questions about Skarion's OSP engineering training, job placement support, and career advancement programs.",
     url: "https://skarion.com/faq",
     siteName: "Skarion",
     images: [
