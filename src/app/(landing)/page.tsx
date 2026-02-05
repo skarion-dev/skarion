@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     "Professional Certification",
     "Hands-on Training",
     "Career Support",
+    
   ],
   openGraph: {
     title: "Skarion - Advancing Careers Through Specialized Training",
