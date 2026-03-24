@@ -137,16 +137,15 @@ export default async function Home() {
                   </span>
                 </div>
                 <span className="text-[12px] font-[400]">
-                  Trusted by 20+ Students Worldwide
+                  Trusted by 70+ Professionals Worldwide
                 </span>
               </div>
             </div>
             <h1 className="text-[#000000] text-4xl sm:text-5xl md:text-6xl lg:text-[64px] leading-[1.2] text-left">
-              Advancing Careers Through Specialized Training
+              Advancing Careers Through Strategic Professional Development
             </h1>
             <div className="text-base sm:text-lg md:text-[20px] font-[300] pt-5 text-left w-full lg:w-[80%]">
-              Skarion helps individuals gain the skills and experience needed to
-              secure high-demand jobs through specialized, hands-on training.
+              Skarion helps individuals confidently navigate the hiring process and secure top-tier roles through expert coaching, resume optimization, and hands-on training.
             </div>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8">
               <Link
