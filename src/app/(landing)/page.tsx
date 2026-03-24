@@ -144,7 +144,7 @@ export default async function Home() {
             <h1 className="text-[#000000] text-4xl sm:text-5xl md:text-6xl lg:text-[64px] leading-[1.2] text-left">
               Advancing Careers Through Strategic Professional Development
             </h1>
-            <div className="text-base sm:text-lg md:text-[20px] font-[300] pt-5 text-left w-full lg:w-[80%]">
+            <div className="text-sm sm:text-base md:text-lg font-[300] pt-5 text-left w-full lg:w-[80%]">
               Skarion helps individuals confidently navigate the hiring process and secure top-tier roles through expert coaching, resume optimization, and hands-on training.
             </div>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8">
