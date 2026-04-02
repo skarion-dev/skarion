@@ -248,9 +248,8 @@ export default async function Home() {
         </div>
       </div>
       <Courses />
-      {/* <Workstep /> */}
-      <Testimonials />
-      <FAQ />
+      {/* <Testimonials /> */}
+      {/* <FAQ /> */}
     </div>
   );
 }
