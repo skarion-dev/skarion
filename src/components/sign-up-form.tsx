@@ -64,18 +64,7 @@ export function SignUpForm({
       });
 
       toast.success("Account created successfully!");
-
-      const res = await signIn("credentials", {
-        redirect: false,
-        email: data.email,
-        password: data.password,
-      });
-
-      if (res?.ok) {
-        router.push("/dashboard");
-      } else {
-        router.push("/auth/sign-in");
-      }
+      router.push("/auth/sign-in");
     } catch (error: unknown) {
       if (error instanceof ApiError) {
         toast.error(
@@ -196,7 +185,7 @@ export function SignUpForm({
         <button
           type="button"
           className="w-full flex items-center justify-center gap-4 py-2.5 px-6 text-[15px] font-medium tracking-wide text-slate-900 border border-slate-300 rounded-md hover:bg-slate-100 focus:outline-none cursor-pointer"
-          onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+          onClick={() => signIn("google", { callbackUrl: "/" })}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -33,8 +33,6 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
           name: data.name,
           email: data.email,
           role: data.role,
-          roles: data.roles ?? [],
-          permissions: data.permissions ?? [],
           image: data.image,
           lastLogin: data.lastLogin,
           accessToken: data.accessToken,
@@ -66,8 +64,6 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
           name: user.name,
           email: user.email,
           role: user.role,
-          roles: user.roles ?? [],
-          permissions: user.permissions ?? [],
           image: user.image,
           lastLogin: user.lastLogin,
           accessToken: user.accessToken,
@@ -84,8 +80,6 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
       if (user) {
         token.id = String(user.id);
         token.role = user.role;
-        token.roles = user.roles ?? [];
-        token.permissions = user.permissions ?? [];
         token.image = user.image;
         token.lastLogin = user.lastLogin;
         token.email = user.email;
@@ -97,8 +91,6 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
       if (session.user) {
         session.user.id = token.id as string;
         session.user.role = token.role as string;
-        session.user.roles = (token.roles ?? []) as string[];
-        session.user.permissions = (token.permissions ?? []) as string[];
         session.user.image = token.image as string;
         session.user.lastLogin = token.lastLogin as string;
         session.user.email = token.email as string;
