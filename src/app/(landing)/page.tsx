@@ -8,6 +8,7 @@ import SwiperComponent from "@/components/SwiperComponent";
 import Counter from "@/components/Counter";
 import Steps from "@/components/Steps";
 import { Metadata } from "next";
+import { auth } from "@/auth";
 
 export const metadata: Metadata = {
   title: "Skarion - Advancing Careers Through Specialized Training",
@@ -89,8 +90,15 @@ const images = [
 ];
 
 export default async function Home() {
+  const session = await auth();
+
   return (
     <div>
+      {session?.user && (
+        <div className="bg-[#122461]/10 text-[#122461] border-b border-[#122461]/20 text-sm font-medium px-4 py-3 text-center">
+          Welcome back, <strong>{session.user.name}</strong>! Active Permissions: {session.user.permissions?.length ? session.user.permissions.join(", ") : "None"}
+        </div>
+      )}
       <div className="w-full bg-[#ffffff] sm:py-10 py-5 sm:px-12 px-6 max-w-[1440px] mx-auto">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-12">
           <div className="w-full lg:w-[60%]">

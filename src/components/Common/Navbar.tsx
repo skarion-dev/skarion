@@ -173,14 +173,14 @@ export default function Header({ user }: { user?: any }) {
                 </DropdownMenu>
               ) : (
                 <>
-                  <Link href={`/auth/sign-in`}>
+                  <Link href={"https://app.skarion.com/auth/sign-in"}>
                     <div className="bg-[#191F38] border border-[#EBEBEB] rounded-[12px] px-4 py-2 text-center cursor-pointer">
                       <p className="text-[14px] text-white font-semibold">
                         Login
                       </p>
                     </div>
                   </Link>
-                  <Link href={`/auth/sign-up`}>
+                  <Link href={"https://app.skarion.com/auth/sign-up"}>
                     <div className="bg-white border border-[#EBEBEB] rounded-[12px] px-4 py-2 text-center cursor-pointer">
                       <p className="text-[14px] text-[#191F38] font-semibold">
                         Sign up
@@ -325,14 +325,14 @@ export default function Header({ user }: { user?: any }) {
                     </div>
                   ) : (
                     <div className="flex gap-2">
-                      <Link href={`/auth/sign-in`} className="flex-1">
+                      <Link href={"https://app.skarion.com/auth/sign-in"} className="flex-1">
                         <div className="bg-[#191F38] border border-[#EBEBEB] rounded-[12px] px-4 py-2 text-center">
                           <p className="text-[16px] text-white font-semibold">
                             Login
                           </p>
                         </div>
                       </Link>
-                      <Link href={`/auth/sign-up`} className="flex-1">
+                      <Link href={"https://app.skarion.com/auth/sign-up"} className="flex-1">
                         <div className="bg-[#191F38] rounded-[12px] px-4 py-2 text-center">
                           <p className="text-[16px] text-white font-semibold">
                             Sign up
