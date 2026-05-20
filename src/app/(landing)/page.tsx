@@ -79,8 +79,8 @@ const images = [
   },
   {
     src: "/globe to us.jpg",
-    title: "Global-to-U.S.A Visa Support",
-    details: "Get career-ready with pathaways tailored for OPT, CPT, and H-18 success.",
+    title: "Industry Leaders and Recruiters Connection",
+    details: "Set up a job along with a network for smoother future.",
   },
   {
     src: "/end to end.jpg",
