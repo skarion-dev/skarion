@@ -108,7 +108,24 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
     },
   },
   pages: {
-    signIn: "/auth/sign-in",
+    signIn: "https://app.skarion.com/auth/sign-in",
+  },
+  cookies: {
+    sessionToken: {
+      name:
+        process.env.NODE_ENV === "production"
+          ? "__Secure-authjs.session-token"
+          : "authjs.session-token",
+      options: {
+        httpOnly: true,
+        sameSite: "lax",
+        path: "/",
+        secure: process.env.NODE_ENV === "production",
+        domain:
+          process.env.NEXT_PUBLIC_COOKIE_DOMAIN ||
+          (process.env.NODE_ENV === "production" ? ".skarion.com" : "localhost"),
+      },
+    },
   },
   secret: process.env.NEXTAUTH_SECRET,
   trustHost: true, //TODO: update later
