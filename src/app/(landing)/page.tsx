@@ -79,7 +79,7 @@ const images = [
   },
   {
     src: "/globe to us.jpg",
-    title: "Industry Leaders and Recruiters Connection",
+    title: "Network with Industry Leaders",
     details: "Set up a job along with a network for smoother future.",
   },
   {
