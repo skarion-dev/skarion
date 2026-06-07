@@ -173,11 +173,11 @@
   -webkit-mask: linear-gradient(
     90deg,
     transparent,
-    white 20%,
-    white 80%,
+    white 5%,
+    white 95%,
     transparent
   );
-  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  mask: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
 }
 
 @keyframes infinite-scroll {
@@ -190,6 +190,26 @@
   animation: infinite-scroll 10s linear infinite;
 }
 
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee {
+  animation: marquee 70s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 70s linear infinite;
+  will-change: transform;
+}
+
 .inner-scroll {
   width: max-content;
 }
@@ -200,10 +220,17 @@
   height: 100%;
   left: 0;
   top: 0;
-  transition: -webkit-clip-path 1s ease;
   overflow: hidden;
   border-radius: 14px;
   padding: 28px 0 0;
+}
+
+.cards[data-direction="forward"] .card-content {
+  transition: -webkit-clip-path 1s ease, clip-path 1s ease;
+}
+
+.cards[data-direction="reverse"] .card-content {
+  transition: -webkit-clip-path 0.3s ease, clip-path 0.3s ease;
 }
 
 #dribbble .card-content {
@@ -260,6 +287,18 @@
   -webkit-clip-path: circle(270% at 364px 88%);
   clip-path: circle(270% at 364px 88%);
 }
+
+#coaching .card-content {
+  background-color: #122461;
+  -webkit-clip-path: circle(0% at 436px 88%);
+  clip-path: circle(0% at 436px 88%);
+}
+
+#coaching.active .card-content {
+  -webkit-clip-path: circle(270% at 436px 88%);
+  clip-path: circle(270% at 436px 88%);
+}
+
 
 .cards {
   background: #fefefe;

@@ -75,7 +75,7 @@ export default function Footer() {
               </p>
               <Link
                 href="/faq"
-                className="block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-2"
+                className="block text-[14px] hover:text-[#c3ddf5] transition-colors relative group mt-4"
               >
                 FAQ
               </Link>

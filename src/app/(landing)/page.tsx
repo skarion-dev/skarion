@@ -9,6 +9,8 @@ import Counter from "@/components/Counter";
 import Steps from "@/components/Steps";
 import { Metadata } from "next";
 import { auth } from "@/auth";
+import AboutUs from "@/components/Landing/AboutUs";
+import Reviews from "@/components/Landing/Reviews";
 
 export const metadata: Metadata = {
   title: "Skarion - Advancing Careers Through Specialized Training",
@@ -90,15 +92,8 @@ const images = [
 ];
 
 export default async function Home() {
-  const session = await auth();
-
   return (
     <div>
-      {session?.user && (
-        <div className="bg-[#122461]/10 text-[#122461] border-b border-[#122461]/20 text-sm font-medium px-4 py-3 text-center">
-          Welcome back, <strong>{session.user.name}</strong>! Active Permissions: {session.user.permissions?.length ? session.user.permissions.join(", ") : "None"}
-        </div>
-      )}
       <div className="w-full bg-[#ffffff] sm:py-10 py-5 sm:px-12 px-6 max-w-[1440px] mx-auto">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-12">
           <div className="w-full lg:w-[60%]">
@@ -141,7 +136,7 @@ export default async function Home() {
                   <span className="text-base">★</span>
                   <span className="text-base">★</span>
                   <span className="ml-[8px] text-gray-500 text-[12px] font-[600]">
-                    4.8 (10+)
+                    4.8 (30+)
                   </span>
                 </div>
                 <span className="text-[12px] font-[400]">
@@ -232,14 +227,14 @@ export default async function Home() {
                   </p>
                   <p className="text-[#ffffff] text-[16px] leading-[1.2] z-10 mt-2 w-[65%]">
                     Get your initial deposit refunded if we can&apos;t place you
-                    within 90 days.
+                    within 120 days.
                   </p>
                 </div>
                 <div className="w-full sm:w-[40%]">
                   <div className="w-full h-full relative flex items-center shrink-0 overflow-hidden rounded-xl bg-[#122461] pl-5 pr-5 pb-4 pt-1">
                     <div className="relative z-10 text-white">
                       <span className="text-[#ffffff] text-[64px] leading-[1.2] font-[600]">
-                        <Counter value={50} />
+                        <Counter value={70} />
                       </span>
                       <p className="text-[#ffffff] text-[14px] font-[500] leading-[1.3]">
                         Candidates Have Found a Career in the US Through Skarion
@@ -256,8 +251,10 @@ export default async function Home() {
         </div>
       </div>
       <Courses />
+      {/* <AboutUs /> */}
+      <Reviews />
       {/* <Testimonials /> */}
-      {/* <FAQ /> */}
+      <FAQ />
     </div>
   );
 }
