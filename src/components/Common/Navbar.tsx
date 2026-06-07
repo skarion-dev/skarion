@@ -129,7 +129,7 @@ export default function Header({ user }: { user?: any }) {
                 </div>
               </div>
             </div>
-            <div
+            {/* <div
               className="hidden lg:flex items-center h-full gap-4"
               onMouseEnter={() => setIsMenuOpen(false)}
             >
@@ -150,7 +150,7 @@ export default function Header({ user }: { user?: any }) {
                         </span>
                       </div>
                     </DropdownMenuLabel>
-                    <DropdownMenuSeparator />
+                    <DropdownMenuSeparator /> */}
                     {/* <DropdownMenuGroup> */}
                     {/* <DropdownMenuItem>
                         <BadgeCheck />
@@ -166,7 +166,7 @@ export default function Header({ user }: { user?: any }) {
                       </DropdownMenuItem> */}
                     {/* </DropdownMenuGroup>
                     <DropdownMenuSeparator /> */}
-                    <DropdownMenuItem onClick={() => signOut()}>
+                    {/* <DropdownMenuItem onClick={() => signOut()}>
                       Log out
                     </DropdownMenuItem>
                   </DropdownMenuContent>
@@ -189,7 +189,7 @@ export default function Header({ user }: { user?: any }) {
                   </Link>
                 </>
               )}
-            </div>
+            </div> */}
 
             <div className="flex lg:hidden items-center">
               <button
@@ -304,7 +304,7 @@ export default function Header({ user }: { user?: any }) {
                       </p>
                     </div>
                   </Link>
-                  {user ? (
+                  {/* {user ? (
                     <div className="flex items-center gap-3 rounded-lg mt-2">
                       <Avatar>
                         <AvatarImage src={user.image} alt={user.name} />
@@ -340,7 +340,7 @@ export default function Header({ user }: { user?: any }) {
                         </div>
                       </Link>
                     </div>
-                  )}
+                  )} */}
                 </div>
               </div>
             </div>

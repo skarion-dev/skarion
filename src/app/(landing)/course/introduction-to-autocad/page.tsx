@@ -697,12 +697,10 @@ export default async function CoursePage() {
     <div className="w-full bg-[#ffffff] py-10 sm:px-12 px-6 max-w-[1440px] mx-auto flex flex-col lg:flex-row justify-between gap-8">
       <div className="w-full lg:w-[65%]">
         <h1 className="text-[32px] text-[42px] leading-[1.2]">
-          Outside Plant Engineering
+          Introduction to AutoCAD
         </h1>
         <p className="text-[16px] sm:text-[18px] font-[300] mt-4">
-          OSP Engineering involves the design, installation, and maintenance of
-          outdoor infrastructure, including fiber optic routes, cables, and
-          utility networks.
+          Learn the ins and outs of AutoCAD, from basic drawing to advanced modeling. Suitable for those with a passion for design.
         </p>
         <div className="rounded-[14px] bg-[#122461] mt-10 text-white overflow-hidden aspect-video">
           <iframe
@@ -717,7 +715,7 @@ export default async function CoursePage() {
           Unlock high-demand careers in the US with OSP engineering!
         </p>
         <p className="text-[14px] sm:text-[16px] font-[500] text-[#666666] font-[300] mt-3">
-          22 Theory Modules · Live & On-Demand · 11+ Real World Projects
+          13 Theory Modules · Live & On-Demand · 10+ Real World Projects
         </p>
         <div className="w-full py-4 px-4 sm:px-6 border border-[#EBEBEB] rounded-[14px] mt-8 flex flex-col sm:flex-row items-left justify-between gap-4">
           <p className="text-[14px] font-[400] sm:w-[35%]">
@@ -844,7 +842,7 @@ export default async function CoursePage() {
         </div>
         <div className="w-full md:w-[70%] mt-10">
           <p className="text-[16px] font-[300]">
-            Over a comprehensive 22 module program, you'll master the principles
+            Over a comprehensive 10 module program, you'll master the principles
             of OSP engineering from fiber network design to real world
             implementation. Supported by hands on projects and expert mentors,
             this course equips you with the skills to excel in a fast growing,
@@ -946,7 +944,7 @@ export default async function CoursePage() {
             <div className="w-full py-4 px-6 border border-[#EBEBEB] rounded-[14px] my-8 flex flex-wrap items-center justify-between gap-4">
               <div className="w-full sm:w-[45%] md:w-[20%]">
                 <p className="text-[20px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2]">
-                  11
+                  10
                 </p>
                 <p className="text-[14px] font-[400] mt-2 mb-1">
                   Theory Modules
@@ -962,7 +960,7 @@ export default async function CoursePage() {
               <span className="hidden md:block w-[2px] h-14 bg-[#EBEBEB] self-center"></span>
               <div className="w-full sm:w-[45%] md:w-[20%]">
                 <p className="text-[20px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2]">
-                  6
+                  5
                 </p>
                 <p className="text-[14px] font-[400] mt-2 mb-1">LLD Projects</p>
               </div>
