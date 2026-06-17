@@ -9,7 +9,7 @@ const courses = [
     courseName: "Outside Plant Engineering",
     courseDescription:
       "Understand the fundamentals of fiber optics, including OSP design, splicing techniques, and network layout. Ideal for those aiming to work in telecom and infrastructure.",
-    modules: 13,
+    modules: 22,
     tag: "Most Popular",
     isPopular: true,
     image: "/osp.jpg",
@@ -20,11 +20,11 @@ const courses = [
     courseName: "AutoCAD Fundamentals",
     courseDescription:
       "Learn the ins and outs of AutoCAD, from basic drawing to advanced modeling. Suitable for those with a passion for design.",
-    modules: 13,
-    tag: "Coming Soon",
-    isPopular: false,
-    href: "/",
-    published: false,
+    modules: 11,
+    tag: "MOst Popular",
+    isPopular: true,
+    href: "/course/introduction-to-autocad",
+    published: true,
   },
   {
     courseName: "GIS Essentials",

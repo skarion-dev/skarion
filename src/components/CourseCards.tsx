@@ -16,17 +16,17 @@ const courses = [
     image: "/osp.jpg",
     published: true,
   },
-  // {
-  //   courseName: "Introduction to AutoCAD",
-  //   courseDescription:
-  //     "Learn the ins and outs of AutoCAD, from basic drawing to advanced modeling. Suitable for those with a passion for design.",
-  //   modules: 11,
-  //   tag: "Most Popular",
-  //   isPopular: true,
-  //   href: "/course/introduction-to-autocad",
-  //   image: "/osp.jpg",
-  //   published: true,
-  // },
+  {
+    courseName: "Introduction to AutoCAD",
+    courseDescription:
+      "Learn the ins and outs of AutoCAD, from basic drawing to advanced modeling. Suitable for those with a passion for design.",
+    modules: 11,
+    tag: "Most Popular",
+    isPopular: true,
+    href: "/course/introduction-to-autocad",
+    image: "/osp.jpg",
+    published: true,
+  },
   {
     courseName: "GIS Essentials",
     courseDescription:
