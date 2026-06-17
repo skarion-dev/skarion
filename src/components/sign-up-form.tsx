@@ -12,6 +12,7 @@ import { ApiError, AuthService } from "@/api-client";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Image from "next/image";
 
 const validationSchema = z
   .object({
@@ -63,7 +64,18 @@ export function SignUpForm({
       });
 
       toast.success("Account created successfully!");
-      router.push("/auth/sign-in");
+
+      const res = await signIn("credentials", {
+        redirect: false,
+        email: data.email,
+        password: data.password,
+      });
+
+      if (res?.ok) {
+        router.push("/");
+      } else {
+        router.push("/auth/sign-in");
+      }
     } catch (error: unknown) {
       if (error instanceof ApiError) {
         toast.error(
@@ -80,17 +92,29 @@ export function SignUpForm({
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className={cn("flex flex-col gap-6", className)}
+      className={cn("flex flex-col gap-6 h-[80vh]", className)}
       {...props}
     >
-      <div className="grid gap-6">
+      <div className="grid gap-6 px-5 ">
+        <div className="flex justify-center mb-2">
+          <a href="/" className="group relative block">
+            <Image
+              src="/logo.svg"
+              alt="Skarion Logo"
+              width={70}
+              height={70}
+              className="w-auto h-auto max-w-[70px] sm:max-w-[70px] max-sm:max-w-[50px]"
+              priority
+            />
+          </a>
+        </div>
         <div className="grid">
           <Label htmlFor="name">Full Name</Label>
           <Input
             id="name"
             {...register("name")}
             type="text"
-            placeholder="John Doe"
+            placeholder="Enter Your Full Name"
             className="mt-3"
           />
           {errors.name && (
@@ -103,7 +127,7 @@ export function SignUpForm({
             id="email"
             {...register("email")}
             type="email"
-            placeholder="m@example.com"
+            placeholder="mail@example.com"
             className="mt-3"
           />
           {errors.email && (
@@ -116,7 +140,7 @@ export function SignUpForm({
             id="username"
             {...register("username")}
             type="text"
-            placeholder="rianulamin.r"
+            placeholder="Enter Your Username"
             className="mt-3"
           />
           {errors.username && (
@@ -214,7 +238,7 @@ export function SignUpForm({
           Continue with google
         </button>
       </div>
-      <div className="text-center text-sm">
+      <div className="text-center text-sm pb-20">
         Already have an account?{" "}
         <a href="/auth/sign-in" className="underline underline-offset-4">
           Sign in

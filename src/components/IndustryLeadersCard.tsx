@@ -7,14 +7,14 @@ export default function IndustryLeadersCard() {
     <motion.div
       whileHover="hover"
       variants={hoverVariant}
-      className="relative bg-[#EBEBEB] border border-[#EBEBEB] rounded-[14px] h-[180px] group"
+      className="relative bg-[#EBEBEB] border border-[#EBEBEB] rounded-[14px] h-[180px] group mt-8"
     >
       <TeamBackground />
       <div className="absolute bottom-0 bg-[#ffffff] border-2 border-[#EBEBEB] rounded-[14px] h-[150px] z-5 w-full group-hover:border-[#5383EC]">
         <div className="h-12 w-12 border-2 border-[#EBEBEB] rounded-full flex items-center justify-center -mt-6 ml-4 bg-[#ffffff] group-hover:border-[#5383EC]">
           <svg
-            width="35"
-            height="35"
+            width="30"
+            height="30"
             viewBox="0 0 25 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

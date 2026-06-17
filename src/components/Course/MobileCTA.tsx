@@ -14,7 +14,7 @@ export default function MobileCTA({ isPurchased }: { isPurchased: boolean }) {
         const entry = entries[0];
         setFooterVisible(entry.isIntersecting);
       },
-      { root: null, threshold: 0 }
+      { root: null, threshold: 0 },
     );
     observer.observe(footer);
     return () => {
@@ -33,7 +33,7 @@ export default function MobileCTA({ isPurchased }: { isPurchased: boolean }) {
   return (
     <div
       className={[
-        "block lg:hidden fixed bottom-0 left-0 right-0 z-50 h-[180px] bg-[#000000]/70 py-3 px-4 border-t border-black/20",
+        "block lg:hidden fixed bottom-0 left-0 right-0 z-50 h-[150px] bg-[#000000]/70 py-3 px-4 border-t border-black/20",
         "transition-opacity duration-500 ease-out",
         showCTA ? "opacity-100" : "opacity-0 pointer-events-none",
       ].join(" ")}
@@ -43,6 +43,7 @@ export default function MobileCTA({ isPurchased }: { isPurchased: boolean }) {
           <span className="text-white leading-[1.2] text-[24px] font-[500]">
             OSP Engineering Bootcamp
           </span>
+
           <EnrollButton isPurchased={isPurchased} />
         </div>
       </div>
