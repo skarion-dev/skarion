@@ -15,6 +15,7 @@ import { CoursesService, OpenAPI } from "@/api-client";
 import Overview from "@/../videos/intro.mp4.json";
 import video1 from "@/../videos/1.2.mp4.json";
 import video2 from "@/../videos/1228.mp4.json";
+import intro from "@/../videos/1217.mp4.json";
 import FAQMini from "@/components/Course/FAQMini";
 
 export const metadata: Metadata = {
@@ -475,13 +476,13 @@ export default async function CoursePage() {
           Learn the ins and outs of AutoCAD, from basic drawing to advanced modeling. Suitable for those with a passion for design.
         </p>
         <div className="rounded-[14px] bg-[#122461] mt-10 text-white overflow-hidden aspect-video">
-          <iframe
-            className="w-full h-full"
-            src="https://www.youtube-nocookie.com/embed/8ZYRpCTfY3c?si=kbaMZci2jPmz6jiI"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; "
-            referrerPolicy="strict-origin-when-cross-origin"
-          ></iframe>
+          <Video
+                src={intro.sources[0].src}
+                playsInline
+                disablePictureInPicture
+                controls
+                className="object-cover"
+          />
         </div>
         <p className="text-[24px] font-[500] mt-10 capitalize">
           Unlock high-demand careers in the US with OSP engineering!
