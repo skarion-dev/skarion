@@ -9,7 +9,7 @@ const courses = [
     courseName: "Outside Plant Engineering",
     courseDescription:
       "Understand the fundamentals of fiber optics, including OSP design, splicing techniques, and network layout. Ideal for those aiming to work in telecom and infrastructure.",
-    modules: 22,
+    modules: 21,
     tag: "Most Popular",
     isPopular: true,
     href: "/course/outside-plant-engineering",

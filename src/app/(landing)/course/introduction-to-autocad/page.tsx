@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import EnrollButton from "@/components/Course/EnrollButton";
 import MobileCTA from "@/components/Course/MobileCTA";
-import { OutsidePlantEngineeringCourse } from "@/constants/course";
+import { OutsidePlantEngineeringCourse, IntroductionToAutoCadCourse } from "@/constants/course";
 import { auth } from "@/auth";
 import { CoursesService, OpenAPI } from "@/api-client";
 import Overview from "@/../videos/intro.mp4.json";
@@ -18,17 +18,17 @@ import video2 from "@/../videos/1228.mp4.json";
 import FAQMini from "@/components/Course/FAQMini";
 
 export const metadata: Metadata = {
-  title: "Outside Plant Engineering Course - Skarion",
-  description: "Unlock high-demand careers in the US with OSP engineering",
+  title: "Introduction to AutoCAD Course - Skarion",
+  description: "Master the jack of all trades design software - AutoCAD",
   keywords: [
-    "Outside Plant Engineering Course",
-    "OSP",
-    "OSP Course",
-    "OSP Engineering",
+    "Introduction to AutoCAD Course",
+    "AutoCAD",
+    "AutoCAD Course",
+    "AutoCAD Training",
     "Skarion",
     "Fiber Optic Design",
     "Telecommunications Engineering",
-    "OSP Design Training",
+    "AutoCAD Design Training",
     "FTTH Design",
     "Fiber to the Home",
     "GIS for OSP",
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     "US OSP Engineering Jobs",
   ],
   openGraph: {
-    title: "Outside Plant Engineering Course - Skarion",
-    description: "Unlock high-demand careers in the US with OSP engineering",
-    url: "https://skarion.com/course/outside-plant-engineering",
+    title: "Introduction to AutoCAD Course - Skarion",
+    description: "Master the jack of all trades design software - AutoCAD",
+    url: "https://skarion.com/course/introduction-to-autocad",
     siteName: "Skarion",
     images: [
       {
@@ -447,7 +447,7 @@ export default async function CoursePage() {
 
   try {
     OpenAPI.TOKEN = session?.accessToken;
-    const courseId = OutsidePlantEngineeringCourse.id.trim();
+    const courseId = IntroductionToAutoCadCourse.id.trim();
     const course = await CoursesService.coursesControllerFindOne(courseId);
     if (!course) {
       throw new Error("Course not found");
@@ -716,7 +716,7 @@ export default async function CoursePage() {
             <div className="w-full py-4 px-6 border border-[#EBEBEB] rounded-[14px] my-8 flex flex-wrap items-center justify-between gap-4">
               <div className="w-full sm:w-[45%] md:w-[20%]">
                 <p className="text-[20px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2]">
-                  10
+                  11
                 </p>
                 <p className="text-[14px] font-[400] mt-2 mb-1">
                   Theory Modules
@@ -727,22 +727,22 @@ export default async function CoursePage() {
                 <p className="text-[20px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2]">
                   5
                 </p>
-                <p className="text-[14px] font-[400] mt-2 mb-1">HLD Projects</p>
+                <p className="text-[14px] font-[400] mt-2 mb-1">Assignments</p>
               </div>
-              <span className="hidden md:block w-[2px] h-14 bg-[#EBEBEB] self-center"></span>
+              {/* <span className="hidden md:block w-[2px] h-14 bg-[#EBEBEB] self-center"></span>
               <div className="w-full sm:w-[45%] md:w-[20%]">
                 <p className="text-[20px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2]">
                   5
                 </p>
                 <p className="text-[14px] font-[400] mt-2 mb-1">LLD Projects</p>
-              </div>
-              <span className="hidden md:block w-[2px] h-14 bg-[#EBEBEB] self-center"></span>
+              </div> */}
+              {/* <span className="hidden md:block w-[2px] h-14 bg-[#EBEBEB] self-center"></span>
               <div className="w-full sm:w-[45%] md:w-[20%]">
                 <p className="text-[20px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2]">
                   20
                 </p>
                 <p className="text-[14px] font-[400] mt-2 mb-1">Quizzes</p>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -836,7 +836,7 @@ export default async function CoursePage() {
         </div>
         <div className="block lg:hidden h-[80px]" />
       </div>
-      <MobileCTA isPurchased={isPurchased} />
+      <MobileCTA isPurchased={isPurchased} courseName={IntroductionToAutoCadCourse.title} />
     </div>
   );
 }
