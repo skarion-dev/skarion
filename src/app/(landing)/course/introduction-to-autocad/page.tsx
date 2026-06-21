@@ -9,26 +9,29 @@ import {
 } from "@/components/ui/accordion";
 import EnrollButton from "@/components/Course/EnrollButton";
 import MobileCTA from "@/components/Course/MobileCTA";
-import { OutsidePlantEngineeringCourse } from "@/constants/course";
+import { OutsidePlantEngineeringCourse, IntroductionToAutoCadCourse } from "@/constants/course";
 import { auth } from "@/auth";
 import { CoursesService, OpenAPI } from "@/api-client";
 import Overview from "@/../videos/intro.mp4.json";
-import video1 from "@/../videos/1.2.mp4.json";
-import video2 from "@/../videos/1228.mp4.json";
+import intro from "@/../videos/1217.mp4.json";
+import video1 from "@/../videos/1.1 fixed.mp4.json";
+import video2 from "@/../videos/1.2 fixed.mp4.json";
+import video3 from "@/../videos/1.3 fixed.mp4.json";
+import video4 from "@/../videos/1.4 fixed.mp4.json";
 import FAQMini from "@/components/Course/FAQMini";
 
 export const metadata: Metadata = {
-  title: "Outside Plant Engineering Course - Skarion",
-  description: "Unlock high-demand careers in the US with OSP engineering",
+  title: "Introduction to AutoCAD Course - Skarion",
+  description: "Master the jack of all trades design software - AutoCAD",
   keywords: [
-    "Outside Plant Engineering Course",
-    "OSP",
-    "OSP Course",
-    "OSP Engineering",
+    "Introduction to AutoCAD Course",
+    "AutoCAD",
+    "AutoCAD Course",
+    "AutoCAD Training",
     "Skarion",
     "Fiber Optic Design",
     "Telecommunications Engineering",
-    "OSP Design Training",
+    "AutoCAD Design Training",
     "FTTH Design",
     "Fiber to the Home",
     "GIS for OSP",
@@ -50,9 +53,9 @@ export const metadata: Metadata = {
     "US OSP Engineering Jobs",
   ],
   openGraph: {
-    title: "Outside Plant Engineering Course - Skarion",
-    description: "Unlock high-demand careers in the US with OSP engineering",
-    url: "https://skarion.com/course/outside-plant-engineering",
+    title: "Introduction to AutoCAD Course - Skarion",
+    description: "Master the jack of all trades design software - AutoCAD",
+    url: "https://skarion.com/course/introduction-to-autocad",
     siteName: "Skarion",
     images: [
       {
@@ -80,77 +83,173 @@ export const metadata: Metadata = {
 const bootcampSchedule = [
   {
     week: 1,
-    title: "Career & Industry Focus",
+    title: "Getting Started",
     lessons: [
       {
         id: "1.1",
-        name: "OSP Engineering Roles & Outlook",
+        name: "Starting a New File and Opening an Existing One",
         isLocked: false,
         link: video1.sources[0].src,
       },
       {
         id: "1.2",
-        name: "Essential Soft Skills for OSP Engineers",
+        name: "User Interface in AutoCAD",
         isLocked: false,
         link: video2.sources[0].src,
+      },
+      {
+        id: "1.3",
+        name: "Setting Up Drawing Units",
+        isLocked: false,
+        link: video3.sources[0].src,
+      },
+      {
+        id: "1.4",
+        name: "Using Various Zoom Options",
+        isLocked: false,
+        link: video4.sources[0].src,
       },
     ],
   },
   {
     week: 2,
-    title: "Network Architecture Fundamentals",
+    title: "Using Drawing Tools",
     lessons: [
       {
         id: "2.1",
-        name: "Submarine to Home Journey",
+        name: "Line, Polyline and Spline",
         isLocked: true,
         link: video1.sources[0].src,
       },
       {
         id: "2.2",
-        name: "Core OSP Components and Hierarchy",
+        name: "Drawing Circles",
         isLocked: true,
         link: video1.sources[0].src,
       },
       {
         id: "2.3",
-        name: "PON Basics and Capacity Planning",
+        name: "Drawing Arcs",
         isLocked: true,
         link: video1.sources[0].src,
       },
       {
-        id: "Q1",
-        name: "Pop Quiz (13 Questions)",
+        id: "2.4",
+        name: "Drawing Rectangles",
         isLocked: true,
         link: video1.sources[0].src,
       },
+      {
+        id: "2.5",
+        name: "Drawing Polygons",
+        isLocked: true,
+        link: video1.sources[0].src,
+      },
+      {
+        id: "2.6",
+        name: "Drawing Construction Lines or Rays",
+        isLocked: true,
+        link: video1.sources[0].src,
+      },
+      {
+        id: "2.7",
+        name: "Applying Hatches and Gradient Hatches",
+        isLocked: true,
+        link: video1.sources[0].src,
+      },
+      {
+        id: "A1",
+        name: "Assignment 1",
+        isLocked: true,
+        link: video1.sources[0].src,
+      }
     ],
   },
   {
     week: 3,
-    title: "Fiber Technology Essentials Phase-1",
+    title: "Using Modify Tools",
     lessons: [
       {
         id: "3.1",
-        name: "Fiber Construction and Fundamentals",
+        name: "Copying and Moving Objects",
         isLocked: true,
         link: video1.sources[0].src,
       },
       {
-        id: "S1",
-        name: "SCORM: Color Coded Fiber Distribution",
+        id: "3.2",
+        name: "Stretching, Scaling, and Offsetting Entities",
         isLocked: true,
         link: video1.sources[0].src,
       },
       {
-        id: "S2",
-        name: "SCORM: Total Internal Reflection",
+        id: "3.3",
+        name: "Rotating and MirroringEntities",
         isLocked: true,
         link: video1.sources[0].src,
       },
       {
-        id: "Q2",
-        name: "Pop Quiz (10 Questions)",
+        id: "3.4",
+        name: "Trimming and Extending Entities",
+        isLocked: true,
+        link: video1.sources[0].src,
+      },
+      {
+        id: "3.5",
+        name: "Creating Fillets",
+        isLocked: true,
+        link: video1.sources[0].src,
+      },
+      {
+        id: "3.6",
+        name: "Creating Blend Curves",
+        isLocked: true,
+        link: video1.sources[0].src,
+      },
+      {
+        id: "3.7",
+        name: "Using Erase Tool",
+        isLocked: true,
+        link: video1.sources[0].src,
+      },
+      {
+        id: "3.8",
+        name: "Using Explode Tool ",
+        isLocked: true,
+        link: video1.sources[0].src,
+      },
+      {
+        id: "3.9",
+        name: "Using Align Tool",
+        isLocked: true,
+        link: video1.sources[0].src,
+      },
+      {
+        id: "3.10",
+        name: "Using Break and Break at Point Tools",
+        isLocked: true,
+        link: video1.sources[0].src,
+      },
+      {
+        id: "3.11",
+        name: "Using Join Tool",
+        isLocked: true,
+        link: video1.sources[0].src,
+      },
+      {
+        id: "3.12",
+        name: "Using Overkill Command",
+        isLocked: true,
+        link: video1.sources[0].src,
+      },
+      {
+        id: "3.12",
+        name: "Using Array Tool ",
+        isLocked: true,
+        link: video1.sources[0].src,
+      },
+      {
+        id: "A2",
+        name: "Assignment 2",
         isLocked: true,
         link: video1.sources[0].src,
       },
@@ -158,47 +257,35 @@ const bootcampSchedule = [
   },
   {
     week: 4,
-    title: "Fiber Technology Essentials Phase-2",
+    title: "Using Status Bar",
     lessons: [
       {
         id: "4.1",
-        name: "Fusion Splicing and Quality Control",
+        name: "Using Various Status BarToggles",
         isLocked: true,
         link: video1.sources[0].src,
-      },
-      {
-        id: "S3",
-        name: "SCORM: Mini Fusion Lab",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "Q3",
-        name: "Pop Quiz (15 Questions)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
+      }
     ],
   },
   {
     week: 5,
-    title: "Legal & Regulatory Framework",
+    title: "Working with Layers",
     lessons: [
       {
         id: "5.1",
-        name: "Site Planning: ROW, Easements and Maps",
+        name: "Layers",
         isLocked: true,
         link: video1.sources[0].src,
       },
       {
-        id: "S4",
-        name: "SCORM: Permit Picker",
+        id: "5.2",
+        name: "Using Layer Options",
         isLocked: true,
         link: video1.sources[0].src,
       },
       {
-        id: "Q4",
-        name: "Pop Quiz (10 Questions)",
+        id: "A3",
+        name: "Assignment 3",
         isLocked: true,
         link: video1.sources[0].src,
       },
@@ -206,65 +293,35 @@ const bootcampSchedule = [
   },
   {
     week: 6,
-    title: "Underground Infrastructure",
+    title: "Writing Standard and Annotative Texts",
     lessons: [
       {
         id: "6.1",
-        name: "Underground Infrastructure",
+        name: "Writing Single Line and Multiline Texts",
         isLocked: true,
         link: video1.sources[0].src,
-      },
-      {
-        id: "S5",
-        name: "SCORM: 811 Locate",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "6.2",
-        name: "Aerial Infrastructure",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "S6",
-        name: "SCORM: Span Sense",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "6.3",
-        name: "Network Components Deep Dive",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "Q5",
-        name: "Pop Quiz (20 Questions)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
+      }
     ],
   },
   {
     week: 7,
-    title: "GIS Address Classification & Capacity Planning",
+    title: "Using Dimensioning Tools",
     lessons: [
       {
         id: "7.1",
-        name: "Type of OSP Service Locations",
+        name: "Using Dimensioning Tools - Dimensions Drop-Down",
         isLocked: true,
         link: video1.sources[0].src,
       },
       {
         id: "7.2",
-        name: "Capacity and Velocity Planning",
+        name: "Creating a New Dimension Style",
         isLocked: true,
         link: video1.sources[0].src,
       },
       {
-        id: "Q6",
-        name: "Pop Quiz (9 Questions)",
+        id: "A4",
+        name: "Assignment 4",
         isLocked: true,
         link: video1.sources[0].src,
       },
@@ -272,400 +329,118 @@ const bootcampSchedule = [
   },
   {
     week: 8,
-    title: "PON Technology & Network Architecture",
+    title: "Adding Leaders",
     lessons: [
       {
         id: "8.1",
-        name: "PON Specifications, deployment, and QoS",
+        name: "Using Multileader Tool",
         isLocked: true,
         link: video1.sources[0].src,
       },
       {
-        id: "Q7",
-        name: "Pop Quiz (10 Questions)",
+        id: "8.2",
+        name: "Using Multileader Style Manager",
         isLocked: true,
         link: video1.sources[0].src,
       },
+      {
+        id: "8.3",
+        name: "Using Multileader Align Tool",
+        isLocked: true,
+        link: video1.sources[0].src,
+      },
+      {
+        id: "8.4",
+        name: "Adding and Removing Leaders to an Existing Leader",
+        isLocked: true,
+        link: video1.sources[0].src,
+      }
     ],
   },
   {
     week: 9,
-    title: "Design Constraints & Optimization",
+    title: "Working with Blocks",
     lessons: [
       {
         id: "9.1",
-        name: "Design Rules and Engineering Principles",
+        name: "Creating and Inserting Blocks",
         isLocked: true,
         link: video1.sources[0].src,
       },
       {
-        id: "Q8",
-        name: "Pop Quiz (10 Questions)",
+        id: "9.2",
+        name: "Using Block Editor Tool",
         isLocked: true,
         link: video1.sources[0].src,
       },
+      {
+        id: "9.3",
+        name: "Creating Annotative Blocks",
+        isLocked: true,
+        link: video1.sources[0].src,
+      },
+      {
+        id: "9.4",
+        name: "Creating Dynamic Blocks",
+        isLocked: true,
+        link: video1.sources[0].src,
+      },
+      {
+        id: "9.5",
+        name: "Renaming Blocks",
+        isLocked: true,
+        link: video1.sources[0].src,
+      },
+      {
+        id: "9.6",
+        name: "Using PURGE Command",
+        isLocked: true,
+        link: video1.sources[0].src,
+      }
     ],
   },
   {
     week: 10,
-    title: "HLD Theory",
+    title: "Drawing Utilities",
     lessons: [
       {
         id: "10.1",
-        name: "Introduction to HLD",
+        name: "Using Drawing Utility Tools",
         isLocked: true,
         link: video1.sources[0].src,
       },
       {
         id: "10.2",
-        name: "Mapping Fundamentals",
+        name: "Using List Tool",
         isLocked: true,
         link: video1.sources[0].src,
       },
       {
         id: "10.3",
-        name: "Project Definition and Network Planning",
+        name: "Using Quick Select Tool",
         isLocked: true,
         link: video1.sources[0].src,
-      },
-      {
-        id: "10.4",
-        name: "Network Hierarchy",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "10.5",
-        name: "Placement Principles",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "Q9",
-        name: "Pop Quiz (14 Questions)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
+      }
     ],
   },
   {
     week: 11,
-    title: "SKARION Design Standards",
+    title: "Plotting and Printing",
     lessons: [
       {
         id: "11.1",
-        name: "SKARION Design Standards",
+        name: "Plotting Drawings",
         isLocked: true,
         link: video1.sources[0].src,
       },
       {
-        id: "Q10",
-        name: "Pop Quiz (20 Questions)",
+        id: "A5",
+        name: "Assignment 5",
         isLocked: true,
         link: video1.sources[0].src,
       },
     ],
-  },
-  {
-    week: 12,
-    title: "HLD Project 01 - Tracing EOP, CL and ROW",
-    lessons: [
-      {
-        id: "12.1",
-        name: "HLD Project 01 - Tracing EOP, CL and ROW (Slide)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "12.2",
-        name: "HLD Project 01 - Tracing EOP, CL and ROW (Video)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "Q11",
-        name: "Pop Quiz (10 Questions)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "P1",
-        name: "Project - Tracing EOP, CL and ROW",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-    ],
-  },
-  {
-    week: 13,
-    title: "HLD Project 02 - Service Groups",
-    lessons: [
-      {
-        id: "13.1",
-        name: "HLD Project 02 - Service Groups (Slide)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "13.2",
-        name: "HLD Project 02 - Service Groups (Video)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "Q12",
-        name: "Pop Quiz (10 Questions)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "P2",
-        name: "Project - Service Groups",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-    ],
-  },
-  {
-    week: 14,
-    title: "HLD Project 03 - Conduit, Handhole and Flowerpot Placement",
-    lessons: [
-      {
-        id: "14.1",
-        name: "HLD Project 03 - Conduit, Handhole and Flowerpot Placement (Slide)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "14.2",
-        name: "HLD Project 03 - Conduit, Handhole and Flowerpot Placement (Video)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "Q13",
-        name: "Pop Quiz (10 Questions)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "P3",
-        name: "Project - Conduit, Handhole and Flowerpot Placement",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-    ],
-  },
-  {
-    week: 15,
-    title: "HLD Project 04 - Splice Closure Placement",
-    lessons: [
-      {
-        id: "15.1",
-        name: "HLD Project 04 - Splice Closure Placement (Slide)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "15.2",
-        name: "HLD Project 04 - Splice Closure Placement (Video)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "Q14",
-        name: "Pop Quiz (10 Questions)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "P4",
-        name: "Project - Splice Closure Placement",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-    ],
-  },
-  {
-    week: 16,
-    title: "HLD Project 05 - Vicinity Map",
-    lessons: [
-      {
-        id: "16.1",
-        name: "HLD Project 05 - Vicinity Map (Slide)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "16.2",
-        name: "HLD Project 05 - Vicinity Map (Video)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "Q15",
-        name: "Pop Quiz (7 Questions)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "P5",
-        name: "Project - Vicinity Map",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-    ],
-  },
-  {
-    week: 17,
-    title: "LLD Project 01 - Labels and Callouts",
-    lessons: [
-      {
-        id: "17.1",
-        name: "LLD Project 01 - Labels and Callouts (Slide)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "17.2",
-        name: "LLD Project 01 - Labels and Callouts (Video)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "Q16",
-        name: "Pop Quiz (10 Questions)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "P6",
-        name: "Project -  Labels and Callouts",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-    ],
-  },
-  {
-    week: 18,
-    title: "LLD Project 02 - Schematic",
-    lessons: [
-      {
-        id: "18.1",
-        name: "LLD Project 02 - Schematic (Slide)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "18.2",
-        name: "LLD Project 02 - Schematic (Video)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "Q17",
-        name: "Pop Quiz (10 Questions)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "P7",
-        name: "Project - Schematic",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-    ],
-  },
-  {
-    week: 19,
-    title: "LLD Project 03 - Cable and Terminal Labelling",
-    lessons: [
-      {
-        id: "19.1",
-        name: "LLD Project 03 - Cable and Terminal Labelling (Slide)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "19.2",
-        name: "LLD Project 03 - Cable and Terminal Labelling (Video)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "Q18",
-        name: "Pop Quiz (10 Questions)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "P8",
-        name: "Project - Cable and Terminal Labelling",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-    ],
-  },
-  {
-    week: 20,
-    title: "LLD Project 04 - Paperspace, Splice Point & Splice Diagram",
-    lessons: [
-      {
-        id: "20.1",
-        name: "LLD Project 04 - Paperspace, Splice Point & Splice Diagram (Slide)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "20.2",
-        name: "LLD Project 04 - Paperspace, Splice Point & Splice Diagram (Video)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "Q19",
-        name: "Pop Quiz (10 Questions)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "P9",
-        name: "Project - Paperspace, Splice Point & Splice Diagram",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-    ],
-  },
-  {
-    week: 21,
-    title: "LLD Project 5 - BOM and Splice Matrix",
-    lessons: [
-      {
-        id: "21.1",
-        name: "LLD Project 5 - BOM and Splice Matrix (Slide)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "21.2",
-        name: "LLD Project 5 - BOM and Splice Matrix (Video)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "Q20",
-        name: "Pop Quiz (10 Questions)",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-      {
-        id: "P10",
-        name: "Project - BOM and Splice Matrix",
-        isLocked: true,
-        link: video1.sources[0].src,
-      },
-    ],
-  },
+  }
 ];
 
 export default async function CoursePage() {
@@ -675,7 +450,7 @@ export default async function CoursePage() {
 
   try {
     OpenAPI.TOKEN = session?.accessToken;
-    const courseId = OutsidePlantEngineeringCourse.id.trim();
+    const courseId = IntroductionToAutoCadCourse.id.trim();
     const course = await CoursesService.coursesControllerFindOne(courseId);
     if (!course) {
       throw new Error("Course not found");
@@ -703,19 +478,19 @@ export default async function CoursePage() {
           Learn the ins and outs of AutoCAD, from basic drawing to advanced modeling. Suitable for those with a passion for design.
         </p>
         <div className="rounded-[14px] bg-[#122461] mt-10 text-white overflow-hidden aspect-video">
-          <iframe
-            className="w-full h-full"
-            src="https://www.youtube-nocookie.com/embed/8ZYRpCTfY3c?si=kbaMZci2jPmz6jiI"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; "
-            referrerPolicy="strict-origin-when-cross-origin"
-          ></iframe>
+          <Video
+                src={intro.sources[0].src}
+                playsInline
+                disablePictureInPicture
+                controls
+                className="object-cover"
+          />
         </div>
         <p className="text-[24px] font-[500] mt-10 capitalize">
           Unlock high-demand careers in the US with OSP engineering!
         </p>
         <p className="text-[14px] sm:text-[16px] font-[500] text-[#666666] font-[300] mt-3">
-          13 Theory Modules · Live & On-Demand · 10+ Real World Projects
+          11 Theory Modules · Live & On-Demand · 10+ Real World Projects
         </p>
         <div className="w-full py-4 px-4 sm:px-6 border border-[#EBEBEB] rounded-[14px] mt-8 flex flex-col sm:flex-row items-left justify-between gap-4">
           <p className="text-[14px] font-[400] sm:w-[35%]">
@@ -944,7 +719,7 @@ export default async function CoursePage() {
             <div className="w-full py-4 px-6 border border-[#EBEBEB] rounded-[14px] my-8 flex flex-wrap items-center justify-between gap-4">
               <div className="w-full sm:w-[45%] md:w-[20%]">
                 <p className="text-[20px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2]">
-                  10
+                  11
                 </p>
                 <p className="text-[14px] font-[400] mt-2 mb-1">
                   Theory Modules
@@ -955,22 +730,22 @@ export default async function CoursePage() {
                 <p className="text-[20px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2]">
                   5
                 </p>
-                <p className="text-[14px] font-[400] mt-2 mb-1">HLD Projects</p>
+                <p className="text-[14px] font-[400] mt-2 mb-1">Assignments</p>
               </div>
-              <span className="hidden md:block w-[2px] h-14 bg-[#EBEBEB] self-center"></span>
+              {/* <span className="hidden md:block w-[2px] h-14 bg-[#EBEBEB] self-center"></span>
               <div className="w-full sm:w-[45%] md:w-[20%]">
                 <p className="text-[20px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2]">
                   5
                 </p>
                 <p className="text-[14px] font-[400] mt-2 mb-1">LLD Projects</p>
-              </div>
-              <span className="hidden md:block w-[2px] h-14 bg-[#EBEBEB] self-center"></span>
+              </div> */}
+              {/* <span className="hidden md:block w-[2px] h-14 bg-[#EBEBEB] self-center"></span>
               <div className="w-full sm:w-[45%] md:w-[20%]">
                 <p className="text-[20px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2]">
                   20
                 </p>
                 <p className="text-[14px] font-[400] mt-2 mb-1">Quizzes</p>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -1050,7 +825,7 @@ export default async function CoursePage() {
             <div className="absolute inset-0 bg-cover bg-center">
               <Image
                 src={"/osp.jpg"}
-                alt={`Outside Plant Engineering`}
+                alt={`Introduction To AutoCAD`}
                 layout="fill"
                 objectFit="cover"
                 className="rounded-[14px]"
@@ -1058,13 +833,13 @@ export default async function CoursePage() {
             </div>
           </div>
           <p className="text-[24px] leading-[1.2] text-white mt-5 font-[500]">
-            Outside Plant Engineering
+            Introduction To AutoCAD
           </p>
           <EnrollButton isPurchased={isPurchased} />
         </div>
         <div className="block lg:hidden h-[80px]" />
       </div>
-      <MobileCTA isPurchased={isPurchased} />
+      <MobileCTA isPurchased={isPurchased} courseName={IntroductionToAutoCadCourse.title} />
     </div>
   );
 }
