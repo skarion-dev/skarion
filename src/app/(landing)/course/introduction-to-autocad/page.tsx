@@ -13,9 +13,11 @@ import { OutsidePlantEngineeringCourse, IntroductionToAutoCadCourse } from "@/co
 import { auth } from "@/auth";
 import { CoursesService, OpenAPI } from "@/api-client";
 import Overview from "@/../videos/intro.mp4.json";
-import video1 from "@/../videos/1.2.mp4.json";
-import video2 from "@/../videos/1228.mp4.json";
 import intro from "@/../videos/1217.mp4.json";
+import video1 from "@/../videos/1.1 fixed.mp4.json";
+import video2 from "@/../videos/1.2 fixed.mp4.json";
+import video3 from "@/../videos/1.3 fixed.mp4.json";
+import video4 from "@/../videos/1.4 fixed.mp4.json";
 import FAQMini from "@/components/Course/FAQMini";
 
 export const metadata: Metadata = {
@@ -99,13 +101,13 @@ const bootcampSchedule = [
         id: "1.3",
         name: "Setting Up Drawing Units",
         isLocked: false,
-        link: video2.sources[0].src,
+        link: video3.sources[0].src,
       },
       {
         id: "1.4",
         name: "Using Various Zoom Options",
         isLocked: false,
-        link: video2.sources[0].src,
+        link: video4.sources[0].src,
       },
     ],
   },
