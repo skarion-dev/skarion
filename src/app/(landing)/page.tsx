@@ -252,8 +252,8 @@ export default async function Home() {
       </div>
       <Courses />
       {/* <AboutUs /> */}
-      <Reviews />
-      {/* <Testimonials /> */}
+      {/* <Reviews /> */}
+      <Testimonials />
       <FAQ />
     </div>
   );
