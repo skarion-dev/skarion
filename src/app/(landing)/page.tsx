@@ -226,7 +226,7 @@ export default async function Home() {
                     NICHE INDUSTRIES
                   </p>
                   <p className="text-[#ffffff] text-[16px] leading-[1.2] z-10 mt-2 w-[65%]">
-                    Apply where your skills are in higher demand across the market today.
+                    Get your profile dropped where your skills are in higher demand across the market today.
                   </p>
                 </div>
                 <div className="w-full sm:w-[40%]">
