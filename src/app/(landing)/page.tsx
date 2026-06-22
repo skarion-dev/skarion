@@ -221,13 +221,12 @@ export default async function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent" />
                   <p className="text-[#ffffff] text-[26px] sm:text-[26px] md:text-[28px] lg:text-[30px] font-[600] leading-[1.2] z-10">
-                    GUARANTEED
+                    TARGETTED
                     <br />
-                    JOB PLACEMENT
+                    NICHE INDUSTRIES
                   </p>
                   <p className="text-[#ffffff] text-[16px] leading-[1.2] z-10 mt-2 w-[65%]">
-                    Get your initial deposit refunded if we can&apos;t place you
-                    within 120 days.
+                    Get your profile dropped where your skills are in higher demand across the market today.
                   </p>
                 </div>
                 <div className="w-full sm:w-[40%]">
