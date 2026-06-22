@@ -60,7 +60,7 @@ export default function Testimonials() {
             <div className="text-sm sm:text-base md:text-lg font-[300] pt-5 text-left w-full lg:w-[50%]">
               Discover how our guidance helps driven professionals overcome hiring obstacles and step confidently into the next chapter of their careers.
             </div>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5 mb-5 mt-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5 mb-10 mt-8">
               <div className="flex -space-x-2">
                 <Image src="/image 1.jpg" alt="student" width={28} height={28} className="rounded-full aspect-square object-cover border border-[#ffffff] sm:w-[35px] sm:h-[35px]" />
                 <Image src="/profile 1.jpg" alt="student" width={28} height={28} className="rounded-full aspect-square object-cover border border-[#ffffff] sm:w-[35px] sm:h-[35px]" />
