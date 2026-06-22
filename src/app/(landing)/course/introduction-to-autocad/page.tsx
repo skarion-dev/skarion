@@ -824,7 +824,7 @@ export default async function CoursePage() {
           <div className="relative bg-[#ffffff] rounded-[14px] h-[200px]">
             <div className="absolute inset-0 bg-cover bg-center">
               <Image
-                src={"/osp.jpg"}
+                src={"/cad.jpeg"}
                 alt={`Introduction To AutoCAD`}
                 layout="fill"
                 objectFit="cover"
