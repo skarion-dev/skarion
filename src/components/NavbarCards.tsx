@@ -23,7 +23,7 @@ const courses = [
     modules: 11,
     tag: "Most Popular",
     isPopular: true,
-    image: "/cad1.jpeg",
+    image: "/cad.jpeg",
     href: "/course/introduction-to-autocad",
     published: true,
   },

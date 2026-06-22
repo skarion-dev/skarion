@@ -24,7 +24,7 @@ const courses = [
     tag: "Most Popular",
     isPopular: true,
     href: "/course/introduction-to-autocad",
-    image: "/cad1.jpeg",
+    image: "/cad.jpeg",
     published: true,
   },
   {
