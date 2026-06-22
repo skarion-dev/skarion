@@ -22,10 +22,10 @@ const courses = [
       "Learn the ins and outs of AutoCAD, from basic drawing to advanced modeling. Suitable for those with a passion for design.",
     modules: 11,
     tag: "Most Popular",
-    isPopular: true,
+    isPopular: false,
     href: "/course/introduction-to-autocad",
     image: "/cad.jpeg",
-    published: true,
+    published: false,
   },
   {
     courseName: "GIS Essentials",
