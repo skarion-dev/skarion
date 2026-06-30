@@ -5,13 +5,16 @@ import { format, parseISO } from "date-fns";
 import {
   CheckCircle2,
   Clock3,
+  FileText,
   Loader2,
   Mail,
   MapPin,
   Phone,
+  Upload,
   User,
+  X,
 } from "lucide-react";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -52,6 +55,14 @@ const US_TIMEZONES = [
   { value: "America/Anchorage", label: "Alaska Time (US & Canada)" },
   { value: "Pacific/Honolulu", label: "Hawaii Time (US & Canada)" },
 ];
+
+const ALLOWED_RESUME_TYPES = [
+  "application/pdf",
+  "application/msword",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+];
+
+const MAX_RESUME_SIZE = 10 * 1024 * 1024; // 10 MB
 
 type BookingSlot = {
   value: string;
@@ -120,6 +131,9 @@ export function PublicBookingPage() {
   const [submitting, setSubmitting] = useState(false);
   const [confirmation, setConfirmation] = useState<BookingResponse | null>(null);
   const [selectedTimezone, setSelectedTimezone] = useState<string>("America/New_York");
+  const [resumeFile, setResumeFile] = useState<File | null>(null);
+  const [resumeError, setResumeError] = useState<string>("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const form = useForm<BookingFormValues>({
     resolver: zodResolver(bookingFormSchema),
@@ -199,26 +213,67 @@ export function PublicBookingPage() {
     }
   }, [form, selectedDate, selectedDay, selectedSlot]);
 
+  const handleResumeSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setResumeError("");
+    const file = e.target.files?.[0];
+
+    if (!file) {
+      return;
+    }
+
+    if (!ALLOWED_RESUME_TYPES.includes(file.type)) {
+      setResumeError("Please upload a PDF or Word document (.pdf, .doc, .docx)");
+      e.target.value = "";
+      return;
+    }
+
+    if (file.size > MAX_RESUME_SIZE) {
+      setResumeError("Resume must be under 10 MB");
+      e.target.value = "";
+      return;
+    }
+
+    setResumeFile(file);
+  };
+
+  const clearResume = () => {
+    setResumeFile(null);
+    setResumeError("");
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
+
   const onSubmit = async (values: BookingFormValues) => {
+    // Validate resume before submitting
+    if (!resumeFile) {
+      setResumeError("Please upload your resume");
+      return;
+    }
+
     setSubmitting(true);
 
     try {
-      const requestPayload = {
-        ...values,
-        fullName: values.fullName.trim(),
-        email: values.email.trim(),
-        phone: values.phone.trim(),
-        address: values.address?.trim() || undefined,
-        note: values.note?.trim() || undefined,
-        timezone: selectedTimezone,
-      };
+      const formData = new FormData();
+      formData.append("fullName", values.fullName.trim());
+      formData.append("email", values.email.trim());
+      formData.append("phone", values.phone.trim());
+      formData.append("slotDate", values.slotDate);
+      formData.append("slotValue", values.slotValue);
+      formData.append("timezone", selectedTimezone);
+
+      if (values.address?.trim()) {
+        formData.append("address", values.address.trim());
+      }
+      if (values.note?.trim()) {
+        formData.append("note", values.note.trim());
+      }
+
+      formData.append("resume", resumeFile);
 
       const response = await fetch(getApiUrl("/bookings"), {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(requestPayload),
+        body: formData,
       });
 
       if (!response.ok) {
@@ -238,6 +293,7 @@ export function PublicBookingPage() {
         slotDate: "",
         slotValue: "",
       });
+      clearResume();
 
       await loadAvailability();
     } catch (error) {
@@ -497,6 +553,74 @@ export function PublicBookingPage() {
                           </FormItem>
                         )}
                       />
+                    </div>
+
+                    {/* ── Resume Upload (mandatory) ─────────────────────── */}
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="resume-upload"
+                        className="text-sm font-medium text-slate-900"
+                      >
+                        <span className="inline-flex items-center gap-2">
+                          <FileText className="size-4" />
+                          Resume <span className="text-red-500">*</span>
+                        </span>
+                      </Label>
+
+                      {resumeFile ? (
+                        <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50/60 px-4 py-3">
+                          <FileText className="size-5 shrink-0 text-slate-500" />
+                          <div className="min-w-0 flex-1">
+                            <p className="truncate text-sm font-medium text-slate-700">
+                              {resumeFile.name}
+                            </p>
+                            <p className="text-xs text-slate-400">
+                              {(resumeFile.size / 1024).toFixed(0)} KB
+                            </p>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={clearResume}
+                            className="rounded-full p-1.5 text-slate-400 transition-colors hover:bg-slate-200 hover:text-slate-600"
+                            aria-label="Remove resume"
+                          >
+                            <X className="size-4" />
+                          </button>
+                        </div>
+                      ) : (
+                        <label
+                          htmlFor="resume-upload"
+                          className={cn(
+                            "flex cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed px-4 py-6 text-center transition-colors hover:border-slate-400 hover:bg-slate-50",
+                            resumeError
+                              ? "border-red-400 bg-red-50/50"
+                              : "border-slate-300 bg-slate-50/60",
+                          )}
+                        >
+                          <Upload className="size-6 text-slate-400" />
+                          <div>
+                            <p className="text-sm font-medium text-slate-600">
+                              Click to upload your resume
+                            </p>
+                            <p className="mt-0.5 text-xs text-slate-400">
+                              PDF or Word document, up to 10 MB
+                            </p>
+                          </div>
+                        </label>
+                      )}
+
+                      <input
+                        ref={fileInputRef}
+                        id="resume-upload"
+                        type="file"
+                        accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                        className="sr-only"
+                        onChange={handleResumeSelect}
+                      />
+
+                      {resumeError && (
+                        <p className="text-sm text-destructive">{resumeError}</p>
+                      )}
                     </div>
 
                     <FormField
