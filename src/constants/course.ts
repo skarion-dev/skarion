@@ -9,3 +9,12 @@ export const OutsidePlantEngineeringCourse = {
   currency: "USD",
   thumbnailUrl: null,
 };
+
+export const IntroductionToAutoCadCourse = {
+  id: STATIC_COURSE_ID,
+  title: "Introduction to AutoCAD",
+  originalPrice: 400,
+  discountedPrice: 250,
+  currency: "USD",
+  thumbnailUrl: null,
+};

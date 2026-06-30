@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import EnrollButton from "@/components/Course/EnrollButton";
 
-export default function MobileCTA({ isPurchased }: { isPurchased: boolean }) {
+export default function MobileCTA({ isPurchased, courseName = "OSP Engineering Bootcamp" }: { isPurchased: boolean; courseName?: string }) {
   const [footerVisible, setFooterVisible] = useState(false);
   const [showCTA, setShowCTA] = useState(true);
 
@@ -41,7 +41,7 @@ export default function MobileCTA({ isPurchased }: { isPurchased: boolean }) {
       <div className="max-w-6xl mx-auto flex items-center gap-3">
         <div className="flex flex-col gap-1 w-full">
           <span className="text-white leading-[1.2] text-[24px] font-[500]">
-            OSP Engineering Bootcamp
+            {courseName}
           </span>
 
           <EnrollButton isPurchased={isPurchased} />

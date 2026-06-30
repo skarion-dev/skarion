@@ -54,6 +54,31 @@ export default function Testimonials() {
 
   return (
     <div className="w-full bg-[#ffffff] py-10 sm:px-12 px-6 h-[200vh] overflow-hidden max-w-[1440px] mx-auto">
+      <h1 className="text-[#000000] text-[40px] sm:text-[64px] leading-[1.2] text-left">
+              Success Stories
+            </h1>
+            <div className="text-sm sm:text-base md:text-lg font-[300] pt-5 text-left w-full lg:w-[50%]">
+              Discover how our guidance helps driven professionals overcome hiring obstacles and step confidently into the next chapter of their careers.
+            </div>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5 mb-10 mt-8">
+              <div className="flex -space-x-2">
+                <Image src="/image 1.jpg" alt="student" width={28} height={28} className="rounded-full aspect-square object-cover border border-[#ffffff] sm:w-[35px] sm:h-[35px]" />
+                <Image src="/profile 1.jpg" alt="student" width={28} height={28} className="rounded-full aspect-square object-cover border border-[#ffffff] sm:w-[35px] sm:h-[35px]" />
+                <Image src="/image 3.jpg" alt="student" width={28} height={28} className="rounded-full aspect-square object-cover border border-[#ffffff] sm:w-[35px] sm:h-[35px]" />
+                <Image src="/profile 2.jpg" alt="student" width={28} height={28} className="rounded-full aspect-square object-cover border border-[#ffffff] sm:w-[35px] sm:h-[35px]" />
+              </div>
+              <div className="flex flex-col justify-between">
+                <div className="flex items-center gap-[2px] text-[#f5b942]">
+                  <span className="text-base">★</span>
+                  <span className="text-base">★</span>
+                  <span className="text-base">★</span>
+                  <span className="text-base">★</span>
+                  <span className="text-base">★</span>
+                  <span className="ml-[8px] text-gray-500 text-[12px] font-[600]">4.8 (30+)</span>
+                </div>
+                <span className="text-[12px] font-[400]">Trusted by 70+ Professionals Worldwide</span>
+              </div>
+            </div>
       <div ref={container} className="flex gap-6 overflow-hidden">
         <Column
           testimonials={[

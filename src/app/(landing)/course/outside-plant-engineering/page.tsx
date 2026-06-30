@@ -15,6 +15,10 @@ import { CoursesService, OpenAPI } from "@/api-client";
 import Overview from "@/../videos/intro.mp4.json";
 import video1 from "@/../videos/1.2.mp4.json";
 import video2 from "@/../videos/1228.mp4.json";
+import intro from "@/../videos/1217.mp4.json";
+import v1 from "@/../videos/V1.mp4.json";
+import v2 from "@/../videos/V2.mp4.json";
+import v3 from "@/../videos/V3.mp4.json";
 import FAQMini from "@/components/Course/FAQMini";
 
 export const metadata: Metadata = {
@@ -83,16 +87,39 @@ const bootcampSchedule = [
     title: "Career & Industry Focus",
     lessons: [
       {
-        id: "1.1",
-        name: "OSP Engineering Roles & Outlook",
+        id: "V1",
+        name: "Introduction to OSP Engineering",
         isLocked: false,
-        link: video1.sources[0].src,
+        type:'video',
+        link: v1.sources[0].src,
+      },
+      {
+        id: "V2",
+        name: "OSP Engineering Career Pathways",
+        isLocked: false,
+        type:'video',
+        link: v2.sources[0].src,
+      },
+      {
+        id: "1.1",
+        name: "OSP Engineering Roles and Outlooks ",
+        isLocked: false,
+        type:'pdf',
+        link: "/files/1.1.pdf",
+      },
+      {
+        id: "V3",
+        name: "Essential Skills for OSP Engineers ",
+        isLocked: false,
+        type:'video',
+        link: v3.sources[0].src,
       },
       {
         id: "1.2",
         name: "Essential Soft Skills for OSP Engineers",
         isLocked: false,
-        link: video2.sources[0].src,
+        type:'pdf',
+        link: "/files/1.2.pdf",
       },
     ],
   },
@@ -101,57 +128,121 @@ const bootcampSchedule = [
     title: "Network Architecture Fundamentals",
     lessons: [
       {
+        id: "V4",
+        name: "Submarine to Home Journey",
+        isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
+      {
         id: "2.1",
         name: "Submarine to Home Journey",
         isLocked: true,
+        type:'pdf',
+        link: "/files/2.1.pdf",
+      },
+      {
+        id: "V5",
+        name: "Internet from Central office to Customer",
+        isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
+      {
+        id: "V6",
+        name: "Passive Optical Network (PON)",
+        isLocked: true,
+        type:'video',
         link: video1.sources[0].src,
       },
       {
         id: "2.2",
         name: "Core OSP Components and Hierarchy",
         isLocked: true,
+        type:'pdf',
+        link: "/files/2.2.pdf",
+      },
+      {
+        id: "V7",
+        name: "Optical Splitter - EXFO animated glossary of Fiber Optics",
+        isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
+      {
+        id: "V8",
+        name: "Centralized vs Cascaded",
+        isLocked: true,
+        type:'video',
         link: video1.sources[0].src,
       },
       {
         id: "2.3",
         name: "PON Basics and Capacity Planning",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/2.3.pdf",
       },
       {
         id: "Q1",
-        name: "Pop Quiz (13 Questions)",
+        name: "Quiz 1 (13 Questions)",
         isLocked: true,
+        type:'quiz',
         link: video1.sources[0].src,
       },
     ],
   },
   {
     week: 3,
-    title: "Fiber Technology Essentials Phase-1",
+    title: "Fiber Technology Essentials",
     lessons: [
+      {
+        id: "V9",
+        name: "Optical Fiber Mechanisms and Types",
+        isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
+      {
+        id: "V10",
+        name: "Fiber Optic Color Coding",
+        isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
+      {
+        id: "V11",
+        name: "Cable Type, Attenuation and Tests",
+        isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
       {
         id: "3.1",
         name: "Fiber Construction and Fundamentals",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/3.1.pdf",
       },
       {
         id: "S1",
-        name: "SCORM: Color Coded Fiber Distribution",
+        name: "SCORM: Color Snap",
         isLocked: true,
+        type:'scorm',
         link: video1.sources[0].src,
       },
       {
         id: "S2",
         name: "SCORM: Total Internal Reflection",
         isLocked: true,
+        type:'scorm',
         link: video1.sources[0].src,
       },
       {
         id: "Q2",
-        name: "Pop Quiz (10 Questions)",
+        name: "Quiz 2 (10 Questions)",
         isLocked: true,
+        type:'quiz',
         link: video1.sources[0].src,
       },
     ],
@@ -161,21 +252,38 @@ const bootcampSchedule = [
     title: "Fiber Technology Essentials Phase-2",
     lessons: [
       {
+        id: "V12",
+        name: "Fiber Splicing",
+        isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
+      {
+        id: "V13",
+        name: "Splicing Closures",
+        isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
+      {
         id: "4.1",
         name: "Fusion Splicing and Quality Control",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/4.1.pdf",
       },
       {
         id: "S3",
         name: "SCORM: Mini Fusion Lab",
         isLocked: true,
+        type:'scorm',
         link: video1.sources[0].src,
       },
       {
         id: "Q3",
-        name: "Pop Quiz (15 Questions)",
+        name: "Quiz 3 (15 Questions)",
         isLocked: true,
+        type:'quiz',
         link: video1.sources[0].src,
       },
     ],
@@ -185,21 +293,38 @@ const bootcampSchedule = [
     title: "Legal & Regulatory Framework",
     lessons: [
       {
+        id: "V14",
+        name: "ROW , EOP and CL",
+        isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
+      {
+        id: "V15",
+        name: "Rules and Regulations",
+        isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
+      {
         id: "5.1",
         name: "Site Planning: ROW, Easements and Maps",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/5.1.pdf",
       },
       {
         id: "S4",
         name: "SCORM: Permit Picker",
         isLocked: true,
+        type:'scorm',
         link: video1.sources[0].src,
       },
       {
         id: "Q4",
-        name: "Pop Quiz (10 Questions)",
+        name: "Quiz 4 (10 Questions)",
         isLocked: true,
+        type:'quiz',
         link: video1.sources[0].src,
       },
     ],
@@ -209,39 +334,108 @@ const bootcampSchedule = [
     title: "Underground Infrastructure",
     lessons: [
       {
+        id: "V16",
+        name: "Underground Construction Methods",
+        isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
+      {
+        id: "V17",
+        name: "Handholes and Excavation",
+        isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
+      {
+        id: "V18",
+        name: "ONT Mounting",
+        isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
+      {
         id: "6.1",
         name: "Underground Infrastructure",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/6.1.pdf",
       },
       {
         id: "S5",
         name: "SCORM: 811 Locate",
         isLocked: true,
+        type:'scorm',
+        link: video1.sources[0].src,
+      },
+      {
+        id: "V19",
+        name: "Aerial Fiber Optic Networks",
+        isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
+      {
+        id: "V20",
+        name: "Aerial Fiber Installations",
+        isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
+      {
+        id: "V21",
+        name: "Storm Hardening, Joint Use Agreements and NESC",
+        isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
+      {
+        id: "V22",
+        name: "Aerial Maintenance Access",
+        isLocked: true,
+        type:'video',
         link: video1.sources[0].src,
       },
       {
         id: "6.2",
         name: "Aerial Infrastructure",
         isLocked: true,
+        type:'pdf',
+        link: "/files/6.2.pdf",
+      },
+      {
+        id: "V23",
+        name: "OSP Hardware Choices",
+        isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
+      {
+        id: "V24",
+        name: "Terminal Sizing",
+        isLocked: true,
+        type:'video',
         link: video1.sources[0].src,
       },
       {
         id: "S6",
         name: "SCORM: Span Sense",
         isLocked: true,
+        type:'scorm',
         link: video1.sources[0].src,
       },
       {
         id: "6.3",
         name: "Network Components Deep Dive",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/6.3.pdf",
       },
       {
         id: "Q5",
-        name: "Pop Quiz (20 Questions)",
+        name: "Quiz 5 (20 Questions)",
         isLocked: true,
+        type:'quiz',
         link: video1.sources[0].src,
       },
     ],
@@ -251,21 +445,38 @@ const bootcampSchedule = [
     title: "GIS Address Classification & Capacity Planning",
     lessons: [
       {
+        id: "V25",
+        name: "Address Classification",
+        isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
+      {
         id: "7.1",
         name: "Type of OSP Service Locations",
         isLocked: true,
+        type:'pdf',
+        link: "/files/7.1.pdf",
+      },
+      {
+        id: "V26",
+        name: "Capacity Calculation",
+        isLocked: true,
+        type:'video',
         link: video1.sources[0].src,
       },
       {
         id: "7.2",
         name: "Capacity and Velocity Planning",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/7.2.pdf",
       },
       {
         id: "Q6",
-        name: "Pop Quiz (9 Questions)",
+        name: "Quiz 6 (9 Questions)",
         isLocked: true,
+        type:'quiz',
         link: video1.sources[0].src,
       },
     ],
@@ -275,15 +486,24 @@ const bootcampSchedule = [
     title: "PON Technology & Network Architecture",
     lessons: [
       {
-        id: "8.1",
-        name: "PON Specifications, deployment, and QoS",
+        id: "V27",
+        name: "PON GPON and XGPON",
         isLocked: true,
+        type:'video',
         link: video1.sources[0].src,
       },
       {
-        id: "Q7",
-        name: "Pop Quiz (10 Questions)",
+        id: "8.1",
+        name: "PON Specifications, deployment, and QoS",
         isLocked: true,
+        type:'pdf',
+        link: "/files/8.1.pdf",
+      },
+      {
+        id: "Q7",
+        name: "Quiz 7 (10 Questions)",
+        isLocked: true,
+        type:'quiz',
         link: video1.sources[0].src,
       },
     ],
@@ -293,15 +513,45 @@ const bootcampSchedule = [
     title: "Design Constraints & Optimization",
     lessons: [
       {
-        id: "9.1",
-        name: "Design Rules and Engineering Principles",
+        id: "V28",
+        name: "Fiber Count Rules",
         isLocked: true,
+        type:'video',
         link: video1.sources[0].src,
       },
       {
-        id: "Q8",
-        name: "Pop Quiz (10 Questions)",
+        id: "V29",
+        name: "3 Mechanical Rules",
         isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
+      {
+        id: "V30",
+        name: "Fiber Optic Network Protection",
+        isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
+      {
+        id: "V31",
+        name: "Cost Optimization",
+        isLocked: true,
+        type:'video',
+        link: video1.sources[0].src,
+      },
+      {
+        id: "9.1",
+        name: "Design Rules and Engineering Principles",
+        isLocked: true,
+        type:'pdf',
+        link: "/files/9.1.pdf",
+      },
+      {
+        id: "Q8",
+        name: "Quiz 8 (10 Questions)",
+        isLocked: true,
+        type:'quiz',
         link: video1.sources[0].src,
       },
     ],
@@ -314,36 +564,42 @@ const bootcampSchedule = [
         id: "10.1",
         name: "Introduction to HLD",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/10.1.pdf",
       },
       {
         id: "10.2",
         name: "Mapping Fundamentals",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/10.2.pdf",
       },
       {
         id: "10.3",
         name: "Project Definition and Network Planning",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/10.3.pdf",
       },
       {
         id: "10.4",
         name: "Network Hierarchy",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/10.4.pdf",
       },
       {
         id: "10.5",
         name: "Placement Principles",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/10.5.pdf",
       },
       {
         id: "Q9",
-        name: "Pop Quiz (14 Questions)",
+        name: "Quiz 9 (14 Questions)",
         isLocked: true,
+        type:'quiz',
         link: video1.sources[0].src,
       },
     ],
@@ -356,12 +612,14 @@ const bootcampSchedule = [
         id: "11.1",
         name: "SKARION Design Standards",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/11.1.pdf",
       },
       {
         id: "Q10",
-        name: "Pop Quiz (20 Questions)",
+        name: "Quiz 10 (20 Questions)",
         isLocked: true,
+        type:'quiz',
         link: video1.sources[0].src,
       },
     ],
@@ -372,26 +630,30 @@ const bootcampSchedule = [
     lessons: [
       {
         id: "12.1",
-        name: "HLD Project 01 - Tracing EOP, CL and ROW (Slide)",
+        name: "HLD Project 01 - Tracing EOP, CL and ROW",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/12.1.pdf",
       },
       {
-        id: "12.2",
-        name: "HLD Project 01 - Tracing EOP, CL and ROW (Video)",
+        id: "PV1",
+        name: "HLD Project 01 - Tracing EOP, CL and ROW",
         isLocked: true,
+        type:'video',
         link: video1.sources[0].src,
       },
       {
         id: "Q11",
-        name: "Pop Quiz (10 Questions)",
+        name: "Quiz 11 (10 Questions)",
         isLocked: true,
+        type:'quiz',
         link: video1.sources[0].src,
       },
       {
         id: "P1",
-        name: "Project - Tracing EOP, CL and ROW",
+        name: "Project 01 - Tracing EOP, CL and ROW",
         isLocked: true,
+        type:'project',
         link: video1.sources[0].src,
       },
     ],
@@ -402,26 +664,30 @@ const bootcampSchedule = [
     lessons: [
       {
         id: "13.1",
-        name: "HLD Project 02 - Service Groups (Slide)",
+        name: "HLD Project 02 - Service Groups",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/13.1.pdf",
       },
       {
-        id: "13.2",
-        name: "HLD Project 02 - Service Groups (Video)",
+        id: "PV2",
+        name: "HLD Project 02 - Service Groups",
         isLocked: true,
+        type:'video',
         link: video1.sources[0].src,
       },
       {
         id: "Q12",
-        name: "Pop Quiz (10 Questions)",
+        name: "Quiz 12 (10 Questions)",
         isLocked: true,
+        type:'quiz',
         link: video1.sources[0].src,
       },
       {
         id: "P2",
-        name: "Project - Service Groups",
+        name: "Project 02- Service Groups",
         isLocked: true,
+        type:'project',
         link: video1.sources[0].src,
       },
     ],
@@ -432,26 +698,30 @@ const bootcampSchedule = [
     lessons: [
       {
         id: "14.1",
-        name: "HLD Project 03 - Conduit, Handhole and Flowerpot Placement (Slide)",
+        name: "HLD Project 03 - Conduit, Handhole and Flowerpot Placement",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/14.1.pdf",
       },
       {
-        id: "14.2",
-        name: "HLD Project 03 - Conduit, Handhole and Flowerpot Placement (Video)",
+        id: "PV3",
+        name: "HLD Project 03 - Conduit, Handhole and Flowerpot Placement",
         isLocked: true,
+        type:'video',
         link: video1.sources[0].src,
       },
       {
         id: "Q13",
-        name: "Pop Quiz (10 Questions)",
+        name: "Quiz 13 (10 Questions)",
         isLocked: true,
+        type:'quiz',
         link: video1.sources[0].src,
       },
       {
         id: "P3",
-        name: "Project - Conduit, Handhole and Flowerpot Placement",
+        name: "Project 03 - Conduit, Handhole and Flowerpot Placement",
         isLocked: true,
+        type:'project',
         link: video1.sources[0].src,
       },
     ],
@@ -462,26 +732,30 @@ const bootcampSchedule = [
     lessons: [
       {
         id: "15.1",
-        name: "HLD Project 04 - Splice Closure Placement (Slide)",
+        name: "HLD Project 04 - Splice Closure Placement ",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/15.1.pdf",
       },
       {
-        id: "15.2",
-        name: "HLD Project 04 - Splice Closure Placement (Video)",
+        id: "PV4",
+        name: "HLD Project 04 - Splice Closure Placement ",
         isLocked: true,
+        type:'video',
         link: video1.sources[0].src,
       },
       {
         id: "Q14",
-        name: "Pop Quiz (10 Questions)",
+        name: "Quiz 14 (10 Questions)",
         isLocked: true,
+        type:'quiz',
         link: video1.sources[0].src,
       },
       {
         id: "P4",
-        name: "Project - Splice Closure Placement",
+        name: "Project 04 - Splice Closure Placement",
         isLocked: true,
+        type:'project',
         link: video1.sources[0].src,
       },
     ],
@@ -492,26 +766,30 @@ const bootcampSchedule = [
     lessons: [
       {
         id: "16.1",
-        name: "HLD Project 05 - Vicinity Map (Slide)",
+        name: "HLD Project 05 - Vicinity Map",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/16.1.pdf",
       },
       {
-        id: "16.2",
-        name: "HLD Project 05 - Vicinity Map (Video)",
+        id: "PV5",
+        name: "HLD Project 05 - Vicinity Map ",
         isLocked: true,
+        type:'video',
         link: video1.sources[0].src,
       },
       {
         id: "Q15",
-        name: "Pop Quiz (7 Questions)",
+        name: "Quiz 15 (7 Questions)",
         isLocked: true,
+        type:'quiz',
         link: video1.sources[0].src,
       },
       {
         id: "P5",
-        name: "Project - Vicinity Map",
+        name: "Project 05 - Vicinity Map",
         isLocked: true,
+        type:'project',
         link: video1.sources[0].src,
       },
     ],
@@ -522,26 +800,30 @@ const bootcampSchedule = [
     lessons: [
       {
         id: "17.1",
-        name: "LLD Project 01 - Labels and Callouts (Slide)",
+        name: "LLD Project 01 - Labels and Callouts ",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/17.1.pdf",
       },
       {
-        id: "17.2",
-        name: "LLD Project 01 - Labels and Callouts (Video)",
+        id: "PV1",
+        name: "LLD Project 01 - Labels and Callouts",
         isLocked: true,
+        type:'video',
         link: video1.sources[0].src,
       },
       {
         id: "Q16",
-        name: "Pop Quiz (10 Questions)",
+        name: "Quiz 16 (10 Questions)",
         isLocked: true,
+        type:'quiz',
         link: video1.sources[0].src,
       },
       {
         id: "P6",
-        name: "Project -  Labels and Callouts",
+        name: "Project 06 -  Labels and Callouts",
         isLocked: true,
+        type:'project',
         link: video1.sources[0].src,
       },
     ],
@@ -552,26 +834,30 @@ const bootcampSchedule = [
     lessons: [
       {
         id: "18.1",
-        name: "LLD Project 02 - Schematic (Slide)",
+        name: "LLD Project 02 - Schematic ",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/18.1.pdf",
       },
       {
-        id: "18.2",
-        name: "LLD Project 02 - Schematic (Video)",
+        id: "PV2",
+        name: "LLD Project 02 - Schematic ",
         isLocked: true,
+        type:'video',
         link: video1.sources[0].src,
       },
       {
         id: "Q17",
-        name: "Pop Quiz (10 Questions)",
+        name: "Quiz 17 (10 Questions)",
         isLocked: true,
+        type:'quiz',
         link: video1.sources[0].src,
       },
       {
         id: "P7",
-        name: "Project - Schematic",
+        name: "Project 07 - Schematic",
         isLocked: true,
+        type:'project',
         link: video1.sources[0].src,
       },
     ],
@@ -582,26 +868,30 @@ const bootcampSchedule = [
     lessons: [
       {
         id: "19.1",
-        name: "LLD Project 03 - Cable and Terminal Labelling (Slide)",
+        name: "LLD Project 03 - Cable and Terminal Labelling ",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/19.1.pdf",
       },
       {
-        id: "19.2",
-        name: "LLD Project 03 - Cable and Terminal Labelling (Video)",
+        id: "PV3",
+        name: "LLD Project 03 - Cable and Terminal Labelling ",
         isLocked: true,
+        type:'video',
         link: video1.sources[0].src,
       },
       {
         id: "Q18",
-        name: "Pop Quiz (10 Questions)",
+        name: "Quiz 18 (10 Questions)",
         isLocked: true,
+        type:'quiz',
         link: video1.sources[0].src,
       },
       {
         id: "P8",
-        name: "Project - Cable and Terminal Labelling",
+        name: "Project 08 - Cable and Terminal Labelling",
         isLocked: true,
+        type:'project',
         link: video1.sources[0].src,
       },
     ],
@@ -612,56 +902,64 @@ const bootcampSchedule = [
     lessons: [
       {
         id: "20.1",
-        name: "LLD Project 04 - Paperspace, Splice Point & Splice Diagram (Slide)",
+        name: "LLD Project 04 - Paperspace, Splice Point & Splice Diagram ",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/20.1.pdf",
       },
       {
-        id: "20.2",
-        name: "LLD Project 04 - Paperspace, Splice Point & Splice Diagram (Video)",
+        id: "PV4",
+        name: "LLD Project 04 - Paperspace, Splice Point & Splice Diagram ",
         isLocked: true,
+        type:'video',
         link: video1.sources[0].src,
       },
       {
         id: "Q19",
-        name: "Pop Quiz (10 Questions)",
+        name: "Quiz 19 (10 Questions)",
         isLocked: true,
+        type:'quiz',
         link: video1.sources[0].src,
       },
       {
         id: "P9",
-        name: "Project - Paperspace, Splice Point & Splice Diagram",
+        name: "Project 09 - Paperspace, Splice Point & Splice Diagram",
         isLocked: true,
+        type:'project',
         link: video1.sources[0].src,
       },
     ],
   },
   {
     week: 21,
-    title: "LLD Project 5 - BOM and Splice Matrix",
+    title: "LLD Project 05 - BOM and Splice Matrix",
     lessons: [
       {
         id: "21.1",
-        name: "LLD Project 5 - BOM and Splice Matrix (Slide)",
+        name: "LLD Project 5 - BOM and Splice Matrix ",
         isLocked: true,
-        link: video1.sources[0].src,
+        type:'pdf',
+        link: "/files/21.1.pdf",
       },
       {
-        id: "21.2",
-        name: "LLD Project 5 - BOM and Splice Matrix (Video)",
+        id: "PV5",
+        name: "LLD Project 5 - BOM and Splice Matrix ",
         isLocked: true,
+        type:'video',
         link: video1.sources[0].src,
       },
       {
         id: "Q20",
-        name: "Pop Quiz (10 Questions)",
+        name: "Quiz 20 (10 Questions)",
         isLocked: true,
+        type:'quiz',
         link: video1.sources[0].src,
       },
       {
         id: "P10",
-        name: "Project - BOM and Splice Matrix",
+        name: "Project 10 - BOM and Splice Matrix",
         isLocked: true,
+        type:'project',
         link: video1.sources[0].src,
       },
     ],
@@ -705,13 +1003,13 @@ export default async function CoursePage() {
           utility networks.
         </p>
         <div className="rounded-[14px] bg-[#122461] mt-10 text-white overflow-hidden aspect-video">
-          <iframe
-            className="w-full h-full"
-            src="https://www.youtube-nocookie.com/embed/8ZYRpCTfY3c?si=kbaMZci2jPmz6jiI"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; "
-            referrerPolicy="strict-origin-when-cross-origin"
-          ></iframe>
+          <Video
+                src={intro.sources[0].src}
+                playsInline
+                disablePictureInPicture
+                controls
+                className="object-cover"
+          />
         </div>
         <p className="text-[24px] font-[500] mt-10 capitalize">
           Unlock high-demand careers in the US with OSP engineering!
@@ -962,7 +1260,7 @@ export default async function CoursePage() {
               <span className="hidden md:block w-[2px] h-14 bg-[#EBEBEB] self-center"></span>
               <div className="w-full sm:w-[45%] md:w-[20%]">
                 <p className="text-[20px] sm:text-[22px] md:text-[24px] font-[500] leading-[1.2]">
-                  6
+                  5
                 </p>
                 <p className="text-[14px] font-[400] mt-2 mb-1">LLD Projects</p>
               </div>
@@ -1022,15 +1320,41 @@ export default async function CoursePage() {
                             </div>
                           </AccordionTrigger>
                           <AccordionContent className="p-0 mt-2">
-                            <div className="rounded-[14px] overflow-hidden bg-black">
-                              <Video
-                                src={lesson.link}
-                                playsInline
-                                disablePictureInPicture
-                                controls
-                                className="object-cover"
-                              />
-                            </div>
+                            {lesson.type === 'video' ? (
+                              <div className="rounded-[14px] overflow-hidden bg-black">
+                                <Video
+                                  src={lesson.link}
+                                  playsInline
+                                  disablePictureInPicture
+                                  controls
+                                  className="object-cover"
+                                />
+                              </div>
+                            ) : lesson.type === 'pdf' ? (
+                              <div className="rounded-[14px] overflow-hidden bg-gray-100 h-[600px]">
+                               <div className="flex justify-end mb-2">
+                                  <a 
+                                    href={lesson.link} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-colors"
+                                  >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                      <polyline points="15 3 21 3 21 9"></polyline>
+                                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                    Open PDF in New Tab
+                                  </a>
+                                </div>
+                                <iframe
+                                  src={lesson.link}
+                                  allowFullScreen
+                                  className="w-full h-full border-none"
+                                  title={`PDF: ${lesson.name}`}
+                                />
+                              </div>
+                            ) : null}
                           </AccordionContent>
                         </AccordionItem>
                       ),
@@ -1066,7 +1390,7 @@ export default async function CoursePage() {
         </div>
         <div className="block lg:hidden h-[80px]" />
       </div>
-      <MobileCTA isPurchased={isPurchased} />
+      <MobileCTA isPurchased={isPurchased} courseName={OutsidePlantEngineeringCourse.title} />
     </div>
   );
 }
