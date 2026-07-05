@@ -134,6 +134,11 @@ export function PublicBookingPage() {
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [resumeError, setResumeError] = useState<string>("");
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const form = useForm<BookingFormValues>({
     resolver: zodResolver(bookingFormSchema),
@@ -311,6 +316,10 @@ export function PublicBookingPage() {
 
   const timezoneLabel = availability?.timezoneLabel ?? "Local time";
   const firstAvailableDate = availableDays[0]?.date;
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <div className="px-4 py-10 md:px-6 md:py-14">
