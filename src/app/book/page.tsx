@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
-
-const PublicBookingPage = dynamic(
-  () => import("@/components/booking/public-booking-page").then((mod) => mod.PublicBookingPage),
-  { ssr: false }
-);
+import { PublicBookingPage } from "@/components/booking/public-booking-page";
 
 export const metadata: Metadata = {
   title: "Book A Call | Skarion",
