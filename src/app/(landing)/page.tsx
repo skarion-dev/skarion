@@ -145,16 +145,15 @@ export default async function Home() {
               </div>
             </div>
             <h1 className="text-[#000000] text-4xl sm:text-5xl md:text-6xl lg:text-[64px] leading-[1.2] text-left">
-              Advancing Careers Through Strategic Professional Development
+              Career Support That Gets You Hired. Build Skills
             </h1>
             <div className="text-sm sm:text-base md:text-lg font-[300] pt-5 text-left w-full lg:w-[80%]">
               Skarion helps individuals confidently navigate the hiring process and secure top-tier roles through expert coaching, resume optimization, and hands-on training.
             </div>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8">
               <Link
-                href="https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled"
-                target="_blank"
-                rel="noopener noreferrer"
+                // href="/book"
+                href = "https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled"
                 className="bg-[#122461] rounded-[8px] px-6 py-3 flex justify-center items-center gap-2 group transition-all duration-300 cursor-pointer whitespace-nowrap"
               >
                 <p className="text-[#FFFFFF] text-[12px] sm:text-[14px] font-[500] flex">

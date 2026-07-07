@@ -388,7 +388,7 @@ export function PublicBookingPage() {
                     disabled={(date: Date | undefined) =>
                       !availableDateSet.has(format(date as Date, "yyyy-MM-dd"))
                     }
-                    className="w-full rounded-[1.75rem] border border-slate-200/80 bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] p-5 [--cell-size:2.8rem] md:[--cell-size:3.1rem] shadow-[0_18px_45px_-24px_rgba(15,23,42,0.12)]"
+                    className="w-full min-w-0 rounded-[1.75rem] border border-slate-200/80 bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] p-2 sm:p-3 md:p-5 [--cell-size:2rem] sm:[--cell-size:2.4rem] md:[--cell-size:2.8rem] shadow-[0_18px_45px_-24px_rgba(15,23,42,0.12)]"
                   />
 
                   {form.formState.errors.slotDate && (
