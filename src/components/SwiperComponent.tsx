@@ -42,7 +42,7 @@ const SwiperComponent: FC<SwiperComponentProps> = ({ images }) => {
             slideShadows: false,
           }}
           autoplay={{
-            delay: 2500,
+            delay: 6000,
             disableOnInteraction: true,
           }}
           loop={true}
