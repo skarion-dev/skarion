@@ -152,8 +152,8 @@ export default async function Home() {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8">
               <Link
-                // href="/book"
-                href = "https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled"
+                href="/book"
+                // href = "https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled"
                 className="bg-[#122461] rounded-[8px] px-6 py-3 flex justify-center items-center gap-2 group transition-all duration-300 cursor-pointer whitespace-nowrap"
               >
                 <p className="text-[#FFFFFF] text-[12px] sm:text-[14px] font-[500] flex">
