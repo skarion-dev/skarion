@@ -156,7 +156,26 @@ export function PublicBookingPage() {
   const selectedDate = form.watch("slotDate");
   const selectedSlot = form.watch("slotValue");
 
-  const availableDays = useMemo(() => availability?.days ?? [], [availability]);
+  const rawAvailableDays = useMemo(() => availability?.days ?? [], [availability]);
+
+  // Only show days/slots that are at least 24 hours from now.
+  const cutoff = useMemo(() => {
+    const t = new Date();
+    t.setHours(t.getHours() + 24);
+    return t;
+  }, []);
+
+  const availableDays = useMemo(
+    () =>
+      rawAvailableDays
+        .map((day) => ({
+          ...day,
+          slots: day.slots.filter((slot) => new Date(slot.startAt) > cutoff),
+        }))
+        .filter((day) => day.slots.length > 0),
+    [rawAvailableDays, cutoff],
+  );
+
   const availableDateSet = useMemo(
     () => new Set(availableDays.map((day) => day.date)),
     [availableDays],
