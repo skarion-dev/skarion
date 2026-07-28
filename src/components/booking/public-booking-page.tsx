@@ -56,6 +56,30 @@ const US_TIMEZONES = [
   { value: "Pacific/Honolulu", label: "Hawaii Time (US & Canada)" },
 ];
 
+const FALLBACK_TIMEZONE = "America/New_York";
+
+/**
+ * Detect the browser timezone and return the best matching US_TIMEZONES value.
+ * Falls back to FALLBACK_TIMEZONE (EST) if detection fails or timezone is not
+ * in the supported list.
+ */
+function detectTimezone(): string {
+  try {
+    const detected = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    if (!detected) return FALLBACK_TIMEZONE;
+    // Exact match first
+    const exact = US_TIMEZONES.find((tz) => tz.value === detected);
+    if (exact) return exact.value;
+    // Partial match by region (e.g. "America/Indiana/Indianapolis" → "America/New_York")
+    const prefix = detected.split("/")[0]; // e.g. "America", "Pacific"
+    const partial = US_TIMEZONES.find((tz) => tz.value.startsWith(prefix));
+    if (partial) return partial.value;
+    return FALLBACK_TIMEZONE;
+  } catch {
+    return FALLBACK_TIMEZONE;
+  }
+}
+
 const ALLOWED_RESUME_TYPES = [
   "application/pdf",
   "application/msword",
@@ -130,13 +154,17 @@ export function PublicBookingPage() {
   const [loadingAvailability, setLoadingAvailability] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [confirmation, setConfirmation] = useState<BookingResponse | null>(null);
-  const [selectedTimezone, setSelectedTimezone] = useState<string>("America/New_York");
+  // Start with null; we detect on mount before the first fetch
+  const [selectedTimezone, setSelectedTimezone] = useState<string>(FALLBACK_TIMEZONE);
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [resumeError, setResumeError] = useState<string>("");
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    // Detect timezone on first mount, before availability is fetched
+    const detected = detectTimezone();
+    setSelectedTimezone(detected);
     setIsMounted(true);
   }, []);
 
