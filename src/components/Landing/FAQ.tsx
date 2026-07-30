@@ -7,130 +7,150 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { Search, X } from "lucide-react";
 
 interface FAQItem {
   question: string;
   answer: string;
+  group: string;
 }
 
 const faqData: FAQItem[] = [
+  // — General
   {
-    "question": "What is OSP (Outside Plant) Engineering?",
-    "answer": "OSP engineering involves designing and building the fiber-optic and telecom infrastructure outside buildings, such as on streets, poles, and underground routes."
+    group: "General",
+    question: "What is Skarion?",
+    answer:
+      "Skarion is a success-based career acceleration and placement company. We help international graduates and early-career professionals break into specialized, less-saturated U.S. career pathways by mapping their background to the right field, closing practical skill gaps, positioning their profile, and running a curated job-search campaign on their behalf. You pay only after you're placed.",
   },
   {
-    "question": "How does a career in the OSP industry look?",
-    "answer": "OSP engineers work in a stable, high-demand field with growth potential, involving tasks like fiber network design, installation, testing, and maintenance."
+    group: "General",
+    question: "Why choose Skarion over free courses or generic job boards?",
+    answer:
+      "Free courses teach concepts and hope they stick. Generic job boards leave you to apply alone. Skarion does something different: we start by finding the right pathway for your background, then manage the entire job-search process alongside you — resume, applications, interviews, and onboarding. And our success-based model means our incentives are aligned with yours.",
   },
   {
-    "question": "What is Skarion?",
-    "answer": "Skarion is a career-focused bootcamp that equips you with job-ready skills and helps you get hired through expert training and personalized support."
+    group: "General",
+    question: "Will I get personal support throughout the process?",
+    answer:
+      "Yes. Once you enroll, a dedicated team of instructors, managers, and industry experts backs your training, job search, and applications every step of the way.",
   },
   {
-    "question": "Why choose Skarion over free courses?",
-    "answer": "Free courses teach concepts. Skarion prepares you for employment with hands-on training, resume grooming, interview preparation, and active job placement support."
+    group: "General",
+    question: "How long does the process typically take?",
+    answer:
+      "It varies by pathway and individual background. Many candidates target placement within about 120 days of enrolling. We'll give you an honest, personalized timeline estimate during your free consultation — not a generic promise.",
   },
   {
-    "question": "What if I don’t get a job?",
-    "answer": "If you don’t get placed within 120 days, your initial deposit is refunded (terms apply)."
+    group: "General",
+    question: "Do I need prior experience in the field?",
+    answer:
+      "Not necessarily. Many candidates come from adjacent or unrelated backgrounds. What matters more is your commitment, transferable skills, and work-authorization situation. Our free career assessment will tell you honestly what your prospects look like.",
+  },
+  // — Career Pathways
+  {
+    group: "Career Pathways",
+    question: "What career pathways does Skarion support?",
+    answer:
+      "We currently support three pathways: Engineering & Infrastructure (our flagship — includes OSP/telecom, GIS, CAD, and civil-adjacent roles), Technology & Data (software, analytics, QA, cloud, and applied AI), and Business & Operations (accounting, financial analysis, business systems, supply chain, and project coordination). Each pathway has dedicated hiring relationships and a tailored process.",
   },
   {
-    "question": "Is there a money-back guarantee if I don’t get a job?",
-    "answer": "Yes, if you don’t get placed within 120 days, your deposit is refunded (terms apply)."
+    group: "Career Pathways",
+    question: "What is the Engineering & Infrastructure pathway?",
+    answer:
+      "This is our flagship pathway, built on our roots in outside plant (OSP) fiber network design. It covers telecom & OSP engineering, GIS & geospatial analysis, utility and civil support roles, AutoCAD and permitting, and construction/project engineering. We have direct hiring relationships with employers in this space and the strongest placement track record here.",
   },
   {
-    "question": "How does this process work?",
-    "answer": "You train → practice job-ready skills → get resume & interview prep → apply with guidance → get placed."
+    group: "Career Pathways",
+    question: "I'm not from an engineering background. Can Skarion still help me?",
+    answer:
+      "Yes. Our Technology & Data and Business & Operations pathways are designed for candidates from CS, data, accounting, business systems, and adjacent fields. Your first step is a free consultation where we review your background and identify the pathway where you're most likely to succeed.",
   },
   {
-    "question": "Will someone assist me personally?",
-    "answer": "Yes, a dedicated team supports your training, applications, and interviews."
+    group: "Career Pathways",
+    question: "How do I know which pathway is right for me?",
+    answer:
+      "That's exactly what our free career consultation is for. We review your education, experience, work-authorization situation, and goals, then recommend the pathway and specific roles where you're most likely to get hired. No pressure, no upfront cost.",
   },
   {
-    "question": "When do I have to pay?",
-    "answer": "You pay a small deposit to start, and the remaining amount is paid only after job placement."
+    group: "Career Pathways",
+    question: "What skill-development courses does Skarion offer?",
+    answer:
+      "Our flagship course is Outside Plant Engineering (21 modules — fiber optics, OSP design, splicing, network layout). We also offer Introduction to AutoCAD (11 modules) and GIS Essentials (coming soon, 13 modules). Courses are used when a specific skill gap stands between you and your target role — they're one part of the process, not the whole service.",
   },
-
+  // — Payment & Model
   {
-    "question": "How does the payment method work?",
-    "answer": "You start by paying a small deposit, and the remaining amount is only paid after you land a job."
-  },
-  {
-    "question": "Are discounts available?",
-    "answer": "Yes, limited discounts and flexible options may be available."
-  },
-  {
-    "question": "Who is this for?",
-    "answer": "Beginners, career switchers, and international students serious about full-time telecom roles."
+    group: "Payment & Model",
+    question: "When do I have to pay?",
+    answer:
+      "Skarion runs on a success-based model for our placement service. Fees become applicable only after you're successfully placed in a role, exactly as defined in your signed agreement. There is no upfront tuition for the placement service. Note: standalone skill-development courses may have their own pricing — your consultation will clarify what applies to your situation.",
   },
   {
-    "question": "How long does the program take?",
-    "answer": "Training typically takes 3-4 weeks, followed by placement support."
+    group: "Payment & Model",
+    question: "Is the placement service free?",
+    answer:
+      "It's not free — it's success-based. The distinction matters: you don't pay upfront tuition, but a fee does apply after successful placement, per your signed agreement. We use the term \"success-based\" or \"pay-when-hired\" rather than \"free\" to be accurate and transparent.",
   },
   {
-    "question": "What is the time commitment for this program?",
-    "answer": "It requires consistent effort over a few weeks (3-4), with flexible schedules to suit your pace."
+    group: "Payment & Model",
+    question: "What if I don't get placed?",
+    answer:
+      "We work hard to find the right fit, but we don't make guarantees. We can't and don't promise a specific job, salary, timeline, or sponsorship. The terms governing what happens in various scenarios are set out clearly in your signed agreement before you commit.",
   },
   {
-    "question": "Do I need prior experience?",
-    "answer": "No prior experience is required; commitment matters more."
+    group: "Payment & Model",
+    question: "Are discounts or flexible options available?",
+    answer:
+      "Limited options may be available. The best way to understand what applies to your situation is to book a free consultation — we'll walk you through the model in full.",
+  },
+  // — International Candidates
+  {
+    group: "International Candidates",
+    question: "Is this program open to international students and OPT holders?",
+    answer:
+      "Yes. Many of our candidates are international graduates on OPT or STEM OPT. We have direct experience helping this group navigate the U.S. job market and are upfront about work-authorization realities — including which employers are realistically accessible on different visa types.",
   },
   {
-    "question": "What help will I get from Skarion in landing a job?",
-    "answer": "Skarion provides resume building, interview preparation, job application support, and connects you with placement opportunities."
+    group: "International Candidates",
+    question: "Will Skarion guarantee sponsorship or an H-1B visa?",
+    answer:
+      "No. We never promise sponsorship or specific visa outcomes. What we do is help you target roles and employers where sponsorship is realistically possible, position your profile as strongly as possible, and make the most of your available time on OPT or STEM OPT. Honest guidance beats false hope.",
   },
   {
-    "question": "Do I need to pay the full amount upfront for the program?",
-    "answer": "No, only the deposit is required upfront; you pay the rest only after job placement."
+    group: "International Candidates",
+    question: "What should I know about the OPT/STEM OPT timeline?",
+    answer:
+      "OPT gives you 12 months of work authorization after graduation; a STEM OPT extension adds up to 24 more months if you graduated from a STEM program and your employer files an E-Verify-compliant I-983. Timing matters — the earlier you start the placement process, the more runway you have. We factor your specific situation into the roadmap during your consultation.",
   },
   {
-    "question": "Will I get a certificate after I complete the program?",
-    "answer": "Yes, you will get a Skarion certificate upon completing the program, but the main focus is on getting you hired."
+    group: "International Candidates",
+    question: "I have a foreign degree or foreign work experience. Can Skarion still help?",
+    answer:
+      "Yes. Repositioning foreign credentials for the U.S. market is something we do regularly. Part of the profile-optimization work is translating your experience into language and formats that U.S. hiring managers recognize and value.",
   },
-  {
-    "question": "Is this program just for U.S. residents, or can international students apply?",
-    "answer": "This program is open to anyone residing in the U.S., including U.S. citizens, green card holders, and international students, especially those on OPT/CPT."
-  },
-  {
-    "question": "What happens after I complete the training?",
-    "answer": "You receive placement support, help with resume building, and job application assistance to land a full-time role."
-  },
-  {
-    "question": "How does the program differ from other courses or bootcamps?",
-    "answer": "Skarion provides hands-on training tailored to real-world projects and direct support to help you get hired."
-  },
-  {
-    "question": "Do I get personalized support during the program?",
-    "answer": "Yes, you get personalized mentorship and support throughout the training to help you succeed."
-  },
-  {
-    "question": "What are the job prospects after completing the program?",
-    "answer": "The program prepares you for full-time positions like OSP Engineer, OSP Designer, and Fiber Network Engineer, with placement support in the U.S."
-  },
-  {
-    "question": "Is the program suitable for someone without prior experience?",
-    "answer": "Yes, no prior experience is required; a commitment to learning is most important."
-  },
-  {
-    "question": "What kind of support can I expect from Skarion in landing a job?",
-    "answer": "Skarion provides resume building, interview preparation, and direct placement assistance to help you land a full-time role."
-  }
 ];
+
+const groups = Array.from(new Set(faqData.map((f) => f.group)));
 
 const FAQPage: React.FC = () => {
   const [query, setQuery] = React.useState("");
+  const [activeGroup, setActiveGroup] = React.useState<string>("All");
   const normalizedQuery = query.trim();
+
   const filteredFaq = React.useMemo(() => {
-    if (!normalizedQuery) return faqData;
+    let items = faqData;
+    if (activeGroup !== "All") {
+      items = items.filter((item) => item.group === activeGroup);
+    }
+    if (!normalizedQuery) return items;
     const q = normalizedQuery.toLowerCase();
-    return faqData.filter(
+    return items.filter(
       (item) =>
         item.question.toLowerCase().includes(q) ||
-        item.answer.toLowerCase().includes(q),
+        item.answer.toLowerCase().includes(q)
     );
-  }, [normalizedQuery]);
+  }, [normalizedQuery, activeGroup]);
+
   const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const highlight = (text: string, q: string) => {
     if (!q) return text;
@@ -143,15 +163,39 @@ const FAQPage: React.FC = () => {
         </mark>
       ) : (
         <span key={i}>{part}</span>
-      ),
+      )
     );
   };
+
   return (
     <div className="w-full bg-[#ffffff] py-5 mt-8 sm:px-12 px-6 max-w-[1440px] mx-auto">
-      <h1 className="text-[#000000] text-[40px] sm:text-[64px] leading-[1.2] text-left mb-6 sm:mb-12">
+      <h2 className="text-[#000000] text-[40px] sm:text-[64px] leading-[1.2] text-left mb-4 sm:mb-6 font-[700]">
         Frequently Asked Questions
-      </h1>
-      <div className="w-full mb-8 sm:mb-12 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      </h2>
+      <p className="text-gray-600 text-[15px] sm:text-[16px] font-[300] mb-8 max-w-2xl leading-relaxed">
+        Questions about pathways, the success-based model, international
+        candidates, and more.
+      </p>
+
+      {/* Group filter chips */}
+      <div className="flex flex-wrap gap-2 mb-6">
+        {["All", ...groups].map((g) => (
+          <button
+            key={g}
+            onClick={() => setActiveGroup(g)}
+            className={`px-4 py-1.5 rounded-full text-[13px] font-[500] border transition-colors duration-200 ${
+              activeGroup === g
+                ? "bg-[#122461] text-white border-[#122461]"
+                : "bg-white text-gray-600 border-[#EBEBEB] hover:border-[#122461] hover:text-[#122461]"
+            }`}
+          >
+            {g}
+          </button>
+        ))}
+      </div>
+
+      {/* Search */}
+      <div className="w-full mb-8 sm:mb-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="relative w-full max-w-lg">
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
             <Search className="h-5 w-5 text-gray-400" />
@@ -176,11 +220,12 @@ const FAQPage: React.FC = () => {
           )}
         </div>
         <div className="text-sm text-gray-500 font-medium whitespace-nowrap">
-          Showing {filteredFaq.length} of {faqData.length} FAQs
+          Showing {filteredFaq.length} of {faqData.length} questions
         </div>
       </div>
+
       <Accordion type="multiple" className="w-full">
-        {(normalizedQuery ? filteredFaq : faqData).map((item, index) => (
+        {filteredFaq.map((item, index) => (
           <AccordionItem
             key={index}
             value={`faq-${index}`}
@@ -199,6 +244,7 @@ const FAQPage: React.FC = () => {
           </AccordionItem>
         ))}
       </Accordion>
+
       {normalizedQuery && filteredFaq.length === 0 && (
         <div className="my-6 text-center text-sm text-gray-500">
           No matching questions found.

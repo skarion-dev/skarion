@@ -11,29 +11,31 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Skarion - Advancing Careers Through Specialized Training",
-  description: "Skarion is dedicated to shaping the next generation of telecom professionals. Through specialized training in OSP, AutoCAD, and GIS, we equip candidates with hands-on skills and dedicated job placement support to help them thrive in the industry.",
+  title: "Skarion — Success-Based Career Acceleration & Placement",
+  description:
+    "Skarion helps international graduates and early-career professionals break into specialized, less-saturated U.S. career pathways. We find the right field for your background, close skill gaps, and run your job search — you pay only after you're placed.",
   keywords: [
     "Skarion",
-    "Outside Plant Engineering",
-    "OSP Training",
-    "OSP Job Placement",
-    "Telecom Career",
-    "AutoCAD Training",
-    "GIS Training",
-    "Fiber Optics Training",
-    "Telecommunications Engineering",
-    "OSP Design",
-    "OSP Career",
-    "Outside Plant Design",
-    "Telecom Infrastructure Training",
-    "Network Engineering",
-    "OSP Certification",
-    "Career Placement",
+    "career placement",
+    "success-based placement",
+    "pay when hired",
+    "international graduates",
+    "OPT job placement",
+    "STEM OPT careers",
+    "career acceleration",
+    "OSP engineering",
+    "GIS careers",
+    "technology data careers",
+    "business operations placement",
+    "managed job search",
+    "U.S. career pathways",
+    "career coaching",
+    "job placement company",
   ],
   openGraph: {
-    title: "Skarion - Advancing Careers Through Specialized Training",
-    description: "Skarion is dedicated to shaping the next generation of telecom professionals. Through specialized training in OSP, AutoCAD, and GIS, we equip candidates with hands-on skills and dedicated job placement support to help them thrive in the industry.",
+    title: "Skarion — Success-Based Career Acceleration & Placement",
+    description:
+      "Skarion helps international graduates break into specialized U.S. career pathways. Pay only after you're placed.",
     url: "https://skarion.com",
     siteName: "Skarion",
     images: [
@@ -41,7 +43,7 @@ export const metadata: Metadata = {
         url: "https://skarion.com/skarion-jpg.jpg",
         width: 1200,
         height: 630,
-        alt: "Skarion",
+        alt: "Skarion — Career Acceleration & Placement",
       },
     ],
     locale: "en_US",
@@ -49,8 +51,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Skarion - Advancing Careers Through Specialized Training",
-    description: "Skarion is dedicated to shaping the next generation of telecom professionals. Through specialized training in OSP, AutoCAD, and GIS, we equip candidates with hands-on skills and dedicated job placement support to help them thrive in the industry.",
+    title: "Skarion — Success-Based Career Acceleration & Placement",
+    description:
+      "Skarion helps international graduates break into specialized U.S. career pathways. Pay only after you're placed.",
     images: ["https://skarion.com/skarion-jpg.jpg"],
   },
   verification: {

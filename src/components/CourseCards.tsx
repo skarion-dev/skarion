@@ -2,15 +2,15 @@
 import clsx from "clsx";
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image"; 
+import Image from "next/image";
 
 const courses = [
   {
     courseName: "Outside Plant Engineering",
     courseDescription:
-      "Understand the fundamentals of fiber optics, including OSP design, splicing techniques, and network layout. Ideal for those aiming to work in telecom and infrastructure.",
+      "Fiber optics fundamentals, OSP design, splicing, and network layout. Built for high-demand telecom and infrastructure roles. Our most established pathway with direct employer relationships.",
     modules: 21,
-    tag: "Most Popular",
+    tag: "Flagship",
     isPopular: true,
     href: "/course/outside-plant-engineering",
     image: "/osp.jpg",
@@ -19,9 +19,9 @@ const courses = [
   {
     courseName: "Introduction to AutoCAD",
     courseDescription:
-      "Learn the ins and outs of AutoCAD, from basic drawing to advanced modeling. Suitable for those with a passion for design.",
+      "Learn the ins and outs of AutoCAD, from basic drawing to advanced modeling. Suitable for engineering, design, and infrastructure roles.",
     modules: 11,
-    tag: "Most Popular",
+    tag: "11 Modules",
     isPopular: false,
     href: "/course/introduction-to-autocad",
     image: "/cad.jpeg",
@@ -30,7 +30,7 @@ const courses = [
   {
     courseName: "GIS Essentials",
     courseDescription:
-      "Learn the ins and outs of GIS, from mapping to data analysis. Ideal for those with a passion for location-based services.",
+      "From mapping to spatial data analysis. Ideal for GIS, geospatial, and location-based roles across engineering and data pathways.",
     modules: 13,
     tag: "Coming Soon",
     isPopular: false,
@@ -55,17 +55,25 @@ export default function CourseCards() {
             isPopular,
             published,
           } = course || {};
+
           const baseClasses = clsx(
             "relative bg-white border rounded-lg transition-all ease-out",
             "min-w-[270px] w-full sm:min-w-[300px]",
             isActive
               ? "lg:w-[500px] duration-300"
-              : "sm:w-[300px] duration-300",
+              : "sm:w-[300px] duration-300"
           );
           const disabledClasses = clsx(
             baseClasses,
-            "opacity-60 cursor-not-allowed pointer-events-none",
+            "opacity-60 cursor-not-allowed pointer-events-none"
           );
+
+          const badgeClasses = isPopular
+            ? "text-emerald-800 bg-emerald-100 border-white"
+            : tag === "Coming Soon"
+            ? "text-amber-700 bg-amber-100 border-white"
+            : "text-gray-700 bg-gray-100 border-white";
+
           const content = (
             <>
               <div className="relative rounded-lg h-[150px] m-2">
@@ -73,7 +81,7 @@ export default function CourseCards() {
                   <div className="absolute inset-0 bg-cover bg-center">
                     <Image
                       src={course.image}
-                      alt={`${course.courseName} Background`}
+                      alt={`${course.courseName} course`}
                       layout="fill"
                       objectFit="cover"
                       className="rounded-lg"
@@ -83,7 +91,7 @@ export default function CourseCards() {
                   <div className="relative bg-gray-300 rounded-lg h-full" />
                 )}
                 <div
-                  className={`absolute -bottom-4 left-2 inline-flex items-center justify-center px-4 py-1 text-[11px] font-[600] rounded-full border-3 border-white z-10 ${isPopular ? "text-green-800 bg-green-200" : "text-red-800 bg-red-200"}`}
+                  className={`absolute -bottom-4 left-2 inline-flex items-center justify-center px-4 py-1 text-[11px] font-[600] rounded-full border-3 z-10 ${badgeClasses}`}
                 >
                   {tag}
                 </div>
@@ -92,7 +100,7 @@ export default function CourseCards() {
                 <div className="mt-6 text-[20px] font-[600] text-black">
                   {courseName}
                 </div>
-                <div className="mt-1 text-[14px] text-gray-600 line-clamp-2">
+                <div className="mt-1 text-[14px] text-gray-600 line-clamp-3">
                   {courseDescription}
                 </div>
               </div>
@@ -101,6 +109,7 @@ export default function CourseCards() {
               </div>
             </>
           );
+
           return published ? (
             <Link
               href={course.href}
