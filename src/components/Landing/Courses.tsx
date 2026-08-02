@@ -2,7 +2,7 @@ import CourseCards from "@/components/CourseCards";
 
 export default function Courses() {
   return (
-    <div className="w-full bg-[#ffffff] mb-15 mt-8 sm:px-12 px-6 max-w-[1440px] mx-auto">
+    <div id="courses" className="w-full bg-[#ffffff] mb-15 mt-8 sm:px-12 px-6 max-w-[1440px] mx-auto">
       <p className="text-[#122461] text-[11px] sm:text-[12px] font-[600] uppercase tracking-widest mb-3">
         SKILL DEVELOPMENT
       </p>
