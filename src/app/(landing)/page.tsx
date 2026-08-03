@@ -201,7 +201,7 @@ export default async function Home() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8">
               <Link
-                href="https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled"
+                href="/book"
                 target="_blank"
                 rel="noopener noreferrer"
                 id="hero-cta-book"
@@ -228,7 +228,7 @@ export default async function Home() {
                 </svg>
               </Link>
               <Link
-                href="/pathways"
+                href="#pathways"
                 id="hero-cta-pathways"
                 className="border-[1px] border-[#122461] rounded-[8px] px-6 py-3 flex justify-center items-center gap-2 group cursor-pointer whitespace-nowrap hover:bg-[#122461] transition-all duration-300"
               >
@@ -320,7 +320,7 @@ export default async function Home() {
       </div>
 
       {/* ── Career Pathways Section ── */}
-      <div className="w-full sm:py-14 py-10 sm:px-12 px-6">
+      <div id="pathways" className="w-full sm:py-14 py-10 sm:px-12 px-6">
         <div className="max-w-[1440px] mx-auto">
           <p className="text-[#122461] text-[11px] sm:text-[12px] font-[600] uppercase tracking-widest mb-3">
             SPECIALIZED CAREER PATHWAYS
@@ -400,7 +400,7 @@ export default async function Home() {
           <p className="mt-12 text-center text-[12px] sm:text-[12px] text-gray-500">
             Not sure which fits?{" "}
             <Link
-              href="https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled"
+              href="/book"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#122461] hover:underline underline-offset-4 font-[500]"
@@ -495,15 +495,9 @@ export default async function Home() {
               </Link>
             </p>
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+
               <Link
-                href="/pricing"
-                id="success-band-pricing-cta"
-                className="bg-[#122461] text-white rounded-[8px] px-6 py-3 text-center text-[13px] sm:text-[14px] font-[500] hover:opacity-90 transition-opacity whitespace-nowrap"
-              >
-                How pricing works
-              </Link>
-              <Link
-                href="https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled"
+                href="/book"
                 target="_blank"
                 rel="noopener noreferrer"
                 id="success-band-book-cta"
@@ -591,7 +585,7 @@ export default async function Home() {
                 Read the FAQ
               </Link>
               <Link
-                href="https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled"
+                href="/book"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border border-[#122461] text-[#122461] rounded-[8px] px-6 py-3 text-center text-[13px] sm:text-[14px] font-[500] hover:bg-[#122461] hover:text-white transition-colors whitespace-nowrap"
@@ -622,16 +616,16 @@ export default async function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled"
+              href="/book"
               target="_blank"
               rel="noopener noreferrer"
               id="final-cta-book"
               className="bg-[#122461] text-white rounded-[8px] px-8 py-3 text-[14px] font-[600] hover:opacity-90 transition-opacity whitespace-nowrap"
             >
-              Book a Free Consultation ▸
+              Book a Free Consultation
             </Link>
             <Link
-              href="/pathways"
+              href="#pathways"
               id="final-cta-pathways"
               className="border border-[#122461] text-[#122461] rounded-[8px] px-8 py-3 text-[14px] font-[500] hover:bg-[#122461] hover:text-white transition-all duration-300 whitespace-nowrap"
             >
