@@ -1,11 +1,13 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import * as Dialog from "@radix-ui/react-dialog";
 import { format, parseISO } from "date-fns";
 import {
   CheckCircle2,
   Clock3,
   FileText,
+  Globe2,
   Loader2,
   Mail,
   MapPin,
@@ -51,32 +53,100 @@ const US_TIMEZONES = [
   { value: "America/New_York", label: "Eastern Time (US & Canada)" },
   { value: "America/Chicago", label: "Central Time (US & Canada)" },
   { value: "America/Denver", label: "Mountain Time (US & Canada)" },
+  { value: "America/Phoenix", label: "Arizona Time" },
   { value: "America/Los_Angeles", label: "Pacific Time (US & Canada)" },
   { value: "America/Anchorage", label: "Alaska Time (US & Canada)" },
   { value: "Pacific/Honolulu", label: "Hawaii Time (US & Canada)" },
+  { value: "America/Puerto_Rico", label: "Atlantic Time (Puerto Rico)" },
 ];
 
 const FALLBACK_TIMEZONE = "America/New_York";
 
+const TIMEZONE_ALIASES: Record<string, string> = {
+  "US/Eastern": "America/New_York",
+  "America/Detroit": "America/New_York",
+  "America/Indiana/Indianapolis": "America/New_York",
+  "America/Indiana/Marengo": "America/New_York",
+  "America/Indiana/Vevay": "America/New_York",
+  "America/Indiana/Vincennes": "America/New_York",
+  "America/Indiana/Winamac": "America/New_York",
+  "America/Kentucky/Louisville": "America/New_York",
+  "America/Kentucky/Monticello": "America/New_York",
+  "US/Central": "America/Chicago",
+  "America/Indiana/Knox": "America/Chicago",
+  "America/Indiana/Tell_City": "America/Chicago",
+  "America/Menominee": "America/Chicago",
+  "America/North_Dakota/Beulah": "America/Chicago",
+  "America/North_Dakota/Center": "America/Chicago",
+  "America/North_Dakota/New_Salem": "America/Chicago",
+  "US/Mountain": "America/Denver",
+  "America/Boise": "America/Denver",
+  "US/Pacific": "America/Los_Angeles",
+  "US/Alaska": "America/Anchorage",
+  "US/Hawaii": "Pacific/Honolulu",
+};
+
 /**
- * Detect the browser timezone and return the best matching US_TIMEZONES value.
- * Falls back to FALLBACK_TIMEZONE (EST) if detection fails or timezone is not
- * in the supported list.
+ * Detect the browser's IANA timezone. Known aliases are normalized for the
+ * booking service; detection failure falls back to Eastern Time, which still
+ * has to be explicitly confirmed before submission.
  */
 function detectTimezone(): string {
   try {
     const detected = Intl.DateTimeFormat().resolvedOptions().timeZone;
     if (!detected) return FALLBACK_TIMEZONE;
-    // Exact match first
-    const exact = US_TIMEZONES.find((tz) => tz.value === detected);
+
+    const exact = US_TIMEZONES.find((timezone) => timezone.value === detected);
     if (exact) return exact.value;
-    // Partial match by region (e.g. "America/Indiana/Indianapolis" → "America/New_York")
-    const prefix = detected.split("/")[0]; // e.g. "America", "Pacific"
-    const partial = US_TIMEZONES.find((tz) => tz.value.startsWith(prefix));
-    if (partial) return partial.value;
-    return FALLBACK_TIMEZONE;
+
+    // Preserve any valid browser-reported IANA timezone that is not in the
+    // curated list. A rejected timezone is safer than silently changing it.
+    return TIMEZONE_ALIASES[detected] ?? detected;
   } catch {
     return FALLBACK_TIMEZONE;
+  }
+}
+
+function getTimezoneLabel(timezone: string): string {
+  return (
+    US_TIMEZONES.find((item) => item.value === timezone)?.label ?? timezone
+  );
+}
+
+function getTimezoneDetails(timezone: string, instant = new Date()): string {
+  try {
+    const parts = new Intl.DateTimeFormat("en-US", {
+      timeZone: timezone,
+      timeZoneName: "short",
+      hour: "numeric",
+      minute: "2-digit",
+    }).formatToParts(instant);
+    const abbreviation = parts.find(
+      (part) => part.type === "timeZoneName",
+    )?.value;
+
+    return abbreviation
+      ? `${getTimezoneLabel(timezone)} (${abbreviation})`
+      : getTimezoneLabel(timezone);
+  } catch {
+    return getTimezoneLabel(timezone);
+  }
+}
+
+function formatInTimezone(isoDate: string, timezone: string): string {
+  try {
+    return new Intl.DateTimeFormat("en-US", {
+      timeZone: timezone,
+      weekday: "long",
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      timeZoneName: "short",
+    }).format(new Date(isoDate));
+  } catch {
+    return isoDate;
   }
 }
 
@@ -113,6 +183,7 @@ type BookingResponse = {
   slotDate: string;
   slotLabel: string;
   slotStartAt: string;
+  timezone: string;
   meetingJoinUrl?: string;
 };
 
@@ -122,7 +193,10 @@ const bookingFormSchema = z.object({
   phone: z
     .string()
     .trim()
-    .regex(/^(\+?1\s?)?(\([0-9]{3}\)|[0-9]{3})[\s\-]?[0-9]{3}[\s\-]?[0-9]{4}$/, "Enter a valid 10-digit US phone number"),
+    .regex(
+      /^(\+?1\s?)?(\([0-9]{3}\)|[0-9]{3})[\s\-]?[0-9]{3}[\s\-]?[0-9]{4}$/,
+      "Enter a valid 10-digit US phone number",
+    ),
   address: z.string().max(255, "Address is too long").optional(),
   note: z.string().max(1000, "Note is too long").optional(),
   slotDate: z.string().min(1, "Please choose a date"),
@@ -153,12 +227,22 @@ export function PublicBookingPage() {
     useState<BookingAvailabilityResponse | null>(null);
   const [loadingAvailability, setLoadingAvailability] = useState(true);
   const [submitting, setSubmitting] = useState(false);
-  const [confirmation, setConfirmation] = useState<BookingResponse | null>(null);
-  // Start with null; we detect on mount before the first fetch
-  const [selectedTimezone, setSelectedTimezone] = useState<string>(FALLBACK_TIMEZONE);
+  const [confirmation, setConfirmation] = useState<BookingResponse | null>(
+    null,
+  );
+  const [confirmedBookingTimezone, setConfirmedBookingTimezone] = useState<
+    string | null
+  >(null);
+  const [selectedTimezone, setSelectedTimezone] = useState<string | null>(null);
+  const [confirmationTimezone, setConfirmationTimezone] =
+    useState(FALLBACK_TIMEZONE);
+  const [timezoneDialogOpen, setTimezoneDialogOpen] = useState(false);
+  const [pendingBooking, setPendingBooking] =
+    useState<BookingFormValues | null>(null);
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [resumeError, setResumeError] = useState<string>("");
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const availabilityAbortRef = useRef<AbortController | null>(null);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -184,7 +268,10 @@ export function PublicBookingPage() {
   const selectedDate = form.watch("slotDate");
   const selectedSlot = form.watch("slotValue");
 
-  const rawAvailableDays = useMemo(() => availability?.days ?? [], [availability]);
+  const rawAvailableDays = useMemo(
+    () => availability?.days ?? [],
+    [availability],
+  );
 
   // Only show days/slots that are at least 24 hours from now.
   const cutoff = useMemo(() => {
@@ -214,36 +301,95 @@ export function PublicBookingPage() {
     [availableDays, selectedDate],
   );
 
-  const loadAvailability = useCallback(async () => {
-    setLoadingAvailability(true);
+  const selectedSlotDetails = useMemo(
+    () => selectedDay?.slots.find((slot) => slot.value === selectedSlot),
+    [selectedDay, selectedSlot],
+  );
 
-    try {
-      const response = await fetch(getApiUrl(`/bookings/availability?timezone=${selectedTimezone}`), {
-        cache: "no-store",
-      });
+  const timezoneOptions = useMemo(() => {
+    const knownValues = new Set(US_TIMEZONES.map((timezone) => timezone.value));
+    const detectedOptions = [selectedTimezone, confirmationTimezone]
+      .filter((timezone): timezone is string => Boolean(timezone))
+      .filter((timezone, index, values) => values.indexOf(timezone) === index)
+      .filter((timezone) => !knownValues.has(timezone))
+      .map((timezone) => ({
+        value: timezone,
+        label: `Detected timezone (${timezone.replaceAll("_", " ")})`,
+      }));
 
-      if (!response.ok) {
-        throw new Error(await getApiErrorMessage(response));
+    return [...detectedOptions, ...US_TIMEZONES];
+  }, [confirmationTimezone, selectedTimezone]);
+
+  const loadAvailability = useCallback(
+    async (timezone: string) => {
+      availabilityAbortRef.current?.abort();
+      const controller = new AbortController();
+      availabilityAbortRef.current = controller;
+      setLoadingAvailability(true);
+
+      try {
+        const query = new URLSearchParams({ timezone });
+        const response = await fetch(
+          getApiUrl(`/bookings/availability?${query}`),
+          {
+            cache: "no-store",
+            signal: controller.signal,
+          },
+        );
+
+        if (!response.ok) {
+          throw new Error(await getApiErrorMessage(response));
+        }
+
+        const payload = (await response.json()) as BookingAvailabilityResponse;
+        if (controller.signal.aborted) return;
+
+        if (payload.timezone && payload.timezone !== timezone) {
+          throw new Error(
+            "The booking service returned times for a different timezone. Please try again.",
+          );
+        }
+
+        setAvailability(payload);
+
+        if (payload.days.length && !form.getValues("slotDate")) {
+          const minimumStart = Date.now() + 24 * 60 * 60 * 1000;
+          const firstUsableDay = payload.days.find((day) =>
+            day.slots.some(
+              (slot) => new Date(slot.startAt).getTime() > minimumStart,
+            ),
+          );
+
+          if (firstUsableDay) {
+            form.setValue("slotDate", firstUsableDay.date, {
+              shouldValidate: true,
+            });
+          }
+        }
+      } catch (error) {
+        if (error instanceof DOMException && error.name === "AbortError")
+          return;
+
+        const message =
+          error instanceof Error
+            ? error.message
+            : "Unable to load booking times";
+        toast.error(message);
+      } finally {
+        if (availabilityAbortRef.current === controller) {
+          setLoadingAvailability(false);
+        }
       }
-
-      const payload = (await response.json()) as BookingAvailabilityResponse;
-      setAvailability(payload);
-
-      if (payload.days.length && !form.getValues("slotDate")) {
-        form.setValue("slotDate", payload.days[0].date, { shouldValidate: true });
-      }
-    } catch (error) {
-      const message =
-        error instanceof Error ? error.message : "Unable to load booking times";
-      toast.error(message);
-    } finally {
-      setLoadingAvailability(false);
-    }
-  }, [form, selectedTimezone]);
+    },
+    [form],
+  );
 
   useEffect(() => {
-    void loadAvailability();
-  }, [loadAvailability]);
+    if (!selectedTimezone) return;
+
+    void loadAvailability(selectedTimezone);
+    return () => availabilityAbortRef.current?.abort();
+  }, [loadAvailability, selectedTimezone]);
 
   useEffect(() => {
     if (!selectedDate) {
@@ -274,7 +420,9 @@ export function PublicBookingPage() {
     }
 
     if (!ALLOWED_RESUME_TYPES.includes(file.type)) {
-      setResumeError("Please upload a PDF or Word document (.pdf, .doc, .docx)");
+      setResumeError(
+        "Please upload a PDF or Word document (.pdf, .doc, .docx)",
+      );
       e.target.value = "";
       return;
     }
@@ -296,10 +444,43 @@ export function PublicBookingPage() {
     }
   };
 
-  const onSubmit = async (values: BookingFormValues) => {
-    // Validate resume before submitting
+  const handleTimezoneChange = (timezone: string) => {
+    if (timezone === selectedTimezone) return;
+
+    setAvailability(null);
+    form.setValue("slotDate", "", { shouldValidate: false });
+    form.setValue("slotValue", "", { shouldValidate: false });
+    form.clearErrors(["slotDate", "slotValue"]);
+    setSelectedTimezone(timezone);
+  };
+
+  const requestBookingConfirmation = (values: BookingFormValues) => {
     if (!resumeFile) {
       setResumeError("Please upload your resume");
+      return;
+    }
+
+    if (!selectedTimezone) {
+      toast.error("Please select your timezone");
+      return;
+    }
+
+    if (!selectedSlotDetails) {
+      toast.error(
+        "That time is no longer available. Please choose another slot.",
+      );
+      return;
+    }
+
+    setPendingBooking(values);
+    setConfirmationTimezone(selectedTimezone);
+    setTimezoneDialogOpen(true);
+  };
+
+  const submitBooking = async (values: BookingFormValues, timezone: string) => {
+    if (!resumeFile) {
+      setResumeError("Please upload your resume");
+      setTimezoneDialogOpen(false);
       return;
     }
 
@@ -312,7 +493,11 @@ export function PublicBookingPage() {
       formData.append("phone", values.phone.trim());
       formData.append("slotDate", values.slotDate);
       formData.append("slotValue", values.slotValue);
-      formData.append("timezone", selectedTimezone);
+      formData.append("timezone", timezone);
+
+      if (selectedSlotDetails) {
+        formData.append("slotStartAt", selectedSlotDetails.startAt);
+      }
 
       if (values.address?.trim()) {
         formData.append("address", values.address.trim());
@@ -334,6 +519,9 @@ export function PublicBookingPage() {
 
       const booking = (await response.json()) as BookingResponse;
       setConfirmation(booking);
+      setConfirmedBookingTimezone(booking.timezone);
+      setPendingBooking(null);
+      setTimezoneDialogOpen(false);
       toast.success("Your call has been booked");
 
       form.reset({
@@ -347,7 +535,7 @@ export function PublicBookingPage() {
       });
       clearResume();
 
-      await loadAvailability();
+      await loadAvailability(timezone);
     } catch (error) {
       const message =
         error instanceof Error ? error.message : "Unable to book your call";
@@ -355,6 +543,20 @@ export function PublicBookingPage() {
     } finally {
       setSubmitting(false);
     }
+  };
+
+  const confirmTimezoneAndBook = async () => {
+    if (!pendingBooking || !selectedTimezone) return;
+
+    if (confirmationTimezone !== selectedTimezone) {
+      setTimezoneDialogOpen(false);
+      setPendingBooking(null);
+      handleTimezoneChange(confirmationTimezone);
+      toast.info("Timezone updated. Please choose your date and time again.");
+      return;
+    }
+
+    await submitBooking(pendingBooking, selectedTimezone);
   };
 
   const selectedCalendarDate = selectedDate
@@ -380,12 +582,23 @@ export function PublicBookingPage() {
                   <p className="font-semibold">Booking confirmed</p>
                   <p className="text-sm">
                     {confirmation.fullName}, your call is booked for{" "}
-                    {format(
-                      parseISO(confirmation.slotStartAt),
-                      "EEEE, MMM d, yyyy 'at' h:mm a",
-                    )}
+                    {confirmedBookingTimezone
+                      ? formatInTimezone(
+                          confirmation.slotStartAt,
+                          confirmedBookingTimezone,
+                        )
+                      : confirmation.slotLabel}
                     .
                   </p>
+                  {confirmedBookingTimezone && (
+                    <p className="text-xs font-medium text-emerald-700">
+                      Timezone:{" "}
+                      {getTimezoneDetails(
+                        confirmedBookingTimezone,
+                        new Date(confirmation.slotStartAt),
+                      )}
+                    </p>
+                  )}
                   {confirmation.meetingJoinUrl && (
                     <a
                       href={confirmation.meetingJoinUrl}
@@ -450,7 +663,7 @@ export function PublicBookingPage() {
                     "rounded-3xl border bg-white p-5 shadow-sm transition-all duration-300",
                     form.formState.errors.slotValue
                       ? "border-red-500"
-                      : "border-slate-200"
+                      : "border-slate-200",
                   )}
                 >
                   <div className="flex flex-col justify-between gap-3">
@@ -465,18 +678,24 @@ export function PublicBookingPage() {
                       </p>
                     </div>
                     <div className="shrink-0 w-full sm:w-[240px] mt-4">
-                      <Select value={selectedTimezone} onValueChange={setSelectedTimezone}>
+                      <Select
+                        value={selectedTimezone ?? undefined}
+                        onValueChange={handleTimezoneChange}
+                      >
                         <SelectTrigger className="h-9 w-full bg-slate-50">
                           <SelectValue placeholder="Select timezone" />
                         </SelectTrigger>
                         <SelectContent>
-                          {US_TIMEZONES.map((tz) => (
+                          {timezoneOptions.map((tz) => (
                             <SelectItem key={tz.value} value={tz.value}>
                               {tz.label}
                             </SelectItem>
                           ))}
                         </SelectContent>
                       </Select>
+                      <p className="mt-2 text-xs text-slate-500">
+                        Auto-detected. You will confirm this before booking.
+                      </p>
                     </div>
                   </div>
 
@@ -486,7 +705,9 @@ export function PublicBookingPage() {
                         <Button
                           key={`${selectedDay.date}-${slot.value}`}
                           type="button"
-                          variant={selectedSlot === slot.value ? "default" : "outline"}
+                          variant={
+                            selectedSlot === slot.value ? "default" : "outline"
+                          }
                           className={cn(
                             "h-auto min-h-16 justify-start rounded-2xl whitespace-normal border px-4 py-4 text-left text-sm font-medium transition-all",
                             selectedSlot === slot.value
@@ -524,7 +745,10 @@ export function PublicBookingPage() {
                 </div>
 
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+                  <form
+                    onSubmit={form.handleSubmit(requestBookingConfirmation)}
+                    className="space-y-5"
+                  >
                     <div className="grid gap-5 md:grid-cols-2">
                       <FormField
                         control={form.control}
@@ -580,7 +804,10 @@ export function PublicBookingPage() {
                               </span>
                             </FormLabel>
                             <FormControl>
-                              <Input placeholder="+1 (555) 123-4567" {...field} />
+                              <Input
+                                placeholder="+1 (555) 123-4567"
+                                {...field}
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -675,7 +902,9 @@ export function PublicBookingPage() {
                       />
 
                       {resumeError && (
-                        <p className="text-sm text-destructive">{resumeError}</p>
+                        <p className="text-sm text-destructive">
+                          {resumeError}
+                        </p>
                       )}
                     </div>
 
@@ -701,13 +930,17 @@ export function PublicBookingPage() {
 
                     <div className="flex flex-col gap-3 border-t border-slate-200 pt-5 sm:flex-row sm:items-center sm:justify-between">
                       <div className="text-sm text-slate-500">
-                        Confirmation and calendar details will be sent after booking.
+                        Confirmation and calendar details will be sent after
+                        booking.
                       </div>
                       <Button
                         type="submit"
                         className="h-12 w-full rounded-2xl px-6 text-base font-semibold sm:w-auto"
                         disabled={
-                          submitting || loadingAvailability || !availableDays.length
+                          submitting ||
+                          loadingAvailability ||
+                          !selectedTimezone ||
+                          !availableDays.length
                         }
                       >
                         {submitting ? (
@@ -727,6 +960,123 @@ export function PublicBookingPage() {
           </CardContent>
         </Card>
       </div>
+
+      <Dialog.Root
+        open={timezoneDialogOpen}
+        onOpenChange={(open) => {
+          if (submitting) return;
+          setTimezoneDialogOpen(open);
+          if (!open) setPendingBooking(null);
+        }}
+      >
+        <Dialog.Portal>
+          <Dialog.Overlay className="fixed inset-0 z-[100] bg-slate-950/60 backdrop-blur-sm data-[state=closed]:animate-out data-[state=open]:animate-in data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+          <Dialog.Content className="fixed left-1/2 top-1/2 z-[101] w-[calc(100%-2rem)] max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-3xl border border-slate-200 bg-white p-6 shadow-2xl focus:outline-none sm:p-7">
+            <div className="flex items-start justify-between gap-4">
+              <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-sky-100 text-sky-700">
+                <Globe2 className="size-5" />
+              </div>
+              <Dialog.Close asChild>
+                <button
+                  type="button"
+                  disabled={submitting}
+                  className="rounded-full p-2 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700 disabled:pointer-events-none disabled:opacity-50"
+                  aria-label="Close timezone confirmation"
+                >
+                  <X className="size-5" />
+                </button>
+              </Dialog.Close>
+            </div>
+
+            <Dialog.Title className="mt-5 text-2xl font-semibold text-slate-950">
+              Confirm your timezone
+            </Dialog.Title>
+            <Dialog.Description className="mt-2 text-sm leading-6 text-slate-600">
+              We detected this automatically. Confirm it before booking so your
+              displayed time and calendar invitation match.
+            </Dialog.Description>
+
+            {pendingBooking && (
+              <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <div className="flex items-center gap-2 text-sm font-semibold text-slate-900">
+                  <Clock3 className="size-4 text-slate-500" />
+                  {format(
+                    parseISO(`${pendingBooking.slotDate}T12:00:00`),
+                    "EEEE, MMMM d, yyyy",
+                  )}
+                </div>
+                <p className="mt-1 pl-6 text-sm text-slate-600">
+                  {selectedSlotDetails?.label ?? pendingBooking.slotValue}
+                </p>
+              </div>
+            )}
+
+            <div className="mt-5 space-y-2">
+              <Label
+                htmlFor="final-timezone"
+                className="text-sm font-semibold text-slate-900"
+              >
+                Your timezone
+              </Label>
+              <select
+                id="final-timezone"
+                value={confirmationTimezone}
+                onChange={(event) =>
+                  setConfirmationTimezone(event.target.value)
+                }
+                disabled={submitting}
+                className="h-12 w-full rounded-xl border border-slate-300 bg-white px-3 text-sm text-slate-900 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100 disabled:opacity-60"
+              >
+                {timezoneOptions.map((timezone) => (
+                  <option key={timezone.value} value={timezone.value}>
+                    {timezone.label}
+                  </option>
+                ))}
+              </select>
+              <p className="text-xs font-medium text-slate-500">
+                {getTimezoneDetails(
+                  confirmationTimezone,
+                  selectedSlotDetails
+                    ? new Date(selectedSlotDetails.startAt)
+                    : new Date(),
+                )}
+              </p>
+            </div>
+
+            {confirmationTimezone !== selectedTimezone && (
+              <p className="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800">
+                Changing timezone will reload availability. You will need to
+                choose the date and time again.
+              </p>
+            )}
+
+            <div className="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+              <Dialog.Close asChild>
+                <Button type="button" variant="outline" disabled={submitting}>
+                  Go back
+                </Button>
+              </Dialog.Close>
+              <Button
+                type="button"
+                onClick={() => void confirmTimezoneAndBook()}
+                disabled={submitting}
+                className="min-w-44"
+              >
+                {submitting ? (
+                  <>
+                    <Loader2 className="size-4 animate-spin" />
+                    Booking your call...
+                  </>
+                ) : confirmationTimezone !== selectedTimezone ? (
+                  "Apply timezone"
+                ) : (
+                  "Confirm timezone & book"
+                )}
+              </Button>
+            </div>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
     </div>
   );
 }
