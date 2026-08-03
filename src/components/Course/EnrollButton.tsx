@@ -18,7 +18,7 @@ export default function EnrollButton({
       onClick={() => {
         if (!isPurchased)
           router.push(
-            "https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled",
+            "/book",
           );
       }}
     >

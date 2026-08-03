@@ -1,6 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'media.licdn.com',
+      },
+    ],
+  },
   async rewrites() {
     const apiBaseUrl =
       process.env.API_URL?.replace(/\/$/, "") ||

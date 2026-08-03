@@ -6,7 +6,7 @@ import Link from "next/link";
 import YouTubeIcon from "@/svg/YouTubeIcon";
 
 const BOOKING_URL =
-  "https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled";
+  "/book";
 
 const BRAND_DESC =
   "Skarion is a success-based career acceleration and placement company helping international graduates and early-career professionals enter specialized U.S. career pathways. You pay only after you're placed.";

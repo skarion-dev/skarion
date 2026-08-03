@@ -119,7 +119,7 @@ export default function Header({ user }: { user?: any }) {
                   onMouseEnter={() => setIsMenuOpen(false)}
                 >
                   <Link
-                    href="https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled"
+                    href="/book"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[14px] text-[#191F38] font-medium"
@@ -290,7 +290,7 @@ export default function Header({ user }: { user?: any }) {
                 </Link> */}
                 <div className="pt-4 border-t border-[#EBEBEB] space-y-4">
                   <Link
-                    href="https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled"
+                    href="/book"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => {
@@ -388,7 +388,7 @@ export default function Header({ user }: { user?: any }) {
                           </div>
                           <div className="space-y-1 md:space-y-2 bg-[#ffffff]">
                             <Link
-                              href="https://outlook.office.com/book/SkarionConsultationCall@inuberry.com/?ismsaljsauthenabled"
+                              href="/book"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="inline-block rounded py-1 text-[14px] sm:text-[15px] md:text-[16px] text-[#191F38] hover:text-[#4B5563]"
